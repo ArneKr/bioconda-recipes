@@ -1,0 +1,53 @@
+package:
+  name: bioconductor-rnbeads
+  version: 1.8.0
+source:
+  fn: RnBeads_1.8.0.tar.gz
+  url: https://bioarchive.galaxyproject.org/RnBeads_1.8.0.tar.gz
+  md5: acb0b9acaa05e4bfd07d6f01116c3abc
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biocgenerics
+    - bioconductor-genomicranges
+    - bioconductor-illuminaio
+    - bioconductor-iranges
+    - bioconductor-limma
+    - bioconductor-methylumi
+    - 'bioconductor-s4vectors >=0.9.25'
+    - r-base
+    - r-ff
+    - r-fields
+    - 'r-ggplot2 >=0.9.2'
+    - r-gplots
+    - r-gridextra
+    - r-matrixstats
+    - r-plyr
+  run:
+    - bioconductor-biocgenerics
+    - bioconductor-genomicranges
+    - bioconductor-illuminaio
+    - bioconductor-iranges
+    - bioconductor-limma
+    - bioconductor-methylumi
+    - 'bioconductor-s4vectors >=0.9.25'
+    - r-base
+    - r-ff
+    - r-fields
+    - 'r-ggplot2 >=0.9.2'
+    - r-gplots
+    - r-gridextra
+    - r-matrixstats
+    - r-plyr
+test:
+  commands:
+    - '$R -e "library(''RnBeads'')"'
+about:
+  home: http://bioconductor.org/packages/release/bioc/html/RnBeads.html
+  license: GPL-3
+  summary: 'RnBeads facilitates comprehensive analysis of various types of DNA methylation
+    data at the genome scale.'

@@ -1,0 +1,34 @@
+package:
+  name: bioconductor-fdb.infiniummethylation.hg19
+  version: 2.2.0
+source:
+  fn: FDb.InfiniumMethylation.hg19_2.2.0.tar.gz
+  url: http://bioconductor.org/packages/release/data/annotation/src/contrib/FDb.InfiniumMethylation.hg19_2.2.0.tar.gz
+  md5: b8b1abc599b9556b9fe9c6e824cb2697
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-annotationdbi
+    - bioconductor-biostrings
+    - 'bioconductor-genomicfeatures >=1.7.22'
+    - bioconductor-org.hs.eg.db
+    - bioconductor-txdb.hsapiens.ucsc.hg19.knowngene
+    - r-base
+  run:
+    - bioconductor-annotationdbi
+    - bioconductor-biostrings
+    - 'bioconductor-genomicfeatures >=1.7.22'
+    - bioconductor-org.hs.eg.db
+    - bioconductor-txdb.hsapiens.ucsc.hg19.knowngene
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''FDb.InfiniumMethylation.hg19'')"'
+about:
+  home: http://bioconductor.org/packages/release/data/annotation/html/FDb.InfiniumMethylation.hg19.html
+  license: Artistic-2.0
+  summary: 'Compiled HumanMethylation27 and HumanMethylation450 annotations'
