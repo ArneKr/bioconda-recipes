@@ -1,7 +1,9 @@
 package:
   name: reademption
   version: "0.4.3"
-
+build:
+  number: 0
+  noarch: python
 source:
   fn: READemption-0.4.3.tar.gz
   url: https://pypi.python.org/packages/50/c5/36e3b1654e65352ec95028b185abf54b0532251256f1f1c17663cc7c2ccb/READemption-0.4.3.tar.gz
@@ -30,6 +32,7 @@ test:
 
 
 about:
+  home: https://pythonhosted.org/READemption
   license: ISC License (ISCL)
   summary: 'A RNA-Seq Analysis Pipeline'
   license_family: OTHER
