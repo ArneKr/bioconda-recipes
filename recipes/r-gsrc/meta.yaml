@@ -1,0 +1,61 @@
+{% set version = '1.1' %}
+
+{% set posix = 'm2-' if win else '' %}
+{% set native = 'm2w64-' if win else '' %}
+
+package:
+  name: r-gsrc
+  version: {{ version|replace("-", "_") }}
+
+source:
+  fn: gsrc_{{ version }}.tar.gz
+  url:
+    - https://cran.r-project.org/src/contrib/gsrc_{{ version }}.tar.gz
+    - https://cran.r-project.org/src/contrib/Archive/gsrc/gsrc_{{ version }}.tar.gz
+
+
+  sha256: 28487cdea56f1a51db1e6a6fc202c50a06362d1a22091a34eb1f970c76ba398b
+
+
+build:
+ number: 0
+
+ rpaths:
+    - lib/R/lib/
+    - lib/
+
+requirements:
+  build:
+    - r-base
+    - r-ckmeans.1d.dp
+    - r-dnacopy
+    - r-r6
+    - r-dbscan
+    - r-illuminaio
+    - r-limma
+    - r-openxlsx
+    - r-preprocesscore
+
+  run:
+    - r-base
+    - r-ckmeans.1d.dp
+    - r-dnacopy
+    - r-r6
+    - r-dbscan
+    - r-illuminaio
+    - r-limma
+    - r-openxlsx
+    - r-preprocesscore
+
+test:
+  commands:
+    - $R -e "library('gsrc')"  
+
+
+about:
+  home: http://github.com/grafab/gsrc
+  license: GPL-3
+  summary: Pipeline to read and analyze raw SNP array data. The data is preprocessed and normalized.
+    Genotypes and CNVs are called. Synteny blocks are calculated and translocations
+    detected. The results can be plotted with special functions.
+  license_family: GPL3
