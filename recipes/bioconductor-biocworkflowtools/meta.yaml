@@ -1,6 +1,7 @@
 package:
   name: bioconductor-biocworkflowtools
   version: 1.2.0
+
 source:
   fn: BiocWorkflowTools_1.2.0.tar.gz
   url:
@@ -8,11 +9,13 @@ source:
     - https://bioarchive.galaxyproject.org/BiocWorkflowTools_1.2.0.tar.gz
     - https://depot.galaxyproject.org/software/BiocWorkflowTools/BiocWorkflowTools_1.2.0_src_all.tar.gz
   md5: 88f65820eaa442963e608166dff0050a
+
 build:
   number: 0
   rpaths:
     - lib/R/lib/
     - lib/
+
 requirements:
   build:
     - bioconductor-biocstyle
@@ -30,6 +33,7 @@ requirements:
     - r-knitr
     - r-rmarkdown
     - r-stringr
+    
 test:
   commands:
     - '$R -e "library(''BiocWorkflowTools'')"'
