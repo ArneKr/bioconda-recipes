@@ -1,15 +1,18 @@
 package:
   name: bioconductor-clomial
   version: 1.12.0
+
 source:
   fn: Clomial_1.12.0.tar.gz
   url: https://bioarchive.galaxyproject.org/Clomial_1.12.0.tar.gz
   md5: 151d701512de116ca5dd87fb48690d5a
+
 build:
   number: 0
   rpaths:
     - lib/R/lib/
     - lib/
+
 requirements:
   build:
     - r-base
@@ -19,6 +22,7 @@ requirements:
     - r-base
     - r-matrixstats
     - r-permute
+    
 test:
   commands:
     - '$R -e "library(''Clomial'')"'
