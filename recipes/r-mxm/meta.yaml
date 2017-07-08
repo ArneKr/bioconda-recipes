@@ -1,0 +1,75 @@
+{% set version = '0.9.9' %}
+
+{% set posix = 'm2-' if win else '' %}
+{% set native = 'm2w64-' if win else '' %}
+
+package:
+  name: r-mxm
+  version: {{ version|replace("-", "_") }}
+
+source:
+  fn: MXM_{{ version }}.tar.gz
+  url:
+    - https://cran.r-project.org/src/contrib/MXM_{{ version }}.tar.gz
+    - https://cran.r-project.org/src/contrib/Archive/MXM/MXM_{{ version }}.tar.gz
+
+
+  sha256: 8b8023815e9ddb2d7f2c073f57869050c16e2c8a6b53a59927ed447d0349d3b4
+
+
+build:
+  number: 0
+
+  rpaths:
+    - lib/R/lib/
+    - lib/
+
+requirements:
+  build:
+    - r-base
+    - r-mass
+    - r-rfast
+    - r-doparallel
+    - r-e1071
+    - r-energy
+    - r-foreach
+    - r-lme4
+    - r-nnet
+    - r-ordinal
+    - r-quantreg
+    - r-relations
+    - r-speedglm
+    - r-survival
+    - r-visnetwork
+
+  run:
+    - r-base
+    - r-mass
+    - r-rfast
+    - r-doparallel
+    - r-e1071
+    - r-energy
+    - r-foreach
+    - r-lme4
+    - r-nnet
+    - r-ordinal
+    - r-quantreg
+    - r-relations
+    - r-speedglm
+    - r-survival
+    - r-visnetwork
+
+test:
+  commands:
+    - $R -e "library('MXM')"
+
+about:
+  home: http://mensxmachina.org
+  license: GPL-2
+  summary: 'Feature selection methods for identifying minimal, statistically-equivalent and equally-predictive
+    feature subsets. Bayesian network algorithms and related functions are also included.
+    The package name ''MXM'' stands for "Mens eX Machina", meaning "Mind from the Machine"
+    in Latin.  '
+
+  license_family: GPL2
+
