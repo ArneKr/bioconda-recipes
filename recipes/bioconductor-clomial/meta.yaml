@@ -1,0 +1,33 @@
+package:
+  name: bioconductor-clomial
+  version: 1.12.0
+source:
+  fn: Clomial_1.12.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/Clomial_1.12.0.tar.gz
+    - https://bioarchive.galaxyproject.org/Clomial_1.12.0.tar.gz
+    - https://depot.galaxyproject.org/software/Clomial/Clomial_1.12.0_src_all.tar.gz
+  md5: 151d701512de116ca5dd87fb48690d5a
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - r-base
+    - r-matrixstats
+    - r-permute
+  run:
+    - r-base
+    - r-matrixstats
+    - r-permute
+test:
+  commands:
+    - '$R -e "library(''Clomial'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/Clomial.html
+  license: 'GPL (>= 2)'
+  summary: 'Clomial fits binomial distributions to counts obtained from Next Gen Sequencing
+    data of multiple samples of the same tumor. The trained parameters can be interpreted
+    to infer the clonal structure of the tumor.'
