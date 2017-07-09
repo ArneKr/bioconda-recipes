@@ -1,0 +1,31 @@
+package:
+  name: bioconductor-cnanorm
+  version: 1.22.1
+source:
+  fn: CNAnorm_1.22.1.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/CNAnorm_1.22.1.tar.gz
+    - https://depot.galaxyproject.org/software/CNAnorm/CNAnorm_1.22.1_src_all.tar.gz
+  md5: ec444ae4bdef671c0aa19b1d6e79ccf7
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-dnacopy
+    - r-base
+  run:
+    - bioconductor-dnacopy
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''CNAnorm'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/CNAnorm.html
+  license: GPL-2
+  summary: 'Performs ratio, GC content correction and normalization of data obtained
+    using low coverage (one read every 100-10,000 bp) high troughput sequencing. It
+    performs a "discrete" normalization looking for the ploidy of the genome. It will
+    also provide tumour content if at least two ploidy states can be found.'
