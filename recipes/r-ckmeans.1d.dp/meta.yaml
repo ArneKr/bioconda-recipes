@@ -1,0 +1,55 @@
+{% set version = '4.2.0' %}
+
+{% set posix = 'm2-' if win else '' %}
+{% set native = 'm2w64-' if win else '' %}
+
+package:
+  name: r-ckmeans.1d.dp
+  version: {{ version|replace("-", "_") }}
+
+source:
+  fn: Ckmeans.1d.dp_{{ version }}.tar.gz
+  url:
+    - https://cran.r-project.org/src/contrib/Ckmeans.1d.dp_{{ version }}.tar.gz
+    - https://cran.r-project.org/src/contrib/Archive/Ckmeans.1d.dp/Ckmeans.1d.dp_{{ version }}.tar.gz
+
+
+  sha256: 4c319d68fc94b28467db198a00dadba901171301d0c76d041f1c6e62ae8018a2
+
+build:
+ number: 0
+
+rpaths:
+    - lib/R/lib/
+    - lib/
+
+requirements:
+  build:
+    - r-base
+    - gcc   # [not osx]
+    - llvm  # [osx]             
+
+  run:
+    - r-base
+    - libgcc # [not osx] 
+
+test:
+  commands:
+    - $R -e "library('Ckmeans.1d.dp')"  
+
+
+about:
+  home: https://CRAN.R-project.org/package=Ckmeans.1d.dp
+  license: LGPL (>= 3)
+  summary: A fast dynamic programming algorithmic framework to achieve optimal univariate k-means,
+    k-median, and k-segments clustering. Minimizing the sum of respective within-cluster
+    distances, the algorithms guarantee optimality and reproducibility. Their advantage
+    over heuristic clustering algorithms in efficiency and accuracy is increasingly
+    pronounced as the number of clusters k increases. Weighted k-means and unweighted
+    k-segments algorithms can also optimally segment time series and perform peak calling.
+    An auxiliary function generates histograms that are adaptive to patterns in data.
+    This package provides a powerful alternative to heuristic methods for univariate
+    data analysis.
+  license_family: LGPL
+
+

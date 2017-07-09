@@ -28,24 +28,24 @@ requirements:
   build:
     - r-base
     - r-ckmeans.1d.dp
-    - r-dnacopy
+    - bioconductor-dnacopy
     - r-r6
     - r-dbscan
-    - r-illuminaio
-    - r-limma
+    - bioconductor-illuminaio
+    - bioconductor-limma
     - r-openxlsx
-    - r-preprocesscore
+    - bioconductor-preprocesscore
 
   run:
     - r-base
     - r-ckmeans.1d.dp
-    - r-dnacopy
+    - bioconductor-dnacopy
     - r-r6
     - r-dbscan
-    - r-illuminaio
-    - r-limma
+    - bioconductor-illuminaio
+    - bioconductor-limma
     - r-openxlsx
-    - r-preprocesscore
+    - bioconductor-preprocesscore
 
 test:
   commands:
