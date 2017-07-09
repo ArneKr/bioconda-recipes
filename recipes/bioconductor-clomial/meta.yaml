@@ -5,7 +5,7 @@ package:
 source:
   fn: Clomial_1.12.0.tar.gz
   url: https://bioarchive.galaxyproject.org/Clomial_1.12.0.tar.gz
-  md5: 151d701512de116ca5dd87fb48690d5a
+  md5: e3f82f347fbed65f736d74dfaf6276c3
 
 build:
   number: 0
