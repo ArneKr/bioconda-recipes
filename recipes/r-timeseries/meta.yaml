@@ -1,0 +1,45 @@
+{% set version = '3022.101.2' %}
+
+{% set posix = 'm2-' if win else '' %}
+{% set native = 'm2w64-' if win else '' %}
+
+package:
+  name: r-timeseries
+  version: {{ version|replace("-", "_") }}
+
+source:
+  fn: timeSeries_{{ version }}.tar.gz
+  url:
+    - https://cran.r-project.org/src/contrib/timeSeries_{{ version }}.tar.gz
+    - https://cran.r-project.org/src/contrib/Archive/timeSeries/timeSeries_{{ version }}.tar.gz
+  sha256: 326a6ba45ae6291fd88bf99990ca3526ac3dfaca134a68ce2b60826b3892257b
+
+
+build:
+  number: 0
+
+  rpaths:
+    - lib/R/lib/
+    - lib/
+
+requirements:
+  build:
+    - r-base
+    - r-timedate >=2150.95
+
+  run:
+    - r-base
+    - r-timedate >=2150.95
+
+test:
+  commands:
+    - $R -e "library('timeSeries')"
+
+
+about:
+  home: http
+  license: GPL (>= 2)
+  summary: Environment for teaching  "Financial Engineering and Computational Finance". Managing
+    financial time series objects.
+  license_family: GPL3
+  

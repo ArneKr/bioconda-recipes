@@ -1,0 +1,56 @@
+{% set version = '3011.87' %}
+
+{% set posix = 'm2-' if win else '' %}
+{% set native = 'm2w64-' if win else '' %}
+
+package:
+  name: r-fbasics
+  version: {{ version|replace("-", "_") }}
+
+source:
+  fn: fBasics_{{ version }}.tar.gz
+  url:
+    - https://cran.r-project.org/src/contrib/fBasics_{{ version }}.tar.gz
+    - https://cran.r-project.org/src/contrib/Archive/fBasics/fBasics_{{ version }}.tar.gz
+  sha256: f0a79bb3931cd145677c947d8cd87cf60869f604933e685e74225bb01ad992f4
+ 
+
+build:
+ number: 0
+
+ rpaths:
+    - lib/R/lib/
+    - lib/
+
+requirements:
+  build:
+    - r-base
+    - r-mass
+    - r-gss
+    - r-stabledist
+    - r-timedate
+    - r-timeseries
+    - gcc   # [not osx]
+    - llvm  # [osx]
+
+  run:
+    - r-base
+    - r-mass
+    - r-gss
+    - r-stabledist
+    - r-timedate
+    - r-timeseries
+    - libgcc    # [not osx]
+
+test:
+  commands:
+    - $R -e "library('fBasics')"  
+
+
+about:
+  home: https
+  license: GPL (>= 2)
+  summary: Environment for teaching  "Financial Engineering and Computational Finance".
+  license_family: GPL3
+
+
