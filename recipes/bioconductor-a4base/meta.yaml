@@ -1,0 +1,49 @@
+package:
+  name: bioconductor-a4base
+  version: 1.24.0
+source:
+  fn: a4Base_1.24.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/a4Base_1.24.0.tar.gz
+    - https://bioarchive.galaxyproject.org/a4Base_1.24.0.tar.gz
+    - https://depot.galaxyproject.org/software/a4Base/a4Base_1.24.0_src_all.tar.gz
+  md5: 98f53cb437f1b8bb7ba8c2628c0f44c6
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-a4core
+    - bioconductor-a4preproc
+    - bioconductor-annaffy
+    - bioconductor-annotationdbi
+    - bioconductor-biobase
+    - bioconductor-genefilter
+    - bioconductor-limma
+    - bioconductor-multtest
+    - r-base
+    - r-glmnet
+    - r-gplots
+    - r-mpm
+  run:
+    - bioconductor-a4core
+    - bioconductor-a4preproc
+    - bioconductor-annaffy
+    - bioconductor-annotationdbi
+    - bioconductor-biobase
+    - bioconductor-genefilter
+    - bioconductor-limma
+    - bioconductor-multtest
+    - r-base
+    - r-glmnet
+    - r-gplots
+    - r-mpm
+test:
+  commands:
+    - '$R -e "library(''a4Base'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/a4Base.html
+  license: GPL-3
+  summary: 'Automated Affymetrix Array Analysis'

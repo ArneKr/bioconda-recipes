@@ -1,0 +1,51 @@
+package:
+  name: bioconductor-adacgh2
+  version: 2.16.0
+source:
+  fn: ADaCGH2_2.16.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/ADaCGH2_2.16.0.tar.gz
+    - https://bioarchive.galaxyproject.org/ADaCGH2_2.16.0.tar.gz
+    - https://depot.galaxyproject.org/software/ADaCGH2/ADaCGH2_2.16.0_src_all.tar.gz
+  md5: 2e9a2ad9d151f2c2824c9b396dfd5b58
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-acgh
+    - bioconductor-dnacopy
+    - bioconductor-glad
+    - bioconductor-snapcgh
+    - bioconductor-tilingarray
+    - r-base
+    - r-bit
+    - r-cluster
+    - r-ff
+    - r-ffbase
+    - r-waveslim
+  run:
+    - bioconductor-acgh
+    - bioconductor-dnacopy
+    - bioconductor-glad
+    - bioconductor-snapcgh
+    - bioconductor-tilingarray
+    - r-base
+    - r-bit
+    - r-cluster
+    - r-ff
+    - r-ffbase
+    - r-waveslim
+test:
+  commands:
+    - '$R -e "library(''ADaCGH2'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/ADaCGH2.html
+  license: 'GPL (>= 3)'
+  summary: 'Analysis and plotting of array CGH data. Allows usage of Circular Binary
+    Segementation, wavelet-based smoothing (both as in Liu et al., and HaarSeg as
+    in Ben-Yaacov and Eldar), HMM, BioHMM, GLAD, CGHseg. Most computations are parallelized
+    (either via forking or with clusters, including MPI and sockets clusters) and
+    use ff for storing data.'

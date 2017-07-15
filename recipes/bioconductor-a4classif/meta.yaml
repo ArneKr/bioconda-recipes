@@ -1,0 +1,41 @@
+package:
+  name: bioconductor-a4classif
+  version: 1.24.0
+source:
+  fn: a4Classif_1.24.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/a4Classif_1.24.0.tar.gz
+    - https://bioarchive.galaxyproject.org/a4Classif_1.24.0.tar.gz
+    - https://depot.galaxyproject.org/software/a4Classif/a4Classif_1.24.0_src_all.tar.gz
+  md5: b3367ba63a5d5a38d94e671d027098ff
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-a4core
+    - bioconductor-a4preproc
+    - bioconductor-mlinterfaces
+    - r-base
+    - r-glmnet
+    - r-pamr
+    - r-rocr
+    - r-varselrf
+  run:
+    - bioconductor-a4core
+    - bioconductor-a4preproc
+    - bioconductor-mlinterfaces
+    - r-base
+    - r-glmnet
+    - r-pamr
+    - r-rocr
+    - r-varselrf
+test:
+  commands:
+    - '$R -e "library(''a4Classif'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/a4Classif.html
+  license: GPL-3
+  summary: 'Automated Affymetrix Array Analysis Classification Package'

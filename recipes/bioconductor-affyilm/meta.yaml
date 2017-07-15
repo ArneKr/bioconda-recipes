@@ -1,0 +1,38 @@
+package:
+  name: bioconductor-affyilm
+  version: 1.28.0
+source:
+  fn: affyILM_1.28.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/affyILM_1.28.0.tar.gz
+    - https://bioarchive.galaxyproject.org/affyILM_1.28.0.tar.gz
+    - https://depot.galaxyproject.org/software/affyILM/affyILM_1.28.0_src_all.tar.gz
+  md5: 2a0885a089c9fb41ea372b8673cf869f
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - 'bioconductor-affxparser >=1.16.0'
+    - bioconductor-affy
+    - bioconductor-biobase
+    - bioconductor-gcrma
+    - r-base
+  run:
+    - 'bioconductor-affxparser >=1.16.0'
+    - bioconductor-affy
+    - bioconductor-biobase
+    - bioconductor-gcrma
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''affyILM'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/affyILM.html
+  license: 'GPL version 3'
+  summary: 'affyILM is a preprocessing tool which estimates gene expression levels
+    for Affymetrix Gene Chips. Input from physical chemistry is employed to first
+    background subtract intensities before calculating concentrations on behalf of
+    the Langmuir model.'
