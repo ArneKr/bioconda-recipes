@@ -1,0 +1,38 @@
+package:
+  name: bioconductor-affypara
+  version: 1.36.0
+source:
+  fn: affyPara_1.36.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/affyPara_1.36.0.tar.gz
+    - https://bioarchive.galaxyproject.org/affyPara_1.36.0.tar.gz
+    - https://depot.galaxyproject.org/software/affyPara/affyPara_1.36.0_src_all.tar.gz
+  md5: d3c9e010dc0afa0f84f61d2a9baa9f29
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - 'bioconductor-affy >=1.20.0'
+    - bioconductor-affyio
+    - 'bioconductor-vsn >=3.6.0'
+    - 'r-aplpack >=1.1.1'
+    - r-base
+    - 'r-snow >=0.2-3'
+  run:
+    - 'bioconductor-affy >=1.20.0'
+    - bioconductor-affyio
+    - 'bioconductor-vsn >=3.6.0'
+    - 'r-aplpack >=1.1.1'
+    - r-base
+    - 'r-snow >=0.2-3'
+test:
+  commands:
+    - '$R -e "library(''affyPara'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/affyPara.html
+  license: GPL-3
+  summary: 'The package contains parallelized functions for exploratory oligonucleotide
+    array analysis. The package is designed for large numbers of microarray data.'

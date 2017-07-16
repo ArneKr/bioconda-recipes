@@ -1,0 +1,41 @@
+package:
+  name: bioconductor-affyplm
+  version: 1.52.1
+source:
+  fn: affyPLM_1.52.1.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/affyPLM_1.52.1.tar.gz
+    - https://depot.galaxyproject.org/software/affyPLM/affyPLM_1.52.1_src_all.tar.gz
+  md5: 7345e389903d93db16be7dc94f5648cb
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - 'bioconductor-affy >=1.11.0'
+    - 'bioconductor-biobase >=2.17.8'
+    - 'bioconductor-biocgenerics >=0.3.2'
+    - bioconductor-gcrma
+    - 'bioconductor-preprocesscore >=1.5.1'
+    - bioconductor-zlibbioc
+    - r-base
+  run:
+    - 'bioconductor-affy >=1.11.0'
+    - 'bioconductor-biobase >=2.17.8'
+    - 'bioconductor-biocgenerics >=0.3.2'
+    - bioconductor-gcrma
+    - 'bioconductor-preprocesscore >=1.5.1'
+    - bioconductor-zlibbioc
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''affyPLM'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/affyPLM.html
+  license: 'GPL (>= 2)'
+  summary: 'A package that extends and improves the functionality of the base affy
+    package. Routines that make heavy use of compiled code for speed. Central focus
+    is on implementation of methods for fitting probe-level models and tools using
+    these models. PLM based quality assessment tools.'
