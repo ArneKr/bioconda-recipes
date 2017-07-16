@@ -17,12 +17,12 @@ requirements:
   build:
     - bioconductor-affy
     - bioconductor-biobase
-    - r-affydata
+    - bioconductor-affydata
     - r-base
   run:
     - bioconductor-affy
     - bioconductor-biobase
-    - r-affydata
+    - bioconductor-affydata
     - r-base
 test:
   commands:
