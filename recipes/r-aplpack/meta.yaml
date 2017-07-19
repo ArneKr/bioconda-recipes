@@ -1,0 +1,39 @@
+{% set version = '1.3.0' %}
+
+
+package:
+  name: r-aplpack
+  version: {{ version|replace("-", "_") }}
+
+source:
+  fn: aplpack_{{ version }}.tar.gz
+  url:
+    - https://cran.r-project.org/src/contrib/aplpack_{{ version }}.tar.gz
+    - https://cran.r-project.org/src/contrib/Archive/aplpack/aplpack_{{ version }}.tar.gz
+  sha256: 582900002f01b0829946bbf8383170349d42134cbc3dfbd42b13cfe795f1d244
+ 
+build:
+  number: 0
+
+  rpaths:
+    - lib/R/lib/
+    - lib/
+
+requirements:
+  build:
+    - r-base
+
+  run:
+    - r-base
+
+test:
+  commands:
+    - $R -e "library('aplpack')" 
+
+
+about:
+  home: http
+  license: GPL (>= 2)
+  summary: set of functions for drawing some special plots
+  license_family: GPL3
+
