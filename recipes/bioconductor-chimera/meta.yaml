@@ -1,0 +1,46 @@
+package:
+  name: bioconductor-chimera
+  version: 1.18.0
+source:
+  fn: chimera_1.18.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/chimera_1.18.0.tar.gz
+    - https://bioarchive.galaxyproject.org/chimera_1.18.0.tar.gz
+    - https://depot.galaxyproject.org/software/chimera/chimera_1.18.0_src_all.tar.gz
+  md5: ac3bb89388cca255e816bfc80c13876c
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-annotationdbi
+    - bioconductor-biobase
+    - bioconductor-bsgenome.hsapiens.ucsc.hg19
+    - bioconductor-genomicalignments
+    - 'bioconductor-genomicranges >=1.13.3'
+    - bioconductor-homo.sapiens
+    - 'bioconductor-rsamtools >=1.13.1'
+    - bioconductor-txdb.hsapiens.ucsc.hg19.knowngene
+    - r-base
+  run:
+    - bioconductor-annotationdbi
+    - bioconductor-biobase
+    - bioconductor-bsgenome.hsapiens.ucsc.hg19
+    - bioconductor-genomicalignments
+    - 'bioconductor-genomicranges >=1.13.3'
+    - bioconductor-homo.sapiens
+    - 'bioconductor-rsamtools >=1.13.1'
+    - bioconductor-txdb.hsapiens.ucsc.hg19.knowngene
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''chimera'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/chimera.html
+  license: Artistic-2.0
+  summary: 'This package facilitates the characterisation of fusion products events.
+    It allows to import fusion data results from the following fusion finders:  chimeraScan,
+    bellerophontes, deFuse, FusionFinder, FusionHunter, mapSplice, tophat-fusion,
+    FusionMap, STAR, Rsubread, fusionCatcher.'

@@ -1,0 +1,36 @@
+package:
+  name: bioconductor-chipsim
+  version: 1.30.0
+source:
+  fn: ChIPsim_1.30.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/ChIPsim_1.30.0.tar.gz
+    - https://depot.galaxyproject.org/software/ChIPsim/ChIPsim_1.30.0_src_all.tar.gz
+  md5: dcd831e06359df8fe0b4b51a6fd60305
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - 'bioconductor-biostrings >=2.29.2'
+    - bioconductor-iranges
+    - bioconductor-shortread
+    - bioconductor-xvector
+    - r-base
+  run:
+    - 'bioconductor-biostrings >=2.29.2'
+    - bioconductor-iranges
+    - bioconductor-shortread
+    - bioconductor-xvector
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''ChIPsim'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/ChIPsim.html
+  license: 'GPL (>= 2)'
+  summary: 'A general framework for the simulation of ChIP-seq data. Although currently
+    focused on nucleosome positioning the package is designed to support different
+    types of experiments.'
