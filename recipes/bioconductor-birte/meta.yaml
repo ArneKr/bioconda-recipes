@@ -1,0 +1,49 @@
+package:
+  name: bioconductor-birte
+  version: 1.12.0
+source:
+  fn: birte_1.12.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/birte_1.12.0.tar.gz
+    - https://depot.galaxyproject.org/software/birte/birte_1.12.0_src_all.tar.gz
+  md5: 5fb8933ad3cc444e51cbe86d49f671ef
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biobase
+    - 'bioconductor-limma >=3.22.0'
+    - bioconductor-nem
+    - r-base
+    - r-glmnet
+    - r-mass
+    - r-rcpp
+    - 'r-rcpparmadillo >=0.3.6.1'
+    - gcc  # [linux]
+    - llvm  # [osx]
+  run:
+    - bioconductor-biobase
+    - 'bioconductor-limma >=3.22.0'
+    - bioconductor-nem
+    - r-base
+    - r-glmnet
+    - r-mass
+    - r-rcpp
+    - 'r-rcpparmadillo >=0.3.6.1'
+test:
+  commands:
+    - '$R -e "library(''birte'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/birte.html
+  license: 'GPL (>= 2)'
+  summary: 'Expression levels of mRNA molecules are regulated by different processes,
+    comprising inhibition or activation by transcription factors and post-transcriptional
+    degradation by microRNAs. biRte uses regulatory networks of TFs, miRNAs and possibly
+    other factors, together with mRNA, miRNA and other available expression data to
+    predict the relative influence of a regulator on the expression of its target
+    genes. Inference is done in a Bayesian modeling framework using Markov-Chain-Monte-Carlo.
+    A special feature is the possibility for follow-up network reverse engineering
+    between active regulators.'

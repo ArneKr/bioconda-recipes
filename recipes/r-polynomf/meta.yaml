@@ -1,0 +1,40 @@
+{% set version = '0.94' %}
+
+package:
+  name: r-polynomf
+  version: {{ version|replace("-", "_") }}
+
+source:
+  fn: PolynomF_{{ version }}.tar.gz
+  url:
+    - https://cran.r-project.org/src/contrib/PolynomF_{{ version }}.tar.gz
+    - https://cran.r-project.org/src/contrib/Archive/PolynomF/PolynomF_{{ version }}.tar.gz
+  sha256: e1fcecc03b80337aa533716649adfeabdfa85c2ef53ee8a5d821e11d41d1cd00
+
+build:
+  number: 0
+
+  rpaths:
+    - lib/R/lib/
+    - lib/
+
+
+requirements:
+  build:
+    - r-base
+    - gcc                  # [not osx]
+    - llvm                 # [osx]
+
+  run:
+    - r-base
+    - libgcc               # [not osx]
+
+test:
+  commands:
+    - $R -e "library('PolynomF')"
+
+about:
+  home: https://CRAN.R-project.org/package=PolynomF
+  license: GPL-2
+  summary: Implements univariate polynomial operations in R
+  license_family: GPL2
