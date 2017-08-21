@@ -1,0 +1,55 @@
+package:
+  name: bioconductor-chromstar
+  version: 1.2.0
+source:
+  fn: chromstaR_1.2.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/chromstaR_1.2.0.tar.gz
+    - https://bioarchive.galaxyproject.org/chromstaR_1.2.0.tar.gz
+    - https://depot.galaxyproject.org/software/chromstaR/chromstaR_1.2.0_src_all.tar.gz
+  md5: 219347fd0943440a5935a3f4faf2214d
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-bamsignals
+    - bioconductor-genomeinfodb
+    - bioconductor-genomicalignments
+    - bioconductor-genomicranges
+    - bioconductor-iranges
+    - bioconductor-rsamtools
+    - bioconductor-s4vectors
+    - r-base
+    - r-chromstardata
+    - r-doparallel
+    - r-foreach
+    - r-ggplot2
+    - r-mvtnorm
+    - r-reshape2
+  run:
+    - bioconductor-bamsignals
+    - bioconductor-genomeinfodb
+    - bioconductor-genomicalignments
+    - bioconductor-genomicranges
+    - bioconductor-iranges
+    - bioconductor-rsamtools
+    - bioconductor-s4vectors
+    - r-base
+    - r-chromstardata
+    - r-doparallel
+    - r-foreach
+    - r-ggplot2
+    - r-mvtnorm
+    - r-reshape2
+test:
+  commands:
+    - '$R -e "library(''chromstaR'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/chromstaR.html
+  license: Artistic-2.0
+  summary: 'This package implements functions for combinatorial and differential analysis
+    of ChIP-seq data. It includes uni- and multivariate peak-calling, export to genome
+    browser viewable files, and functions for enrichment analyses.'
