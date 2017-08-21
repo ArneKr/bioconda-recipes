@@ -1,0 +1,38 @@
+package:
+  name: bioconductor-fabia
+  version: 2.22.0
+source:
+  fn: fabia_2.22.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/fabia_2.22.0.tar.gz
+    - https://bioarchive.galaxyproject.org/fabia_2.22.0.tar.gz
+    - https://depot.galaxyproject.org/software/fabia/fabia_2.22.0_src_all.tar.gz
+  md5: 166f13407e155a1fe1a1419ca6bb6cc4
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biobase
+    - r-base
+  run:
+    - bioconductor-biobase
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''fabia'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/fabia.html
+  license: 'LGPL (>= 2.1)'
+  summary: 'Biclustering by "Factor Analysis for Bicluster Acquisition" (FABIA). FABIA
+    is a model-based technique for biclustering, that is clustering rows and columns
+    simultaneously. Biclusters are found by factor analysis where both the factors
+    and the loading matrix are sparse. FABIA is a multiplicative model that extracts
+    linear dependencies between samples and feature patterns. It captures realistic
+    non-Gaussian data distributions with heavy tails as observed in gene expression
+    measurements. FABIA utilizes well understood model selection techniques like the
+    EM algorithm and variational approaches and is embedded into a Bayesian framework.
+    FABIA ranks biclusters according to their information content and separates spurious
+    biclusters from true biclusters. The code is written in C.'
