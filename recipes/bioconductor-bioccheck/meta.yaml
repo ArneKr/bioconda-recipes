@@ -1,0 +1,39 @@
+package:
+  name: bioconductor-bioccheck
+  version: 1.12.0
+source:
+  fn: BiocCheck_1.12.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/BiocCheck_1.12.0.tar.gz
+    - https://bioarchive.galaxyproject.org/BiocCheck_1.12.0.tar.gz
+    - https://depot.galaxyproject.org/software/BiocCheck/BiocCheck_1.12.0_src_all.tar.gz
+  md5: 48260089c690aeb17d512d9b417de34c
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biocinstaller
+    - 'bioconductor-biocviews >=1.33.7'
+    - bioconductor-graph
+    - r-base
+    - r-codetools
+    - r-httr
+    - r-optparse
+  run:
+    - bioconductor-biocinstaller
+    - 'bioconductor-biocviews >=1.33.7'
+    - bioconductor-graph
+    - r-base
+    - r-codetools
+    - r-httr
+    - r-optparse
+test:
+  commands:
+    - '$R -e "library(''BiocCheck'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/BiocCheck.html
+  license: Artistic-2.0
+  summary: 'Executes Bioconductor-specific package checks.'
