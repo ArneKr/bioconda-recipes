@@ -1,0 +1,47 @@
+package:
+  name: bioconductor-flowcatchr
+  version: 1.10.0
+source:
+  fn: flowcatchR_1.10.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/flowcatchR_1.10.0.tar.gz
+    - https://bioarchive.galaxyproject.org/flowcatchR_1.10.0.tar.gz
+    - https://depot.galaxyproject.org/software/flowcatchR/flowcatchR_1.10.0_src_all.tar.gz
+  md5: 10a91c6193555be5dfab994901f3289f
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biocparallel
+    - bioconductor-ebimage
+    - r-abind
+    - r-base
+    - r-colorramps
+    - r-rgl
+  run:
+    - bioconductor-biocparallel
+    - bioconductor-ebimage
+    - r-abind
+    - r-base
+    - r-colorramps
+    - r-rgl
+test:
+  commands:
+    - '$R -e "library(''flowcatchR'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/flowcatchR.html
+  license: 'BSD_3_clause + file LICENSE'
+  summary: 'flowcatchR is a set of tools to analyze in vivo microscopy imaging data,
+    focused on tracking flowing blood cells. It guides the steps from segmentation
+    to calculation of features, filtering out particles not of interest, providing
+    also a set of utilities to help checking the quality of the performed operations
+    (e.g. how good the segmentation was). It allows investigating the issue of tracking
+    flowing cells such as in blood vessels, to categorize the particles in flowing,
+    rolling and adherent. This classification is applied in the study of phenomena
+    such as hemostasis and study of thrombosis development. Moreover, flowcatchR presents
+    an integrated workflow solution, based on the integration with a Shiny App and
+    Jupyter notebooks, which is delivered alongside the package, and can enable fully
+    reproducible bioimage analysis in the R environment.'
