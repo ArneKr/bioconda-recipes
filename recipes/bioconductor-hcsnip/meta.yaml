@@ -1,0 +1,50 @@
+package:
+  name: bioconductor-hcsnip
+  version: 1.16.0
+source:
+  fn: HCsnip_1.16.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/HCsnip_1.16.0.tar.gz
+    - https://bioarchive.galaxyproject.org/HCsnip_1.16.0.tar.gz
+    - https://depot.galaxyproject.org/software/HCsnip/HCsnip_1.16.0_src_all.tar.gz
+  md5: 25760e2afdf73402e8a5f6b080ebcaae
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biobase
+    - bioconductor-impute
+    - bioconductor-sigar
+    - r-base
+    - r-clusterrepro
+    - r-coin
+    - r-fpc
+    - r-randomforestsrc
+    - r-sm
+    - r-survival
+  run:
+    - bioconductor-biobase
+    - bioconductor-impute
+    - bioconductor-sigar
+    - r-base
+    - r-clusterrepro
+    - r-coin
+    - r-fpc
+    - r-randomforestsrc
+    - r-sm
+    - r-survival
+test:
+  commands:
+    - '$R -e "library(''HCsnip'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/HCsnip.html
+  license: 'GPL (>= 2)'
+  summary: 'Decompose given hierarchical clustering tree into non-overlapping clusters
+    in a semi-supervised way by using available patients follow-up information as
+    guidance. Contains functions for snipping HC tree, various cluster quality evaluation
+    criteria, assigning new patients to one of the two given HC trees, testing the
+    significance of clusters with permutation argument and clusters visualization
+    using sample''s molecular entropy.'
