@@ -1,0 +1,57 @@
+package:
+  name: bioconductor-dchiprep
+  version: 1.6.1
+source:
+  fn: DChIPRep_1.6.1.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/DChIPRep_1.6.1.tar.gz
+    - https://depot.galaxyproject.org/software/DChIPRep/DChIPRep_1.6.1_src_all.tar.gz
+  md5: 982862a822cefe81230fa4df543c0f72
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-chippeakanno
+    - bioconductor-deseq2
+    - bioconductor-genomicranges
+    - bioconductor-s4vectors
+    - bioconductor-soggi
+    - bioconductor-summarizedexperiment
+    - r-assertthat
+    - r-base
+    - r-fdrtool
+    - r-ggplot2
+    - r-plyr
+    - r-purrr
+    - r-reshape2
+    - r-smoothmest
+    - r-tidyr
+  run:
+    - bioconductor-chippeakanno
+    - bioconductor-deseq2
+    - bioconductor-genomicranges
+    - bioconductor-s4vectors
+    - bioconductor-soggi
+    - bioconductor-summarizedexperiment
+    - r-assertthat
+    - r-base
+    - r-fdrtool
+    - r-ggplot2
+    - r-plyr
+    - r-purrr
+    - r-reshape2
+    - r-smoothmest
+    - r-tidyr
+test:
+  commands:
+    - '$R -e "library(''DChIPRep'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/DChIPRep.html
+  license: 'MIT + file LICENCE'
+  summary: 'The DChIPRep package implements a methodology to assess differences between
+    chromatin modification profiles in replicated ChIP-Seq studies as described in
+    Chabbert et. al - http://www.dx.doi.org/10.15252/msb.20145776. A detailed description
+    of the method is given in the software paper at https://doi.org/10.7717/peerj.1981'
