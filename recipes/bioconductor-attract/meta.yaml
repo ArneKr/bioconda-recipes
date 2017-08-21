@@ -1,0 +1,46 @@
+package:
+  name: bioconductor-attract
+  version: 1.28.1
+source:
+  fn: attract_1.28.1.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/attract_1.28.1.tar.gz
+    - https://depot.galaxyproject.org/software/attract/attract_1.28.1_src_all.tar.gz
+  md5: 2074c49bbb56b46d2d3d9cdee5874b87
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-annotationdbi
+    - bioconductor-biobase
+    - bioconductor-gostats
+    - bioconductor-keggrest
+    - bioconductor-limma
+    - bioconductor-org.hs.eg.db
+    - bioconductor-reactome.db
+    - r-base
+    - r-cluster
+  run:
+    - bioconductor-annotationdbi
+    - bioconductor-biobase
+    - bioconductor-gostats
+    - bioconductor-keggrest
+    - bioconductor-limma
+    - bioconductor-org.hs.eg.db
+    - bioconductor-reactome.db
+    - r-base
+    - r-cluster
+test:
+  commands:
+    - '$R -e "library(''attract'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/attract.html
+  license: 'LGPL (>= 2.0)'
+  summary: 'This package contains the functions to find the gene expression modules
+    that represent the drivers of Kauffman''s attractor landscape. The modules are
+    the core attractor pathways that discriminate between different cell types of
+    groups of interest. Each pathway has a set of synexpression groups, which show
+    transcriptionally-coordinated changes in gene expression.'
