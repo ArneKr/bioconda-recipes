@@ -1,0 +1,38 @@
+package:
+  name: bioconductor-chromdraw
+  version: 2.6.0
+source:
+  fn: chromDraw_2.6.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/chromDraw_2.6.0.tar.gz
+    - https://bioarchive.galaxyproject.org/chromDraw_2.6.0.tar.gz
+    - https://depot.galaxyproject.org/software/chromDraw/chromDraw_2.6.0_src_all.tar.gz
+  md5: c104e3d55c9e2541b94a7f7699196958
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - 'bioconductor-genomicranges >=1.17.46'
+    - r-base
+    - 'r-rcpp >=0.11.1'
+    - gcc  # [linux]
+    - llvm  # [osx]
+  run:
+    - 'bioconductor-genomicranges >=1.17.46'
+    - r-base
+    - 'r-rcpp >=0.11.1'
+test:
+  commands:
+    - '$R -e "library(''chromDraw'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/chromDraw.html
+  license: GPL-3
+  summary: 'ChromDraw is a R package for drawing the schemes of karyotype(s) in the
+    linear and circular fashion. It is possible to visualized cytogenetic marsk on
+    the chromosomes. This tool has own input data format. Input data can be imported
+    from the GenomicRanges data structure. This package can visualized the data in
+    the BED file format. Here is requirement on to the first nine fields of the BED
+    format. Output files format are *.eps and *.svg.'
