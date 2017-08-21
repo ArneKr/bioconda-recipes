@@ -1,0 +1,66 @@
+package:
+  name: bioconductor-desubs
+  version: 1.2.2
+source:
+  fn: DEsubs_1.2.2.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/DEsubs_1.2.2.tar.gz
+    - https://depot.galaxyproject.org/software/DEsubs/DEsubs_1.2.2_src_all.tar.gz
+  md5: d4af04ed00cefaad22c01dd6e4dbb2da
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-deseq
+    - bioconductor-deseq2
+    - bioconductor-ebseq
+    - bioconductor-edger
+    - bioconductor-graph
+    - bioconductor-limma
+    - bioconductor-rbgl
+    - r-base
+    - r-circlize
+    - r-ggplot2
+    - r-igraph
+    - r-jsonlite
+    - r-locfit
+    - r-matrix
+    - r-nbpseq
+    - r-pheatmap
+    - r-samr
+  run:
+    - bioconductor-deseq
+    - bioconductor-deseq2
+    - bioconductor-ebseq
+    - bioconductor-edger
+    - bioconductor-graph
+    - bioconductor-limma
+    - bioconductor-rbgl
+    - r-base
+    - r-circlize
+    - r-ggplot2
+    - r-igraph
+    - r-jsonlite
+    - r-locfit
+    - r-matrix
+    - r-nbpseq
+    - r-pheatmap
+    - r-samr
+test:
+  commands:
+    - '$R -e "library(''DEsubs'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/DEsubs.html
+  license: GPL-3
+  summary: 'DEsubs is a network-based systems biology package that extracts disease-perturbed
+    subpathways within a pathway network as recorded by RNA-seq experiments. It contains
+    an extensive and customizable framework covering a broad range of operation modes
+    at all stages of the subpathway analysis, enabling a case-specific approach. The
+    operation modes refer to the pathway network construction and processing, the
+    subpathway extraction, visualization and enrichment analysis with regard to various
+    biological and pharmacological features. Its capabilities render it a tool-guide
+    for both the modeler and experimentalist for the identification of more robust
+    systems-level biomarkers for complex diseases.'
