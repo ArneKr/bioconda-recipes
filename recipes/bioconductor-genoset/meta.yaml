@@ -1,0 +1,42 @@
+package:
+  name: bioconductor-genoset
+  version: 1.32.0
+source:
+  fn: genoset_1.32.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/genoset_1.32.0.tar.gz
+    - https://depot.galaxyproject.org/software/genoset/genoset_1.32.0_src_all.tar.gz
+  md5: 31005feee5190611398c3e5b2f2f3c0b
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - 'bioconductor-biocgenerics >=0.11.3'
+    - 'bioconductor-genomeinfodb >=1.1.3'
+    - 'bioconductor-genomicranges >=1.17.19'
+    - 'bioconductor-iranges >=2.5.12'
+    - 'bioconductor-s4vectors >=0.13.13'
+    - 'bioconductor-summarizedexperiment >=1.1.6'
+    - r-base
+  run:
+    - 'bioconductor-biocgenerics >=0.11.3'
+    - 'bioconductor-genomeinfodb >=1.1.3'
+    - 'bioconductor-genomicranges >=1.17.19'
+    - 'bioconductor-iranges >=2.5.12'
+    - 'bioconductor-s4vectors >=0.13.13'
+    - 'bioconductor-summarizedexperiment >=1.1.6'
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''genoset'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/genoset.html
+  license: Artistic-2.0
+  summary: 'GenoSet provides an extension of the RangedSummarizedExperiment class
+    with additional API features. This class provides convenient and fast methods
+    for working with segmented genomic data. Additionally, GenoSet provides the class
+    RleDataFrame which stores runs of data along the genome for multiple samples and
+    provides very fast summaries of arbitrary row sets (regions of the genome).'
