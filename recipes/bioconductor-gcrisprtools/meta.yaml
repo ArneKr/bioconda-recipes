@@ -1,0 +1,43 @@
+package:
+  name: bioconductor-gcrisprtools
+  version: 1.4.0
+source:
+  fn: gCrisprTools_1.4.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/gCrisprTools_1.4.0.tar.gz
+    - https://bioarchive.galaxyproject.org/gCrisprTools_1.4.0.tar.gz
+    - https://depot.galaxyproject.org/software/gCrisprTools/gCrisprTools_1.4.0_src_all.tar.gz
+  md5: b88c9a305e23e71ce1fed41b1401ed35
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biobase
+    - bioconductor-limma
+    - bioconductor-panther.db
+    - r-base
+    - r-ggplot2
+    - r-rmarkdown
+    - r-robustrankaggreg
+  run:
+    - bioconductor-biobase
+    - bioconductor-limma
+    - bioconductor-panther.db
+    - r-base
+    - r-ggplot2
+    - r-rmarkdown
+    - r-robustrankaggreg
+test:
+  commands:
+    - '$R -e "library(''gCrisprTools'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/gCrisprTools.html
+  license: Artistic-2.0
+  summary: 'Set of tools for evaluating pooled high-throughput screening experiments,
+    typically employing CRISPR/Cas9 or shRNA expression cassettes. Contains methods
+    for interrogating library and cassette behavior within an experiment, identifying
+    differentially abundant cassettes, aggregating signals to identify candidate targets
+    for empirical validation, hypothesis testing, and comprehensive reporting.'
