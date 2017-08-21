@@ -1,0 +1,37 @@
+package:
+  name: bioconductor-hdf5array
+  version: 1.4.8
+source:
+  fn: HDF5Array_1.4.8.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/HDF5Array_1.4.8.tar.gz
+    - https://depot.galaxyproject.org/software/HDF5Array/HDF5Array_1.4.8_src_all.tar.gz
+  md5: 6a20cf5ae921be1b0a407a4a28e163ee
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biocgenerics
+    - 'bioconductor-delayedarray >=0.2.4'
+    - bioconductor-iranges
+    - bioconductor-rhdf5
+    - bioconductor-s4vectors
+    - r-base
+  run:
+    - bioconductor-biocgenerics
+    - 'bioconductor-delayedarray >=0.2.4'
+    - bioconductor-iranges
+    - bioconductor-rhdf5
+    - bioconductor-s4vectors
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''HDF5Array'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/HDF5Array.html
+  license: Artistic-2.0
+  summary: 'An array-like container for convenient access and manipulation of HDF5
+    datasets. Supports delayed operations and block processing.'
