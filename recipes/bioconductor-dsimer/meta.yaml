@@ -1,0 +1,47 @@
+package:
+  name: bioconductor-dsimer
+  version: 1.2.0
+source:
+  fn: dSimer_1.2.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/dSimer_1.2.0.tar.gz
+    - https://bioarchive.galaxyproject.org/dSimer_1.2.0.tar.gz
+    - https://depot.galaxyproject.org/software/dSimer/dSimer_1.2.0_src_all.tar.gz
+  md5: fd85898b24084362301574a318d6f429
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-annotationdbi
+    - bioconductor-go.db
+    - bioconductor-org.hs.eg.db
+    - r-base
+    - r-ggplot2
+    - 'r-igraph >=1.0.1'
+    - 'r-rcpp >=0.11.3'
+    - r-reshape2
+    - gcc  # [linux]
+    - llvm  # [osx]
+  run:
+    - bioconductor-annotationdbi
+    - bioconductor-go.db
+    - bioconductor-org.hs.eg.db
+    - r-base
+    - r-ggplot2
+    - 'r-igraph >=1.0.1'
+    - 'r-rcpp >=0.11.3'
+    - r-reshape2
+test:
+  commands:
+    - '$R -e "library(''dSimer'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/dSimer.html
+  license: 'GPL (>= 2)'
+  summary: 'dSimer is an R package which provides computation of nine methods for
+    measuring disease-disease similarity, including a standard cosine similarity measure
+    and eight function-based methods. The disease similarity matrix obtained from
+    these nine methods can be visualized through heatmap and network. Biological data
+    widely used in disease-disease associations study are also provided by dSimer.'
