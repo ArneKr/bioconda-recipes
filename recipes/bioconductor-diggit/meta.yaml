@@ -1,0 +1,34 @@
+package:
+  name: bioconductor-diggit
+  version: 1.8.0
+source:
+  fn: diggit_1.8.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/diggit_1.8.0.tar.gz
+    - https://bioarchive.galaxyproject.org/diggit_1.8.0.tar.gz
+    - https://depot.galaxyproject.org/software/diggit/diggit_1.8.0_src_all.tar.gz
+  md5: 6df27d2ce784f8124a1b1ecc7ccb18a2
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biobase
+    - 'bioconductor-viper >=1.3.1'
+    - r-base
+    - r-ks
+  run:
+    - bioconductor-biobase
+    - 'bioconductor-viper >=1.3.1'
+    - r-base
+    - r-ks
+test:
+  commands:
+    - '$R -e "library(''diggit'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/diggit.html
+  license: 'file LICENSE'
+  summary: 'Inference of Genetic Variants Driving Cellullar Phenotypes by the DIGGIT
+    algorithm'
