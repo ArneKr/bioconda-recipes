@@ -1,0 +1,39 @@
+package:
+  name: bioconductor-flowutils
+  version: 1.40.0
+source:
+  fn: flowUtils_1.40.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/flowUtils_1.40.0.tar.gz
+    - https://bioarchive.galaxyproject.org/flowUtils_1.40.0.tar.gz
+    - https://depot.galaxyproject.org/software/flowUtils/flowUtils_1.40.0_src_all.tar.gz
+  md5: 644404da36d002c659ece4c692a01757
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biobase
+    - 'bioconductor-flowcore >=1.32.0'
+    - bioconductor-graph
+    - r-base
+    - r-corpcor
+    - r-runit
+    - r-xml
+  run:
+    - bioconductor-biobase
+    - 'bioconductor-flowcore >=1.32.0'
+    - bioconductor-graph
+    - r-base
+    - r-corpcor
+    - r-runit
+    - r-xml
+test:
+  commands:
+    - '$R -e "library(''flowUtils'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/flowUtils.html
+  license: Artistic-2.0
+  summary: 'Provides utilities for flow cytometry data.'
