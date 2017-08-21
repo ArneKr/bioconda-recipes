@@ -1,0 +1,32 @@
+package:
+  name: bioconductor-envisionquery
+  version: 1.24.0
+source:
+  fn: ENVISIONQuery_1.24.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/ENVISIONQuery_1.24.0.tar.gz
+    - https://bioarchive.galaxyproject.org/ENVISIONQuery_1.24.0.tar.gz
+    - https://depot.galaxyproject.org/software/ENVISIONQuery/ENVISIONQuery_1.24.0_src_all.tar.gz
+  md5: bfc229b6662ee3b97673e7829075bd74
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - r-base
+    - r-rjava
+    - r-xml
+  run:
+    - r-base
+    - r-rjava
+    - r-xml
+test:
+  commands:
+    - '$R -e "library(''ENVISIONQuery'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/ENVISIONQuery.html
+  license: GPL-2
+  summary: 'Tools to retrieve data from ENVISION, the Database for Annotation, Visualization
+    and Integrated Discovery portal'
