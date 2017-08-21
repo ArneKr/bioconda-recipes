@@ -1,0 +1,41 @@
+package:
+  name: bioconductor-ensemblvep
+  version: 1.16.0
+source:
+  fn: ensemblVEP_1.16.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/ensemblVEP_1.16.0.tar.gz
+    - https://bioarchive.galaxyproject.org/ensemblVEP_1.16.0.tar.gz
+    - https://depot.galaxyproject.org/software/ensemblVEP/ensemblVEP_1.16.0_src_all.tar.gz
+  md5: f6b4ca02372620e1048beaf0eb656682
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biocgenerics
+    - bioconductor-biostrings
+    - bioconductor-genomeinfodb
+    - bioconductor-genomicranges
+    - 'bioconductor-s4vectors >=0.9.25'
+    - bioconductor-summarizedexperiment
+    - bioconductor-variantannotation
+    - r-base
+  run:
+    - bioconductor-biocgenerics
+    - bioconductor-biostrings
+    - bioconductor-genomeinfodb
+    - bioconductor-genomicranges
+    - 'bioconductor-s4vectors >=0.9.25'
+    - bioconductor-summarizedexperiment
+    - bioconductor-variantannotation
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''ensemblVEP'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/ensemblVEP.html
+  license: Artistic-2.0
+  summary: 'Query the Ensembl Variant Effect Predictor via the perl API'
