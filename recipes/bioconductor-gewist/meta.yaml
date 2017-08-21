@@ -1,0 +1,30 @@
+package:
+  name: bioconductor-gewist
+  version: 1.20.0
+source:
+  fn: GEWIST_1.20.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/GEWIST_1.20.0.tar.gz
+    - https://bioarchive.galaxyproject.org/GEWIST_1.20.0.tar.gz
+    - https://depot.galaxyproject.org/software/GEWIST/GEWIST_1.20.0_src_all.tar.gz
+  md5: c24327f3f2a578aaa66750774b85f96a
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - r-base
+    - r-car
+  run:
+    - r-base
+    - r-car
+test:
+  commands:
+    - '$R -e "library(''GEWIST'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/GEWIST.html
+  license: GPL-2
+  summary: 'This ''GEWIST'' package provides statistical tools to efficiently optimize
+    SNP prioritization for gene-gene and gene-environment interactions.'
