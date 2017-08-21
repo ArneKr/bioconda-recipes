@@ -1,0 +1,51 @@
+package:
+  name: bioconductor-fem
+  version: 3.4.0
+source:
+  fn: FEM_3.4.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/FEM_3.4.0.tar.gz
+    - https://bioarchive.galaxyproject.org/FEM_3.4.0.tar.gz
+    - https://depot.galaxyproject.org/software/FEM/FEM_3.4.0_src_all.tar.gz
+  md5: e26cd9f4484eefe083c21acf3cbe6847
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-annotationdbi
+    - bioconductor-biocgenerics
+    - bioconductor-graph
+    - bioconductor-impute
+    - bioconductor-limma
+    - bioconductor-marray
+    - bioconductor-org.hs.eg.db
+    - r-base
+    - r-corrplot
+    - r-igraph
+    - r-matrix
+  run:
+    - bioconductor-annotationdbi
+    - bioconductor-biocgenerics
+    - bioconductor-graph
+    - bioconductor-impute
+    - bioconductor-limma
+    - bioconductor-marray
+    - bioconductor-org.hs.eg.db
+    - r-base
+    - r-corrplot
+    - r-igraph
+    - r-matrix
+test:
+  commands:
+    - '$R -e "library(''FEM'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/FEM.html
+  license: 'GPL (>=2)'
+  summary: 'The FEM package performs a systems-level integrative analysis of DNA methylation
+    and gene expression data. It seeks modules of functionally related genes which
+    exhibit differential promoter DNA methylation and differential expression, where
+    an inverse association between promoter DNA methylation and gene expression is
+    assumed. For full details, see Jiao et al Bioinformatics 2014.'
