@@ -1,0 +1,76 @@
+package:
+  name: bioconductor-ggtools
+  version: 5.12.0
+source:
+  fn: GGtools_5.12.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/GGtools_5.12.0.tar.gz
+    - https://bioarchive.galaxyproject.org/GGtools_5.12.0.tar.gz
+    - https://depot.galaxyproject.org/software/GGtools/GGtools_5.12.0_src_all.tar.gz
+  md5: 95cc71cf7aa3c5bc35332ea1c717069c
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-annotationdbi
+    - bioconductor-biobase
+    - bioconductor-biocgenerics
+    - bioconductor-biostrings
+    - bioconductor-genomeinfodb
+    - bioconductor-genomicranges
+    - 'bioconductor-ggbase >=3.19.7'
+    - bioconductor-gviz
+    - bioconductor-homo.sapiens
+    - bioconductor-iranges
+    - bioconductor-rsamtools
+    - bioconductor-rtracklayer
+    - 'bioconductor-s4vectors >=0.9.25'
+    - bioconductor-snpstats
+    - bioconductor-variantannotation
+    - r-base
+    - r-biglm
+    - r-bit
+    - r-data.table
+    - r-ff
+    - r-ggplot2
+    - r-hexbin
+    - r-iterators
+    - r-reshape2
+    - r-rocr
+  run:
+    - bioconductor-annotationdbi
+    - bioconductor-biobase
+    - bioconductor-biocgenerics
+    - bioconductor-biostrings
+    - bioconductor-genomeinfodb
+    - bioconductor-genomicranges
+    - 'bioconductor-ggbase >=3.19.7'
+    - bioconductor-gviz
+    - bioconductor-homo.sapiens
+    - bioconductor-iranges
+    - bioconductor-rsamtools
+    - bioconductor-rtracklayer
+    - 'bioconductor-s4vectors >=0.9.25'
+    - bioconductor-snpstats
+    - bioconductor-variantannotation
+    - r-base
+    - r-biglm
+    - r-bit
+    - r-data.table
+    - r-ff
+    - r-ggplot2
+    - r-hexbin
+    - r-iterators
+    - r-reshape2
+    - r-rocr
+test:
+  commands:
+    - '$R -e "library(''GGtools'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/GGtools.html
+  license: Artistic-2.0
+  summary: 'software and data for analyses in genetics of gene expression and/or DNA
+    methylation'
