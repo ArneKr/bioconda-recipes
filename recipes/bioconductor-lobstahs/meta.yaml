@@ -1,0 +1,41 @@
+package:
+  name: bioconductor-lobstahs
+  version: 1.2.1
+source:
+  fn: LOBSTAHS_1.2.1.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/LOBSTAHS_1.2.1.tar.gz
+    - https://depot.galaxyproject.org/software/LOBSTAHS/LOBSTAHS_1.2.1_src_all.tar.gz
+  md5: ece9721265fde365492dbe29a955928f
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-camera
+    - bioconductor-xcms
+    - r-base
+  run:
+    - bioconductor-camera
+    - bioconductor-xcms
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''LOBSTAHS'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/LOBSTAHS.html
+  license: 'GPL (>= 3) + file LICENSE'
+  summary: 'LOBSTAHS is a multifunction package for screening, annotation, and putative
+    identification of mass spectral features in large, HPLC-MS lipid datasets. In
+    silico data for a wide range of lipids, oxidized lipids, and oxylipins can be
+    generated from user-supplied structural criteria with a database generation function.
+    LOBSTAHS then applies these databases to assign putative compound identities to
+    features in any high-mass accuracy dataset that has been processed using xcms
+    and CAMERA. Users can then apply a series of orthogonal screening criteria based
+    on adduct ion formation patterns, chromatographic retention time, and other properties,
+    to evaluate and assign confidence scores to this list of preliminary assignments.
+    During the screening routine, LOBSTAHS rejects assignments that do not meet the
+    specified criteria, identifies potential isomers and isobars, and assigns a variety
+    of annotation codes to assist the user in evaluating the accuracy of each assignment.'
