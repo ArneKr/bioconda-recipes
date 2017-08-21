@@ -1,0 +1,66 @@
+package:
+  name: bioconductor-gwascat
+  version: 2.8.0
+source:
+  fn: gwascat_2.8.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/gwascat_2.8.0.tar.gz
+    - https://depot.galaxyproject.org/software/gwascat/gwascat_2.8.0_src_all.tar.gz
+  md5: ef3d694b386022fee11ef16433d0f916
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-annotationdbi
+    - bioconductor-annotationhub
+    - bioconductor-biocgenerics
+    - bioconductor-biostrings
+    - bioconductor-genomeinfodb
+    - bioconductor-genomicfeatures
+    - bioconductor-genomicranges
+    - bioconductor-ggbio
+    - bioconductor-gqtlstats
+    - bioconductor-graph
+    - bioconductor-gviz
+    - bioconductor-homo.sapiens
+    - bioconductor-iranges
+    - bioconductor-rsamtools
+    - bioconductor-rtracklayer
+    - 'bioconductor-s4vectors >=0.9.25'
+    - bioconductor-snpstats
+    - bioconductor-summarizedexperiment
+    - bioconductor-variantannotation
+    - r-base
+    - r-ggplot2
+  run:
+    - bioconductor-annotationdbi
+    - bioconductor-annotationhub
+    - bioconductor-biocgenerics
+    - bioconductor-biostrings
+    - bioconductor-genomeinfodb
+    - bioconductor-genomicfeatures
+    - bioconductor-genomicranges
+    - bioconductor-ggbio
+    - bioconductor-gqtlstats
+    - bioconductor-graph
+    - bioconductor-gviz
+    - bioconductor-homo.sapiens
+    - bioconductor-iranges
+    - bioconductor-rsamtools
+    - bioconductor-rtracklayer
+    - 'bioconductor-s4vectors >=0.9.25'
+    - bioconductor-snpstats
+    - bioconductor-summarizedexperiment
+    - bioconductor-variantannotation
+    - r-base
+    - r-ggplot2
+test:
+  commands:
+    - '$R -e "library(''gwascat'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/gwascat.html
+  license: Artistic-2.0
+  summary: 'Represent and model data in the EMBL-EBI GWAS catalog.'
