@@ -1,0 +1,35 @@
+package:
+  name: bioconductor-flipflop
+  version: 1.14.1
+source:
+  fn: flipflop_1.14.1.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/flipflop_1.14.1.tar.gz
+    - https://depot.galaxyproject.org/software/flipflop/flipflop_1.14.1_src_all.tar.gz
+  md5: f8e3ce5f4a093392b6c32237cbcba78f
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-genomicranges
+    - bioconductor-iranges
+    - r-base
+    - r-matrix
+  run:
+    - bioconductor-genomicranges
+    - bioconductor-iranges
+    - r-base
+    - r-matrix
+test:
+  commands:
+    - '$R -e "library(''flipflop'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/flipflop.html
+  license: GPL-3
+  summary: 'Flipflop discovers which isoforms of a gene are expressed in a given sample
+    together with their abundances, based on RNA-Seq read data. It takes an alignment
+    file in SAM format as input. It can also discover transcripts from several samples
+    simultaneously, increasing statistical power.'
