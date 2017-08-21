@@ -1,0 +1,61 @@
+package:
+  name: bioconductor-bsseq
+  version: 1.12.2
+source:
+  fn: bsseq_1.12.2.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/bsseq_1.12.2.tar.gz
+    - https://depot.galaxyproject.org/software/bsseq/bsseq_1.12.2_src_all.tar.gz
+  md5: c47e8a19670b5d10ee6d55d0a1bcb238
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biobase
+    - bioconductor-biocgenerics
+    - 'bioconductor-delayedarray >=0.2.1'
+    - bioconductor-genomeinfodb
+    - 'bioconductor-genomicranges >=1.23.7'
+    - bioconductor-hdf5array
+    - 'bioconductor-iranges >=2.5.17'
+    - bioconductor-limma
+    - bioconductor-s4vectors
+    - 'bioconductor-summarizedexperiment >=0.1.1'
+    - r-base
+    - r-data.table
+    - r-gtools
+    - r-locfit
+    - 'r-matrixstats >=0.50.0'
+    - r-permute
+    - 'r-r.utils >=2.0.0'
+    - r-scales
+  run:
+    - bioconductor-biobase
+    - bioconductor-biocgenerics
+    - 'bioconductor-delayedarray >=0.2.1'
+    - bioconductor-genomeinfodb
+    - 'bioconductor-genomicranges >=1.23.7'
+    - bioconductor-hdf5array
+    - 'bioconductor-iranges >=2.5.17'
+    - bioconductor-limma
+    - bioconductor-s4vectors
+    - 'bioconductor-summarizedexperiment >=0.1.1'
+    - r-base
+    - r-data.table
+    - r-gtools
+    - r-locfit
+    - 'r-matrixstats >=0.50.0'
+    - r-permute
+    - 'r-r.utils >=2.0.0'
+    - r-scales
+test:
+  commands:
+    - '$R -e "library(''bsseq'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/bsseq.html
+  license: Artistic-2.0
+  summary: 'A collection of tools for analyzing and visualizing bisulfite sequencing
+    data.'
