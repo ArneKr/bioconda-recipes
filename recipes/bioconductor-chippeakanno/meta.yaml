@@ -1,0 +1,90 @@
+package:
+  name: bioconductor-chippeakanno
+  version: 3.10.1
+source:
+  fn: ChIPpeakAnno_3.10.1.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/ChIPpeakAnno_3.10.1.tar.gz
+    - https://depot.galaxyproject.org/software/ChIPpeakAnno/ChIPpeakAnno_3.10.1_src_all.tar.gz
+  md5: c8e2379964491ee78193ffead5692f70
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-annotationdbi
+    - bioconductor-biobase
+    - 'bioconductor-biocgenerics >=0.1.0'
+    - bioconductor-biocinstaller
+    - bioconductor-biomart
+    - bioconductor-biostrings
+    - bioconductor-bsgenome
+    - bioconductor-delayedarray
+    - bioconductor-ensembldb
+    - bioconductor-genomeinfodb
+    - bioconductor-genomicalignments
+    - bioconductor-genomicfeatures
+    - 'bioconductor-genomicranges >=1.23.16'
+    - bioconductor-go.db
+    - bioconductor-graph
+    - 'bioconductor-iranges >=2.5.27'
+    - bioconductor-limma
+    - bioconductor-multtest
+    - bioconductor-rbgl
+    - bioconductor-regioner
+    - bioconductor-rsamtools
+    - 'bioconductor-s4vectors >=0.9.25'
+    - bioconductor-summarizedexperiment
+    - r-base
+    - r-dbi
+    - r-idr
+    - r-matrixstats
+    - r-seqinr
+    - r-venndiagram
+  run:
+    - bioconductor-annotationdbi
+    - bioconductor-biobase
+    - 'bioconductor-biocgenerics >=0.1.0'
+    - bioconductor-biocinstaller
+    - bioconductor-biomart
+    - bioconductor-biostrings
+    - bioconductor-bsgenome
+    - bioconductor-delayedarray
+    - bioconductor-ensembldb
+    - bioconductor-genomeinfodb
+    - bioconductor-genomicalignments
+    - bioconductor-genomicfeatures
+    - 'bioconductor-genomicranges >=1.23.16'
+    - bioconductor-go.db
+    - bioconductor-graph
+    - 'bioconductor-iranges >=2.5.27'
+    - bioconductor-limma
+    - bioconductor-multtest
+    - bioconductor-rbgl
+    - bioconductor-regioner
+    - bioconductor-rsamtools
+    - 'bioconductor-s4vectors >=0.9.25'
+    - bioconductor-summarizedexperiment
+    - r-base
+    - r-dbi
+    - r-idr
+    - r-matrixstats
+    - r-seqinr
+    - r-venndiagram
+test:
+  commands:
+    - '$R -e "library(''ChIPpeakAnno'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/ChIPpeakAnno.html
+  license: 'GPL (>= 2)'
+  summary: 'The package includes functions to retrieve the sequences around the peak,
+    obtain enriched Gene Ontology (GO) terms, find the nearest gene, exon, miRNA or
+    custom features such as most conserved elements and other transcription factor
+    binding sites supplied by users. Starting 2.0.5, new functions have been added
+    for finding the peaks with bi-directional promoters with summary statistics (peaksNearBDP),
+    for summarizing the occurrence of motifs in peaks (summarizePatternInPeaks) and
+    for adding other IDs to annotated peaks or enrichedGO (addGeneIDs). This package
+    leverages the biomaRt, IRanges, Biostrings, BSgenome, GO.db, multtest and stat
+    packages.'
