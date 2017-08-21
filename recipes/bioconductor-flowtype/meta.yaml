@@ -1,0 +1,48 @@
+package:
+  name: bioconductor-flowtype
+  version: 2.14.0
+source:
+  fn: flowType_2.14.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/flowType_2.14.0.tar.gz
+    - https://bioarchive.galaxyproject.org/flowType_2.14.0.tar.gz
+    - https://depot.galaxyproject.org/software/flowType/flowType_2.14.0_src_all.tar.gz
+  md5: fb7771d96575cec84e0f2f4411471128
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biobase
+    - bioconductor-flowclust
+    - bioconductor-flowcore
+    - bioconductor-flowmeans
+    - bioconductor-flowmerge
+    - r-base
+    - 'r-bh >=1.51.0-3'
+    - 'r-rcpp >=0.10.4'
+    - r-rrcov
+    - r-sfsmisc
+    - gcc  # [linux]
+    - llvm  # [osx]
+  run:
+    - bioconductor-biobase
+    - bioconductor-flowclust
+    - bioconductor-flowcore
+    - bioconductor-flowmeans
+    - bioconductor-flowmerge
+    - r-base
+    - 'r-bh >=1.51.0-3'
+    - 'r-rcpp >=0.10.4'
+    - r-rrcov
+    - r-sfsmisc
+test:
+  commands:
+    - '$R -e "library(''flowType'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/flowType.html
+  license: Artistic-2.0
+  summary: 'Phenotyping Flow Cytometry Assays using multidimentional expansion of
+    single dimentional partitions.'
