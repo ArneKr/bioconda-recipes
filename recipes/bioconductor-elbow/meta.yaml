@@ -1,0 +1,34 @@
+package:
+  name: bioconductor-elbow
+  version: 1.12.0
+source:
+  fn: ELBOW_1.12.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/ELBOW_1.12.0.tar.gz
+    - https://depot.galaxyproject.org/software/ELBOW/ELBOW_1.12.0_src_all.tar.gz
+  md5: c35bde6d934a7c5e123c324e350b3955
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - r-base
+  run:
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''ELBOW'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/ELBOW.html
+  license: 'file LICENSE'
+  summary: 'Elbow an improved fold change test that uses cluster analysis and pattern
+    recognition to set cut off limits that are derived directly from intrareplicate
+    variance without assuming a normal distribution for as few as 2 biological replicates.
+    Elbow also provides the same consistency as fold testing in cross platform analysis.
+    Elbow has lower false positive and false negative rates than standard fold testing
+    when both are evaluated using T testing and Statistical Analysis of Microarray
+    using 12 replicates (six replicates each for initial and final conditions). Elbow
+    provides a null value based on initial condition replicates and gives error bounds
+    for results to allow better evaluation of significance.'
