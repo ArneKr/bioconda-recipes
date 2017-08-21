@@ -1,0 +1,29 @@
+package:
+  name: bioconductor-glad
+  version: 2.40.0
+source:
+  fn: GLAD_2.40.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/GLAD_2.40.0.tar.gz
+    - https://bioarchive.galaxyproject.org/GLAD_2.40.0.tar.gz
+    - https://depot.galaxyproject.org/software/GLAD/GLAD_2.40.0_src_all.tar.gz
+  md5: 7b2a405d4bb7fb2e6ae714bcdebb428c
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - r-base
+  run:
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''GLAD'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/GLAD.html
+  license: GPL-2
+  summary: 'Analysis of array CGH data : detection of breakpoints in genomic profiles
+    and assignment of a status (gain, normal or loss) to each chromosomal regions
+    identified.'
