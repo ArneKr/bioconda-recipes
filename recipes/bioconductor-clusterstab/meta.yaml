@@ -1,0 +1,30 @@
+package:
+  name: bioconductor-clusterstab
+  version: 1.48.0
+source:
+  fn: clusterStab_1.48.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/clusterStab_1.48.0.tar.gz
+    - https://bioarchive.galaxyproject.org/clusterStab_1.48.0.tar.gz
+    - https://depot.galaxyproject.org/software/clusterStab/clusterStab_1.48.0_src_all.tar.gz
+  md5: 6b4279b7115ca9b0b6fe54bc0637c94d
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - 'bioconductor-biobase >=1.4.22'
+    - r-base
+  run:
+    - 'bioconductor-biobase >=1.4.22'
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''clusterStab'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/clusterStab.html
+  license: Artistic-2.0
+  summary: 'This package can be used to estimate the number of clusters in a set of
+    microarray data, as well as test the stability of these clusters.'
