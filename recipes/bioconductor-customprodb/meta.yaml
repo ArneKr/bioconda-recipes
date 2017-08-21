@@ -1,0 +1,70 @@
+package:
+  name: bioconductor-customprodb
+  version: 1.16.0
+source:
+  fn: customProDB_1.16.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/customProDB_1.16.0.tar.gz
+    - https://bioarchive.galaxyproject.org/customProDB_1.16.0.tar.gz
+    - https://depot.galaxyproject.org/software/customProDB/customProDB_1.16.0_src_all.tar.gz
+  md5: 45597fc5a6d6a6f2891db45c9dedc5e8
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-annotationdbi
+    - 'bioconductor-biomart >=2.17.1'
+    - 'bioconductor-biostrings >=2.26.3'
+    - bioconductor-genomeinfodb
+    - bioconductor-genomicalignments
+    - 'bioconductor-genomicfeatures >=1.17.13'
+    - bioconductor-genomicranges
+    - bioconductor-iranges
+    - 'bioconductor-rsamtools >=1.10.2'
+    - bioconductor-rtracklayer
+    - 'bioconductor-s4vectors >=0.9.25'
+    - 'bioconductor-variantannotation >=1.13.44'
+    - r-ahocorasicktrie
+    - r-base
+    - r-plyr
+    - r-rcurl
+    - r-rsqlite
+    - r-stringr
+  run:
+    - bioconductor-annotationdbi
+    - 'bioconductor-biomart >=2.17.1'
+    - 'bioconductor-biostrings >=2.26.3'
+    - bioconductor-genomeinfodb
+    - bioconductor-genomicalignments
+    - 'bioconductor-genomicfeatures >=1.17.13'
+    - bioconductor-genomicranges
+    - bioconductor-iranges
+    - 'bioconductor-rsamtools >=1.10.2'
+    - bioconductor-rtracklayer
+    - 'bioconductor-s4vectors >=0.9.25'
+    - 'bioconductor-variantannotation >=1.13.44'
+    - r-ahocorasicktrie
+    - r-base
+    - r-plyr
+    - r-rcurl
+    - r-rsqlite
+    - r-stringr
+test:
+  commands:
+    - '$R -e "library(''customProDB'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/customProDB.html
+  license: Artistic-2.0
+  summary: 'Database search is the most widely used approach for peptide and protein
+    identification in mass spectrometry-based proteomics studies. Our previous study
+    showed that sample-specific protein databases derived from RNA-Seq data can better
+    approximate the real protein pools in the samples and thus improve protein identification.
+    More importantly, single nucleotide variations, short insertion and deletions
+    and novel junctions identified from RNA-Seq data make protein database more complete
+    and sample-specific. Here, we report an R package customProDB that enables the
+    easy generation of customized databases from RNA-Seq data for proteomics search.
+    This work bridges genomics and proteomics studies and facilitates cross-omics
+    data integration.'
