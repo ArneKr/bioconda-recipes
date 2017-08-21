@@ -1,0 +1,43 @@
+package:
+  name: bioconductor-deltagseg
+  version: 1.16.0
+source:
+  fn: deltaGseg_1.16.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/deltaGseg_1.16.0.tar.gz
+    - https://bioarchive.galaxyproject.org/deltaGseg_1.16.0.tar.gz
+    - https://depot.galaxyproject.org/software/deltaGseg/deltaGseg_1.16.0_src_all.tar.gz
+  md5: f53065848a864752fe9f8c30504cf4a5
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - r-base
+    - r-changepoint
+    - r-fbasics
+    - r-ggplot2
+    - r-pvclust
+    - r-reshape
+    - r-scales
+    - r-tseries
+    - r-wavethresh
+  run:
+    - r-base
+    - r-changepoint
+    - r-fbasics
+    - r-ggplot2
+    - r-pvclust
+    - r-reshape
+    - r-scales
+    - r-tseries
+    - r-wavethresh
+test:
+  commands:
+    - '$R -e "library(''deltaGseg'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/deltaGseg.html
+  license: GPL-2
+  summary: 'Identifying distinct subpopulations through multiscale time series analysis'
