@@ -1,0 +1,36 @@
+package:
+  name: bioconductor-cancerclass
+  version: 1.20.0
+source:
+  fn: cancerclass_1.20.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/cancerclass_1.20.0.tar.gz
+    - https://bioarchive.galaxyproject.org/cancerclass_1.20.0.tar.gz
+    - https://depot.galaxyproject.org/software/cancerclass/cancerclass_1.20.0_src_all.tar.gz
+  md5: 435987bc9eeee9b584752fe5a252f27a
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biobase
+    - r-base
+    - r-binom
+  run:
+    - bioconductor-biobase
+    - r-base
+    - r-binom
+test:
+  commands:
+    - '$R -e "library(''cancerclass'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/cancerclass.html
+  license: 'GPL 3'
+  summary: 'The classification protocol starts with a feature selection step and continues
+    with nearest-centroid classification. The accurarcy of the predictor can be evaluated
+    using training and test set validation, leave-one-out cross-validation or in a
+    multiple random validation protocol. Methods for calculation and visualization
+    of continuous prediction scores allow to balance sensitivity and specificity and
+    define a cutoff value according to clinical requirements.'
