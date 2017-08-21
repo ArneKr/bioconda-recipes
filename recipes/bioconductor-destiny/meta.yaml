@@ -1,0 +1,56 @@
+package:
+  name: bioconductor-destiny
+  version: 2.4.4
+source:
+  fn: destiny_2.4.4.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/destiny_2.4.4.tar.gz
+    - https://depot.galaxyproject.org/software/destiny/destiny_2.4.4_src_all.tar.gz
+  md5: a8e5671fc586eb8baebda68576d4c9f3
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biobase
+    - bioconductor-biocgenerics
+    - r-base
+    - r-fnn
+    - r-ggplot2
+    - r-hmisc
+    - r-igraph
+    - r-matrix
+    - r-proxy
+    - 'r-rcpp >=0.10.3'
+    - r-rcppeigen
+    - r-scales
+    - r-scatterplot3d
+    - r-smoother
+    - r-vim
+    - gcc  # [linux]
+    - llvm  # [osx]
+  run:
+    - bioconductor-biobase
+    - bioconductor-biocgenerics
+    - r-base
+    - r-fnn
+    - r-ggplot2
+    - r-hmisc
+    - r-igraph
+    - r-matrix
+    - r-proxy
+    - 'r-rcpp >=0.10.3'
+    - r-rcppeigen
+    - r-scales
+    - r-scatterplot3d
+    - r-smoother
+    - r-vim
+test:
+  commands:
+    - '$R -e "library(''destiny'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/destiny.html
+  license: GPL
+  summary: 'Create and plot diffusion maps.'
