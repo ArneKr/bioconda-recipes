@@ -1,0 +1,44 @@
+package:
+  name: bioconductor-clippda
+  version: 1.26.0
+source:
+  fn: clippda_1.26.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/clippda_1.26.0.tar.gz
+    - https://bioarchive.galaxyproject.org/clippda_1.26.0.tar.gz
+    - https://depot.galaxyproject.org/software/clippda/clippda_1.26.0_src_all.tar.gz
+  md5: 7a0ee1d1b7aa0b548d9ed01b7c6b36a2
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biobase
+    - bioconductor-limma
+    - r-base
+    - r-lattice
+    - r-rgl
+    - r-scatterplot3d
+    - r-statmod
+  run:
+    - bioconductor-biobase
+    - bioconductor-limma
+    - r-base
+    - r-lattice
+    - r-rgl
+    - r-scatterplot3d
+    - r-statmod
+test:
+  commands:
+    - '$R -e "library(''clippda'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/clippda.html
+  license: 'GPL (>=2)'
+  summary: 'Methods for the nalysis of data from clinical proteomic profiling studies.
+    The focus is on the studies of human subjects, which are often observational case-control
+    by design and have technical replicates. A method for sample size determination
+    for planning these studies is proposed. It incorporates routines for adjusting
+    for the expected heterogeneities and imbalances in the data and the within-sample
+    replicate correlations.'
