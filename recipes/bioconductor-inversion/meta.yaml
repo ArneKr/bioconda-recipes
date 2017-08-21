@@ -1,0 +1,28 @@
+package:
+  name: bioconductor-inversion
+  version: 1.24.1
+source:
+  fn: inveRsion_1.24.1.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/inveRsion_1.24.1.tar.gz
+    - https://depot.galaxyproject.org/software/inveRsion/inveRsion_1.24.1_src_all.tar.gz
+  md5: 2ad05003b8897e64c6d2d9892266ef8c
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - r-base
+    - r-haplo.stats
+  run:
+    - r-base
+    - r-haplo.stats
+test:
+  commands:
+    - '$R -e "library(''inveRsion'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/inveRsion.html
+  license: 'GPL (>= 2)'
+  summary: 'Package to find genetic inversions in genotype (SNP array) data.'
