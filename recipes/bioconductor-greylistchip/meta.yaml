@@ -1,0 +1,45 @@
+package:
+  name: bioconductor-greylistchip
+  version: 1.8.0
+source:
+  fn: GreyListChIP_1.8.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/GreyListChIP_1.8.0.tar.gz
+    - https://bioarchive.galaxyproject.org/GreyListChIP_1.8.0.tar.gz
+    - https://depot.galaxyproject.org/software/GreyListChIP/GreyListChIP_1.8.0_src_all.tar.gz
+  md5: 75567b14ec1d9ca690e9719effee7e29
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-bsgenome
+    - bioconductor-genomeinfodb
+    - bioconductor-genomicalignments
+    - bioconductor-genomicranges
+    - bioconductor-rsamtools
+    - bioconductor-rtracklayer
+    - bioconductor-summarizedexperiment
+    - r-base
+    - r-mass
+  run:
+    - bioconductor-bsgenome
+    - bioconductor-genomeinfodb
+    - bioconductor-genomicalignments
+    - bioconductor-genomicranges
+    - bioconductor-rsamtools
+    - bioconductor-rtracklayer
+    - bioconductor-summarizedexperiment
+    - r-base
+    - r-mass
+test:
+  commands:
+    - '$R -e "library(''GreyListChIP'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/GreyListChIP.html
+  license: Artistic-2.0
+  summary: 'Identify regions of ChIP experiments with high signal in the input, that
+    lead to spurious peaks during peak calling. Remove reads aligning to these regions
+    prior to peak calling, for cleaner ChIP analysis.'
