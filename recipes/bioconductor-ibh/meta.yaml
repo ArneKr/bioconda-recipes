@@ -1,0 +1,32 @@
+package:
+  name: bioconductor-ibh
+  version: 1.24.0
+source:
+  fn: ibh_1.24.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/ibh_1.24.0.tar.gz
+    - https://bioarchive.galaxyproject.org/ibh_1.24.0.tar.gz
+    - https://depot.galaxyproject.org/software/ibh/ibh_1.24.0_src_all.tar.gz
+  md5: f281ac76cd42b3f111e8242ad401e9ec
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - r-base
+    - r-simpintlists
+  run:
+    - r-base
+    - r-simpintlists
+test:
+  commands:
+    - '$R -e "library(''ibh'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/ibh.html
+  license: 'GPL (>= 2)'
+  summary: 'This package contains methods for calculating Interaction Based Homogeneity
+    to evaluate fitness of gene lists to an interaction network which is useful for
+    evaluation of clustering results and gene list analysis. BioGRID interactions
+    are used in the calculation. The user can also provide their own interactions.'
