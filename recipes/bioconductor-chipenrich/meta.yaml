@@ -1,0 +1,66 @@
+package:
+  name: bioconductor-chipenrich
+  version: 2.0.1
+source:
+  fn: chipenrich_2.0.1.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/chipenrich_2.0.1.tar.gz
+    - https://depot.galaxyproject.org/software/chipenrich/chipenrich_2.0.1_src_all.tar.gz
+  md5: 1bf6bb24475f3d5acf0cc3679b2d3dcf
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-annotationdbi
+    - bioconductor-biocgenerics
+    - bioconductor-genomeinfodb
+    - bioconductor-genomicranges
+    - bioconductor-iranges
+    - bioconductor-org.dm.eg.db
+    - bioconductor-org.dr.eg.db
+    - bioconductor-org.hs.eg.db
+    - bioconductor-org.mm.eg.db
+    - bioconductor-org.rn.eg.db
+    - bioconductor-rtracklayer
+    - bioconductor-s4vectors
+    - r-base
+    - 'r-chipenrich.data >=1.11.4'
+    - r-lattice
+    - r-latticeextra
+    - r-mgcv
+    - r-plyr
+    - r-rms
+    - r-stringr
+  run:
+    - bioconductor-annotationdbi
+    - bioconductor-biocgenerics
+    - bioconductor-genomeinfodb
+    - bioconductor-genomicranges
+    - bioconductor-iranges
+    - bioconductor-org.dm.eg.db
+    - bioconductor-org.dr.eg.db
+    - bioconductor-org.hs.eg.db
+    - bioconductor-org.mm.eg.db
+    - bioconductor-org.rn.eg.db
+    - bioconductor-rtracklayer
+    - bioconductor-s4vectors
+    - r-base
+    - 'r-chipenrich.data >=1.11.4'
+    - r-lattice
+    - r-latticeextra
+    - r-mgcv
+    - r-plyr
+    - r-rms
+    - r-stringr
+test:
+  commands:
+    - '$R -e "library(''chipenrich'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/chipenrich.html
+  license: GPL-3
+  summary: 'ChIP-Enrich performs gene set enrichment testing using peaks called from
+    a ChIP-seq experiment. The method empirically corrects for confounding factors
+    such as the length of genes, and the mappability of the sequence surrounding genes.'
