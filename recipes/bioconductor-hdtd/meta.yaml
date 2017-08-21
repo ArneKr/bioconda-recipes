@@ -1,0 +1,35 @@
+package:
+  name: bioconductor-hdtd
+  version: 1.10.0
+source:
+  fn: HDTD_1.10.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/HDTD_1.10.0.tar.gz
+    - https://bioarchive.galaxyproject.org/HDTD_1.10.0.tar.gz
+    - https://depot.galaxyproject.org/software/HDTD/HDTD_1.10.0_src_all.tar.gz
+  md5: 5d32bc4fae454b18faf4d21cfdbc7491
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - r-base
+  run:
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''HDTD'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/HDTD.html
+  license: GPL-3
+  summary: 'Characterization of intra-individual variability using physiologically
+    relevant measurements provides important insights into fundamental biological
+    questions ranging from cell type identity to tumor development. For each individual,
+    the data measurements can be written as a matrix with the different subsamples
+    of the individual recorded in the columns and the different phenotypic units recorded
+    in the rows. Datasets of this type are called high-dimensional transposable data.
+    The HDTD package provides functions for conducting statistical inference for the
+    mean relationship between the row and column variables and for the covariance
+    structure within and between the row and column variables.'
