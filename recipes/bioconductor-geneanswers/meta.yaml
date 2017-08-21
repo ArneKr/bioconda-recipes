@@ -1,0 +1,50 @@
+package:
+  name: bioconductor-geneanswers
+  version: 2.18.0
+source:
+  fn: GeneAnswers_2.18.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/GeneAnswers_2.18.0.tar.gz
+    - https://bioarchive.galaxyproject.org/GeneAnswers_2.18.0.tar.gz
+    - https://depot.galaxyproject.org/software/GeneAnswers/GeneAnswers_2.18.0_src_all.tar.gz
+  md5: f7c0d4aedf409128d889945ed20a01d2
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-annotate
+    - 'bioconductor-biobase >=1.12.0'
+    - bioconductor-heatplus
+    - bioconductor-rbgl
+    - r-base
+    - r-downloader
+    - r-igraph
+    - r-mass
+    - r-rcolorbrewer
+    - r-rcurl
+    - r-rsqlite
+    - r-xml
+  run:
+    - bioconductor-annotate
+    - 'bioconductor-biobase >=1.12.0'
+    - bioconductor-heatplus
+    - bioconductor-rbgl
+    - r-base
+    - r-downloader
+    - r-igraph
+    - r-mass
+    - r-rcolorbrewer
+    - r-rcurl
+    - r-rsqlite
+    - r-xml
+test:
+  commands:
+    - '$R -e "library(''GeneAnswers'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/GeneAnswers.html
+  license: 'LGPL (>= 2)'
+  summary: 'GeneAnswers provides an integrated tool for biological or medical interpretation
+    of the given one or more groups of genes by means of statistical test.'
