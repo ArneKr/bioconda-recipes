@@ -1,0 +1,35 @@
+package:
+  name: bioconductor-joda
+  version: 1.24.0
+source:
+  fn: joda_1.24.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/joda_1.24.0.tar.gz
+    - https://depot.galaxyproject.org/software/joda/joda_1.24.0_src_all.tar.gz
+  md5: 5c034a2f1412ada940654529e1cc4edb
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-rbgl
+    - r-base
+    - r-bgmm
+  run:
+    - bioconductor-rbgl
+    - r-base
+    - r-bgmm
+test:
+  commands:
+    - '$R -e "library(''joda'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/joda.html
+  license: 'GPL (>= 2)'
+  summary: 'Package ''joda'' implements three steps of an algorithm called JODA. The
+    algorithm computes gene deregulation scores. For each gene, its deregulation score
+    reflects how strongly an effect of a certain regulator''s perturbation on this
+    gene differs between two different cell populations. The algorithm utilizes regulator
+    knockdown expression data as well as knowledge about signaling pathways in which
+    the regulators are involved (formalized in a simple matrix model).'
