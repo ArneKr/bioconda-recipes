@@ -1,0 +1,79 @@
+package:
+  name: bioconductor-dapar
+  version: 1.8.7
+source:
+  fn: DAPAR_1.8.7.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/DAPAR_1.8.7.tar.gz
+    - https://depot.galaxyproject.org/software/DAPAR/DAPAR_1.8.7_src_all.tar.gz
+  md5: c92dc2c378dd81c7207721dc10379690
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-impute
+    - bioconductor-limma
+    - bioconductor-msnbase
+    - bioconductor-pcamethods
+    - bioconductor-preprocesscore
+    - r-base
+    - r-cairo
+    - 'r-cp4p >=0.3.5'
+    - r-dapardata
+    - r-doparallel
+    - r-foreach
+    - r-ggplot2
+    - r-gplots
+    - r-highcharter
+    - 'r-imp4p >=0.3'
+    - r-imputelcmd
+    - r-knitr
+    - r-lattice
+    - r-matrix
+    - r-norm
+    - r-openxlsx
+    - r-png
+    - r-rcolorbrewer
+    - r-reshape2
+    - r-scales
+    - r-tmvtnorm
+    - r-vioplot
+  run:
+    - bioconductor-impute
+    - bioconductor-limma
+    - bioconductor-msnbase
+    - bioconductor-pcamethods
+    - bioconductor-preprocesscore
+    - r-base
+    - r-cairo
+    - 'r-cp4p >=0.3.5'
+    - r-dapardata
+    - r-doparallel
+    - r-foreach
+    - r-ggplot2
+    - r-gplots
+    - r-highcharter
+    - 'r-imp4p >=0.3'
+    - r-imputelcmd
+    - r-knitr
+    - r-lattice
+    - r-matrix
+    - r-norm
+    - r-openxlsx
+    - r-png
+    - r-rcolorbrewer
+    - r-reshape2
+    - r-scales
+    - r-tmvtnorm
+    - r-vioplot
+test:
+  commands:
+    - '$R -e "library(''DAPAR'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/DAPAR.html
+  license: Artistic-2.0
+  summary: 'This package contains a collection of functions for the visualisation
+    and the statistical analysis of proteomic data.'
