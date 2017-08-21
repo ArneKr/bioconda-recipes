@@ -1,0 +1,30 @@
+package:
+  name: bioconductor-hypergraph
+  version: 1.48.0
+source:
+  fn: hypergraph_1.48.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/hypergraph_1.48.0.tar.gz
+    - https://bioarchive.galaxyproject.org/hypergraph_1.48.0.tar.gz
+    - https://depot.galaxyproject.org/software/hypergraph/hypergraph_1.48.0_src_all.tar.gz
+  md5: a3ea2912ae29eb764fc34573a6ff20fc
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-graph
+    - r-base
+  run:
+    - bioconductor-graph
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''hypergraph'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/hypergraph.html
+  license: Artistic-2.0
+  summary: 'A package that implements some simple capabilities for representing and
+    manipulating hypergraphs.'
