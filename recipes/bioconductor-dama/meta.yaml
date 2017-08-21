@@ -1,0 +1,31 @@
+package:
+  name: bioconductor-dama
+  version: 1.48.0
+source:
+  fn: daMA_1.48.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/daMA_1.48.0.tar.gz
+    - https://bioarchive.galaxyproject.org/daMA_1.48.0.tar.gz
+    - https://depot.galaxyproject.org/software/daMA/daMA_1.48.0_src_all.tar.gz
+  md5: 325f54c40333284334ec8c1c5f1069fd
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - r-base
+    - r-mass
+  run:
+    - r-base
+    - r-mass
+test:
+  commands:
+    - '$R -e "library(''daMA'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/daMA.html
+  license: 'GPL (>= 2)'
+  summary: 'This package contains functions for the efficient design of factorial
+    two-colour microarray experiments and for the statistical analysis of factorial
+    microarray data. Statistical details are described in Bretz et al. (2003, submitted)'
