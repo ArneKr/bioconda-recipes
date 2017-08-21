@@ -1,0 +1,53 @@
+package:
+  name: bioconductor-hiannotator
+  version: 1.10.0
+source:
+  fn: hiAnnotator_1.10.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/hiAnnotator_1.10.0.tar.gz
+    - https://bioarchive.galaxyproject.org/hiAnnotator_1.10.0.tar.gz
+    - https://depot.galaxyproject.org/software/hiAnnotator/hiAnnotator_1.10.0_src_all.tar.gz
+  md5: 2a0c7474cd5fdc4f8bd6297f8887727b
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-bsgenome
+    - bioconductor-genomicranges
+    - bioconductor-rtracklayer
+    - r-base
+    - r-dplyr
+    - r-foreach
+    - r-ggplot2
+    - r-iterators
+    - r-scales
+  run:
+    - bioconductor-bsgenome
+    - bioconductor-genomicranges
+    - bioconductor-rtracklayer
+    - r-base
+    - r-dplyr
+    - r-foreach
+    - r-ggplot2
+    - r-iterators
+    - r-scales
+test:
+  commands:
+    - '$R -e "library(''hiAnnotator'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/hiAnnotator.html
+  license: 'GPL (>= 2)'
+  summary: 'hiAnnotator contains set of functions which allow users to annotate a
+    GRanges object with custom set of annotations. The basic philosophy of this package
+    is to take two GRanges objects (query & subject) with common set of seqnames (i.e.
+    chromosomes) and return associated annotation per seqnames and rows from the query
+    matching seqnames and rows from the subject (i.e. genes or cpg islands). The package
+    comes with three types of annotation functions which calculates if a position
+    from query is: within a feature, near a feature, or count features in defined
+    window sizes. Moreover, each function is equipped with parallel backend to utilize
+    the foreach package. In addition, the package is equipped with wrapper functions,
+    which finds appropriate columns needed to make a GRanges object from a common
+    data frame.'
