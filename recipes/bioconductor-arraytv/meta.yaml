@@ -1,0 +1,35 @@
+package:
+  name: bioconductor-arraytv
+  version: 1.14.0
+source:
+  fn: ArrayTV_1.14.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/ArrayTV_1.14.0.tar.gz
+    - https://bioarchive.galaxyproject.org/ArrayTV_1.14.0.tar.gz
+    - https://depot.galaxyproject.org/software/ArrayTV/ArrayTV_1.14.0_src_all.tar.gz
+  md5: f7c6221e478d54f133b5b26cf5eabbd9
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-dnacopy
+    - 'bioconductor-oligoclasses >=1.21.3'
+    - 'bioconductor-s4vectors >=0.9.25'
+    - r-base
+    - r-foreach
+  run:
+    - bioconductor-dnacopy
+    - 'bioconductor-oligoclasses >=1.21.3'
+    - 'bioconductor-s4vectors >=0.9.25'
+    - r-base
+    - r-foreach
+test:
+  commands:
+    - '$R -e "library(''ArrayTV'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/ArrayTV.html
+  license: 'GPL (>= 2)'
+  summary: 'Wave correction for genotyping and copy number arrays'
