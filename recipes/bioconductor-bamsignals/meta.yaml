@@ -1,0 +1,41 @@
+package:
+  name: bioconductor-bamsignals
+  version: 1.8.0
+source:
+  fn: bamsignals_1.8.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/bamsignals_1.8.0.tar.gz
+    - https://bioarchive.galaxyproject.org/bamsignals_1.8.0.tar.gz
+    - https://depot.galaxyproject.org/software/bamsignals/bamsignals_1.8.0_src_all.tar.gz
+  md5: becc254b9f0d0fd4564fdc9c79a7cb26
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biocgenerics
+    - bioconductor-genomicranges
+    - bioconductor-iranges
+    - bioconductor-zlibbioc
+    - r-base
+    - 'r-rcpp >=0.10.6'
+    - gcc  # [linux]
+    - llvm  # [osx]
+  run:
+    - bioconductor-biocgenerics
+    - bioconductor-genomicranges
+    - bioconductor-iranges
+    - bioconductor-zlibbioc
+    - r-base
+    - 'r-rcpp >=0.10.6'
+test:
+  commands:
+    - '$R -e "library(''bamsignals'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/bamsignals.html
+  license: GPL-2
+  summary: 'This package allows to efficiently obtain count vectors from indexed bam
+    files. It counts the number of reads in given genomic ranges and it computes reads
+    profiles and coverage profiles. It also handles paired-end data.'
