@@ -1,0 +1,51 @@
+package:
+  name: bioconductor-ggbase
+  version: 3.38.0
+source:
+  fn: GGBase_3.38.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/GGBase_3.38.0.tar.gz
+    - https://bioarchive.galaxyproject.org/GGBase_3.38.0.tar.gz
+    - https://depot.galaxyproject.org/software/GGBase/GGBase_3.38.0_src_all.tar.gz
+  md5: eec2251668f612dfa0fec4aafed83171
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-annotationdbi
+    - bioconductor-biobase
+    - bioconductor-biocgenerics
+    - bioconductor-genefilter
+    - bioconductor-genomicranges
+    - bioconductor-iranges
+    - bioconductor-limma
+    - bioconductor-s4vectors
+    - bioconductor-snpstats
+    - bioconductor-summarizedexperiment
+    - r-base
+    - r-digest
+    - r-matrix
+  run:
+    - bioconductor-annotationdbi
+    - bioconductor-biobase
+    - bioconductor-biocgenerics
+    - bioconductor-genefilter
+    - bioconductor-genomicranges
+    - bioconductor-iranges
+    - bioconductor-limma
+    - bioconductor-s4vectors
+    - bioconductor-snpstats
+    - bioconductor-summarizedexperiment
+    - r-base
+    - r-digest
+    - r-matrix
+test:
+  commands:
+    - '$R -e "library(''GGBase'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/GGBase.html
+  license: Artistic-2.0
+  summary: infrastructure
