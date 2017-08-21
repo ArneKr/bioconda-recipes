@@ -1,0 +1,29 @@
+package:
+  name: bioconductor-lfa
+  version: 1.6.1
+source:
+  fn: lfa_1.6.1.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/lfa_1.6.1.tar.gz
+    - https://depot.galaxyproject.org/software/lfa/lfa_1.6.1_src_all.tar.gz
+  md5: 7155ba9a227a403f6cd533b09f457918
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - r-base
+    - r-corpcor
+  run:
+    - r-base
+    - r-corpcor
+test:
+  commands:
+    - '$R -e "library(''lfa'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/lfa.html
+  license: GPL-3
+  summary: 'LFA is a method for a PCA analogue on Binomial data via estimation of
+    latent structure in the natural parameter.'
