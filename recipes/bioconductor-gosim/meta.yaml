@@ -1,0 +1,55 @@
+package:
+  name: bioconductor-gosim
+  version: 1.14.0
+source:
+  fn: GOSim_1.14.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/GOSim_1.14.0.tar.gz
+    - https://bioarchive.galaxyproject.org/GOSim_1.14.0.tar.gz
+    - https://depot.galaxyproject.org/software/GOSim/GOSim_1.14.0_src_all.tar.gz
+  md5: 17bb618058541aab1ded194bf1443a36
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-annotate
+    - bioconductor-annotationdbi
+    - bioconductor-go.db
+    - bioconductor-graph
+    - bioconductor-org.hs.eg.db
+    - bioconductor-rbgl
+    - bioconductor-topgo
+    - r-base
+    - r-cluster
+    - r-corpcor
+    - r-flexmix
+    - r-matrix
+    - r-rcpp
+    - gcc  # [linux]
+    - llvm  # [osx]
+  run:
+    - bioconductor-annotate
+    - bioconductor-annotationdbi
+    - bioconductor-go.db
+    - bioconductor-graph
+    - bioconductor-org.hs.eg.db
+    - bioconductor-rbgl
+    - bioconductor-topgo
+    - r-base
+    - r-cluster
+    - r-corpcor
+    - r-flexmix
+    - r-matrix
+    - r-rcpp
+test:
+  commands:
+    - '$R -e "library(''GOSim'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/GOSim.html
+  license: 'GPL (>= 2)'
+  summary: 'This package implements several functions useful for computing similarities
+    between GO terms and gene products based on their GO annotation. Moreover it allows
+    for computing a GO enrichment analysis'
