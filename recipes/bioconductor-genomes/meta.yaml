@@ -1,0 +1,31 @@
+package:
+  name: bioconductor-genomes
+  version: 3.6.0
+source:
+  fn: genomes_3.6.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/genomes_3.6.0.tar.gz
+    - https://bioarchive.galaxyproject.org/genomes_3.6.0.tar.gz
+    - https://depot.galaxyproject.org/software/genomes/genomes_3.6.0_src_all.tar.gz
+  md5: 5d7a018218daa007889b32c3dae3dcd9
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - r-base
+    - r-curl
+    - r-readr
+  run:
+    - r-base
+    - r-curl
+    - r-readr
+test:
+  commands:
+    - '$R -e "library(''genomes'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/genomes.html
+  license: GPL-3
+  summary: 'Download genome and assembly reports from NCBI'
