@@ -1,0 +1,33 @@
+package:
+  name: bioconductor-lpeadj
+  version: 1.36.0
+source:
+  fn: LPEadj_1.36.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/LPEadj_1.36.0.tar.gz
+    - https://bioarchive.galaxyproject.org/LPEadj_1.36.0.tar.gz
+    - https://depot.galaxyproject.org/software/LPEadj/LPEadj_1.36.0_src_all.tar.gz
+  md5: 812c7cfc89bba3ef5ef5dadeedcecdc5
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-lpe
+    - r-base
+  run:
+    - bioconductor-lpe
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''LPEadj'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/LPEadj.html
+  license: LGPL
+  summary: 'Two options are added to the LPE algorithm. The original LPE method sets
+    all variances below the max variance in the ordered distribution of variances
+    to the maximum variance. in LPEadj this option is turned off by default.  The
+    second option is to use a variance adjustment based on sample size rather than
+    pi/2.  By default the LPEadj uses the sample size based variance adjustment.'
