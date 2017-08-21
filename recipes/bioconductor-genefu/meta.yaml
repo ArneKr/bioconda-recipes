@@ -1,0 +1,45 @@
+package:
+  name: bioconductor-genefu
+  version: 2.8.0
+source:
+  fn: genefu_2.8.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/genefu_2.8.0.tar.gz
+    - https://bioarchive.galaxyproject.org/genefu_2.8.0.tar.gz
+    - https://depot.galaxyproject.org/software/genefu/genefu_2.8.0_src_all.tar.gz
+  md5: 042d74eaa02dc8bf5d41518940a4cc5f
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-aims
+    - bioconductor-biomart
+    - bioconductor-limma
+    - bioconductor-survcomp
+    - r-amap
+    - r-base
+    - r-ic10
+    - r-mclust
+  run:
+    - bioconductor-aims
+    - bioconductor-biomart
+    - bioconductor-limma
+    - bioconductor-survcomp
+    - r-amap
+    - r-base
+    - r-ic10
+    - r-mclust
+test:
+  commands:
+    - '$R -e "library(''genefu'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/genefu.html
+  license: Artistic-2.0
+  summary: 'Description: This package contains functions implementing various tasks
+    usually required by gene expression analysis, especially in breast cancer studies:
+    gene mapping between different microarray platforms, identification of molecular
+    subtypes, implementation of published gene signatures, gene selection, and survival
+    analysis.'
