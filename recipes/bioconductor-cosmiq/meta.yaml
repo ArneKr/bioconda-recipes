@@ -1,0 +1,47 @@
+package:
+  name: bioconductor-cosmiq
+  version: 1.10.0
+source:
+  fn: cosmiq_1.10.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/cosmiq_1.10.0.tar.gz
+    - https://bioarchive.galaxyproject.org/cosmiq_1.10.0.tar.gz
+    - https://depot.galaxyproject.org/software/cosmiq/cosmiq_1.10.0_src_all.tar.gz
+  md5: 5c9aae15ea91b6536f575e3d6248dfb8
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-massspecwavelet
+    - bioconductor-xcms
+    - r-base
+    - r-faahko
+    - r-pracma
+    - r-rcpp
+    - gcc  # [linux]
+    - llvm  # [osx]
+  run:
+    - bioconductor-massspecwavelet
+    - bioconductor-xcms
+    - r-base
+    - r-faahko
+    - r-pracma
+    - r-rcpp
+test:
+  commands:
+    - '$R -e "library(''cosmiq'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/cosmiq.html
+  license: GPL-3
+  summary: 'cosmiq is a tool for the preprocessing of liquid- or gas - chromatography
+    mass spectrometry (LCMS/GCMS) data with a focus on metabolomics or lipidomics
+    applications. To improve the detection of low abundant signals, cosmiq generates
+    master maps of the mZ/RT space from all acquired runs before a peak detection
+    algorithm is applied. The result is a more robust identification and quantification
+    of low-intensity MS signals compared to conventional approaches where peak picking
+    is performed in each LCMS/GCMS file separately. The cosmiq package builds on the
+    xcmsSet object structure and can be therefore integrated well with the package
+    xcms as an alternative preprocessing step.'
