@@ -1,0 +1,42 @@
+package:
+  name: bioconductor-imetagene
+  version: 1.6.0
+source:
+  fn: Imetagene_1.6.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/Imetagene_1.6.0.tar.gz
+    - https://bioarchive.galaxyproject.org/Imetagene_1.6.0.tar.gz
+    - https://depot.galaxyproject.org/software/Imetagene/Imetagene_1.6.0_src_all.tar.gz
+  md5: 4edc8b459058dee5aced988cb32ddc24
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-metagene
+    - r-base
+    - r-d3heatmap
+    - r-ggplot2
+    - r-shiny
+    - r-shinybs
+    - r-shinyfiles
+    - r-shinythemes
+  run:
+    - bioconductor-metagene
+    - r-base
+    - r-d3heatmap
+    - r-ggplot2
+    - r-shiny
+    - r-shinybs
+    - r-shinyfiles
+    - r-shinythemes
+test:
+  commands:
+    - '$R -e "library(''Imetagene'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/Imetagene.html
+  license: 'Artistic-2.0 | file LICENSE'
+  summary: 'This package provide a graphical user interface to the metagene package.
+    This will allow people with minimal R experience to easily complete metagene analysis.'
