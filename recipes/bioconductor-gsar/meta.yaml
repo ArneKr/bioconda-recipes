@@ -1,0 +1,30 @@
+package:
+  name: bioconductor-gsar
+  version: 1.10.0
+source:
+  fn: GSAR_1.10.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/GSAR_1.10.0.tar.gz
+    - https://bioarchive.galaxyproject.org/GSAR_1.10.0.tar.gz
+    - https://depot.galaxyproject.org/software/GSAR/GSAR_1.10.0_src_all.tar.gz
+  md5: da25ce3c90f35665f770f70e34a26bc6
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - r-base
+    - 'r-igraph >=0.7.1'
+  run:
+    - r-base
+    - 'r-igraph >=0.7.1'
+test:
+  commands:
+    - '$R -e "library(''GSAR'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/GSAR.html
+  license: 'GPL (>=2)'
+  summary: 'Gene set analysis using specific alternative hypotheses. Tests for differential
+    expression, scale and net correlation structure.'
