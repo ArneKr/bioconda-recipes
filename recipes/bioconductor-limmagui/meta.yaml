@@ -1,0 +1,42 @@
+package:
+  name: bioconductor-limmagui
+  version: 1.52.0
+source:
+  fn: limmaGUI_1.52.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/limmaGUI_1.52.0.tar.gz
+    - https://bioarchive.galaxyproject.org/limmaGUI_1.52.0.tar.gz
+    - https://depot.galaxyproject.org/software/limmaGUI/limmaGUI_1.52.0_src_all.tar.gz
+  md5: 86b31f5bb21931085b5e2d85700a924a
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-annotationdbi
+    - bioconductor-biocinstaller
+    - bioconductor-gcrma
+    - bioconductor-limma
+    - r-base
+    - r-r2html
+    - r-tkrplot
+    - r-xtable
+  run:
+    - bioconductor-annotationdbi
+    - bioconductor-biocinstaller
+    - bioconductor-gcrma
+    - bioconductor-limma
+    - r-base
+    - r-r2html
+    - r-tkrplot
+    - r-xtable
+test:
+  commands:
+    - '$R -e "library(''limmaGUI'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/limmaGUI.html
+  license: 'GPL (>=2)'
+  summary: 'A Graphical User Interface for differential expression analysis of two-color
+    microarray data using the limma package.'
