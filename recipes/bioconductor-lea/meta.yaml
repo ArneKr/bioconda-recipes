@@ -1,0 +1,33 @@
+package:
+  name: bioconductor-lea
+  version: 1.8.1
+source:
+  fn: LEA_1.8.1.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/LEA_1.8.1.tar.gz
+    - https://depot.galaxyproject.org/software/LEA/LEA_1.8.1_src_all.tar.gz
+  md5: b1acf7e400142a9007bd21b53c4baf66
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - r-base
+  run:
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''LEA'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/LEA.html
+  license: GPL-3
+  summary: 'LEA is an R package dedicated to landscape genomics and ecological association
+    tests. LEA can run analyses of population structure and genome scans for local
+    adaptation. It includes statistical methods for estimating ancestry coefficients
+    from large genotypic matrices and evaluating the number of ancestral populations
+    (snmf, pca); and identifying genetic polymorphisms that exhibit high correlation
+    with some environmental gradient or with the variables used as proxies for ecological
+    pressures (lfmm), and controlling the false discovery rate. LEA is mainly based
+    on optimized C programs that can scale with the dimension of very large data sets.'
