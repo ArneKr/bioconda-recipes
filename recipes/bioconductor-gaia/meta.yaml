@@ -1,0 +1,27 @@
+package:
+  name: bioconductor-gaia
+  version: 2.20.0
+source:
+  fn: gaia_2.20.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/gaia_2.20.0.tar.gz
+    - https://depot.galaxyproject.org/software/gaia/gaia_2.20.0_src_all.tar.gz
+  md5: ca2ec5acca92f1b9c006cf7770e85833
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - r-base
+  run:
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''gaia'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/gaia.html
+  license: GPL-2
+  summary: 'This package allows to assess the statistical significance of chromosomal
+    aberrations.'
