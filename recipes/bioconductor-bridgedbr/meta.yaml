@@ -1,0 +1,31 @@
+package:
+  name: bioconductor-bridgedbr
+  version: 1.10.0
+source:
+  fn: BridgeDbR_1.10.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/BridgeDbR_1.10.0.tar.gz
+    - https://bioarchive.galaxyproject.org/BridgeDbR_1.10.0.tar.gz
+    - https://depot.galaxyproject.org/software/BridgeDbR/BridgeDbR_1.10.0_src_all.tar.gz
+  md5: d8511e6976204378b5143fdc2831ba03
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - r-base
+    - r-rcurl
+    - r-rjava
+  run:
+    - r-base
+    - r-rcurl
+    - r-rjava
+test:
+  commands:
+    - '$R -e "library(''BridgeDbR'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/BridgeDbR.html
+  license: AGPL-3
+  summary: 'Use BridgeDb functions and load identifier mapping databases in R.'
