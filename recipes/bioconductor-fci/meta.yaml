@@ -1,0 +1,43 @@
+package:
+  name: bioconductor-fci
+  version: 1.6.0
+source:
+  fn: fCI_1.6.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/fCI_1.6.0.tar.gz
+    - https://bioarchive.galaxyproject.org/fCI_1.6.0.tar.gz
+    - https://depot.galaxyproject.org/software/fCI/fCI_1.6.0_src_all.tar.gz
+  md5: 5e53c8164453cbb3af674fcefdfe4365
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - r-base
+    - r-fnn
+    - r-gtools
+    - r-psych
+    - r-rgl
+    - r-venndiagram
+    - r-zoo
+  run:
+    - r-base
+    - r-fnn
+    - r-gtools
+    - r-psych
+    - r-rgl
+    - r-venndiagram
+    - r-zoo
+test:
+  commands:
+    - '$R -e "library(''fCI'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/fCI.html
+  license: 'GPL (>= 2)'
+  summary: '(f-divergence Cutoff Index), is to find DEGs in the transcriptomic & proteomic
+    data, and identify DEGs by computing the difference between the distribution of
+    fold-changes for the control-control and remaining (non-differential) case-control
+    gene expression ratio data. fCI provides several advantages compared to existing
+    methods.'
