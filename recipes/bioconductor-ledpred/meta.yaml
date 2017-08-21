@@ -1,0 +1,53 @@
+package:
+  name: bioconductor-ledpred
+  version: 1.10.0
+source:
+  fn: LedPred_1.10.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/LedPred_1.10.0.tar.gz
+    - https://bioarchive.galaxyproject.org/LedPred_1.10.0.tar.gz
+    - https://depot.galaxyproject.org/software/LedPred/LedPred_1.10.0_src_all.tar.gz
+  md5: ffac76ab87701fda2afc72cacce14371
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - r-akima
+    - r-base
+    - 'r-e1071 >=1.6'
+    - r-ggplot2
+    - r-irr
+    - r-jsonlite
+    - r-plot3d
+    - r-plyr
+    - r-rcurl
+    - r-rocr
+    - r-testthat
+  run:
+    - r-akima
+    - r-base
+    - 'r-e1071 >=1.6'
+    - r-ggplot2
+    - r-irr
+    - r-jsonlite
+    - r-plot3d
+    - r-plyr
+    - r-rcurl
+    - r-rocr
+    - r-testthat
+test:
+  commands:
+    - '$R -e "library(''LedPred'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/LedPred.html
+  license: 'MIT | file LICENSE'
+  summary: 'This package aims at creating a predictive model of regulatory sequences
+    used to score unknown sequences based on the content of DNA motifs, next-generation
+    sequencing (NGS) peaks and signals and other numerical scores of the sequences
+    using supervised classification. The package contains a workflow based on the
+    support vector machine (SVM) algorithm that maps features to sequences, optimize
+    SVM parameters and feature number and creates a model that can be stored and used
+    to score the regulatory potential of unknown sequences.'
