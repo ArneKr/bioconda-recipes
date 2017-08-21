@@ -1,0 +1,96 @@
+package:
+  name: bioconductor-champ
+  version: 2.8.9
+source:
+  fn: ChAMP_2.8.9.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/ChAMP_2.8.9.tar.gz
+    - https://depot.galaxyproject.org/software/ChAMP/ChAMP_2.8.9_src_all.tar.gz
+  md5: 7fb87967ede4e7c0654df0c8c151f5f4
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-bumphunter
+    - bioconductor-dmrcate
+    - bioconductor-dnacopy
+    - 'bioconductor-fem >=3.1'
+    - bioconductor-genomicranges
+    - bioconductor-goseq
+    - bioconductor-illuminahumanmethylation450kmanifest
+    - bioconductor-illuminahumanmethylationepicanno.ilm10b2.hg19
+    - bioconductor-illuminahumanmethylationepicmanifest
+    - bioconductor-illuminaio
+    - bioconductor-impute
+    - bioconductor-limma
+    - bioconductor-marray
+    - bioconductor-minfi
+    - bioconductor-missmethyl
+    - bioconductor-preprocesscore
+    - bioconductor-qvalue
+    - bioconductor-sva
+    - bioconductor-watermelon
+    - r-base
+    - 'r-champdata >=2.6.0'
+    - r-combinat
+    - r-dendextend
+    - r-doparallel
+    - r-illumina450probevariants.db
+    - r-isva
+    - r-matrixstats
+    - 'r-plotly >=4.5.6'
+    - r-plyr
+    - r-quadprog
+    - r-rcolorbrewer
+    - r-rmarkdown
+    - r-rpmm
+    - r-shiny
+    - r-shinythemes
+  run:
+    - bioconductor-bumphunter
+    - bioconductor-dmrcate
+    - bioconductor-dnacopy
+    - 'bioconductor-fem >=3.1'
+    - bioconductor-genomicranges
+    - bioconductor-goseq
+    - bioconductor-illuminahumanmethylation450kmanifest
+    - bioconductor-illuminahumanmethylationepicanno.ilm10b2.hg19
+    - bioconductor-illuminahumanmethylationepicmanifest
+    - bioconductor-illuminaio
+    - bioconductor-impute
+    - bioconductor-limma
+    - bioconductor-marray
+    - bioconductor-minfi
+    - bioconductor-missmethyl
+    - bioconductor-preprocesscore
+    - bioconductor-qvalue
+    - bioconductor-sva
+    - bioconductor-watermelon
+    - r-base
+    - 'r-champdata >=2.6.0'
+    - r-combinat
+    - r-dendextend
+    - r-doparallel
+    - r-illumina450probevariants.db
+    - r-isva
+    - r-matrixstats
+    - 'r-plotly >=4.5.6'
+    - r-plyr
+    - r-quadprog
+    - r-rcolorbrewer
+    - r-rmarkdown
+    - r-rpmm
+    - r-shiny
+    - r-shinythemes
+test:
+  commands:
+    - '$R -e "library(''ChAMP'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/ChAMP.html
+  license: GPL-3
+  summary: 'The package includes quality control metrics, a selection of normalization
+    methods and novel methods to identify differentially methylated regions and to
+    highlight copy number alterations.'
