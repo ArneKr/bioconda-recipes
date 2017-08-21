@@ -1,0 +1,41 @@
+package:
+  name: bioconductor-easyqpcr
+  version: 1.18.0
+source:
+  fn: EasyqpcR_1.18.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/EasyqpcR_1.18.0.tar.gz
+    - https://bioarchive.galaxyproject.org/EasyqpcR_1.18.0.tar.gz
+    - https://depot.galaxyproject.org/software/EasyqpcR/EasyqpcR_1.18.0_src_all.tar.gz
+  md5: f56f6559af12a36b4caadab111f376f0
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - r-base
+    - r-gwidgetsrgtk2
+    - r-matrixstats
+    - r-plotrix
+    - r-plyr
+  run:
+    - r-base
+    - r-gwidgetsrgtk2
+    - r-matrixstats
+    - r-plotrix
+    - r-plyr
+test:
+  commands:
+    - '$R -e "library(''EasyqpcR'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/EasyqpcR.html
+  license: 'GPL (>=2)'
+  summary: 'This package is based on the qBase algorithms published by Hellemans et
+    al. in 2007. The EasyqpcR package allows you to import easily qPCR data files
+    as described in the vignette. Thereafter, you can calculate amplification efficiencies,
+    relative quantities and their standard errors, normalization factors based on
+    the best reference genes choosen (using the SLqPCR package), and then the normalized
+    relative quantities, the NRQs scaled to your control and their standard errors.
+    This package has been created for low-throughput qPCR data analysis.'
