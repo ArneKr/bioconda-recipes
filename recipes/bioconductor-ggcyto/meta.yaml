@@ -1,0 +1,48 @@
+package:
+  name: bioconductor-ggcyto
+  version: 1.4.0
+source:
+  fn: ggcyto_1.4.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/ggcyto_1.4.0.tar.gz
+    - https://bioarchive.galaxyproject.org/ggcyto_1.4.0.tar.gz
+    - https://depot.galaxyproject.org/software/ggcyto/ggcyto_1.4.0_src_all.tar.gz
+  md5: 394f4fc25be5dce73d9f1e6220a7ad19
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - 'bioconductor-flowcore >=1.41.5'
+    - 'bioconductor-flowworkspace >=3.17.24'
+    - 'bioconductor-ncdfflow >=2.17.1'
+    - r-base
+    - r-data.table
+    - 'r-ggplot2 >=2.0.0'
+    - r-gridextra
+    - r-plyr
+    - r-rcolorbrewer
+    - r-scales
+  run:
+    - 'bioconductor-flowcore >=1.41.5'
+    - 'bioconductor-flowworkspace >=3.17.24'
+    - 'bioconductor-ncdfflow >=2.17.1'
+    - r-base
+    - r-data.table
+    - 'r-ggplot2 >=2.0.0'
+    - r-gridextra
+    - r-plyr
+    - r-rcolorbrewer
+    - r-scales
+test:
+  commands:
+    - '$R -e "library(''ggcyto'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/ggcyto.html
+  license: Artistic-2.0
+  summary: 'With the dedicated fority method implemented for flowSet, ncdfFlowSet
+    and GatingSet classes, both raw and gated flow cytometry data can be plotted directly
+    with ggplot. ggcyto wrapper and some customed layers also make it easy to add
+    gates and population statistics to the plot.'
