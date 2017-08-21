@@ -1,0 +1,44 @@
+package:
+  name: bioconductor-chipxpress
+  version: 1.18.0
+source:
+  fn: ChIPXpress_1.18.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/ChIPXpress_1.18.0.tar.gz
+    - https://bioarchive.galaxyproject.org/ChIPXpress_1.18.0.tar.gz
+    - https://depot.galaxyproject.org/software/ChIPXpress/ChIPXpress_1.18.0_src_all.tar.gz
+  md5: 10cac2f5aa0a33bbca918910caafef56
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-affy
+    - bioconductor-biobase
+    - bioconductor-frma
+    - bioconductor-geoquery
+    - r-base
+    - r-biganalytics
+    - r-bigmemory
+    - r-chipxpressdata
+  run:
+    - bioconductor-affy
+    - bioconductor-biobase
+    - bioconductor-frma
+    - bioconductor-geoquery
+    - r-base
+    - r-biganalytics
+    - r-bigmemory
+    - r-chipxpressdata
+test:
+  commands:
+    - '$R -e "library(''ChIPXpress'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/ChIPXpress.html
+  license: GPL(>=2)
+  summary: 'ChIPXpress takes as input predicted TF bound genes from ChIPx data and
+    uses a corresponding database of gene expression profiles downloaded from NCBI
+    GEO to rank the TF bound targets in order of which gene is most likely to be functional
+    TF target.'
