@@ -1,0 +1,32 @@
+package:
+  name: bioconductor-gotools
+  version: 1.50.0
+source:
+  fn: goTools_1.50.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/goTools_1.50.0.tar.gz
+    - https://bioarchive.galaxyproject.org/goTools_1.50.0.tar.gz
+    - https://depot.galaxyproject.org/software/goTools/goTools_1.50.0_src_all.tar.gz
+  md5: 27e39f6008c95ea4a40d16972f5a6512
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-annotationdbi
+    - bioconductor-go.db
+    - r-base
+  run:
+    - bioconductor-annotationdbi
+    - bioconductor-go.db
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''goTools'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/goTools.html
+  license: GPL-2
+  summary: 'Wraper functions for description/comparison of oligo ID list using Gene
+    Ontology database'
