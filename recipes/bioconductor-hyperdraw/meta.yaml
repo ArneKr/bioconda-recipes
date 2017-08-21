@@ -1,0 +1,33 @@
+package:
+  name: bioconductor-hyperdraw
+  version: 1.28.0
+source:
+  fn: hyperdraw_1.28.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/hyperdraw_1.28.0.tar.gz
+    - https://bioarchive.galaxyproject.org/hyperdraw_1.28.0.tar.gz
+    - https://depot.galaxyproject.org/software/hyperdraw/hyperdraw_1.28.0_src_all.tar.gz
+  md5: 1e4f0498802bb4e8fad521c0d9ed1872
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-graph
+    - bioconductor-hypergraph
+    - bioconductor-rgraphviz
+    - r-base
+  run:
+    - bioconductor-graph
+    - bioconductor-hypergraph
+    - bioconductor-rgraphviz
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''hyperdraw'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/hyperdraw.html
+  license: 'GPL (>= 2)'
+  summary: 'Functions for visualizing hypergraphs.'
