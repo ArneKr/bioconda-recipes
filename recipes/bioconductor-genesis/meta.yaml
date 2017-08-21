@@ -1,0 +1,60 @@
+package:
+  name: bioconductor-genesis
+  version: 2.6.1
+source:
+  fn: GENESIS_2.6.1.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/GENESIS_2.6.1.tar.gz
+    - https://depot.galaxyproject.org/software/GENESIS/GENESIS_2.6.1_src_all.tar.gz
+  md5: b4415071e0946f0036c3a1e0220ebd30
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biobase
+    - bioconductor-biocgenerics
+    - bioconductor-gdsfmt
+    - bioconductor-genomicranges
+    - bioconductor-graph
+    - bioconductor-gwastools
+    - bioconductor-iranges
+    - bioconductor-s4vectors
+    - bioconductor-seqarray
+    - bioconductor-seqvartools
+    - r-
+    - r-base
+  run:
+    - bioconductor-biobase
+    - bioconductor-biocgenerics
+    - bioconductor-gdsfmt
+    - bioconductor-genomicranges
+    - bioconductor-graph
+    - bioconductor-gwastools
+    - bioconductor-iranges
+    - bioconductor-s4vectors
+    - bioconductor-seqarray
+    - bioconductor-seqvartools
+    - r-
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''GENESIS'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/GENESIS.html
+  license: GPL-3
+  summary: 'The GENESIS package provides methodology for estimating, inferring, and
+    accounting for population and pedigree structure in genetic analyses.  The current
+    implementation provides functions to perform PC-AiR (Conomos et al., 2015, Gen
+    Epi) and PC-Relate (Conomos et al., 2016, AJHG). PC-AiR performs a Principal Components
+    Analysis on genome-wide SNP data for the detection of population structure in
+    a sample that may contain known or cryptic relatedness. Unlike standard PCA, PC-AiR
+    accounts for relatedness in the sample to provide accurate ancestry inference
+    that is not confounded by family structure. PC-Relate uses ancestry representative
+    principal components to adjust for population structure/ancestry and accurately
+    estimate measures of recent genetic relatedness such as kinship coefficients,
+    IBD sharing probabilities, and inbreeding coefficients. Additionally, functions
+    are provided to perform efficient variance component estimation and mixed model
+    association testing for both quantitative and binary phenotypes.'
