@@ -1,0 +1,29 @@
+package:
+  name: bioconductor-gcatest
+  version: 1.6.1
+source:
+  fn: gcatest_1.6.1.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/gcatest_1.6.1.tar.gz
+    - https://depot.galaxyproject.org/software/gcatest/gcatest_1.6.1_src_all.tar.gz
+  md5: dbdaf445517f9d5f9b89f6f442cafd35
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-lfa
+    - r-base
+  run:
+    - bioconductor-lfa
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''gcatest'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/gcatest.html
+  license: GPL-3
+  summary: 'GCAT is an association test for genome wide association studies that controls
+    for population structure under a general class of trait. models.'
