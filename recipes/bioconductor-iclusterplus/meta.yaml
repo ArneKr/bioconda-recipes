@@ -1,0 +1,27 @@
+package:
+  name: bioconductor-iclusterplus
+  version: 1.12.1
+source:
+  fn: iClusterPlus_1.12.1.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/iClusterPlus_1.12.1.tar.gz
+    - https://depot.galaxyproject.org/software/iClusterPlus/iClusterPlus_1.12.1_src_all.tar.gz
+  md5: 019211c7cf2f66e30a8668f646f8690d
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - r-base
+  run:
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''iClusterPlus'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/iClusterPlus.html
+  license: 'GPL (>= 2)'
+  summary: 'Integrative clustering of multiple genomic data using a joint latent variable
+    model'
