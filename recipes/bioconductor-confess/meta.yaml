@@ -1,0 +1,79 @@
+package:
+  name: bioconductor-confess
+  version: 1.4.0
+source:
+  fn: CONFESS_1.4.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/CONFESS_1.4.0.tar.gz
+    - https://bioarchive.galaxyproject.org/CONFESS_1.4.0.tar.gz
+    - https://depot.galaxyproject.org/software/CONFESS/CONFESS_1.4.0_src_all.tar.gz
+  md5: d84f5e347f606d057c005047b38390c4
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-ebimage
+    - bioconductor-flowclust
+    - bioconductor-flowcore
+    - bioconductor-flowmeans
+    - bioconductor-flowmerge
+    - bioconductor-flowpeaks
+    - bioconductor-limma
+    - bioconductor-samspectral
+    - r-base
+    - r-changepoint
+    - r-cluster
+    - r-contrast
+    - 'r-data.table >=1.9.7'
+    - r-ecp
+    - r-flexmix
+    - r-foreach
+    - r-ggplot2
+    - r-mass
+    - r-moments
+    - r-outliers
+    - r-plotrix
+    - r-raster
+    - r-readbitmap
+    - r-reshape2
+    - r-waveslim
+    - r-wavethresh
+    - r-zoo
+  run:
+    - bioconductor-ebimage
+    - bioconductor-flowclust
+    - bioconductor-flowcore
+    - bioconductor-flowmeans
+    - bioconductor-flowmerge
+    - bioconductor-flowpeaks
+    - bioconductor-limma
+    - bioconductor-samspectral
+    - r-base
+    - r-changepoint
+    - r-cluster
+    - r-contrast
+    - 'r-data.table >=1.9.7'
+    - r-ecp
+    - r-flexmix
+    - r-foreach
+    - r-ggplot2
+    - r-mass
+    - r-moments
+    - r-outliers
+    - r-plotrix
+    - r-raster
+    - r-readbitmap
+    - r-reshape2
+    - r-waveslim
+    - r-wavethresh
+    - r-zoo
+test:
+  commands:
+    - '$R -e "library(''CONFESS'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/CONFESS.html
+  license: GPL-2
+  summary: 'Single Cell Fluidigm Spot Detector.'
