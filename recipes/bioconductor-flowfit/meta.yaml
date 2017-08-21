@@ -1,0 +1,40 @@
+package:
+  name: bioconductor-flowfit
+  version: 1.14.0
+source:
+  fn: flowFit_1.14.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/flowFit_1.14.0.tar.gz
+    - https://bioarchive.galaxyproject.org/flowFit_1.14.0.tar.gz
+    - https://depot.galaxyproject.org/software/flowFit/flowFit_1.14.0_src_all.tar.gz
+  md5: 5d68d57650c43e5a75d936ff26b97d1e
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-flowcore
+    - bioconductor-flowviz
+    - r-base
+    - r-gplots
+    - r-kza
+    - r-minpack.lm
+  run:
+    - bioconductor-flowcore
+    - bioconductor-flowviz
+    - r-base
+    - r-gplots
+    - r-kza
+    - r-minpack.lm
+test:
+  commands:
+    - '$R -e "library(''flowFit'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/flowFit.html
+  license: Artistic-2.0
+  summary: 'This package estimate the proliferation of a cell population in cell-tracking
+    dye studies. The package uses an R implementation of the Levenberg-Marquardt algorithm
+    (minpack.lm) to fit a set of peaks (corresponding to different generations of
+    cells) over the proliferation-tracking dye distribution in a FACS experiment.'
