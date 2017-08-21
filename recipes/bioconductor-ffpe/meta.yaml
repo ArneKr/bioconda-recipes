@@ -1,0 +1,43 @@
+package:
+  name: bioconductor-ffpe
+  version: 1.20.0
+source:
+  fn: ffpe_1.20.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/ffpe_1.20.0.tar.gz
+    - https://bioarchive.galaxyproject.org/ffpe_1.20.0.tar.gz
+    - https://depot.galaxyproject.org/software/ffpe/ffpe_1.20.0_src_all.tar.gz
+  md5: c6d135a1d9330855e822127b6e942fe6
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-affy
+    - bioconductor-biobase
+    - bioconductor-biocgenerics
+    - bioconductor-lumi
+    - bioconductor-methylumi
+    - r-base
+    - r-sfsmisc
+    - r-ttr
+  run:
+    - bioconductor-affy
+    - bioconductor-biobase
+    - bioconductor-biocgenerics
+    - bioconductor-lumi
+    - bioconductor-methylumi
+    - r-base
+    - r-sfsmisc
+    - r-ttr
+test:
+  commands:
+    - '$R -e "library(''ffpe'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/ffpe.html
+  license: 'GPL (>2)'
+  summary: 'Identify low-quality data using metrics developed for expression data
+    derived from Formalin-Fixed, Paraffin-Embedded (FFPE) data.  Also a function for
+    making Concordance at the Top plots (CAT-plots).'
