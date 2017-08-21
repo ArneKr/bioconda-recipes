@@ -1,0 +1,41 @@
+package:
+  name: bioconductor-altcdfenvs
+  version: 2.38.0
+source:
+  fn: altcdfenvs_2.38.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/altcdfenvs_2.38.0.tar.gz
+    - https://bioarchive.galaxyproject.org/altcdfenvs_2.38.0.tar.gz
+    - https://depot.galaxyproject.org/software/altcdfenvs/altcdfenvs_2.38.0_src_all.tar.gz
+  md5: 0544f668edd9eab0e4440f396ea1bb34
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-affy
+    - 'bioconductor-biobase >=2.15.1'
+    - 'bioconductor-biocgenerics >=0.1.0'
+    - bioconductor-biostrings
+    - bioconductor-hypergraph
+    - bioconductor-makecdfenv
+    - 'bioconductor-s4vectors >=0.9.25'
+    - r-base
+  run:
+    - bioconductor-affy
+    - 'bioconductor-biobase >=2.15.1'
+    - 'bioconductor-biocgenerics >=0.1.0'
+    - bioconductor-biostrings
+    - bioconductor-hypergraph
+    - bioconductor-makecdfenv
+    - 'bioconductor-s4vectors >=0.9.25'
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''altcdfenvs'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/altcdfenvs.html
+  license: 'GPL (>= 2)'
+  summary: 'Convenience data structures and functions to handle cdfenvs'
