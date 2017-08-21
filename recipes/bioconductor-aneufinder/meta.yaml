@@ -1,0 +1,68 @@
+package:
+  name: bioconductor-aneufinder
+  version: 1.4.0
+source:
+  fn: AneuFinder_1.4.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/AneuFinder_1.4.0.tar.gz
+    - https://bioarchive.galaxyproject.org/AneuFinder_1.4.0.tar.gz
+    - https://depot.galaxyproject.org/software/AneuFinder/AneuFinder_1.4.0_src_all.tar.gz
+  md5: 096b23778815b202d9e0c9a45b7c7452
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-bamsignals
+    - bioconductor-biocgenerics
+    - bioconductor-biostrings
+    - bioconductor-dnacopy
+    - bioconductor-genomeinfodb
+    - bioconductor-genomicalignments
+    - bioconductor-genomicranges
+    - bioconductor-iranges
+    - bioconductor-rsamtools
+    - bioconductor-s4vectors
+    - r-aneufinderdata
+    - r-base
+    - r-cowplot
+    - r-doparallel
+    - r-foreach
+    - r-ggdendro
+    - r-ggplot2
+    - r-ggrepel
+    - r-mclust
+    - r-reordercluster
+    - r-reshape2
+  run:
+    - bioconductor-bamsignals
+    - bioconductor-biocgenerics
+    - bioconductor-biostrings
+    - bioconductor-dnacopy
+    - bioconductor-genomeinfodb
+    - bioconductor-genomicalignments
+    - bioconductor-genomicranges
+    - bioconductor-iranges
+    - bioconductor-rsamtools
+    - bioconductor-s4vectors
+    - r-aneufinderdata
+    - r-base
+    - r-cowplot
+    - r-doparallel
+    - r-foreach
+    - r-ggdendro
+    - r-ggplot2
+    - r-ggrepel
+    - r-mclust
+    - r-reordercluster
+    - r-reshape2
+test:
+  commands:
+    - '$R -e "library(''AneuFinder'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/AneuFinder.html
+  license: Artistic-2.0
+  summary: 'This package implements functions for CNV calling, plotting, export and
+    analysis from whole-genome single cell sequencing data.'
