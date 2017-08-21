@@ -1,0 +1,32 @@
+package:
+  name: bioconductor-dbchip
+  version: 1.20.0
+source:
+  fn: DBChIP_1.20.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/DBChIP_1.20.0.tar.gz
+    - https://bioarchive.galaxyproject.org/DBChIP_1.20.0.tar.gz
+    - https://depot.galaxyproject.org/software/DBChIP/DBChIP_1.20.0_src_all.tar.gz
+  md5: 01cd2c6be337e600320d35977d8140db
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-deseq
+    - bioconductor-edger
+    - r-base
+  run:
+    - bioconductor-deseq
+    - bioconductor-edger
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''DBChIP'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/DBChIP.html
+  license: 'GPL (>= 2)'
+  summary: 'DBChIP detects differentially bound sharp binding sites across multiple
+    conditions, with or without matching control samples.'
