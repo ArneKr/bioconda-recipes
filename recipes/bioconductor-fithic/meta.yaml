@@ -1,0 +1,36 @@
+package:
+  name: bioconductor-fithic
+  version: 1.2.0
+source:
+  fn: FitHiC_1.2.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/FitHiC_1.2.0.tar.gz
+    - https://bioarchive.galaxyproject.org/FitHiC_1.2.0.tar.gz
+    - https://depot.galaxyproject.org/software/FitHiC/FitHiC_1.2.0_src_all.tar.gz
+  md5: ad1a54f362199551d94f45f00dbdcc10
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - r-base
+    - r-data.table
+    - r-fdrtool
+    - r-rcpp
+    - gcc  # [linux]
+    - llvm  # [osx]
+  run:
+    - r-base
+    - r-data.table
+    - r-fdrtool
+    - r-rcpp
+test:
+  commands:
+    - '$R -e "library(''FitHiC'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/FitHiC.html
+  license: 'GPL (>= 2)'
+  summary: 'Fit-Hi-C is a tool for assigning statistical confidence estimates to intra-chromosomal
+    contact maps produced by genome-wide genome architecture assays such as Hi-C.'
