@@ -1,0 +1,38 @@
+package:
+  name: bioconductor-gsri
+  version: 2.24.0
+source:
+  fn: GSRI_2.24.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/GSRI_2.24.0.tar.gz
+    - https://bioarchive.galaxyproject.org/GSRI_2.24.0.tar.gz
+    - https://depot.galaxyproject.org/software/GSRI/GSRI_2.24.0_src_all.tar.gz
+  md5: 63b514c2f6b0ba76c06be330a7901880
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biobase
+    - bioconductor-genefilter
+    - bioconductor-gseabase
+    - 'bioconductor-les >=1.1.6'
+    - r-base
+    - r-fdrtool
+  run:
+    - bioconductor-biobase
+    - bioconductor-genefilter
+    - bioconductor-gseabase
+    - 'bioconductor-les >=1.1.6'
+    - r-base
+    - r-fdrtool
+test:
+  commands:
+    - '$R -e "library(''GSRI'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/GSRI.html
+  license: GPL-3
+  summary: 'The GSRI package estimates the number of differentially expressed genes
+    in gene sets, utilizing the concept of the Gene Set Regulation Index (GSRI).'
