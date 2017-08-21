@@ -1,0 +1,44 @@
+package:
+  name: bioconductor-kimod
+  version: 1.4.0
+source:
+  fn: kimod_1.4.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/kimod_1.4.0.tar.gz
+    - https://bioarchive.galaxyproject.org/kimod_1.4.0.tar.gz
+    - https://depot.galaxyproject.org/software/kimod/kimod_1.4.0_src_all.tar.gz
+  md5: ce7f224ed6f01336bc291ee01267eb08
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biobase
+    - r-base
+    - r-cluster
+  run:
+    - bioconductor-biobase
+    - r-base
+    - r-cluster
+test:
+  commands:
+    - '$R -e "library(''kimod'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/kimod.html
+  license: 'GPL (>=2)'
+  summary: 'This package allows to work with mixed omics data (transcriptomics, proteomics,
+    microarray-chips, rna-seq data), introducing the following improvements: distance
+    options (for numeric and/or categorical variables) for each of the tables, bootstrap
+    resampling techniques on the residuals matrices for all methods, that enable perform
+    confidence ellipses for the projection of individuals, variables and biplot methodology
+    to project variables (gene expression) on the compromise. Since the main purpose
+    of the package is to use these techniques to omic data analysis, it includes an
+    example data from four different microarray platforms (i.e.,Agilent, Affymetrix
+    HGU 95, Affymetrix HGU 133 and Affymetrix HGU 133plus 2.0) on the NCI-60 cell
+    lines.NCI60_4arrays is a list containing the NCI-60 microarray data with only
+    few hundreds of genes randomly selected in each platform to keep the size of the
+    package small. The data are the same that the package omicade4 used to implement
+    the co-inertia analysis. The references in packages follow the style of the APA-6th
+    norm.'
