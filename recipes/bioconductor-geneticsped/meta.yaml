@@ -1,0 +1,34 @@
+package:
+  name: bioconductor-geneticsped
+  version: 1.38.1
+source:
+  fn: GeneticsPed_1.38.1.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/GeneticsPed_1.38.1.tar.gz
+    - https://depot.galaxyproject.org/software/GeneticsPed/GeneticsPed_1.38.1_src_all.tar.gz
+  md5: b86bd4cd7736d0ca78ef0a87e6c49211
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - r-base
+    - r-gdata
+    - r-genetics
+    - r-mass
+  run:
+    - r-base
+    - r-gdata
+    - r-genetics
+    - r-mass
+test:
+  commands:
+    - '$R -e "library(''GeneticsPed'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/GeneticsPed.html
+  license: 'LGPL (>= 2.1) | file LICENSE'
+  summary: 'Classes and methods for handling pedigree data. It also includes functions
+    to calculate genetic relationship measures as relationship and inbreeding coefficients
+    and other utilities. Note that package is not yet stable. Use it with care!'
