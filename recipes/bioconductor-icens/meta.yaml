@@ -1,0 +1,29 @@
+package:
+  name: bioconductor-icens
+  version: 1.48.0
+source:
+  fn: Icens_1.48.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/Icens_1.48.0.tar.gz
+    - https://bioarchive.galaxyproject.org/Icens_1.48.0.tar.gz
+    - https://depot.galaxyproject.org/software/Icens/Icens_1.48.0_src_all.tar.gz
+  md5: 2a1ce2729457448c3aa1ca39fa112123
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - r-base
+    - r-survival
+  run:
+    - r-base
+    - r-survival
+test:
+  commands:
+    - '$R -e "library(''Icens'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/Icens.html
+  license: Artistic-2.0
+  summary: 'Many functions for computing the NPMLE for censored and truncated data.'
