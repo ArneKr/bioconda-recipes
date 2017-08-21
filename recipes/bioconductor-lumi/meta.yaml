@@ -1,0 +1,61 @@
+package:
+  name: bioconductor-lumi
+  version: 2.28.0
+source:
+  fn: lumi_2.28.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/lumi_2.28.0.tar.gz
+    - https://bioarchive.galaxyproject.org/lumi_2.28.0.tar.gz
+    - https://depot.galaxyproject.org/software/lumi/lumi_2.28.0_src_all.tar.gz
+  md5: ae5eb26429290d410aac5f149e4d945c
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - 'bioconductor-affy >=1.23.4'
+    - bioconductor-annotate
+    - bioconductor-annotationdbi
+    - 'bioconductor-biobase >=2.5.5'
+    - bioconductor-genomicfeatures
+    - bioconductor-genomicranges
+    - 'bioconductor-methylumi >=2.3.2'
+    - bioconductor-preprocesscore
+    - r-base
+    - r-dbi
+    - r-kernsmooth
+    - r-lattice
+    - r-mass
+    - 'r-mgcv >=1.4-0'
+    - r-nleqslv
+    - r-rsqlite
+  run:
+    - 'bioconductor-affy >=1.23.4'
+    - bioconductor-annotate
+    - bioconductor-annotationdbi
+    - 'bioconductor-biobase >=2.5.5'
+    - bioconductor-genomicfeatures
+    - bioconductor-genomicranges
+    - 'bioconductor-methylumi >=2.3.2'
+    - bioconductor-preprocesscore
+    - r-base
+    - r-dbi
+    - r-kernsmooth
+    - r-lattice
+    - r-mass
+    - 'r-mgcv >=1.4-0'
+    - r-nleqslv
+    - r-rsqlite
+test:
+  commands:
+    - '$R -e "library(''lumi'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/lumi.html
+  license: 'LGPL (>= 2)'
+  summary: 'The lumi package provides an integrated solution for the Illumina microarray
+    data analysis. It includes functions of Illumina BeadStudio (GenomeStudio) data
+    input, quality control, BeadArray-specific variance stabilization, normalization
+    and gene annotation at the probe level. It also includes the functions of processing
+    Illumina methylation microarrays, especially Illumina Infinium methylation microarrays.'
