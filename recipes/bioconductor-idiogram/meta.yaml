@@ -1,0 +1,33 @@
+package:
+  name: bioconductor-idiogram
+  version: 1.52.0
+source:
+  fn: idiogram_1.52.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/idiogram_1.52.0.tar.gz
+    - https://bioarchive.galaxyproject.org/idiogram_1.52.0.tar.gz
+    - https://depot.galaxyproject.org/software/idiogram/idiogram_1.52.0_src_all.tar.gz
+  md5: 11b468575a58ef8c3dac1f604a4ff8f8
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-annotate
+    - bioconductor-biobase
+    - r-base
+    - r-plotrix
+  run:
+    - bioconductor-annotate
+    - bioconductor-biobase
+    - r-base
+    - r-plotrix
+test:
+  commands:
+    - '$R -e "library(''idiogram'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/idiogram.html
+  license: GPL-2
+  summary: 'A package for plotting genomic data by chromosomal location'
