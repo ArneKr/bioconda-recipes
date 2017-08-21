@@ -1,0 +1,39 @@
+package:
+  name: bioconductor-decipher
+  version: 2.4.0
+source:
+  fn: DECIPHER_2.4.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/DECIPHER_2.4.0.tar.gz
+    - https://bioarchive.galaxyproject.org/DECIPHER_2.4.0.tar.gz
+    - https://depot.galaxyproject.org/software/DECIPHER/DECIPHER_2.4.0_src_all.tar.gz
+  md5: 58ae48c015558b8ea3d781a6a0ceba86
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - 'bioconductor-biostrings >=2.35.12'
+    - bioconductor-iranges
+    - bioconductor-s4vectors
+    - bioconductor-xvector
+    - r-base
+    - r-dbi
+    - 'r-rsqlite >=1.1'
+  run:
+    - 'bioconductor-biostrings >=2.35.12'
+    - bioconductor-iranges
+    - bioconductor-s4vectors
+    - bioconductor-xvector
+    - r-base
+    - r-dbi
+    - 'r-rsqlite >=1.1'
+test:
+  commands:
+    - '$R -e "library(''DECIPHER'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/DECIPHER.html
+  license: GPL-3
+  summary: 'A toolset for deciphering and managing biological sequences.'
