@@ -1,0 +1,37 @@
+package:
+  name: bioconductor-dupchecker
+  version: 1.14.0
+source:
+  fn: DupChecker_1.14.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/DupChecker_1.14.0.tar.gz
+    - https://bioarchive.galaxyproject.org/DupChecker_1.14.0.tar.gz
+    - https://depot.galaxyproject.org/software/DupChecker/DupChecker_1.14.0_src_all.tar.gz
+  md5: 529e94a297e899e2401c2c46a84198ca
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - r-base
+    - r-r.utils
+    - r-rcurl
+  run:
+    - r-base
+    - r-r.utils
+    - r-rcurl
+test:
+  commands:
+    - '$R -e "library(''DupChecker'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/DupChecker.html
+  license: 'GPL (>= 2)'
+  summary: ' Meta-analysis has become a popular approach for high-throughput genomic
+    data analysis because it often can significantly increase power to detect biological
+    signals or patterns in datasets. However, when using public-available databases
+    for meta-analysis, duplication of samples is an often encountered problem, especially
+    for gene expression data. Not removing duplicates would make study results questionable.
+    We developed a Bioconductor package DupChecker that efficiently identifies duplicated
+    samples by generating MD5 fingerprints for raw data.'
