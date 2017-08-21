@@ -1,0 +1,45 @@
+package:
+  name: bioconductor-ccmap
+  version: 1.2.0
+source:
+  fn: ccmap_1.2.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/ccmap_1.2.0.tar.gz
+    - https://bioarchive.galaxyproject.org/ccmap_1.2.0.tar.gz
+    - https://depot.galaxyproject.org/software/ccmap/ccmap_1.2.0_src_all.tar.gz
+  md5: 02a8c455789ca2f51409d6e86ecd5ac2
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - 'bioconductor-annotationdbi >=1.36.2'
+    - 'bioconductor-biocinstaller >=1.24.0'
+    - r-base
+    - 'r-ccdata >=1.1.2'
+    - 'r-data.table >=1.10.4'
+    - 'r-doparallel >=1.0.10'
+    - 'r-foreach >=1.4.3'
+    - 'r-lsa >=0.73.1'
+    - 'r-xgboost >=0.6.4'
+  run:
+    - 'bioconductor-annotationdbi >=1.36.2'
+    - 'bioconductor-biocinstaller >=1.24.0'
+    - r-base
+    - 'r-ccdata >=1.1.2'
+    - 'r-data.table >=1.10.4'
+    - 'r-doparallel >=1.0.10'
+    - 'r-foreach >=1.4.3'
+    - 'r-lsa >=0.73.1'
+    - 'r-xgboost >=0.6.4'
+test:
+  commands:
+    - '$R -e "library(''ccmap'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/ccmap.html
+  license: 'MIT + file LICENSE'
+  summary: 'Finds drugs and drug combinations that are predicted to reverse or mimic
+    gene expression signatures. These drugs might reverse diseases or mimic healthy
+    lifestyles.'
