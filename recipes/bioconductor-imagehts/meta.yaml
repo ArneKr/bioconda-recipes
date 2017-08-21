@@ -1,0 +1,44 @@
+package:
+  name: bioconductor-imagehts
+  version: 1.26.0
+source:
+  fn: imageHTS_1.26.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/imageHTS_1.26.0.tar.gz
+    - https://bioarchive.galaxyproject.org/imageHTS_1.26.0.tar.gz
+    - https://depot.galaxyproject.org/software/imageHTS/imageHTS_1.26.0_src_all.tar.gz
+  md5: 67deb51640562e3ccf28ac8d515e9c9c
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biobase
+    - 'bioconductor-cellhts2 >=2.10.0'
+    - 'bioconductor-ebimage >=4.3.12'
+    - bioconductor-vsn
+    - r-base
+    - r-e1071
+    - r-hwriter
+  run:
+    - bioconductor-biobase
+    - 'bioconductor-cellhts2 >=2.10.0'
+    - 'bioconductor-ebimage >=4.3.12'
+    - bioconductor-vsn
+    - r-base
+    - r-e1071
+    - r-hwriter
+test:
+  commands:
+    - '$R -e "library(''imageHTS'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/imageHTS.html
+  license: LGPL-2.1
+  summary: 'imageHTS is an R package dedicated to the analysis of high-throughput
+    microscopy-based screens. The package provides a modular and extensible framework
+    to segment cells, extract quantitative cell features, predict cell types and browse
+    screen data through web interfaces. Designed to operate in distributed environments,
+    imageHTS provides a standardized access to remote data and facilitates the dissemination
+    of high-throughput microscopy-based datasets.'
