@@ -1,0 +1,55 @@
+package:
+  name: bioconductor-cytoml
+  version: 1.2.1
+source:
+  fn: CytoML_1.2.1.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/CytoML_1.2.1.tar.gz
+    - https://depot.galaxyproject.org/software/CytoML/CytoML_1.2.1_src_all.tar.gz
+  md5: 9b872b9aab18b0d9d946424d781dc746
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biobase
+    - bioconductor-flowcore
+    - 'bioconductor-flowutils >=1.35.7'
+    - 'bioconductor-flowworkspace >=3.21.10'
+    - bioconductor-graph
+    - bioconductor-ncdfflow
+    - 'bioconductor-opencyto >=1.11.3'
+    - bioconductor-rbgl
+    - bioconductor-rgraphviz
+    - r-base
+    - r-base64enc
+    - r-data.table
+    - r-jsonlite
+    - r-plyr
+    - r-xml
+  run:
+    - bioconductor-biobase
+    - bioconductor-flowcore
+    - 'bioconductor-flowutils >=1.35.7'
+    - 'bioconductor-flowworkspace >=3.21.10'
+    - bioconductor-graph
+    - bioconductor-ncdfflow
+    - 'bioconductor-opencyto >=1.11.3'
+    - bioconductor-rbgl
+    - bioconductor-rgraphviz
+    - r-base
+    - r-base64enc
+    - r-data.table
+    - r-jsonlite
+    - r-plyr
+    - r-xml
+test:
+  commands:
+    - '$R -e "library(''CytoML'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/CytoML.html
+  license: Artistic-2.0
+  summary: 'This package is designed to use GatingML2.0 as the standard format to
+    exchange the gated data with other software platform.'
