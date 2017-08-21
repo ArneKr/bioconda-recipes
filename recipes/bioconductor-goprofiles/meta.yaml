@@ -1,0 +1,34 @@
+package:
+  name: bioconductor-goprofiles
+  version: 1.38.0
+source:
+  fn: goProfiles_1.38.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/goProfiles_1.38.0.tar.gz
+    - https://bioarchive.galaxyproject.org/goProfiles_1.38.0.tar.gz
+    - https://depot.galaxyproject.org/software/goProfiles/goProfiles_1.38.0_src_all.tar.gz
+  md5: 117f1c371b092292fa60c95a47d74271
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-annotationdbi
+    - bioconductor-biobase
+    - bioconductor-go.db
+    - r-base
+  run:
+    - bioconductor-annotationdbi
+    - bioconductor-biobase
+    - bioconductor-go.db
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''goProfiles'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/goProfiles.html
+  license: GPL-2
+  summary: 'The package implements methods to compare lists of genes based on comparing
+    the corresponding ''functional profiles''.'
