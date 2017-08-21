@@ -1,0 +1,54 @@
+package:
+  name: bioconductor-bprmeth
+  version: 1.2.0
+source:
+  fn: BPRMeth_1.2.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/BPRMeth_1.2.0.tar.gz
+    - https://bioarchive.galaxyproject.org/BPRMeth_1.2.0.tar.gz
+    - https://depot.galaxyproject.org/software/BPRMeth/BPRMeth_1.2.0_src_all.tar.gz
+  md5: 855c0034a4de4866befd3cd26fc20c55
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-genomicranges
+    - bioconductor-iranges
+    - bioconductor-s4vectors
+    - r-assertthat
+    - r-base
+    - r-data.table
+    - r-doparallel
+    - r-e1071
+    - r-earth
+    - r-foreach
+    - r-mass
+    - r-randomforest
+  run:
+    - bioconductor-genomicranges
+    - bioconductor-iranges
+    - bioconductor-s4vectors
+    - r-assertthat
+    - r-base
+    - r-data.table
+    - r-doparallel
+    - r-e1071
+    - r-earth
+    - r-foreach
+    - r-mass
+    - r-randomforest
+test:
+  commands:
+    - '$R -e "library(''BPRMeth'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/BPRMeth.html
+  license: GPL-3
+  summary: 'BPRMeth package uses the Binomial Probit Regression likelihood to model
+    methylation profiles and extract higher order features. These features quantitate
+    precisely notions of shape of a methylation profile. Using these higher order
+    features across promoter-proximal regions, we construct a powerful predictor of
+    gene expression. Also, these features are used to cluster proximal-promoter regions
+    using the EM algorithm.'
