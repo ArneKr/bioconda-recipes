@@ -1,0 +1,31 @@
+package:
+  name: bioconductor-bus
+  version: 1.32.0
+source:
+  fn: BUS_1.32.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/BUS_1.32.0.tar.gz
+    - https://depot.galaxyproject.org/software/BUS/BUS_1.32.0_src_all.tar.gz
+  md5: 86c4c1ca92f01090696311ae7fae5553
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-minet
+    - r-base
+    - r-infotheo
+  run:
+    - bioconductor-minet
+    - r-base
+    - r-infotheo
+test:
+  commands:
+    - '$R -e "library(''BUS'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/BUS.html
+  license: GPL-3
+  summary: 'This package can be used to compute associations among genes (gene-networks)
+    or between genes and some external traits (i.e. clinical).'
