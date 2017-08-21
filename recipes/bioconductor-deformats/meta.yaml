@@ -1,0 +1,38 @@
+package:
+  name: bioconductor-deformats
+  version: 1.4.0
+source:
+  fn: DEFormats_1.4.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/DEFormats_1.4.0.tar.gz
+    - https://bioarchive.galaxyproject.org/DEFormats_1.4.0.tar.gz
+    - https://depot.galaxyproject.org/software/DEFormats/DEFormats_1.4.0_src_all.tar.gz
+  md5: e37b4511a58d643646fb2943e63214f8
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-deseq2
+    - 'bioconductor-edger >=3.13.4'
+    - bioconductor-genomicranges
+    - bioconductor-summarizedexperiment
+    - r-base
+    - r-checkmate
+  run:
+    - bioconductor-deseq2
+    - 'bioconductor-edger >=3.13.4'
+    - bioconductor-genomicranges
+    - bioconductor-summarizedexperiment
+    - r-base
+    - r-checkmate
+test:
+  commands:
+    - '$R -e "library(''DEFormats'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/DEFormats.html
+  license: GPL-3
+  summary: 'Covert between different data formats used by differential gene expression
+    analysis tools.'
