@@ -1,0 +1,64 @@
+package:
+  name: bioconductor-compcoder
+  version: 1.12.0
+source:
+  fn: compcodeR_1.12.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/compcodeR_1.12.0.tar.gz
+    - https://bioarchive.galaxyproject.org/compcodeR_1.12.0.tar.gz
+    - https://depot.galaxyproject.org/software/compcodeR/compcodeR_1.12.0_src_all.tar.gz
+  md5: 3a812558aa4732d57e71f4747e548ca1
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-edger
+    - bioconductor-limma
+    - r-base
+    - r-catools
+    - r-gdata
+    - r-ggplot2
+    - r-gplots
+    - r-gtools
+    - r-kernsmooth
+    - 'r-knitr >=1.2'
+    - 'r-lattice >=0.16'
+    - r-markdown
+    - r-mass
+    - r-modeest
+    - r-rocr
+    - r-sm
+    - r-stringr
+    - r-vioplot
+  run:
+    - bioconductor-edger
+    - bioconductor-limma
+    - r-base
+    - r-catools
+    - r-gdata
+    - r-ggplot2
+    - r-gplots
+    - r-gtools
+    - r-kernsmooth
+    - 'r-knitr >=1.2'
+    - 'r-lattice >=0.16'
+    - r-markdown
+    - r-mass
+    - r-modeest
+    - r-rocr
+    - r-sm
+    - r-stringr
+    - r-vioplot
+test:
+  commands:
+    - '$R -e "library(''compcodeR'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/compcodeR.html
+  license: 'GPL (>= 2)'
+  summary: 'This package provides extensive functionality for comparing results obtained
+    by different methods for differential expression analysis of RNAseq data. It also
+    contains functions for simulating count data and interfaces to several packages
+    for performing the differential expression analysis.'
