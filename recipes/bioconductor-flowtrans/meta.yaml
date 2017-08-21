@@ -1,0 +1,34 @@
+package:
+  name: bioconductor-flowtrans
+  version: 1.28.0
+source:
+  fn: flowTrans_1.28.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/flowTrans_1.28.0.tar.gz
+    - https://bioarchive.galaxyproject.org/flowTrans_1.28.0.tar.gz
+    - https://depot.galaxyproject.org/software/flowTrans/flowTrans_1.28.0_src_all.tar.gz
+  md5: b9257b69d036375ded6ef8be9aab1ae3
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-flowclust
+    - bioconductor-flowcore
+    - bioconductor-flowviz
+    - r-base
+  run:
+    - bioconductor-flowclust
+    - bioconductor-flowcore
+    - bioconductor-flowviz
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''flowTrans'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/flowTrans.html
+  license: Artistic-2.0
+  summary: 'Profile maximum likelihood estimation of parameters for flow cytometry
+    data transformations.'
