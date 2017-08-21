@@ -1,0 +1,52 @@
+package:
+  name: bioconductor-flowq
+  version: 1.36.0
+source:
+  fn: flowQ_1.36.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/flowQ_1.36.0.tar.gz
+    - https://bioarchive.galaxyproject.org/flowQ_1.36.0.tar.gz
+    - https://depot.galaxyproject.org/software/flowQ/flowQ_1.36.0_src_all.tar.gz
+  md5: c9ced705504e3b4125a6a2cd4dadc9e0
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biocgenerics
+    - bioconductor-biodist
+    - bioconductor-flowcore
+    - bioconductor-flowviz
+    - bioconductor-geneplotter
+    - bioconductor-iranges
+    - bioconductor-parody
+    - r-base
+    - r-lattice
+    - r-latticeextra
+    - r-mvoutlier
+    - r-outliers
+    - r-rcolorbrewer
+  run:
+    - bioconductor-biocgenerics
+    - bioconductor-biodist
+    - bioconductor-flowcore
+    - bioconductor-flowviz
+    - bioconductor-geneplotter
+    - bioconductor-iranges
+    - bioconductor-parody
+    - r-base
+    - r-lattice
+    - r-latticeextra
+    - r-mvoutlier
+    - r-outliers
+    - r-rcolorbrewer
+test:
+  commands:
+    - '$R -e "library(''flowQ'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/flowQ.html
+  license: Artistic-2.0
+  summary: 'Provides quality control and quality assessment tools for flow cytometry
+    data.'
