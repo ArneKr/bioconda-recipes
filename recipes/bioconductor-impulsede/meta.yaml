@@ -1,0 +1,35 @@
+package:
+  name: bioconductor-impulsede
+  version: 1.2.0
+source:
+  fn: ImpulseDE_1.2.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/ImpulseDE_1.2.0.tar.gz
+    - https://bioarchive.galaxyproject.org/ImpulseDE_1.2.0.tar.gz
+    - https://depot.galaxyproject.org/software/ImpulseDE/ImpulseDE_1.2.0_src_all.tar.gz
+  md5: 6863e195eecab5d1b32499690e721ae1
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - r-amap
+    - r-base
+    - r-boot
+  run:
+    - r-amap
+    - r-base
+    - r-boot
+test:
+  commands:
+    - '$R -e "library(''ImpulseDE'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/ImpulseDE.html
+  license: GPL-3
+  summary: 'ImpulseDE is suited to capture single impulse-like patterns in high throughput
+    time series datasets. By fitting a representative impulse model to each gene,
+    it reports differentially expressed genes whether across time points in a single
+    experiment or between two time courses from two experiments. To optimize the running
+    time, the code makes use of clustering steps and multi-threading.'
