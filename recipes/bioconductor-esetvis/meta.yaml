@@ -1,0 +1,42 @@
+package:
+  name: bioconductor-esetvis
+  version: 1.2.0
+source:
+  fn: esetVis_1.2.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/esetVis_1.2.0.tar.gz
+    - https://bioarchive.galaxyproject.org/esetVis_1.2.0.tar.gz
+    - https://depot.galaxyproject.org/software/esetVis/esetVis_1.2.0_src_all.tar.gz
+  md5: b6fd167eae2b4571cfc096ae6a311653
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biobase
+    - bioconductor-mlp
+    - r-base
+    - r-hexbin
+    - r-mass
+    - r-mpm
+    - r-rtsne
+  run:
+    - bioconductor-biobase
+    - bioconductor-mlp
+    - r-base
+    - r-hexbin
+    - r-mass
+    - r-mpm
+    - r-rtsne
+test:
+  commands:
+    - '$R -e "library(''esetVis'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/esetVis.html
+  license: GPL-3
+  summary: 'Utility functions for visualization of expressionSet (or SummarizedExperiment)
+    Bioconductor object, including spectral map, tsne and linear discriminant analysis.
+    Static plot via the ggplot2 package or interactive via the ggvis or rbokeh packages
+    are available.'
