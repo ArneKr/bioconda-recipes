@@ -1,0 +1,33 @@
+package:
+  name: bioconductor-clonotyper
+  version: 1.14.0
+source:
+  fn: clonotypeR_1.14.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/clonotypeR_1.14.0.tar.gz
+    - https://bioarchive.galaxyproject.org/clonotypeR_1.14.0.tar.gz
+    - https://depot.galaxyproject.org/software/clonotypeR/clonotypeR_1.14.0_src_all.tar.gz
+  md5: 172b563e34073a0797709212535b04d6
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - r-base
+  run:
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''clonotypeR'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/clonotypeR.html
+  license: 'file LICENSE'
+  summary: 'High throughput analysis of T cell antigen receptor sequences The genes
+    encoding T cell receptors are created by somatic recombination, generating an
+    immense combination of V, (D) and J segments. Additional processes during the
+    recombination create extra sequence diversity between the V an J segments. Collectively,
+    this hyper-variable region is called the CDR3 loop. The purpose of this package
+    is to process and quantitatively analyse millions of V-CDR3-J combination, called
+    clonotypes, from multiple sequence libraries.'
