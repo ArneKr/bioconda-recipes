@@ -1,0 +1,39 @@
+package:
+  name: bioconductor-intansv
+  version: 1.14.0
+source:
+  fn: intansv_1.14.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/intansv_1.14.0.tar.gz
+    - https://bioarchive.galaxyproject.org/intansv_1.14.0.tar.gz
+    - https://depot.galaxyproject.org/software/intansv/intansv_1.14.0_src_all.tar.gz
+  md5: e0da3daf00dfc88f6ea257fb6c5b9d0b
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biocgenerics
+    - bioconductor-genomicranges
+    - bioconductor-ggbio
+    - bioconductor-iranges
+    - r-base
+    - r-plyr
+  run:
+    - bioconductor-biocgenerics
+    - bioconductor-genomicranges
+    - bioconductor-ggbio
+    - bioconductor-iranges
+    - r-base
+    - r-plyr
+test:
+  commands:
+    - '$R -e "library(''intansv'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/intansv.html
+  license: Artistic-2.0
+  summary: 'This package provides efficient tools to read and integrate structural
+    variations predicted by popular softwares. Annotation and visulation of structural
+    variations are also implemented in the package.'
