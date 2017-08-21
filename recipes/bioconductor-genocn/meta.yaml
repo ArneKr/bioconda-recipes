@@ -1,0 +1,28 @@
+package:
+  name: bioconductor-genocn
+  version: 1.28.0
+source:
+  fn: genoCN_1.28.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/genoCN_1.28.0.tar.gz
+    - https://bioarchive.galaxyproject.org/genoCN_1.28.0.tar.gz
+    - https://depot.galaxyproject.org/software/genoCN/genoCN_1.28.0_src_all.tar.gz
+  md5: ed7d22dd6d2a09a5da468140bc433778
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - r-base
+  run:
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''genoCN'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/genoCN.html
+  license: 'GPL (>=2)'
+  summary: 'Simultaneous identification of copy number states and genotype calls for
+    regions of either copy number variations or copy number aberrations'
