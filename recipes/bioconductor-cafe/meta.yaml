@@ -1,0 +1,46 @@
+package:
+  name: bioconductor-cafe
+  version: 1.12.0
+source:
+  fn: CAFE_1.12.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/CAFE_1.12.0.tar.gz
+    - https://bioarchive.galaxyproject.org/CAFE_1.12.0.tar.gz
+    - https://depot.galaxyproject.org/software/CAFE/CAFE_1.12.0_src_all.tar.gz
+  md5: fae9aea0d080e50cd0df5a28f00d268f
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-affy
+    - bioconductor-annotate
+    - bioconductor-biobase
+    - bioconductor-biovizbase
+    - bioconductor-genomicranges
+    - bioconductor-ggbio
+    - bioconductor-iranges
+    - r-base
+    - r-ggplot2
+    - r-gridextra
+  run:
+    - bioconductor-affy
+    - bioconductor-annotate
+    - bioconductor-biobase
+    - bioconductor-biovizbase
+    - bioconductor-genomicranges
+    - bioconductor-ggbio
+    - bioconductor-iranges
+    - r-base
+    - r-ggplot2
+    - r-gridextra
+test:
+  commands:
+    - '$R -e "library(''CAFE'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/CAFE.html
+  license: GPL-3
+  summary: 'Detection and visualizations of gross chromosomal aberrations using Affymetrix
+    expression microarrays as input'
