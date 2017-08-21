@@ -1,0 +1,29 @@
+package:
+  name: bioconductor-iseq
+  version: 1.28.0
+source:
+  fn: iSeq_1.28.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/iSeq_1.28.0.tar.gz
+    - https://bioarchive.galaxyproject.org/iSeq_1.28.0.tar.gz
+    - https://depot.galaxyproject.org/software/iSeq/iSeq_1.28.0_src_all.tar.gz
+  md5: 479baf612c58b5e44667777d52dfa418
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - r-base
+  run:
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''iSeq'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/iSeq.html
+  license: 'GPL (>= 2)'
+  summary: 'This package uses Bayesian hidden Ising models to identify IP-enriched
+    genomic regions from ChIP-seq data. It can be used to analyze ChIP-seq data with
+    and without controls and replicates.'
