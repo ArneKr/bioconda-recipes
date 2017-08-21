@@ -1,0 +1,51 @@
+package:
+  name: bioconductor-htsanalyzer
+  version: 2.28.0
+source:
+  fn: HTSanalyzeR_2.28.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/HTSanalyzeR_2.28.0.tar.gz
+    - https://bioarchive.galaxyproject.org/HTSanalyzeR_2.28.0.tar.gz
+    - https://depot.galaxyproject.org/software/HTSanalyzeR/HTSanalyzeR_2.28.0_src_all.tar.gz
+  md5: 2cbe03118eb337db6a1dcf4b8cd616e0
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-annotationdbi
+    - bioconductor-biomart
+    - bioconductor-bionet
+    - bioconductor-cellhts2
+    - bioconductor-graph
+    - bioconductor-gseabase
+    - bioconductor-rankprod
+    - r-base
+    - r-igraph
+  run:
+    - bioconductor-annotationdbi
+    - bioconductor-biomart
+    - bioconductor-bionet
+    - bioconductor-cellhts2
+    - bioconductor-graph
+    - bioconductor-gseabase
+    - bioconductor-rankprod
+    - r-base
+    - r-igraph
+test:
+  commands:
+    - '$R -e "library(''HTSanalyzeR'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/HTSanalyzeR.html
+  license: Artistic-2.0
+  summary: 'This package provides classes and methods for gene set over-representation,
+    enrichment and network analyses on high-throughput screens. The over-representation
+    analysis is performed based on hypergeometric tests. The enrichment analysis is
+    based on the GSEA algorithm (Subramanian et al. PNAS 2005). The network analysis
+    identifies enriched subnetworks based on algorithms from the BioNet package (Beisser
+    et al., Bioinformatics 2010). A pipeline is also specifically designed for cellHTS2
+    object to perform integrative network analyses of high-throughput RNA interference
+    screens. The users can build their own analysis pipeline for their own data set
+    based on this package.'
