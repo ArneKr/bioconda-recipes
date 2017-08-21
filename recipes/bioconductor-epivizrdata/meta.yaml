@@ -1,0 +1,47 @@
+package:
+  name: bioconductor-epivizrdata
+  version: 1.4.0
+source:
+  fn: epivizrData_1.4.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/epivizrData_1.4.0.tar.gz
+    - https://bioarchive.galaxyproject.org/epivizrData_1.4.0.tar.gz
+    - https://depot.galaxyproject.org/software/epivizrData/epivizrData_1.4.0_src_all.tar.gz
+  md5: fac41e911638c1d38ef3a0c5667e8f2a
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biobase
+    - bioconductor-ensembldb
+    - 'bioconductor-epivizrserver >=1.1.1'
+    - bioconductor-genomeinfodb
+    - bioconductor-genomicfeatures
+    - bioconductor-genomicranges
+    - bioconductor-iranges
+    - bioconductor-organismdbi
+    - bioconductor-s4vectors
+    - 'bioconductor-summarizedexperiment >=0.2.0'
+    - r-base
+  run:
+    - bioconductor-biobase
+    - bioconductor-ensembldb
+    - 'bioconductor-epivizrserver >=1.1.1'
+    - bioconductor-genomeinfodb
+    - bioconductor-genomicfeatures
+    - bioconductor-genomicranges
+    - bioconductor-iranges
+    - bioconductor-organismdbi
+    - bioconductor-s4vectors
+    - 'bioconductor-summarizedexperiment >=0.2.0'
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''epivizrData'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/epivizrData.html
+  license: 'MIT + file LICENSE'
+  summary: 'Serve data from Bioconductor Objects through a WebSocket connection.'
