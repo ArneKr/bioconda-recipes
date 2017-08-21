@@ -1,0 +1,56 @@
+package:
+  name: bioconductor-deepbluer
+  version: 1.2.10
+source:
+  fn: DeepBlueR_1.2.10.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/DeepBlueR_1.2.10.tar.gz
+    - https://depot.galaxyproject.org/software/DeepBlueR/DeepBlueR_1.2.10_src_all.tar.gz
+  md5: 0a164dbbab76b331505417da7f44709e
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-genomeinfodb
+    - bioconductor-genomicranges
+    - bioconductor-rtracklayer
+    - r-base
+    - r-data.table
+    - r-diffr
+    - r-dplyr
+    - r-filehash
+    - r-foreach
+    - r-r.utils
+    - r-rcurl
+    - r-rjson
+    - r-settings
+    - r-stringr
+    - r-withr
+    - r-xml
+  run:
+    - bioconductor-genomeinfodb
+    - bioconductor-genomicranges
+    - bioconductor-rtracklayer
+    - r-base
+    - r-data.table
+    - r-diffr
+    - r-dplyr
+    - r-filehash
+    - r-foreach
+    - r-r.utils
+    - r-rcurl
+    - r-rjson
+    - r-settings
+    - r-stringr
+    - r-withr
+    - r-xml
+test:
+  commands:
+    - '$R -e "library(''DeepBlueR'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/DeepBlueR.html
+  license: 'GPL (>=2.0)'
+  summary: 'Accessing the DeepBlue Epigenetics Data Server through R.'
