@@ -1,0 +1,33 @@
+package:
+  name: bioconductor-logicfs
+  version: 1.46.0
+source:
+  fn: logicFS_1.46.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/logicFS_1.46.0.tar.gz
+    - https://bioarchive.galaxyproject.org/logicFS_1.46.0.tar.gz
+    - https://depot.galaxyproject.org/software/logicFS/logicFS_1.46.0_src_all.tar.gz
+  md5: 10237b2a50a838662ca21478a3f6b86d
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - r-base
+    - r-logicreg
+    - r-mcbiopi
+  run:
+    - r-base
+    - r-logicreg
+    - r-mcbiopi
+test:
+  commands:
+    - '$R -e "library(''logicFS'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/logicFS.html
+  license: 'LGPL (>= 2)'
+  summary: 'Identification of interactions between binary variables using Logic Regression.
+    Can, e.g., be used to find interesting SNP interactions. Contains also a bagging
+    version of logic regression for classification.'
