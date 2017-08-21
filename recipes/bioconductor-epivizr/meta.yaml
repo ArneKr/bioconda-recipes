@@ -1,0 +1,45 @@
+package:
+  name: bioconductor-epivizr
+  version: 2.6.0
+source:
+  fn: epivizr_2.6.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/epivizr_2.6.0.tar.gz
+    - https://bioarchive.galaxyproject.org/epivizr_2.6.0.tar.gz
+    - https://depot.galaxyproject.org/software/epivizr/epivizr_2.6.0_src_all.tar.gz
+  md5: b1a94f1e37c5d32b6d40eb5f9546d3a4
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - 'bioconductor-epivizrdata >=1.3.4'
+    - 'bioconductor-epivizrserver >=1.1.1'
+    - bioconductor-genomicranges
+    - bioconductor-iranges
+    - bioconductor-s4vectors
+    - r-
+    - r-base
+  run:
+    - 'bioconductor-epivizrdata >=1.3.4'
+    - 'bioconductor-epivizrserver >=1.1.1'
+    - bioconductor-genomicranges
+    - bioconductor-iranges
+    - bioconductor-s4vectors
+    - r-
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''epivizr'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/epivizr.html
+  license: Artistic-2.0
+  summary: 'This package provides connections to the epiviz web app (http://epiviz.cbcb.umd.edu)
+    for interactive visualization of genomic data. Objects in R/bioc interactive sessions
+    can be displayed in genome browser tracks or plots to be explored by navigation
+    through genomic regions. Fundamental Bioconductor data structures are supported
+    (e.g., GenomicRanges and RangedSummarizedExperiment objects), while providing
+    an easy mechanism to support other data structures (through package epivizrData).
+    Visualizations (using d3.js) can be easily added to the web app as well.'
