@@ -1,0 +1,43 @@
+package:
+  name: bioconductor-guitar
+  version: 1.14.0
+source:
+  fn: Guitar_1.14.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/Guitar_1.14.0.tar.gz
+    - https://bioarchive.galaxyproject.org/Guitar_1.14.0.tar.gz
+    - https://depot.galaxyproject.org/software/Guitar/Guitar_1.14.0_src_all.tar.gz
+  md5: 108ec372e40ed3657abbab7e68cdb42f
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-genomicalignments
+    - bioconductor-genomicfeatures
+    - bioconductor-genomicranges
+    - bioconductor-iranges
+    - bioconductor-rsamtools
+    - bioconductor-rtracklayer
+    - r-base
+    - r-ggplot2
+  run:
+    - bioconductor-genomicalignments
+    - bioconductor-genomicfeatures
+    - bioconductor-genomicranges
+    - bioconductor-iranges
+    - bioconductor-rsamtools
+    - bioconductor-rtracklayer
+    - r-base
+    - r-ggplot2
+test:
+  commands:
+    - '$R -e "library(''Guitar'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/Guitar.html
+  license: GPL-2
+  summary: 'The package is designed for visualization of RNA-related genomic features
+    with respect to the landmarks of RNA transcripts, i.e., transcription starting
+    site, start codon, stop codon and transcription ending site.'
