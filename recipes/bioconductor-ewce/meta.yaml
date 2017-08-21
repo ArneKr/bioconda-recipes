@@ -1,0 +1,37 @@
+package:
+  name: bioconductor-ewce
+  version: 1.3.0
+source:
+  fn: EWCE_1.3.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/EWCE_1.3.0.tar.gz
+    - https://bioarchive.galaxyproject.org/EWCE_1.3.0.tar.gz
+    - https://depot.galaxyproject.org/software/EWCE/EWCE_1.3.0_src_all.tar.gz
+  md5: 90e32c6dc1b50ab2851f72745def6c00
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biomart
+    - r-base
+    - r-ggplot2
+    - r-reshape2
+  run:
+    - bioconductor-biomart
+    - r-base
+    - r-ggplot2
+    - r-reshape2
+test:
+  commands:
+    - '$R -e "library(''EWCE'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/EWCE.html
+  license: Artistic-2.0
+  summary: 'Used to determine which cell types are enriched within gene lists. The
+    package provides tools for testing enrichments within simple gene lists (such
+    as human disease associated genes) and those resulting from differential expression
+    studies. The package does not depend upon any particular Single Cell Transcriptome
+    dataset and user defined datasets can be loaded in and used in the analyses.'
