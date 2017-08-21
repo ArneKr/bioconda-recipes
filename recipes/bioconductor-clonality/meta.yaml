@@ -1,0 +1,29 @@
+package:
+  name: bioconductor-clonality
+  version: 1.24.0
+source:
+  fn: Clonality_1.24.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/Clonality_1.24.0.tar.gz
+    - https://depot.galaxyproject.org/software/Clonality/Clonality_1.24.0_src_all.tar.gz
+  md5: 0e67ba2e534503ec98cbf817710ad825
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-dnacopy
+    - r-base
+  run:
+    - bioconductor-dnacopy
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''Clonality'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/Clonality.html
+  license: GPL-3
+  summary: 'Statistical tests for clonality versus independence of tumors from the
+    same patient based on their LOH or genomewide copy number profiles'
