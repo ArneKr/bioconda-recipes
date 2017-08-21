@@ -1,0 +1,33 @@
+package:
+  name: bioconductor-lpe
+  version: 1.50.0
+source:
+  fn: LPE_1.50.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/LPE_1.50.0.tar.gz
+    - https://bioarchive.galaxyproject.org/LPE_1.50.0.tar.gz
+    - https://depot.galaxyproject.org/software/LPE/LPE_1.50.0_src_all.tar.gz
+  md5: f6a92ffc5b4d9146862874bb010e7b44
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - r-base
+  run:
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''LPE'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/LPE.html
+  license: LGPL
+  summary: 'This LPE library is used to do significance analysis of microarray data
+    with small number of replicates. It uses resampling based FDR adjustment, and
+    gives less conservative results than traditional ''BH'' or ''BY'' procedures.
+    Data accepted is raw data in txt format from MAS4, MAS5 or dChip. Data can also
+    be supplied after normalization. LPE library is primarily used for analyzing data
+    between two conditions. To use it for paired data, see LPEP library. For using
+    LPE in multiple conditions, use HEM library.'
