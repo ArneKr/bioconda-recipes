@@ -1,0 +1,33 @@
+package:
+  name: bioconductor-hibag
+  version: 1.12.0
+source:
+  fn: HIBAG_1.12.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/HIBAG_1.12.0.tar.gz
+    - https://bioarchive.galaxyproject.org/HIBAG_1.12.0.tar.gz
+    - https://depot.galaxyproject.org/software/HIBAG/HIBAG_1.12.0_src_all.tar.gz
+  md5: ca34572936a98181abd2f91c117abbf3
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - r-base
+  run:
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''HIBAG'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/HIBAG.html
+  license: GPL-3
+  summary: 'It is a software package for imputing HLA types using SNP data, and relies
+    on a training set of HLA and SNP genotypes. HIBAG can be used by researchers with
+    published parameter estimates instead of requiring access to large training sample
+    datasets. It combines the concepts of attribute bagging, an ensemble classifier
+    method, with haplotype inference for SNPs and HLA types. Attribute bagging is
+    a technique which improves the accuracy and stability of classifier ensembles
+    using bootstrap aggregating and random variable selection.'
