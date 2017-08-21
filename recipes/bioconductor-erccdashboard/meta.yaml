@@ -1,0 +1,58 @@
+package:
+  name: bioconductor-erccdashboard
+  version: 1.10.0
+source:
+  fn: erccdashboard_1.10.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/erccdashboard_1.10.0.tar.gz
+    - https://bioarchive.galaxyproject.org/erccdashboard_1.10.0.tar.gz
+    - https://depot.galaxyproject.org/software/erccdashboard/erccdashboard_1.10.0_src_all.tar.gz
+  md5: 7b3e2e609066c2e3f08190ae75e7105d
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-edger
+    - bioconductor-limma
+    - bioconductor-qvalue
+    - r-base
+    - 'r-ggplot2 >=2.1.0'
+    - r-gplots
+    - 'r-gridextra >=2.0.0'
+    - r-gtools
+    - r-locfit
+    - r-mass
+    - r-plyr
+    - r-quasiseq
+    - r-reshape2
+    - r-rocr
+    - r-scales
+    - r-stringr
+  run:
+    - bioconductor-edger
+    - bioconductor-limma
+    - bioconductor-qvalue
+    - r-base
+    - 'r-ggplot2 >=2.1.0'
+    - r-gplots
+    - 'r-gridextra >=2.0.0'
+    - r-gtools
+    - r-locfit
+    - r-mass
+    - r-plyr
+    - r-quasiseq
+    - r-reshape2
+    - r-rocr
+    - r-scales
+    - r-stringr
+test:
+  commands:
+    - '$R -e "library(''erccdashboard'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/erccdashboard.html
+  license: 'GPL (>=2)'
+  summary: 'Technical performance metrics for differential gene expression experiments
+    using External RNA Controls Consortium (ERCC) spike-in ratio mixtures.'
