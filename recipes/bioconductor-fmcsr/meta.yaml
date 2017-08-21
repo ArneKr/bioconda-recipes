@@ -1,0 +1,40 @@
+package:
+  name: bioconductor-fmcsr
+  version: 1.18.0
+source:
+  fn: fmcsR_1.18.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/fmcsR_1.18.0.tar.gz
+    - https://bioarchive.galaxyproject.org/fmcsR_1.18.0.tar.gz
+    - https://depot.galaxyproject.org/software/fmcsR/fmcsR_1.18.0_src_all.tar.gz
+  md5: 14359319e3d8db5a6a5f54e0caa32684
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biocgenerics
+    - bioconductor-chemminer
+    - r-base
+    - r-runit
+  run:
+    - bioconductor-biocgenerics
+    - bioconductor-chemminer
+    - r-base
+    - r-runit
+test:
+  commands:
+    - '$R -e "library(''fmcsR'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/fmcsR.html
+  license: Artistic-2.0
+  summary: 'The fmcsR package introduces an efficient maximum common substructure
+    (MCS) algorithms combined with a novel matching strategy that allows for atom
+    and/or bond mismatches in the substructures shared among two small molecules.
+    The resulting flexible MCSs (FMCSs) are often larger than strict MCSs, resulting
+    in the identification of more common features in their source structures, as well
+    as a higher sensitivity in finding compounds with weak structural similarities.
+    The fmcsR package provides several utilities to use the FMCS algorithm for pairwise
+    compound comparisons, structure similarity searching and clustering.'
