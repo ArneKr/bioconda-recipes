@@ -1,0 +1,48 @@
+package:
+  name: bioconductor-eir
+  version: 1.16.1
+source:
+  fn: eiR_1.16.1.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/eiR_1.16.1.tar.gz
+    - https://depot.galaxyproject.org/software/eiR/eiR_1.16.1_src_all.tar.gz
+  md5: 1a2d22022ce0f4ab67413e898a6cea2a
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biocgenerics
+    - 'bioconductor-chemminer >=2.15.15'
+    - bioconductor-gesper
+    - r-base
+    - r-dbi
+    - r-digest
+    - r-rcppannoy
+    - r-rcurl
+    - r-runit
+    - r-snow
+    - r-snowfall
+  run:
+    - bioconductor-biocgenerics
+    - 'bioconductor-chemminer >=2.15.15'
+    - bioconductor-gesper
+    - r-base
+    - r-dbi
+    - r-digest
+    - r-rcppannoy
+    - r-rcurl
+    - r-runit
+    - r-snow
+    - r-snowfall
+test:
+  commands:
+    - '$R -e "library(''eiR'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/eiR.html
+  license: Artistic-2.0
+  summary: 'The eiR package provides utilities for accelerated structure similarity
+    searching of very large small molecule data sets using an embedding and indexing
+    approach.'
