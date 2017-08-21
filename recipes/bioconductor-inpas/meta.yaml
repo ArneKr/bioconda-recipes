@@ -1,0 +1,60 @@
+package:
+  name: bioconductor-inpas
+  version: 1.8.0
+source:
+  fn: InPAS_1.8.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/InPAS_1.8.0.tar.gz
+    - https://bioarchive.galaxyproject.org/InPAS_1.8.0.tar.gz
+    - https://depot.galaxyproject.org/software/InPAS/InPAS_1.8.0_src_all.tar.gz
+  md5: f87d3ce740f286befa51cf1411b5f931
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-annotationdbi
+    - bioconductor-biobase
+    - bioconductor-biocparallel
+    - bioconductor-bsgenome
+    - bioconductor-cleanupdtseq
+    - bioconductor-genomeinfodb
+    - bioconductor-genomicfeatures
+    - bioconductor-genomicranges
+    - bioconductor-gviz
+    - bioconductor-iranges
+    - bioconductor-limma
+    - bioconductor-preprocesscore
+    - bioconductor-s4vectors
+    - r-base
+    - r-depmixs4
+    - r-seqinr
+  run:
+    - bioconductor-annotationdbi
+    - bioconductor-biobase
+    - bioconductor-biocparallel
+    - bioconductor-bsgenome
+    - bioconductor-cleanupdtseq
+    - bioconductor-genomeinfodb
+    - bioconductor-genomicfeatures
+    - bioconductor-genomicranges
+    - bioconductor-gviz
+    - bioconductor-iranges
+    - bioconductor-limma
+    - bioconductor-preprocesscore
+    - bioconductor-s4vectors
+    - r-base
+    - r-depmixs4
+    - r-seqinr
+test:
+  commands:
+    - '$R -e "library(''InPAS'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/InPAS.html
+  license: 'GPL (>= 2)'
+  summary: 'Alternative polyadenylation (APA) is one of the important post-transcriptional
+    regulation mechanisms which occurs in most human genes. InPAS facilitates the
+    discovery of novel APA sites from RNAseq data. It leverages cleanUpdTSeq to fine
+    tune identified APA sites.'
