@@ -1,0 +1,30 @@
+package:
+  name: bioconductor-flowplots
+  version: 1.24.0
+source:
+  fn: flowPlots_1.24.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/flowPlots_1.24.0.tar.gz
+    - https://bioarchive.galaxyproject.org/flowPlots_1.24.0.tar.gz
+    - https://depot.galaxyproject.org/software/flowPlots/flowPlots_1.24.0_src_all.tar.gz
+  md5: 778ebb018ea0882f74feb203a83667d6
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - r-base
+  run:
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''flowPlots'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/flowPlots.html
+  license: Artistic-2.0
+  summary: 'Graphical displays with embedded statistical tests for gated ICS flow
+    cytometry data, and a data class which stores "stacked" data and has methods for
+    computing summary measures on stacked data, such as marginal and polyfunctional
+    degree data.'
