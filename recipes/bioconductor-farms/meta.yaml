@@ -1,0 +1,35 @@
+package:
+  name: bioconductor-farms
+  version: 1.28.0
+source:
+  fn: farms_1.28.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/farms_1.28.0.tar.gz
+    - https://bioarchive.galaxyproject.org/farms_1.28.0.tar.gz
+    - https://depot.galaxyproject.org/software/farms/farms_1.28.0_src_all.tar.gz
+  md5: 4d6fb117cb87fbe4cfcecc984aeb2b86
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - 'bioconductor-affy >=1.20.0'
+    - 'bioconductor-biobase >=1.13.41'
+    - r-base
+    - r-mass
+  run:
+    - 'bioconductor-affy >=1.20.0'
+    - 'bioconductor-biobase >=1.13.41'
+    - r-base
+    - r-mass
+test:
+  commands:
+    - '$R -e "library(''farms'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/farms.html
+  license: 'LGPL (>= 2.1)'
+  summary: 'The package provides the summarization algorithm called Factor Analysis
+    for Robust Microarray Summarization (FARMS) and a novel unsupervised feature selection
+    criterion called "I/NI-calls"'
