@@ -1,0 +1,38 @@
+package:
+  name: bioconductor-cohcap
+  version: 1.20.0
+source:
+  fn: COHCAP_1.20.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/COHCAP_1.20.0.tar.gz
+    - https://bioarchive.galaxyproject.org/COHCAP_1.20.0.tar.gz
+    - https://depot.galaxyproject.org/software/COHCAP/COHCAP_1.20.0_src_all.tar.gz
+  md5: d4c87464babc6c46f6fe004b7e1b4375
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - r-base
+    - r-cohcapanno
+    - r-gplots
+    - r-rcolorbrewer
+    - r-writexls
+  run:
+    - r-base
+    - r-cohcapanno
+    - r-gplots
+    - r-rcolorbrewer
+    - r-writexls
+test:
+  commands:
+    - '$R -e "library(''COHCAP'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/COHCAP.html
+  license: GPL-3
+  summary: 'This package provides a pipeline to analyze single-nucleotide resolution
+    methylation data (Illumina 450k/EPIC methylation array, targeted BS-Seq, etc.).
+    It provides differential methylation for CpG Sites, differential methylation for
+    CpG Islands, integration with gene expression data, with visualizaton options.'
