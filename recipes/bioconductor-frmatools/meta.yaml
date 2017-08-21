@@ -1,0 +1,35 @@
+package:
+  name: bioconductor-frmatools
+  version: 1.28.0
+source:
+  fn: frmaTools_1.28.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/frmaTools_1.28.0.tar.gz
+    - https://bioarchive.galaxyproject.org/frmaTools_1.28.0.tar.gz
+    - https://depot.galaxyproject.org/software/frmaTools/frmaTools_1.28.0_src_all.tar.gz
+  md5: 56081a563732979d9c8af1ecf8b0c85d
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-affy
+    - bioconductor-biobase
+    - bioconductor-preprocesscore
+    - r-base
+    - r-dbi
+  run:
+    - bioconductor-affy
+    - bioconductor-biobase
+    - bioconductor-preprocesscore
+    - r-base
+    - r-dbi
+test:
+  commands:
+    - '$R -e "library(''frmaTools'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/frmaTools.html
+  license: 'GPL (>= 2)'
+  summary: 'Tools for advanced use of the frma package.'
