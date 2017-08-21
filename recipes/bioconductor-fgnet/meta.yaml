@@ -1,0 +1,46 @@
+package:
+  name: bioconductor-fgnet
+  version: 3.10.0
+source:
+  fn: FGNet_3.10.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/FGNet_3.10.0.tar.gz
+    - https://bioarchive.galaxyproject.org/FGNet_3.10.0.tar.gz
+    - https://depot.galaxyproject.org/software/FGNet/FGNet_3.10.0_src_all.tar.gz
+  md5: 6d6841c44648dcad12771c6a789377f6
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - r-base
+    - r-hwriter
+    - 'r-igraph >=0.6'
+    - r-plotrix
+    - r-png
+    - r-r.utils
+    - r-rcolorbrewer
+    - r-reshape2
+    - r-xml
+  run:
+    - r-base
+    - r-hwriter
+    - 'r-igraph >=0.6'
+    - r-plotrix
+    - r-png
+    - r-r.utils
+    - r-rcolorbrewer
+    - r-reshape2
+    - r-xml
+test:
+  commands:
+    - '$R -e "library(''FGNet'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/FGNet.html
+  license: 'GPL (>= 2)'
+  summary: 'Build and visualize functional gene and term networks from clustering
+    of enrichment analyses in multiple annotation spaces. The package includes a graphical
+    user interface (GUI) and functions to perform the functional enrichment analysis
+    through DAVID, GeneTerm Linker, gage (GSEA) and topGO.'
