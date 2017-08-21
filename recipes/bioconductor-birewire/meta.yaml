@@ -1,0 +1,44 @@
+package:
+  name: bioconductor-birewire
+  version: 3.8.1
+source:
+  fn: BiRewire_3.8.1.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/BiRewire_3.8.1.tar.gz
+    - https://depot.galaxyproject.org/software/BiRewire/BiRewire_3.8.1_src_all.tar.gz
+  md5: df31d8597fdebe72fc5310b622929d10
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - r-base
+    - r-igraph
+    - r-matrix
+    - r-slam
+    - r-tsne
+  run:
+    - r-base
+    - r-igraph
+    - r-matrix
+    - r-slam
+    - r-tsne
+test:
+  commands:
+    - '$R -e "library(''BiRewire'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/BiRewire.html
+  license: GPL-3
+  summary: 'Fast functions for bipartite network rewiring through N consecutive switching
+    steps (See References) and for the computation of the minimal number of switching
+    steps to be performed in order to maximise the dissimilarity with respect to the
+    original network. Includes functions for the analysis of the introduced randomness
+    across the switching steps and several other routines to analyse the resulting
+    networks and their natural projections. Extension to undirected networks and directed
+    signed networks is also provided. Starting from version 1.9.7 a more precise bound
+    (especially for small network) has been implemented. Starting from version 2.2.0
+    the analysis routine is more complete and a visual montioring of the underlying
+    Markov Chain has been implemented. Starting from 3.6.0 the library can handle
+    also matrices with NA (not for the directed signed graphs).'
