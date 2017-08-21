@@ -1,0 +1,40 @@
+package:
+  name: bioconductor-famagg
+  version: 1.4.1
+source:
+  fn: FamAgg_1.4.1.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/FamAgg_1.4.1.tar.gz
+    - https://depot.galaxyproject.org/software/FamAgg/FamAgg_1.4.1_src_all.tar.gz
+  md5: 9fbcd4c3970be9b54b87f91cbd822722
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biocgenerics
+    - r-base
+    - 'r-gap >=1.1-17'
+    - r-igraph
+    - r-kinship2
+    - r-matrix
+    - r-survey
+  run:
+    - bioconductor-biocgenerics
+    - r-base
+    - 'r-gap >=1.1-17'
+    - r-igraph
+    - r-kinship2
+    - r-matrix
+    - r-survey
+test:
+  commands:
+    - '$R -e "library(''FamAgg'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/FamAgg.html
+  license: 'MIT + file LICENSE'
+  summary: 'Framework providing basic pedigree analysis and plotting utilities as
+    well as a variety of methods to evaluate familial aggregation of traits in large
+    pedigrees.'
