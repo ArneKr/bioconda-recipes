@@ -1,0 +1,40 @@
+package:
+  name: bioconductor-lola
+  version: 1.6.0
+source:
+  fn: LOLA_1.6.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/LOLA_1.6.0.tar.gz
+    - https://bioarchive.galaxyproject.org/LOLA_1.6.0.tar.gz
+    - https://depot.galaxyproject.org/software/LOLA/LOLA_1.6.0_src_all.tar.gz
+  md5: 72d3c7465dfa2c63625a86464415b13f
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biocgenerics
+    - bioconductor-genomicranges
+    - bioconductor-iranges
+    - bioconductor-s4vectors
+    - r-base
+    - r-data.table
+  run:
+    - bioconductor-biocgenerics
+    - bioconductor-genomicranges
+    - bioconductor-iranges
+    - bioconductor-s4vectors
+    - r-base
+    - r-data.table
+test:
+  commands:
+    - '$R -e "library(''LOLA'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/LOLA.html
+  license: GPL-3
+  summary: 'Provides functions for testing overlap of sets of genomic regions with
+    public and custom region set (genomic ranges) databases. This make is possible
+    to do automated enrichment analysis for genomic region sets, thus facilitating
+    interpretation of functional genomics and epigenomics data.'
