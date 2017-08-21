@@ -1,0 +1,43 @@
+package:
+  name: bioconductor-chromheatmap
+  version: 1.30.0
+source:
+  fn: ChromHeatMap_1.30.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/ChromHeatMap_1.30.0.tar.gz
+    - https://bioarchive.galaxyproject.org/ChromHeatMap_1.30.0.tar.gz
+    - https://depot.galaxyproject.org/software/ChromHeatMap/ChromHeatMap_1.30.0_src_all.tar.gz
+  md5: bdfabf27a2e206aa82a1249c47d4074c
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - 'bioconductor-annotate >=1.20.0'
+    - 'bioconductor-annotationdbi >=1.4.0'
+    - 'bioconductor-biobase >=2.17.8'
+    - 'bioconductor-biocgenerics >=0.3.2'
+    - bioconductor-genomicranges
+    - bioconductor-iranges
+    - bioconductor-rtracklayer
+    - r-base
+  run:
+    - 'bioconductor-annotate >=1.20.0'
+    - 'bioconductor-annotationdbi >=1.4.0'
+    - 'bioconductor-biobase >=2.17.8'
+    - 'bioconductor-biocgenerics >=0.3.2'
+    - bioconductor-genomicranges
+    - bioconductor-iranges
+    - bioconductor-rtracklayer
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''ChromHeatMap'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/ChromHeatMap.html
+  license: Artistic-2.0
+  summary: 'The ChromHeatMap package can be used to plot genome-wide data (e.g. expression,
+    CGH, SNP) along each strand of a given chromosome as a heat map. The generated
+    heat map can be used to interactively identify probes and genes of interest.'
