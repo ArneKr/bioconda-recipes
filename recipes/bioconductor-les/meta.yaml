@@ -1,0 +1,40 @@
+package:
+  name: bioconductor-les
+  version: 1.26.0
+source:
+  fn: les_1.26.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/les_1.26.0.tar.gz
+    - https://bioarchive.galaxyproject.org/les_1.26.0.tar.gz
+    - https://depot.galaxyproject.org/software/les/les_1.26.0_src_all.tar.gz
+  md5: b4b5330f6d8fa2b9f0d836bec414b8d1
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - r-base
+    - r-boot
+    - r-fdrtool
+    - r-gplots
+    - r-rcolorbrewer
+  run:
+    - r-base
+    - r-boot
+    - r-fdrtool
+    - r-gplots
+    - r-rcolorbrewer
+test:
+  commands:
+    - '$R -e "library(''les'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/les.html
+  license: GPL-3
+  summary: 'The ''les'' package estimates Loci of Enhanced Significance (LES) in tiling
+    microarray data. These are regions of regulation such as found in differential
+    transcription, CHiP-chip, or DNA modification analysis. The package provides a
+    universal framework suitable for identifying differential effects in tiling microarray
+    data sets, and is independent of the underlying statistics at the level of single
+    probes.'
