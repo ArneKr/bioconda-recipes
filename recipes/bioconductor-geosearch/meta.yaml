@@ -1,0 +1,37 @@
+package:
+  name: bioconductor-geosearch
+  version: 1.2.0
+source:
+  fn: GEOsearch_1.2.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/GEOsearch_1.2.0.tar.gz
+    - https://bioarchive.galaxyproject.org/GEOsearch_1.2.0.tar.gz
+    - https://depot.galaxyproject.org/software/GEOsearch/GEOsearch_1.2.0_src_all.tar.gz
+  md5: 121eed7e8b69e8b6032152f5bdb15f3a
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-org.hs.eg.db
+    - bioconductor-org.mm.eg.db
+    - r-base
+    - r-rcurl
+  run:
+    - bioconductor-org.hs.eg.db
+    - bioconductor-org.mm.eg.db
+    - r-base
+    - r-rcurl
+test:
+  commands:
+    - '$R -e "library(''GEOsearch'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/GEOsearch.html
+  license: GPL(>=2)
+  summary: 'GEOsearch is an extendable search engine for NCBI GEO (Gene Expression
+    Omnibus). Instead of directly searching the term, GEOsearch can find all the gene
+    names contained in the search term and search all the alias of the gene names
+    simultaneously in GEO database. GEOsearch also provides other functions such as
+    summarizing common biology keywords in the search results.'
