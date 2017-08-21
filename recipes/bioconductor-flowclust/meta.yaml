@@ -1,0 +1,50 @@
+package:
+  name: bioconductor-flowclust
+  version: 3.14.0
+source:
+  fn: flowClust_3.14.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/flowClust_3.14.0.tar.gz
+    - https://bioarchive.galaxyproject.org/flowClust_3.14.0.tar.gz
+    - https://depot.galaxyproject.org/software/flowClust/flowClust_3.14.0_src_all.tar.gz
+  md5: 8465d3290b2b620fadbe257c3be5e010
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biobase
+    - bioconductor-biocgenerics
+    - bioconductor-flowcore
+    - bioconductor-flowviz
+    - bioconductor-graph
+    - bioconductor-rbgl
+    - r-base
+    - r-clue
+    - r-ellipse
+    - r-mcmcpack
+    - r-mnormt
+  run:
+    - bioconductor-biobase
+    - bioconductor-biocgenerics
+    - bioconductor-flowcore
+    - bioconductor-flowviz
+    - bioconductor-graph
+    - bioconductor-rbgl
+    - r-base
+    - r-clue
+    - r-ellipse
+    - r-mcmcpack
+    - r-mnormt
+test:
+  commands:
+    - '$R -e "library(''flowClust'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/flowClust.html
+  license: Artistic-2.0
+  summary: 'Robust model-based clustering using a t-mixture model with Box-Cox transformation.
+    Note: users should have GSL installed. Windows users: ''consult the README file
+    available in the inst directory of the source distribution for necessary configuration
+    instructions''.'
