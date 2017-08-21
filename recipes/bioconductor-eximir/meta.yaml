@@ -1,0 +1,40 @@
+package:
+  name: bioconductor-eximir
+  version: 2.18.0
+source:
+  fn: ExiMiR_2.18.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/ExiMiR_2.18.0.tar.gz
+    - https://bioarchive.galaxyproject.org/ExiMiR_2.18.0.tar.gz
+    - https://depot.galaxyproject.org/software/ExiMiR/ExiMiR_2.18.0_src_all.tar.gz
+  md5: ce6ffec2f8f1f29911ad5e7bddf8b4d6
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - 'bioconductor-affy >=1.26.1'
+    - 'bioconductor-affyio >=1.13.3'
+    - 'bioconductor-biobase >=2.5.5'
+    - bioconductor-limma
+    - 'bioconductor-preprocesscore >=1.10.0'
+    - r-base
+  run:
+    - 'bioconductor-affy >=1.26.1'
+    - 'bioconductor-affyio >=1.13.3'
+    - 'bioconductor-biobase >=2.5.5'
+    - bioconductor-limma
+    - 'bioconductor-preprocesscore >=1.10.0'
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''ExiMiR'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/ExiMiR.html
+  license: GPL-2
+  summary: 'This package contains functions for reading raw data in ImaGene TXT format
+    obtained from Exiqon miRCURY LNA arrays, annotating them with appropriate GAL
+    files, and normalizing them using a spike-in probe-based method. Other platforms
+    and data formats are also supported.'
