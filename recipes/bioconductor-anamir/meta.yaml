@@ -1,0 +1,48 @@
+package:
+  name: bioconductor-anamir
+  version: 1.4.2
+source:
+  fn: anamiR_1.4.2.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/anamiR_1.4.2.tar.gz
+    - https://depot.galaxyproject.org/software/anamiR/anamiR_1.4.2_src_all.tar.gz
+  md5: 583edcf8d581f2698928d153defc694b
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-deseq2
+    - bioconductor-gage
+    - bioconductor-limma
+    - bioconductor-lumi
+    - bioconductor-s4vectors
+    - 'bioconductor-summarizedexperiment >=1.1.6'
+    - r-agricolae
+    - r-base
+    - r-dbi
+    - r-gplots
+    - r-rmysql
+  run:
+    - bioconductor-deseq2
+    - bioconductor-gage
+    - bioconductor-limma
+    - bioconductor-lumi
+    - bioconductor-s4vectors
+    - 'bioconductor-summarizedexperiment >=1.1.6'
+    - r-agricolae
+    - r-base
+    - r-dbi
+    - r-gplots
+    - r-rmysql
+test:
+  commands:
+    - '$R -e "library(''anamiR'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/anamiR.html
+  license: GPL-2
+  summary: 'This package is intended to identify potential interactions of miRNA-target
+    gene interactions from miRNA and mRNA expression data. It contains functions for
+    statistical test, databases of miRNA-target gene interaction and functional analysis.'
