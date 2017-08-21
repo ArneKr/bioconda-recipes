@@ -1,0 +1,64 @@
+package:
+  name: bioconductor-genvisr
+  version: 1.6.0
+source:
+  fn: GenVisR_1.6.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/GenVisR_1.6.0.tar.gz
+    - https://bioarchive.galaxyproject.org/GenVisR_1.6.0.tar.gz
+    - https://depot.galaxyproject.org/software/GenVisR/GenVisR_1.6.0_src_all.tar.gz
+  md5: 45105e2cad51b1c10eab69c03f2fea80
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-annotationdbi
+    - bioconductor-biocgenerics
+    - bioconductor-biomart
+    - bioconductor-biostrings
+    - bioconductor-genomicfeatures
+    - 'bioconductor-genomicranges >=1.25.4'
+    - 'bioconductor-iranges >=2.7.5'
+    - bioconductor-rsamtools
+    - r-base
+    - r-dbi
+    - r-ffield
+    - 'r-ggplot2 >=2.1.0'
+    - r-gridextra
+    - r-gtable
+    - r-gtools
+    - 'r-plyr >=1.8.3'
+    - r-reshape2
+    - r-scales
+    - r-viridis
+  run:
+    - bioconductor-annotationdbi
+    - bioconductor-biocgenerics
+    - bioconductor-biomart
+    - bioconductor-biostrings
+    - bioconductor-genomicfeatures
+    - 'bioconductor-genomicranges >=1.25.4'
+    - 'bioconductor-iranges >=2.7.5'
+    - bioconductor-rsamtools
+    - r-base
+    - r-dbi
+    - r-ffield
+    - 'r-ggplot2 >=2.1.0'
+    - r-gridextra
+    - r-gtable
+    - r-gtools
+    - 'r-plyr >=1.8.3'
+    - r-reshape2
+    - r-scales
+    - r-viridis
+test:
+  commands:
+    - '$R -e "library(''GenVisR'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/GenVisR.html
+  license: 'GPL-3 + file LICENSE'
+  summary: 'Produce highly customizable publication quality graphics for genomic data
+    primarily at the cohort level.'
