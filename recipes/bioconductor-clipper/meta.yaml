@@ -1,0 +1,55 @@
+package:
+  name: bioconductor-clipper
+  version: 1.16.0
+source:
+  fn: clipper_1.16.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/clipper_1.16.0.tar.gz
+    - https://bioarchive.galaxyproject.org/clipper_1.16.0.tar.gz
+    - https://depot.galaxyproject.org/software/clipper/clipper_1.16.0_src_all.tar.gz
+  md5: 88ab6946cfcbce9d1e89f0ba07ca24b0
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biobase
+    - bioconductor-graph
+    - bioconductor-kegggraph
+    - bioconductor-qpgraph
+    - bioconductor-rbgl
+    - r-base
+    - r-corpcor
+    - 'r-grbase >=1.6.6'
+    - r-igraph
+    - r-matrix
+    - r-rcpp
+    - gcc  # [linux]
+    - llvm  # [osx]
+  run:
+    - bioconductor-biobase
+    - bioconductor-graph
+    - bioconductor-kegggraph
+    - bioconductor-qpgraph
+    - bioconductor-rbgl
+    - r-base
+    - r-corpcor
+    - 'r-grbase >=1.6.6'
+    - r-igraph
+    - r-matrix
+    - r-rcpp
+test:
+  commands:
+    - '$R -e "library(''clipper'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/clipper.html
+  license: AGPL-3
+  summary: 'Implements topological gene set analysis using a two-step empirical approach.
+    It exploits graph decomposition theory to create a junction tree and reconstruct
+    the most relevant signal path. In the first step clipper selects significant pathways
+    according to statistical tests on the means and the concentration matrices of
+    the graphs derived from pathway topologies. Then, it "clips" the whole pathway
+    identifying  the signal paths having the greatest association with a specific
+    phenotype.'
