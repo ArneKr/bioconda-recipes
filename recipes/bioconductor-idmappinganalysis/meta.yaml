@@ -1,0 +1,39 @@
+package:
+  name: bioconductor-idmappinganalysis
+  version: 1.20.0
+source:
+  fn: IdMappingAnalysis_1.20.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/IdMappingAnalysis_1.20.0.tar.gz
+    - https://bioarchive.galaxyproject.org/IdMappingAnalysis_1.20.0.tar.gz
+    - https://depot.galaxyproject.org/software/IdMappingAnalysis/IdMappingAnalysis_1.20.0_src_all.tar.gz
+  md5: f1916482e4c4948c41cee62a1c77f44c
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biobase
+    - r-base
+    - r-boot
+    - r-mclust
+    - 'r-r.oo >=1.13.0'
+    - r-rchoicedialogs
+    - r-rcolorbrewer
+  run:
+    - bioconductor-biobase
+    - r-base
+    - r-boot
+    - r-mclust
+    - 'r-r.oo >=1.13.0'
+    - r-rchoicedialogs
+    - r-rcolorbrewer
+test:
+  commands:
+    - '$R -e "library(''IdMappingAnalysis'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/IdMappingAnalysis.html
+  license: GPL-2
+  summary: 'Identifier mapping performance analysis'
