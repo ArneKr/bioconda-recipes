@@ -1,0 +1,39 @@
+package:
+  name: bioconductor-bigmelon
+  version: 1.2.0
+source:
+  fn: bigmelon_1.2.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/bigmelon_1.2.0.tar.gz
+    - https://bioarchive.galaxyproject.org/bigmelon_1.2.0.tar.gz
+    - https://depot.galaxyproject.org/software/bigmelon/bigmelon_1.2.0_src_all.tar.gz
+  md5: 9187ed139f3969522eff28ecbe4afa77
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biobase
+    - 'bioconductor-gdsfmt >=1.0.4'
+    - bioconductor-geoquery
+    - bioconductor-methylumi
+    - 'bioconductor-minfi >=1.21.0'
+    - 'bioconductor-watermelon >=1.19.1'
+    - r-base
+  run:
+    - bioconductor-biobase
+    - 'bioconductor-gdsfmt >=1.0.4'
+    - bioconductor-geoquery
+    - bioconductor-methylumi
+    - 'bioconductor-minfi >=1.21.0'
+    - 'bioconductor-watermelon >=1.19.1'
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''bigmelon'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/bigmelon.html
+  license: GPL-3
+  summary: 'Methods for working with Illumina arrays using gdsfmt.'
