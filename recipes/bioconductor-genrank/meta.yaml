@@ -1,0 +1,34 @@
+package:
+  name: bioconductor-genrank
+  version: 1.4.0
+source:
+  fn: GenRank_1.4.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/GenRank_1.4.0.tar.gz
+    - https://depot.galaxyproject.org/software/GenRank/GenRank_1.4.0_src_all.tar.gz
+  md5: 572ccf25e47cb04291257eedd7062ae6
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-survcomp
+    - r-base
+    - r-matrixstats
+    - r-reshape2
+  run:
+    - bioconductor-survcomp
+    - r-base
+    - r-matrixstats
+    - r-reshape2
+test:
+  commands:
+    - '$R -e "library(''GenRank'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/GenRank.html
+  license: Artistic-2.0
+  summary: 'Methods for ranking genes based on convergent evidence obtained from multiple
+    independent evidence layers. This package adapts three methods that are popular
+    for meta-analysis.'
