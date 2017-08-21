@@ -1,0 +1,50 @@
+package:
+  name: bioconductor-funchip
+  version: 1.2.0
+source:
+  fn: FunChIP_1.2.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/FunChIP_1.2.0.tar.gz
+    - https://bioarchive.galaxyproject.org/FunChIP_1.2.0.tar.gz
+    - https://depot.galaxyproject.org/software/FunChIP/FunChIP_1.2.0_src_all.tar.gz
+  md5: 01520ec47e610a990f460f824b07315b
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-genomeinfodb
+    - bioconductor-genomicalignments
+    - bioconductor-genomicranges
+    - bioconductor-rsamtools
+    - r-base
+    - r-doparallel
+    - r-fda
+    - r-foreach
+    - r-rcolorbrewer
+    - r-rcpp
+    - r-shiny
+    - gcc  # [linux]
+    - llvm  # [osx]
+  run:
+    - bioconductor-genomeinfodb
+    - bioconductor-genomicalignments
+    - bioconductor-genomicranges
+    - bioconductor-rsamtools
+    - r-base
+    - r-doparallel
+    - r-fda
+    - r-foreach
+    - r-rcolorbrewer
+    - r-rcpp
+    - r-shiny
+test:
+  commands:
+    - '$R -e "library(''FunChIP'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/FunChIP.html
+  license: Artistic-2.0
+  summary: 'Preprocessing and smoothing of ChIP-Seq peaks and efficient implementation
+    of the k-mean alignment algorithm to classify them.'
