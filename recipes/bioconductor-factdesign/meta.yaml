@@ -1,0 +1,32 @@
+package:
+  name: bioconductor-factdesign
+  version: 1.52.0
+source:
+  fn: factDesign_1.52.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/factDesign_1.52.0.tar.gz
+    - https://bioarchive.galaxyproject.org/factDesign_1.52.0.tar.gz
+    - https://depot.galaxyproject.org/software/factDesign/factDesign_1.52.0_src_all.tar.gz
+  md5: 85375ea7d1320934d7ee4e2ce6e83131
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - 'bioconductor-biobase >=2.5.5'
+    - r-base
+  run:
+    - 'bioconductor-biobase >=2.5.5'
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''factDesign'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/factDesign.html
+  license: LGPL
+  summary: 'This package provides a set of tools for analyzing data from a factorial
+    designed microarray experiment, or any microarray experiment for which a linear
+    model is appropriate. The functions can be used to evaluate tests of contrast
+    of biological interest and perform single outlier detection.'
