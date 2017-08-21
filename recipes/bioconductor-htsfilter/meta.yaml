@@ -1,0 +1,40 @@
+package:
+  name: bioconductor-htsfilter
+  version: 1.16.0
+source:
+  fn: HTSFilter_1.16.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/HTSFilter_1.16.0.tar.gz
+    - https://bioarchive.galaxyproject.org/HTSFilter_1.16.0.tar.gz
+    - https://depot.galaxyproject.org/software/HTSFilter/HTSFilter_1.16.0_src_all.tar.gz
+  md5: deb3ba84703d909f0e2cef811d471602
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biobase
+    - 'bioconductor-biocparallel >=1.4.3'
+    - 'bioconductor-deseq >=1.22.1'
+    - 'bioconductor-deseq2 >=1.10.1'
+    - 'bioconductor-edger >=3.9.14'
+    - r-base
+  run:
+    - bioconductor-biobase
+    - 'bioconductor-biocparallel >=1.4.3'
+    - 'bioconductor-deseq >=1.22.1'
+    - 'bioconductor-deseq2 >=1.10.1'
+    - 'bioconductor-edger >=3.9.14'
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''HTSFilter'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/HTSFilter.html
+  license: Artistic-2.0
+  summary: 'This package implements a filtering procedure for replicated transcriptome
+    sequencing data based on a global Jaccard similarity index in order to identify
+    genes with low, constant levels of expression across one or more experimental
+    conditions.'
