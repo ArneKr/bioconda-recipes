@@ -1,0 +1,32 @@
+package:
+  name: bioconductor-genemeta
+  version: 1.48.0
+source:
+  fn: GeneMeta_1.48.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/GeneMeta_1.48.0.tar.gz
+    - https://bioarchive.galaxyproject.org/GeneMeta_1.48.0.tar.gz
+    - https://depot.galaxyproject.org/software/GeneMeta/GeneMeta_1.48.0_src_all.tar.gz
+  md5: 4c19c1c25d223e8df3031f5ac41c4707
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - 'bioconductor-biobase >=2.5.5'
+    - bioconductor-genefilter
+    - r-base
+  run:
+    - 'bioconductor-biobase >=2.5.5'
+    - bioconductor-genefilter
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''GeneMeta'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/GeneMeta.html
+  license: Artistic-2.0
+  summary: 'A collection of meta-analysis tools for analysing high throughput experimental
+    data'
