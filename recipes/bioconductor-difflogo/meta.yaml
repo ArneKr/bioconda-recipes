@@ -1,0 +1,31 @@
+package:
+  name: bioconductor-difflogo
+  version: 1.6.0
+source:
+  fn: DiffLogo_1.6.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/DiffLogo_1.6.0.tar.gz
+    - https://bioarchive.galaxyproject.org/DiffLogo_1.6.0.tar.gz
+    - https://depot.galaxyproject.org/software/DiffLogo/DiffLogo_1.6.0_src_all.tar.gz
+  md5: 380bebf227c95553ea764b92cf22d8aa
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - r-
+    - r-base
+    - r-cba
+  run:
+    - r-
+    - r-base
+    - r-cba
+test:
+  commands:
+    - '$R -e "library(''DiffLogo'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/DiffLogo.html
+  license: 'GPL (>= 2)'
+  summary: 'DiffLogo is an easy-to-use tool to visualize motif differences.'
