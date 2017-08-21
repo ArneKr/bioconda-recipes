@@ -1,0 +1,52 @@
+package:
+  name: bioconductor-flowstats
+  version: 3.34.0
+source:
+  fn: flowStats_3.34.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/flowStats_3.34.0.tar.gz
+    - https://bioarchive.galaxyproject.org/flowStats_3.34.0.tar.gz
+    - https://depot.galaxyproject.org/software/flowStats/flowStats_3.34.0_src_all.tar.gz
+  md5: ae3f27b621f57149243ab168dc9df6a3
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biobase
+    - bioconductor-biocgenerics
+    - bioconductor-flowcore
+    - bioconductor-flowviz
+    - bioconductor-flowworkspace
+    - 'bioconductor-ncdfflow >=2.19.5'
+    - r-base
+    - r-cluster
+    - 'r-fda >=2.2.6'
+    - r-kernsmooth
+    - r-ks
+    - r-lattice
+    - r-mass
+  run:
+    - bioconductor-biobase
+    - bioconductor-biocgenerics
+    - bioconductor-flowcore
+    - bioconductor-flowviz
+    - bioconductor-flowworkspace
+    - 'bioconductor-ncdfflow >=2.19.5'
+    - r-base
+    - r-cluster
+    - 'r-fda >=2.2.6'
+    - r-kernsmooth
+    - r-ks
+    - r-lattice
+    - r-mass
+test:
+  commands:
+    - '$R -e "library(''flowStats'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/flowStats.html
+  license: Artistic-2.0
+  summary: 'Methods and functionality to analyse flow data that is beyond the basic
+    infrastructure provided by the flowCore package.'
