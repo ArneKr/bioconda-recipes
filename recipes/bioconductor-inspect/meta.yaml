@@ -1,0 +1,55 @@
+package:
+  name: bioconductor-inspect
+  version: 1.6.1
+source:
+  fn: INSPEcT_1.6.1.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/INSPEcT_1.6.1.tar.gz
+    - https://depot.galaxyproject.org/software/INSPEcT/INSPEcT_1.6.1_src_all.tar.gz
+  md5: 8ca9a8d0392c002e8b3b74b04c014914
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biobase
+    - bioconductor-biocgenerics
+    - bioconductor-biocparallel
+    - bioconductor-genomicalignments
+    - bioconductor-genomicfeatures
+    - bioconductor-genomicranges
+    - bioconductor-iranges
+    - bioconductor-preprocesscore
+    - bioconductor-rsamtools
+    - bioconductor-s4vectors
+    - r-base
+    - r-desolve
+    - r-proc
+    - r-rootsolve
+  run:
+    - bioconductor-biobase
+    - bioconductor-biocgenerics
+    - bioconductor-biocparallel
+    - bioconductor-genomicalignments
+    - bioconductor-genomicfeatures
+    - bioconductor-genomicranges
+    - bioconductor-iranges
+    - bioconductor-preprocesscore
+    - bioconductor-rsamtools
+    - bioconductor-s4vectors
+    - r-base
+    - r-desolve
+    - r-proc
+    - r-rootsolve
+test:
+  commands:
+    - '$R -e "library(''INSPEcT'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/INSPEcT.html
+  license: GPL-2
+  summary: 'INSPEcT (INference of Synthesis, Processing and dEgradation rates in Time-Course
+    experiments) analyses 4sU-seq and RNA-seq time-course data in order to evaluate
+    synthesis, processing and degradation rates and asses via modeling the rates that
+    determines changes in mature mRNA levels.'
