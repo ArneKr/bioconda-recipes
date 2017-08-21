@@ -1,0 +1,41 @@
+package:
+  name: bioconductor-csar
+  version: 1.28.0
+source:
+  fn: CSAR_1.28.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/CSAR_1.28.0.tar.gz
+    - https://bioarchive.galaxyproject.org/CSAR_1.28.0.tar.gz
+    - https://depot.galaxyproject.org/software/CSAR/CSAR_1.28.0_src_all.tar.gz
+  md5: 53256634f013d5f53becacb5f9ec006f
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-genomeinfodb
+    - bioconductor-genomicranges
+    - bioconductor-iranges
+    - bioconductor-s4vectors
+    - r-base
+  run:
+    - bioconductor-genomeinfodb
+    - bioconductor-genomicranges
+    - bioconductor-iranges
+    - bioconductor-s4vectors
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''CSAR'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/CSAR.html
+  license: Artistic-2.0
+  summary: 'Statistical tools for ChIP-seq data analysis. The package includes the
+    statistical method described in Kaufmann et al. (2009) PLoS Biology: 7(4):e1000090.
+    Briefly, Taking the average DNA fragment size subjected to sequencing into account,
+    the software calculates genomic single-nucleotide read-enrichment values. After
+    normalization, sample and control are compared using a test based on the Poisson
+    distribution. Test statistic thresholds to control the false discovery rate are
+    obtained through random permutation.'
