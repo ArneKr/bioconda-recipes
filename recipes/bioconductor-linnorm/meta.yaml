@@ -1,0 +1,76 @@
+package:
+  name: bioconductor-linnorm
+  version: 2.0.8
+source:
+  fn: Linnorm_2.0.8.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/Linnorm_2.0.8.tar.gz
+    - https://depot.galaxyproject.org/software/Linnorm/Linnorm_2.0.8_src_all.tar.gz
+  md5: d8624fd0ad5f02988e6745fc0c69b1d6
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-limma
+    - r-amap
+    - r-apcluster
+    - r-base
+    - r-ellipse
+    - r-fastcluster
+    - r-fpc
+    - r-ggdendro
+    - r-ggplot2
+    - r-gmodels
+    - r-igraph
+    - r-mass
+    - r-mclust
+    - 'r-rcpp >=0.12.2'
+    - r-rcpparmadillo
+    - r-rtsne
+    - r-statmod
+    - r-vegan
+    - r-zoo
+    - gcc  # [linux]
+    - llvm  # [osx]
+  run:
+    - bioconductor-limma
+    - r-amap
+    - r-apcluster
+    - r-base
+    - r-ellipse
+    - r-fastcluster
+    - r-fpc
+    - r-ggdendro
+    - r-ggplot2
+    - r-gmodels
+    - r-igraph
+    - r-mass
+    - r-mclust
+    - 'r-rcpp >=0.12.2'
+    - r-rcpparmadillo
+    - r-rtsne
+    - r-statmod
+    - r-vegan
+    - r-zoo
+test:
+  commands:
+    - '$R -e "library(''Linnorm'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/Linnorm.html
+  license: 'MIT + file LICENSE'
+  summary: 'Linnorm is an R package for the analysis of RNA-seq, scRNA-seq, ChIP-seq
+    count data or any large scale count data. It transforms such datasets for parametric
+    tests. In addition to the transformtion function (Linnorm), the following pipelines
+    are implemented: 1. Library size/Batch effect normalization (Linnorm.Norm), 2.
+    Cell subpopluation analysis and visualization using t-SNE or PCA K-means clustering
+    or Hierarchical clustering (Linnorm.tSNE, Linnorm.PCA, Linnorm.HClust), 3. Differential
+    expression analysis or differential peak detection using limma (Linnorm.limma),
+    4. Highly variable gene discovery and visualization (Linnorm.HVar), 5. Gene correlation
+    network analysis and visualization (Linnorm.Cor), 6. Stable gene selection for
+    scRNA-seq data; for users without or do not want to rely on spike-in genes (Linnorm.SGenes).
+    7. Data imputation. (under development) (Linnorm.DataImput). Linnorm can work
+    with raw count, CPM, RPKM, FPKM and TPM. Additionally, the RnaXSim function is
+    included for simulating RNA-seq data for the evaluation of DEG analysis methods.'
