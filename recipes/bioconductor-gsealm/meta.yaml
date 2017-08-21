@@ -1,0 +1,30 @@
+package:
+  name: bioconductor-gsealm
+  version: 1.36.0
+source:
+  fn: GSEAlm_1.36.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/GSEAlm_1.36.0.tar.gz
+    - https://bioarchive.galaxyproject.org/GSEAlm_1.36.0.tar.gz
+    - https://depot.galaxyproject.org/software/GSEAlm/GSEAlm_1.36.0_src_all.tar.gz
+  md5: 0843c86d622a1a6708714e5678c89dc6
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biobase
+    - r-base
+  run:
+    - bioconductor-biobase
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''GSEAlm'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/GSEAlm.html
+  license: Artistic-2.0
+  summary: 'Models and methods for fitting linear models to gene expression data,
+    together with tools for computing and using various regression diagnostics.'
