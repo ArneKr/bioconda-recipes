@@ -1,0 +1,42 @@
+package:
+  name: bioconductor-dmrcaller
+  version: 1.8.0
+source:
+  fn: DMRcaller_1.8.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/DMRcaller_1.8.0.tar.gz
+    - https://bioarchive.galaxyproject.org/DMRcaller_1.8.0.tar.gz
+    - https://depot.galaxyproject.org/software/DMRcaller/DMRcaller_1.8.0_src_all.tar.gz
+  md5: f54613c61807bca520660c075984e17a
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-genomicranges
+    - bioconductor-iranges
+    - bioconductor-s4vectors
+    - r-base
+    - r-rcpp
+    - r-rcpproll
+    - gcc  # [linux]
+    - llvm  # [osx]
+  run:
+    - bioconductor-genomicranges
+    - bioconductor-iranges
+    - bioconductor-s4vectors
+    - r-base
+    - r-rcpp
+    - r-rcpproll
+test:
+  commands:
+    - '$R -e "library(''DMRcaller'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/DMRcaller.html
+  license: GPL-3
+  summary: 'Uses Bisulfite sequencing data in two conditions and identifies differentially
+    methylated regions between the conditions in CG and non-CG context. The input
+    is the CX report files produced by Bismark and the output is a list of DMRs stored
+    as GRanges objects.'
