@@ -1,0 +1,36 @@
+package:
+  name: bioconductor-agimicrorna
+  version: 2.26.0
+source:
+  fn: AgiMicroRna_2.26.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/AgiMicroRna_2.26.0.tar.gz
+    - https://depot.galaxyproject.org/software/AgiMicroRna/AgiMicroRna_2.26.0_src_all.tar.gz
+  md5: a79f0d7f0f7161b0cba767be05767b60
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - 'bioconductor-affy >=1.22'
+    - bioconductor-affycoretools
+    - bioconductor-biobase
+    - bioconductor-limma
+    - bioconductor-preprocesscore
+    - r-base
+  run:
+    - 'bioconductor-affy >=1.22'
+    - bioconductor-affycoretools
+    - bioconductor-biobase
+    - bioconductor-limma
+    - bioconductor-preprocesscore
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''AgiMicroRna'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/AgiMicroRna.html
+  license: GPL-3
+  summary: 'Processing and Analysis of Agilent microRNA data'
