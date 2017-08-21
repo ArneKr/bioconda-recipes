@@ -1,0 +1,34 @@
+package:
+  name: bioconductor-cleaver
+  version: 1.14.0
+source:
+  fn: cleaver_1.14.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/cleaver_1.14.0.tar.gz
+    - https://bioarchive.galaxyproject.org/cleaver_1.14.0.tar.gz
+    - https://depot.galaxyproject.org/software/cleaver/cleaver_1.14.0_src_all.tar.gz
+  md5: a5467a138696a8a35bb95bd4cc24413c
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - 'bioconductor-biostrings >=1.29.8'
+    - bioconductor-iranges
+    - bioconductor-s4vectors
+    - r-base
+  run:
+    - 'bioconductor-biostrings >=1.29.8'
+    - bioconductor-iranges
+    - bioconductor-s4vectors
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''cleaver'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/cleaver.html
+  license: 'GPL (>= 3)'
+  summary: 'In-silico cleavage of polypeptide sequences. The cleavage rules are taken
+    from: http://web.expasy.org/peptide_cutter/peptidecutter_enzymes.html'
