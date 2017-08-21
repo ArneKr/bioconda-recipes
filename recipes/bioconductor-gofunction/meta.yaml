@@ -1,0 +1,44 @@
+package:
+  name: bioconductor-gofunction
+  version: 1.24.0
+source:
+  fn: GOFunction_1.24.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/GOFunction_1.24.0.tar.gz
+    - https://bioarchive.galaxyproject.org/GOFunction_1.24.0.tar.gz
+    - https://depot.galaxyproject.org/software/GOFunction/GOFunction_1.24.0_src_all.tar.gz
+  md5: a800b5eef7212f6b8776da4d1be388a4
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - 'bioconductor-annotationdbi >=1.10.2'
+    - 'bioconductor-biobase >=2.8.0'
+    - 'bioconductor-go.db >=2.4.1'
+    - 'bioconductor-graph >=1.26.0'
+    - 'bioconductor-rgraphviz >=1.26.0'
+    - r-base
+    - r-dbi
+    - 'r-sparsem >=0.85'
+  run:
+    - 'bioconductor-annotationdbi >=1.10.2'
+    - 'bioconductor-biobase >=2.8.0'
+    - 'bioconductor-go.db >=2.4.1'
+    - 'bioconductor-graph >=1.26.0'
+    - 'bioconductor-rgraphviz >=1.26.0'
+    - r-base
+    - r-dbi
+    - 'r-sparsem >=0.85'
+test:
+  commands:
+    - '$R -e "library(''GOFunction'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/GOFunction.html
+  license: 'GPL (>= 2)'
+  summary: 'The GO-function package provides a tool to address the redundancy that
+    result from the GO structure or multiple annotation genes and derive biologically
+    relevant functions from the statistically significant functions based on some
+    intuitive assumption and statistical testing.'
