@@ -1,0 +1,43 @@
+package:
+  name: bioconductor-crimage
+  version: 1.24.0
+source:
+  fn: CRImage_1.24.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/CRImage_1.24.0.tar.gz
+    - https://bioarchive.galaxyproject.org/CRImage_1.24.0.tar.gz
+    - https://depot.galaxyproject.org/software/CRImage/CRImage_1.24.0_src_all.tar.gz
+  md5: d6dbc5aeb026497df4e7a233be97bfa8
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-acgh
+    - bioconductor-dnacopy
+    - bioconductor-ebimage
+    - r-base
+    - r-e1071
+    - r-foreach
+    - r-mass
+    - r-sgeostat
+  run:
+    - bioconductor-acgh
+    - bioconductor-dnacopy
+    - bioconductor-ebimage
+    - r-base
+    - r-e1071
+    - r-foreach
+    - r-mass
+    - r-sgeostat
+test:
+  commands:
+    - '$R -e "library(''CRImage'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/CRImage.html
+  license: Artistic-2.0
+  summary: 'CRImage provides functionality to process and analyze images, in particular
+    to classify cells in biological images. Furthermore, in the context of tumor images,
+    it provides functionality to calculate tumour cellularity.'
