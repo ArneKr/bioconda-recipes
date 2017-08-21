@@ -1,0 +1,36 @@
+package:
+  name: bioconductor-fastliquidassociation
+  version: 1.12.0
+source:
+  fn: fastLiquidAssociation_1.12.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/fastLiquidAssociation_1.12.0.tar.gz
+    - https://bioarchive.galaxyproject.org/fastLiquidAssociation_1.12.0.tar.gz
+    - https://depot.galaxyproject.org/software/fastLiquidAssociation/fastLiquidAssociation_1.12.0_src_all.tar.gz
+  md5: 88102d2d32f8d7c32051f8bb3dce58aa
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-liquidassociation
+    - r-base
+    - r-hmisc
+    - r-wgcna
+  run:
+    - bioconductor-liquidassociation
+    - r-base
+    - r-hmisc
+    - r-wgcna
+test:
+  commands:
+    - '$R -e "library(''fastLiquidAssociation'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/fastLiquidAssociation.html
+  license: GPL-2
+  summary: 'This package extends the function of the LiquidAssociation package for
+    genome-wide application. It integrates a screening method into the LA analysis
+    to reduce the number of triplets to be examined for a high LA value and provides
+    code for use in subsequent significance analyses.'
