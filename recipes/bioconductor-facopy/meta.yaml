@@ -1,0 +1,75 @@
+package:
+  name: bioconductor-facopy
+  version: 1.10.0
+source:
+  fn: facopy_1.10.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/facopy_1.10.0.tar.gz
+    - https://bioarchive.galaxyproject.org/facopy_1.10.0.tar.gz
+    - https://depot.galaxyproject.org/software/facopy/facopy_1.10.0_src_all.tar.gz
+  md5: 8e93594c2d347167e4d4541dd740226f
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-annotate
+    - bioconductor-dose
+    - bioconductor-go.db
+    - bioconductor-gostats
+    - bioconductor-graphite
+    - bioconductor-iranges
+    - bioconductor-rgraphviz
+    - bioconductor-s4vectors
+    - r-base
+    - 'r-cgdsr >=1.1.30'
+    - 'r-coin >=1.0'
+    - r-data.table
+    - r-facopy.annot
+    - r-factominer
+    - r-ggplot2
+    - r-gridextra
+    - r-igraph
+    - r-mass
+    - r-nnet
+    - r-reshape2
+    - r-scales
+  run:
+    - bioconductor-annotate
+    - bioconductor-dose
+    - bioconductor-go.db
+    - bioconductor-gostats
+    - bioconductor-graphite
+    - bioconductor-iranges
+    - bioconductor-rgraphviz
+    - bioconductor-s4vectors
+    - r-base
+    - 'r-cgdsr >=1.1.30'
+    - 'r-coin >=1.0'
+    - r-data.table
+    - r-facopy.annot
+    - r-factominer
+    - r-ggplot2
+    - r-gridextra
+    - r-igraph
+    - r-mass
+    - r-nnet
+    - r-reshape2
+    - r-scales
+test:
+  commands:
+    - '$R -e "library(''facopy'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/facopy.html
+  license: 'CC BY-NC 4.0'
+  summary: 'facopy is an R package for fine-tuned cancer CNA association modeling.
+    Association is measured directly at the genomic features of interest and, in the
+    case of genes, downstream gene-set enrichment analysis can be performed thanks
+    to novel internal processing of the data. The software opens a way to systematically
+    scrutinize the differences in CNA distribution across tumoral phenotypes, such
+    as those that relate to tumor type, location and progression. Currently, the output
+    format from 11 different methods that analyze data from whole-genome/exome sequencing
+    and SNP microarrays, is supported. Multiple genomes, alteration types and variable
+    types are also supported.'
