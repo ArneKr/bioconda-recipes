@@ -1,0 +1,41 @@
+package:
+  name: bioconductor-assign
+  version: 1.12.0
+source:
+  fn: ASSIGN_1.12.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/ASSIGN_1.12.0.tar.gz
+    - https://bioarchive.galaxyproject.org/ASSIGN_1.12.0.tar.gz
+    - https://depot.galaxyproject.org/software/ASSIGN/ASSIGN_1.12.0_src_all.tar.gz
+  md5: 95d1312b49c2c754bad681549882b9ba
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-sva
+    - r-base
+    - r-gplots
+    - r-msm
+    - r-rlab
+  run:
+    - bioconductor-sva
+    - r-base
+    - r-gplots
+    - r-msm
+    - r-rlab
+test:
+  commands:
+    - '$R -e "library(''ASSIGN'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/ASSIGN.html
+  license: 'MIT + file LICENSE'
+  summary: 'ASSIGN is a computational tool to evaluate the pathway deregulation/activation
+    status in individual patient samples. ASSIGN employs a flexible Bayesian factor
+    analysis approach that adapts predetermined pathway signatures derived either
+    from knowledge-based literatures or from perturbation experiments to the cell-/tissue-specific
+    pathway signatures. The deregulation/activation level of each context-specific
+    pathway is quantified to a score, which represents the extent to which a patient
+    sample encompasses the pathway deregulation/activation signature.'
