@@ -1,0 +1,45 @@
+package:
+  name: bioconductor-edge
+  version: 2.8.0
+source:
+  fn: edge_2.8.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/edge_2.8.0.tar.gz
+    - https://bioarchive.galaxyproject.org/edge_2.8.0.tar.gz
+    - https://depot.galaxyproject.org/software/edge/edge_2.8.0_src_all.tar.gz
+  md5: a90905a69ddd6d9f24b405641e93e6c6
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biobase
+    - 'bioconductor-qvalue >=1.99.0'
+    - bioconductor-snm
+    - bioconductor-sva
+    - r-base
+    - r-jackstraw
+    - r-mass
+  run:
+    - bioconductor-biobase
+    - 'bioconductor-qvalue >=1.99.0'
+    - bioconductor-snm
+    - bioconductor-sva
+    - r-base
+    - r-jackstraw
+    - r-mass
+test:
+  commands:
+    - '$R -e "library(''edge'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/edge.html
+  license: 'MIT + file LICENSE'
+  summary: 'The edge package implements methods for carrying out differential expression
+    analyses of genome-wide gene expression studies. Significance testing using the
+    optimal discovery procedure and generalized likelihood ratio tests (equivalent
+    to F-tests and t-tests) are implemented for general study designs. Special functions
+    are available to facilitate the analysis of common study designs, including time
+    course experiments. Other packages such as snm, sva, and qvalue are integrated
+    in edge to provide a wide range of tools for gene expression analysis.'
