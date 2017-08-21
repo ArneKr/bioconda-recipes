@@ -1,0 +1,33 @@
+package:
+  name: bioconductor-ebseqhmm
+  version: 1.10.0
+source:
+  fn: EBSeqHMM_1.10.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/EBSeqHMM_1.10.0.tar.gz
+    - https://bioarchive.galaxyproject.org/EBSeqHMM_1.10.0.tar.gz
+    - https://depot.galaxyproject.org/software/EBSeqHMM/EBSeqHMM_1.10.0_src_all.tar.gz
+  md5: 5c97ffe367b122feddff7e3b5fd3c546
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-ebseq
+    - r-base
+  run:
+    - bioconductor-ebseq
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''EBSeqHMM'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/EBSeqHMM.html
+  license: Artistic-2.0
+  summary: 'The EBSeqHMM package implements an auto-regressive hidden Markov model
+    for statistical analysis in ordered RNA-seq experiments (e.g. time course or spatial
+    course data). The EBSeqHMM package provides functions to identify genes and isoforms
+    that have non-constant expression profile over the time points/positions, and
+    cluster them into expression paths.'
