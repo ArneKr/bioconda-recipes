@@ -1,0 +1,31 @@
+package:
+  name: bioconductor-graphat
+  version: 1.48.0
+source:
+  fn: GraphAT_1.48.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/GraphAT_1.48.0.tar.gz
+    - https://bioarchive.galaxyproject.org/GraphAT_1.48.0.tar.gz
+    - https://depot.galaxyproject.org/software/GraphAT/GraphAT_1.48.0_src_all.tar.gz
+  md5: ae0800040df08c0475d1a7f8b5f3448a
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-graph
+    - r-base
+    - r-mcmcpack
+  run:
+    - bioconductor-graph
+    - r-base
+    - r-mcmcpack
+test:
+  commands:
+    - '$R -e "library(''GraphAT'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/GraphAT.html
+  license: LGPL
+  summary: 'Functions and data used in Balasubramanian, et al. (2004)'
