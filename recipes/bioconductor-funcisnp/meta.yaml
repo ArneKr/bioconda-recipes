@@ -1,0 +1,60 @@
+package:
+  name: bioconductor-funcisnp
+  version: 1.20.0
+source:
+  fn: FunciSNP_1.20.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/FunciSNP_1.20.0.tar.gz
+    - https://bioarchive.galaxyproject.org/FunciSNP_1.20.0.tar.gz
+    - https://depot.galaxyproject.org/software/FunciSNP/FunciSNP_1.20.0_src_all.tar.gz
+  md5: e4bcd8d97ad19fdb276e7788df8c1c14
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biobase
+    - bioconductor-biocgenerics
+    - 'bioconductor-chippeakanno >=2.2.0'
+    - bioconductor-genomicranges
+    - bioconductor-iranges
+    - 'bioconductor-rsamtools >=1.6.1'
+    - 'bioconductor-rtracklayer >=1.14.1'
+    - bioconductor-s4vectors
+    - bioconductor-snpstats
+    - bioconductor-txdb.hsapiens.ucsc.hg19.knowngene
+    - bioconductor-variantannotation
+    - r-base
+    - r-funcisnp.data
+    - 'r-ggplot2 >=0.9.0'
+    - r-plyr
+    - 'r-reshape >=0.8.4'
+    - r-scales
+  run:
+    - bioconductor-biobase
+    - bioconductor-biocgenerics
+    - 'bioconductor-chippeakanno >=2.2.0'
+    - bioconductor-genomicranges
+    - bioconductor-iranges
+    - 'bioconductor-rsamtools >=1.6.1'
+    - 'bioconductor-rtracklayer >=1.14.1'
+    - bioconductor-s4vectors
+    - bioconductor-snpstats
+    - bioconductor-txdb.hsapiens.ucsc.hg19.knowngene
+    - bioconductor-variantannotation
+    - r-base
+    - r-funcisnp.data
+    - 'r-ggplot2 >=0.9.0'
+    - r-plyr
+    - 'r-reshape >=0.8.4'
+    - r-scales
+test:
+  commands:
+    - '$R -e "library(''FunciSNP'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/FunciSNP.html
+  license: GPL-3
+  summary: 'FunciSNP integrates information from GWAS, 1000genomes and chromatin feature
+    to identify functional SNP in coding or non-coding regions.'
