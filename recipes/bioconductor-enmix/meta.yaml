@@ -1,0 +1,63 @@
+package:
+  name: bioconductor-enmix
+  version: 1.12.3
+source:
+  fn: ENmix_1.12.3.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/ENmix_1.12.3.tar.gz
+    - https://depot.galaxyproject.org/software/ENmix/ENmix_1.12.3_src_all.tar.gz
+  md5: 4f562fa50f940f57b08152378abb890b
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-geneplotter
+    - bioconductor-impute
+    - 'bioconductor-minfi >=1.22.0'
+    - bioconductor-preprocesscore
+    - 'bioconductor-summarizedexperiment >=1.1.6'
+    - bioconductor-sva
+    - bioconductor-watermelon
+    - r-base
+    - r-doparallel
+    - r-foreach
+    - r-mass
+  run:
+    - bioconductor-geneplotter
+    - bioconductor-impute
+    - 'bioconductor-minfi >=1.22.0'
+    - bioconductor-preprocesscore
+    - 'bioconductor-summarizedexperiment >=1.1.6'
+    - bioconductor-sva
+    - bioconductor-watermelon
+    - r-base
+    - r-doparallel
+    - r-foreach
+    - r-mass
+test:
+  commands:
+    - '$R -e "library(''ENmix'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/ENmix.html
+  license: Artistic-2.0
+  summary: 'The ENmix package provides a set of quality control and data pre-processing
+    tools for Illumina HumanMethylation450 and MethylationEPIC Beadchips. It includes
+    ENmix background correction, RELIC dye bias correction, RCP probe-type bias adjustment,
+    along with a number of additional tools. These functions can be used to remove
+    unwanted experimental noise and thus to improve accuracy and reproducibility of
+    methylation measures. ENmix functions are flexible and transparent. Users have
+    option to choose a single pipeline command to finish all data pre-processing steps
+    (including background correction, dye-bias adjustment, inter-array normalization
+    and probe-type bias correction) or to use individual functions sequentially to
+    perform data pre-processing in a more customized manner. In addition the ENmix
+    package has selectable complementary functions for efficient data visualization
+    (such as data distribution plots); quality control (identifing and filtering low
+    quality data points, samples, probes, and outliers, along with imputation of missing
+    values); identification of probes with multimodal distributions due to SNPs or
+    other factors; exploration of data variance structure using principal component
+    regression analysis plot; preparation of experimental factors related surrogate
+    control variables to be adjusted in downstream statistical analysis; and an efficient
+    algorithm oxBS-MLE to estimate 5-methylcytosine and 5-hydroxymethylcytosine level.'
