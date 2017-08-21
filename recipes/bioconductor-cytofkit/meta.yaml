@@ -1,0 +1,72 @@
+package:
+  name: bioconductor-cytofkit
+  version: 1.8.2
+source:
+  fn: cytofkit_1.8.2.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/cytofkit_1.8.2.tar.gz
+    - https://bioarchive.galaxyproject.org/cytofkit_1.8.2.tar.gz
+    - https://depot.galaxyproject.org/software/cytofkit/cytofkit_1.8.2_src_all.tar.gz
+  md5: 26898be99ee4578b2027615818dbe13e
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biobase
+    - bioconductor-destiny
+    - bioconductor-flowcore
+    - 'bioconductor-flowsom >=1.4.0'
+    - r-base
+    - r-colourpicker
+    - r-doparallel
+    - r-e1071
+    - r-ggplot2
+    - r-ggrepel
+    - r-gplots
+    - 'r-igraph >=1.1.2'
+    - r-pdist
+    - r-plyr
+    - 'r-rann >=2.5'
+    - 'r-rcpp >=0.12.0'
+    - r-reshape2
+    - r-rtsne
+    - r-shiny
+    - r-shinyfiles
+    - r-vegan
+    - r-vgam
+    - gcc  # [linux]
+    - llvm  # [osx]
+  run:
+    - bioconductor-biobase
+    - bioconductor-destiny
+    - bioconductor-flowcore
+    - 'bioconductor-flowsom >=1.4.0'
+    - r-base
+    - r-colourpicker
+    - r-doparallel
+    - r-e1071
+    - r-ggplot2
+    - r-ggrepel
+    - r-gplots
+    - 'r-igraph >=1.1.2'
+    - r-pdist
+    - r-plyr
+    - 'r-rann >=2.5'
+    - 'r-rcpp >=0.12.0'
+    - r-reshape2
+    - r-rtsne
+    - r-shiny
+    - r-shinyfiles
+    - r-vegan
+    - r-vgam
+test:
+  commands:
+    - '$R -e "library(''cytofkit'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/cytofkit.html
+  license: Artistic-2.0
+  summary: 'An integrated mass cytometry data analysis pipeline that enables simultaneous
+    illustration of cellular diversity and progression.'
