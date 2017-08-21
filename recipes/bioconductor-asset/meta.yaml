@@ -1,0 +1,37 @@
+package:
+  name: bioconductor-asset
+  version: 1.14.0
+source:
+  fn: ASSET_1.14.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/ASSET_1.14.0.tar.gz
+    - https://bioarchive.galaxyproject.org/ASSET_1.14.0.tar.gz
+    - https://depot.galaxyproject.org/software/ASSET/ASSET_1.14.0_src_all.tar.gz
+  md5: d6428ce8fd93a29e5ee82e8835178484
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - r-base
+    - r-mass
+    - r-msm
+    - r-mvtnorm
+    - r-rmeta
+    - r-tmvnsim
+  run:
+    - r-base
+    - r-mass
+    - r-msm
+    - r-mvtnorm
+    - r-rmeta
+    - r-tmvnsim
+test:
+  commands:
+    - '$R -e "library(''ASSET'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/ASSET.html
+  license: 'GPL-2 + file LICENSE'
+  summary: 'An R package for subset-based analysis of heterogeneous traits and subtypes.'
