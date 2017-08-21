@@ -1,0 +1,44 @@
+package:
+  name: bioconductor-geneselector
+  version: 2.26.0
+source:
+  fn: GeneSelector_2.26.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/GeneSelector_2.26.0.tar.gz
+    - https://bioarchive.galaxyproject.org/GeneSelector_2.26.0.tar.gz
+    - https://depot.galaxyproject.org/software/GeneSelector/GeneSelector_2.26.0_src_all.tar.gz
+  md5: c19c56d7b5b6c7bd9a89f97430ed8bcf
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biobase
+    - bioconductor-limma
+    - bioconductor-multtest
+    - bioconductor-siggenes
+    - r-base
+    - r-samr
+  run:
+    - bioconductor-biobase
+    - bioconductor-limma
+    - bioconductor-multtest
+    - bioconductor-siggenes
+    - r-base
+    - r-samr
+test:
+  commands:
+    - '$R -e "library(''GeneSelector'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/GeneSelector.html
+  license: 'GPL (>= 2)'
+  summary: 'The term ''GeneSelector'' refers to a filter selecting those genes which
+    are consistently identified as differentially expressed using various statistical
+    procedures. ''Selected'' genes are those present at the top of the list in various
+    ranking methods (currently 14). In addition, the stability of the findings can
+    be taken into account in the final ranking by examining perturbed versions of
+    the original data set, e.g. by leaving samples, swapping class labels, generating
+    bootstrap replicates or adding noise. Given multiple ranked lists, one can use
+    aggregation methods in order to find a synthesis.'
