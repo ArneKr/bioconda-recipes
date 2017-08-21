@@ -1,0 +1,38 @@
+package:
+  name: bioconductor-daglogo
+  version: 1.14.0
+source:
+  fn: dagLogo_1.14.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/dagLogo_1.14.0.tar.gz
+    - https://bioarchive.galaxyproject.org/dagLogo_1.14.0.tar.gz
+    - https://depot.galaxyproject.org/software/dagLogo/dagLogo_1.14.0_src_all.tar.gz
+  md5: e4292e86fe70512ecb953b8297cea5f6
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biomart
+    - bioconductor-biostrings
+    - bioconductor-motifstack
+    - r-base
+    - r-grimport
+    - r-pheatmap
+  run:
+    - bioconductor-biomart
+    - bioconductor-biostrings
+    - bioconductor-motifstack
+    - r-base
+    - r-grimport
+    - r-pheatmap
+test:
+  commands:
+    - '$R -e "library(''dagLogo'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/dagLogo.html
+  license: 'GPL (>=2)'
+  summary: 'Visualize significant conserved amino acid sequence pattern in groups
+    based on probability theory.'
