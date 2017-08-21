@@ -1,0 +1,48 @@
+package:
+  name: bioconductor-conumee
+  version: 1.10.0
+source:
+  fn: conumee_1.10.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/conumee_1.10.0.tar.gz
+    - https://bioarchive.galaxyproject.org/conumee_1.10.0.tar.gz
+    - https://depot.galaxyproject.org/software/conumee/conumee_1.10.0_src_all.tar.gz
+  md5: b52ad80aa178fb651340fe41a7ed8701
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-dnacopy
+    - bioconductor-genomeinfodb
+    - bioconductor-genomicranges
+    - bioconductor-illuminahumanmethylation450kanno.ilmn12.hg19
+    - bioconductor-illuminahumanmethylation450kmanifest
+    - bioconductor-illuminahumanmethylationepicanno.ilm10b2.hg19
+    - bioconductor-illuminahumanmethylationepicmanifest
+    - bioconductor-iranges
+    - bioconductor-minfi
+    - bioconductor-rtracklayer
+    - r-base
+  run:
+    - bioconductor-dnacopy
+    - bioconductor-genomeinfodb
+    - bioconductor-genomicranges
+    - bioconductor-illuminahumanmethylation450kanno.ilmn12.hg19
+    - bioconductor-illuminahumanmethylation450kmanifest
+    - bioconductor-illuminahumanmethylationepicanno.ilm10b2.hg19
+    - bioconductor-illuminahumanmethylationepicmanifest
+    - bioconductor-iranges
+    - bioconductor-minfi
+    - bioconductor-rtracklayer
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''conumee'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/conumee.html
+  license: 'GPL (>= 2)'
+  summary: 'This package contains a set of processing and plotting methods for performing
+    copy-number variation (CNV) analysis using Illumina 450k or EPIC methylation arrays.'
