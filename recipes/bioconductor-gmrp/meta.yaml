@@ -1,0 +1,35 @@
+package:
+  name: bioconductor-gmrp
+  version: 1.4.0
+source:
+  fn: GMRP_1.4.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/GMRP_1.4.0.tar.gz
+    - https://bioarchive.galaxyproject.org/GMRP_1.4.0.tar.gz
+    - https://depot.galaxyproject.org/software/GMRP/GMRP_1.4.0_src_all.tar.gz
+  md5: 117434a97a3c21e0d186460e05f35338
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-genomicranges
+    - r-base
+    - r-diagram
+    - r-plotrix
+  run:
+    - bioconductor-genomicranges
+    - r-base
+    - r-diagram
+    - r-plotrix
+test:
+  commands:
+    - '$R -e "library(''GMRP'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/GMRP.html
+  license: 'GPL (>= 2)'
+  summary: 'Perform Mendelian randomization analysis of multiple SNPs to determine
+    risk factors causing disease of study and to exclude confounding variabels and
+    perform path analysis to construct path of risk factors to the disease.'
