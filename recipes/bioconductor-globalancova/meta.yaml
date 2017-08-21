@@ -1,0 +1,46 @@
+package:
+  name: bioconductor-globalancova
+  version: 3.44.0
+source:
+  fn: GlobalAncova_3.44.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/GlobalAncova_3.44.0.tar.gz
+    - https://bioarchive.galaxyproject.org/GlobalAncova_3.44.0.tar.gz
+    - https://depot.galaxyproject.org/software/GlobalAncova/GlobalAncova_3.44.0_src_all.tar.gz
+  md5: bfc8df3c142f30985a14799755036714
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-annotate
+    - bioconductor-annotationdbi
+    - bioconductor-globaltest
+    - r-base
+    - r-corpcor
+  run:
+    - bioconductor-annotate
+    - bioconductor-annotationdbi
+    - bioconductor-globaltest
+    - r-base
+    - r-corpcor
+test:
+  commands:
+    - '$R -e "library(''GlobalAncova'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/GlobalAncova.html
+  license: 'GPL (>= 2)'
+  summary: 'We give the following arguments in support of the GlobalAncova approach:
+    After appropriate normalisation, gene-expression-data appear rather symmetrical
+    and outliers are no real problem, so least squares should be rather robust. ANCOVA
+    with interaction yields saturated data modelling e.g. different means per group
+    and gene. Covariate adjustment can help to correct for possible selection bias.
+    Variance homogeneity and uncorrelated residuals cannot be expected. Application
+    of ordinary least squares gives unbiased, but no longer optimal estimates (Gauss-Markov-Aitken).
+    Therefore, using the classical F-test is inappropriate, due to correlation. The
+    test statistic however mirrors deviations from the null hypothesis. In combination
+    with a permutation approach, empirical significance levels can be approximated.
+    Alternatively, an approximation yields asymptotic p-values. This work was supported
+    by the NGFN grant 01 GR 0459, BMBF, Germany.'
