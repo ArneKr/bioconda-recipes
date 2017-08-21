@@ -1,0 +1,36 @@
+package:
+  name: bioconductor-flowclean
+  version: 1.14.0
+source:
+  fn: flowClean_1.14.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/flowClean_1.14.0.tar.gz
+    - https://bioarchive.galaxyproject.org/flowClean_1.14.0.tar.gz
+    - https://depot.galaxyproject.org/software/flowClean/flowClean_1.14.0_src_all.tar.gz
+  md5: 8954d4ba50badd937653295ccc9e835a
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-flowcore
+    - r-base
+    - r-bit
+    - r-changepoint
+    - r-sfsmisc
+  run:
+    - bioconductor-flowcore
+    - r-base
+    - r-bit
+    - r-changepoint
+    - r-sfsmisc
+test:
+  commands:
+    - '$R -e "library(''flowClean'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/flowClean.html
+  license: Artistic-2.0
+  summary: 'A quality control tool for flow cytometry data based on compositional
+    data analysis.'
