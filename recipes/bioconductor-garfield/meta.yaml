@@ -1,0 +1,36 @@
+package:
+  name: bioconductor-garfield
+  version: 1.4.0
+source:
+  fn: garfield_1.4.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/garfield_1.4.0.tar.gz
+    - https://bioarchive.galaxyproject.org/garfield_1.4.0.tar.gz
+    - https://depot.galaxyproject.org/software/garfield/garfield_1.4.0_src_all.tar.gz
+  md5: 48fbed9ccc79857678cd63b9f94084fb
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - r-base
+  run:
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''garfield'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/garfield.html
+  license: GPL-3
+  summary: 'GARFIELD is a non-parametric functional enrichment analysis approach described
+    in the paper GARFIELD: GWAS analysis of regulatory or functional information enrichment
+    with LD correction. Briefly, it is a method that leverages GWAS findings with
+    regulatory or functional annotations (primarily from ENCODE and Roadmap epigenomics
+    data) to find features relevant to a phenotype of interest. It performs greedy
+    pruning of GWAS SNPs (LD r2 > 0.1) and then annotates them based on functional
+    information overlap. Next, it quantifies Fold Enrichment (FE) at various GWAS
+    significance cutoffs and assesses them by permutation testing, while matching
+    for minor allele frequency, distance to nearest transcription start site and number
+    of LD proxies (r2 > 0.8).'
