@@ -1,0 +1,62 @@
+package:
+  name: bioconductor-guideseq
+  version: 1.6.1
+source:
+  fn: GUIDEseq_1.6.1.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/GUIDEseq_1.6.1.tar.gz
+    - https://depot.galaxyproject.org/software/GUIDEseq/GUIDEseq_1.6.1_src_all.tar.gz
+  md5: 520084c96ef4ceb256e7c24e96e4d91f
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biocgenerics
+    - bioconductor-biocparallel
+    - bioconductor-biostrings
+    - bioconductor-bsgenome
+    - bioconductor-chippeakanno
+    - bioconductor-crisprseek
+    - bioconductor-genomeinfodb
+    - 'bioconductor-genomicalignments >=1.7.3'
+    - bioconductor-genomicranges
+    - 'bioconductor-iranges >=2.5.5'
+    - bioconductor-limma
+    - bioconductor-rsamtools
+    - 'bioconductor-s4vectors >=0.9.6'
+    - r-base
+    - r-data.table
+    - r-hash
+    - r-matrixstats
+  run:
+    - bioconductor-biocgenerics
+    - bioconductor-biocparallel
+    - bioconductor-biostrings
+    - bioconductor-bsgenome
+    - bioconductor-chippeakanno
+    - bioconductor-crisprseek
+    - bioconductor-genomeinfodb
+    - 'bioconductor-genomicalignments >=1.7.3'
+    - bioconductor-genomicranges
+    - 'bioconductor-iranges >=2.5.5'
+    - bioconductor-limma
+    - bioconductor-rsamtools
+    - 'bioconductor-s4vectors >=0.9.6'
+    - r-base
+    - r-data.table
+    - r-hash
+    - r-matrixstats
+test:
+  commands:
+    - '$R -e "library(''GUIDEseq'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/GUIDEseq.html
+  license: 'GPL (>= 2)'
+  summary: 'The package implements GUIDE-seq analysis workflow including functions
+    for obtaining unique insertion sites (proxy of cleavage sites), estimating the
+    locations of the insertion sites, aka, peaks, merging estimated insertion sites
+    from plus and minus strand, and performing off target search of the extended regions
+    around insertion sites.'
