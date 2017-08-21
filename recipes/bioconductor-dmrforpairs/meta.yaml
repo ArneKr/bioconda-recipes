@@ -1,0 +1,42 @@
+package:
+  name: bioconductor-dmrforpairs
+  version: 1.12.0
+source:
+  fn: DMRforPairs_1.12.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/DMRforPairs_1.12.0.tar.gz
+    - https://bioarchive.galaxyproject.org/DMRforPairs_1.12.0.tar.gz
+    - https://depot.galaxyproject.org/software/DMRforPairs/DMRforPairs_1.12.0_src_all.tar.gz
+  md5: cf04e2aad9ea450b6ad8990d9e95ef9d
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - 'bioconductor-genomicranges >=1.10.7'
+    - 'bioconductor-gviz >=1.2.1'
+    - r-base
+    - 'r-r2html >=2.2.1'
+  run:
+    - 'bioconductor-genomicranges >=1.10.7'
+    - 'bioconductor-gviz >=1.2.1'
+    - r-base
+    - 'r-r2html >=2.2.1'
+test:
+  commands:
+    - '$R -e "library(''DMRforPairs'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/DMRforPairs.html
+  license: 'GPL (>= 2)'
+  summary: 'DMRforPairs (formerly DMR2+) allows researchers to compare n>=2 unique
+    samples with regard to their methylation profile. The (pairwise) comparison of
+    n unique single samples distinguishes DMRforPairs from other existing pipelines
+    as these often compare groups of samples in either single CpG locus or region
+    based analysis. DMRforPairs defines regions of interest as genomic ranges with
+    sufficient probes located in close proximity to each other. Probes in one region
+    are optionally annotated to the same functional class(es). Differential methylation
+    is evaluated by comparing the methylation values within each region between individual
+    samples and (if the difference is sufficiently large), testing this difference
+    formally for statistical significance.'
