@@ -1,0 +1,30 @@
+package:
+  name: bioconductor-focalcall
+  version: 1.10.0
+source:
+  fn: focalCall_1.10.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/focalCall_1.10.0.tar.gz
+    - https://bioarchive.galaxyproject.org/focalCall_1.10.0.tar.gz
+    - https://depot.galaxyproject.org/software/focalCall/focalCall_1.10.0_src_all.tar.gz
+  md5: 936d2055e11ec49db3bc6dae1632fd80
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-cghcall
+    - r-base
+  run:
+    - bioconductor-cghcall
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''focalCall'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/focalCall.html
+  license: GPL-2
+  summary: 'Detection of genomic focal aberrations in high-resolution DNA copy number
+    data'
