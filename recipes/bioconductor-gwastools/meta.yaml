@@ -1,0 +1,52 @@
+package:
+  name: bioconductor-gwastools
+  version: 1.22.0
+source:
+  fn: GWASTools_1.22.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/GWASTools_1.22.0.tar.gz
+    - https://bioarchive.galaxyproject.org/GWASTools_1.22.0.tar.gz
+    - https://depot.galaxyproject.org/software/GWASTools/GWASTools_1.22.0_src_all.tar.gz
+  md5: 3b3efe6003b8653a91d434c872bcc1b2
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biobase
+    - bioconductor-dnacopy
+    - bioconductor-gdsfmt
+    - bioconductor-quantsmooth
+    - r-base
+    - r-dbi
+    - r-gwasexacthw
+    - r-lmtest
+    - r-logistf
+    - r-ncdf4
+    - r-rsqlite
+    - r-sandwich
+    - r-survival
+  run:
+    - bioconductor-biobase
+    - bioconductor-dnacopy
+    - bioconductor-gdsfmt
+    - bioconductor-quantsmooth
+    - r-base
+    - r-dbi
+    - r-gwasexacthw
+    - r-lmtest
+    - r-logistf
+    - r-ncdf4
+    - r-rsqlite
+    - r-sandwich
+    - r-survival
+test:
+  commands:
+    - '$R -e "library(''GWASTools'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/GWASTools.html
+  license: Artistic-2.0
+  summary: 'Classes for storing very large GWAS data sets and annotation, and functions
+    for GWAS data cleaning and analysis.'
