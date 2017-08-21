@@ -1,0 +1,35 @@
+package:
+  name: bioconductor-geneplast
+  version: 1.2.0
+source:
+  fn: geneplast_1.2.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/geneplast_1.2.0.tar.gz
+    - https://bioarchive.galaxyproject.org/geneplast_1.2.0.tar.gz
+    - https://depot.galaxyproject.org/software/geneplast/geneplast_1.2.0_src_all.tar.gz
+  md5: 772a3121b0d99fa5ad7add1e5e126d6b
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - r-ape
+    - r-base
+    - r-snow
+  run:
+    - r-ape
+    - r-base
+    - r-snow
+test:
+  commands:
+    - '$R -e "library(''geneplast'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/geneplast.html
+  license: 'GPL (>= 2)'
+  summary: 'Geneplast is designed for evolutionary and plasticity analysis based on
+    orthologous groups distribution in a given species tree. It uses Shannon information
+    theory and orthologs abundance to estimate the Evolutionary Plasticity Index.
+    Additionally, it implements the Bridge algorithm to determine the evolutionary
+    root of a given gene based on its orthologs distribution.'
