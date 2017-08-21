@@ -1,0 +1,43 @@
+package:
+  name: bioconductor-celltree
+  version: 1.6.0
+source:
+  fn: cellTree_1.6.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/cellTree_1.6.0.tar.gz
+    - https://bioarchive.galaxyproject.org/cellTree_1.6.0.tar.gz
+    - https://depot.galaxyproject.org/software/cellTree/cellTree_1.6.0_src_all.tar.gz
+  md5: d90e6981293d567f5806832b882c2078
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-topgo
+    - r-base
+    - r-gplots
+    - r-igraph
+    - r-maptpx
+    - r-slam
+    - r-topicmodels
+    - r-xtable
+  run:
+    - bioconductor-topgo
+    - r-base
+    - r-gplots
+    - r-igraph
+    - r-maptpx
+    - r-slam
+    - r-topicmodels
+    - r-xtable
+test:
+  commands:
+    - '$R -e "library(''cellTree'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/cellTree.html
+  license: Artistic-2.0
+  summary: 'This packages computes a Latent Dirichlet Allocation (LDA) model of single-cell
+    RNA-seq data and builds a compact tree modelling the relationship between individual
+    cells over time or space.'
