@@ -1,0 +1,45 @@
+package:
+  name: bioconductor-arraymvout
+  version: 1.34.0
+source:
+  fn: arrayMvout_1.34.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/arrayMvout_1.34.0.tar.gz
+    - https://bioarchive.galaxyproject.org/arrayMvout_1.34.0.tar.gz
+    - https://depot.galaxyproject.org/software/arrayMvout/arrayMvout_1.34.0_src_all.tar.gz
+  md5: 50d27cd7f4c6cbb25caaf19e84834c79
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-affy
+    - bioconductor-affycontam
+    - bioconductor-biobase
+    - bioconductor-lumi
+    - bioconductor-mdqc
+    - bioconductor-parody
+    - bioconductor-simpleaffy
+    - r-
+    - r-base
+  run:
+    - bioconductor-affy
+    - bioconductor-affycontam
+    - bioconductor-biobase
+    - bioconductor-lumi
+    - bioconductor-mdqc
+    - bioconductor-parody
+    - bioconductor-simpleaffy
+    - r-
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''arrayMvout'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/arrayMvout.html
+  license: Artistic-2.0
+  summary: 'This package supports the application of diverse quality metrics to AffyBatch
+    instances, summarizing these metrics via PCA, and then performing parametric outlier
+    detection on the PCs to identify aberrant arrays with a fixed Type I error rate'
