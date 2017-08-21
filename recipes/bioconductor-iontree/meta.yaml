@@ -1,0 +1,38 @@
+package:
+  name: bioconductor-iontree
+  version: 1.22.0
+source:
+  fn: iontree_1.22.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/iontree_1.22.0.tar.gz
+    - https://bioarchive.galaxyproject.org/iontree_1.22.0.tar.gz
+    - https://depot.galaxyproject.org/software/iontree/iontree_1.22.0_src_all.tar.gz
+  md5: c9a3fc39f46e365db80dc8580180899e
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - r-base
+    - r-rjava
+    - r-rsqlite
+    - r-xml
+  run:
+    - r-base
+    - r-rjava
+    - r-rsqlite
+    - r-xml
+test:
+  commands:
+    - '$R -e "library(''iontree'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/iontree.html
+  license: GPL-2
+  summary: 'Ion fragmentation provides structural information for metabolite identification.
+    This package provides utility functions to manage and analyse MS2/MS3 fragmentation
+    data from ion trap mass spectrometry. It was designed for high throughput metabolomics
+    data with many biological samples and a large numer of ion trees collected. Tests
+    have been done with data from low-resolution mass spectrometry but could be readily
+    extended to precursor ion based fragmentation data from high resoultion mass spectrometry.'
