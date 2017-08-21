@@ -1,0 +1,28 @@
+package:
+  name: bioconductor-cssp
+  version: 1.14.0
+source:
+  fn: CSSP_1.14.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/CSSP_1.14.0.tar.gz
+    - https://bioarchive.galaxyproject.org/CSSP_1.14.0.tar.gz
+    - https://depot.galaxyproject.org/software/CSSP/CSSP_1.14.0_src_all.tar.gz
+  md5: 6447817c12c48164b130fbc115c8b99c
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - r-base
+  run:
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''CSSP'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/CSSP.html
+  license: GPL-2
+  summary: 'Power computation for ChIP-Seq data based on Bayesian estimation for local
+    poisson counting process.'
