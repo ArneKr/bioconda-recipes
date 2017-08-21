@@ -1,0 +1,36 @@
+package:
+  name: bioconductor-lmgene
+  version: 2.32.0
+source:
+  fn: LMGene_2.32.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/LMGene_2.32.0.tar.gz
+    - https://bioarchive.galaxyproject.org/LMGene_2.32.0.tar.gz
+    - https://depot.galaxyproject.org/software/LMGene/LMGene_2.32.0_src_all.tar.gz
+  md5: e999eec9b5b3b5e8d3dd592781bc1948
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-affy
+    - 'bioconductor-biobase >=2.5.5'
+    - bioconductor-multtest
+    - r-base
+    - r-survival
+  run:
+    - bioconductor-affy
+    - 'bioconductor-biobase >=2.5.5'
+    - bioconductor-multtest
+    - r-base
+    - r-survival
+test:
+  commands:
+    - '$R -e "library(''LMGene'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/LMGene.html
+  license: LGPL
+  summary: 'LMGene package for analysis of microarray data using a linear model and
+    glog data transformation'
