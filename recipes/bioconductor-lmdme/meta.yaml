@@ -1,0 +1,37 @@
+package:
+  name: bioconductor-lmdme
+  version: 1.18.0
+source:
+  fn: lmdme_1.18.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/lmdme_1.18.0.tar.gz
+    - https://bioarchive.galaxyproject.org/lmdme_1.18.0.tar.gz
+    - https://depot.galaxyproject.org/software/lmdme/lmdme_1.18.0_src_all.tar.gz
+  md5: 46ce9482a7fff2e0d13789db7c0fc6a3
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-limma
+    - r-base
+    - r-pls
+    - r-stemhypoxia
+  run:
+    - bioconductor-limma
+    - r-base
+    - r-pls
+    - r-stemhypoxia
+test:
+  commands:
+    - '$R -e "library(''lmdme'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/lmdme.html
+  license: 'GPL (>=2)'
+  summary: 'linear ANOVA decomposition of Multivariate Designed Experiments implementation
+    based on limma lmFit. Features: i)Flexible formula type interface, ii) Fast limma
+    based implementation, iii) p-values for each estimated coefficient levels in each
+    factor, iv) F values for factor effects and v) plotting functions for PCA and
+    PLS.'
