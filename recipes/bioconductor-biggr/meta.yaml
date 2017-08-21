@@ -1,0 +1,43 @@
+package:
+  name: bioconductor-biggr
+  version: 1.12.0
+source:
+  fn: BiGGR_1.12.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/BiGGR_1.12.0.tar.gz
+    - https://bioarchive.galaxyproject.org/BiGGR_1.12.0.tar.gz
+    - https://depot.galaxyproject.org/software/BiGGR/BiGGR_1.12.0_src_all.tar.gz
+  md5: 9bb91f65fa3048476feaaac194ab955c
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-hyperdraw
+    - bioconductor-hypergraph
+    - bioconductor-rsbml
+    - r-base
+    - r-lim
+    - r-limsolve
+    - r-stringr
+  run:
+    - bioconductor-hyperdraw
+    - bioconductor-hypergraph
+    - bioconductor-rsbml
+    - r-base
+    - r-lim
+    - r-limsolve
+    - r-stringr
+test:
+  commands:
+    - '$R -e "library(''BiGGR'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/BiGGR.html
+  license: 'file LICENSE'
+  summary: 'This package provides an interface to simulate metabolic reconstruction
+    from the BiGG database(http://bigg.ucsd.edu/) and other metabolic reconstruction
+    databases. The package facilitates flux balance analysis (FBA) and the sampling
+    of feasible flux distributions. Metabolic networks and estimated fluxes can be
+    visualized with hypergraphs.'
