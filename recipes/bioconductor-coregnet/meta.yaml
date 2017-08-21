@@ -1,0 +1,43 @@
+package:
+  name: bioconductor-coregnet
+  version: 1.12.0
+source:
+  fn: CoRegNet_1.12.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/CoRegNet_1.12.0.tar.gz
+    - https://bioarchive.galaxyproject.org/CoRegNet_1.12.0.tar.gz
+    - https://depot.galaxyproject.org/software/CoRegNet/CoRegNet_1.12.0_src_all.tar.gz
+  md5: a53088f58e77eea0b74de6c2cb988bff
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - r-arules
+    - r-base
+    - r-igraph
+    - r-shiny
+  run:
+    - r-arules
+    - r-base
+    - r-igraph
+    - r-shiny
+test:
+  commands:
+    - '$R -e "library(''CoRegNet'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/CoRegNet.html
+  license: GPL-3
+  summary: 'This package provides methods to identify active transcriptional programs.
+    Methods and classes are provided to import or infer large scale co-regulatory
+    network from transcriptomic data. The specificity of the encoded networks is to
+    model Transcription Factor cooperation. External regulation evidences (TFBS, ChIP,...)
+    can be integrated to assess the inferred network and refine it if necessary. Transcriptional
+    activity of the regulators in the network can be estimated using an measure of
+    their influence in a given sample. Finally, an interactive UI can be used to navigate
+    through the network of cooperative regulators and to visualize their activity
+    in a specific sample or subgroup sample. The proposed visualization tool can be
+    used to integrate gene expression, transcriptional activity, copy number status,
+    sample classification and a transcriptional network including co-regulation information.'
