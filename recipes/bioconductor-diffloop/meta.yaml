@@ -1,0 +1,71 @@
+package:
+  name: bioconductor-diffloop
+  version: 1.4.0
+source:
+  fn: diffloop_1.4.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/diffloop_1.4.0.tar.gz
+    - https://bioarchive.galaxyproject.org/diffloop_1.4.0.tar.gz
+    - https://depot.galaxyproject.org/software/diffloop/diffloop_1.4.0_src_all.tar.gz
+  md5: 345949398f9b487204d0cab40526f1bb
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biobase
+    - bioconductor-biomart
+    - bioconductor-edger
+    - bioconductor-genomeinfodb
+    - bioconductor-genomicranges
+    - bioconductor-iranges
+    - bioconductor-limma
+    - bioconductor-rtracklayer
+    - bioconductor-s4vectors
+    - bioconductor-sushi
+    - r-base
+    - r-data.table
+    - r-dplyr
+    - r-foreach
+    - r-ggplot2
+    - r-locfit
+    - r-matrixstats
+    - r-pbapply
+    - r-plyr
+    - r-readr
+    - r-reshape2
+    - r-statmod
+  run:
+    - bioconductor-biobase
+    - bioconductor-biomart
+    - bioconductor-edger
+    - bioconductor-genomeinfodb
+    - bioconductor-genomicranges
+    - bioconductor-iranges
+    - bioconductor-limma
+    - bioconductor-rtracklayer
+    - bioconductor-s4vectors
+    - bioconductor-sushi
+    - r-base
+    - r-data.table
+    - r-dplyr
+    - r-foreach
+    - r-ggplot2
+    - r-locfit
+    - r-matrixstats
+    - r-pbapply
+    - r-plyr
+    - r-readr
+    - r-reshape2
+    - r-statmod
+test:
+  commands:
+    - '$R -e "library(''diffloop'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/diffloop.html
+  license: 'MIT + file LICENSE'
+  summary: 'A suite of tools for subsetting, visualizing, annotating, and statistically
+    analyzing the results of one or more ChIA-PET experiments or other assays that
+    infer chromatin loops.'
