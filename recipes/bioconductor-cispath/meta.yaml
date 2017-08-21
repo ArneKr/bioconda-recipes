@@ -1,0 +1,28 @@
+package:
+  name: bioconductor-cispath
+  version: 1.16.0
+source:
+  fn: cisPath_1.16.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/cisPath_1.16.0.tar.gz
+    - https://bioarchive.galaxyproject.org/cisPath_1.16.0.tar.gz
+    - https://depot.galaxyproject.org/software/cisPath/cisPath_1.16.0_src_all.tar.gz
+  md5: 44c54f99d7ac26961df97ef49abfe415
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - r-base
+  run:
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''cisPath'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/cisPath.html
+  license: 'GPL (>= 3)'
+  summary: 'cisPath is an R package that uses web browsers to visualize and manage
+    protein-protein interaction networks.'
