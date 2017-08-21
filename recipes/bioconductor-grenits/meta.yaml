@@ -1,0 +1,40 @@
+package:
+  name: bioconductor-grenits
+  version: 1.28.1
+source:
+  fn: GRENITS_1.28.1.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/GRENITS_1.28.1.tar.gz
+    - https://depot.galaxyproject.org/software/GRENITS/GRENITS_1.28.1_src_all.tar.gz
+  md5: 400b08209af3e8507e3bcaea81b6fc08
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - r-base
+    - 'r-ggplot2 >=0.9.0'
+    - 'r-rcpp >=0.8.6'
+    - 'r-rcpparmadillo >=0.2.8'
+    - r-reshape2
+    - gcc  # [linux]
+    - llvm  # [osx]
+  run:
+    - r-base
+    - 'r-ggplot2 >=0.9.0'
+    - 'r-rcpp >=0.8.6'
+    - 'r-rcpparmadillo >=0.2.8'
+    - r-reshape2
+test:
+  commands:
+    - '$R -e "library(''GRENITS'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/GRENITS.html
+  license: 'GPL (>= 2)'
+  summary: 'The package offers four network inference statistical models using Dynamic
+    Bayesian Networks and Gibbs Variable Selection: a linear interaction model, two
+    linear interaction models with added experimental noise (Gaussian and Student
+    distributed) for the case where replicates are available and a non-linear interaction
+    model.'
