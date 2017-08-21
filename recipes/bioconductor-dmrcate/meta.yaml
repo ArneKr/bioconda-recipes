@@ -1,0 +1,50 @@
+package:
+  name: bioconductor-dmrcate
+  version: 1.12.1
+source:
+  fn: DMRcate_1.12.1.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/DMRcate_1.12.1.tar.gz
+    - https://depot.galaxyproject.org/software/DMRcate/DMRcate_1.12.1_src_all.tar.gz
+  md5: 8a62058164aef81e1f36aa81b4192e91
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-dss
+    - bioconductor-genomicranges
+    - bioconductor-gviz
+    - bioconductor-iranges
+    - bioconductor-limma
+    - bioconductor-minfi
+    - bioconductor-missmethyl
+    - bioconductor-s4vectors
+    - r-base
+    - r-dmrcatedata
+    - r-plyr
+  run:
+    - bioconductor-dss
+    - bioconductor-genomicranges
+    - bioconductor-gviz
+    - bioconductor-iranges
+    - bioconductor-limma
+    - bioconductor-minfi
+    - bioconductor-missmethyl
+    - bioconductor-s4vectors
+    - r-base
+    - r-dmrcatedata
+    - r-plyr
+test:
+  commands:
+    - '$R -e "library(''DMRcate'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/DMRcate.html
+  license: 'file LICENSE'
+  summary: 'De novo identification and extraction of differentially methylated regions
+    (DMRs) from the human genome using Whole Genome Bisulphite Sequencing (WGBS) and
+    Illumina Infinium Array (450K and EPIC) data. Provides functionality for filtering
+    probes possibly confounded by SNPs and cross-hybridisation. Includes GRanges generation
+    and plotting functions.'
