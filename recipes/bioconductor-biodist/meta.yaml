@@ -1,0 +1,31 @@
+package:
+  name: bioconductor-biodist
+  version: 1.48.0
+source:
+  fn: bioDist_1.48.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/bioDist_1.48.0.tar.gz
+    - https://bioarchive.galaxyproject.org/bioDist_1.48.0.tar.gz
+    - https://depot.galaxyproject.org/software/bioDist/bioDist_1.48.0_src_all.tar.gz
+  md5: 2cb2e7a8a5e721a4dc690b8c805bd568
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biobase
+    - r-base
+    - r-kernsmooth
+  run:
+    - bioconductor-biobase
+    - r-base
+    - r-kernsmooth
+test:
+  commands:
+    - '$R -e "library(''bioDist'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/bioDist.html
+  license: Artistic-2.0
+  summary: 'A collection of software tools for calculating distance measures.'
