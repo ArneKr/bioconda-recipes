@@ -1,0 +1,38 @@
+package:
+  name: bioconductor-biomvrcns
+  version: 1.16.0
+source:
+  fn: biomvRCNS_1.16.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/biomvRCNS_1.16.0.tar.gz
+    - https://bioarchive.galaxyproject.org/biomvRCNS_1.16.0.tar.gz
+    - https://depot.galaxyproject.org/software/biomvRCNS/biomvRCNS_1.16.0_src_all.tar.gz
+  md5: db8c8b1bc6d90668af4420ca2a0775fa
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-genomicranges
+    - bioconductor-gviz
+    - bioconductor-iranges
+    - r-base
+    - r-mvtnorm
+  run:
+    - bioconductor-genomicranges
+    - bioconductor-gviz
+    - bioconductor-iranges
+    - r-base
+    - r-mvtnorm
+test:
+  commands:
+    - '$R -e "library(''biomvRCNS'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/biomvRCNS.html
+  license: 'GPL (>= 2)'
+  summary: 'In this package, a Hidden Semi Markov Model (HSMM) and one homogeneous
+    segmentation model are designed and implemented for segmentation genomic data,
+    with the aim of assisting in transcripts detection using high throughput technology
+    like RNA-seq or tiling array, and copy number analysis using aCGH or sequencing.'
