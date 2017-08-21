@@ -1,0 +1,39 @@
+package:
+  name: bioconductor-hopach
+  version: 2.36.0
+source:
+  fn: hopach_2.36.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/hopach_2.36.0.tar.gz
+    - https://bioarchive.galaxyproject.org/hopach_2.36.0.tar.gz
+    - https://depot.galaxyproject.org/software/hopach/hopach_2.36.0_src_all.tar.gz
+  md5: 36be147595ec7fcee8d273a29e9a9839
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biobase
+    - bioconductor-biocgenerics
+    - r-base
+    - r-cluster
+  run:
+    - bioconductor-biobase
+    - bioconductor-biocgenerics
+    - r-base
+    - r-cluster
+test:
+  commands:
+    - '$R -e "library(''hopach'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/hopach.html
+  license: 'GPL (>= 2)'
+  summary: 'The HOPACH clustering algorithm builds a hierarchical tree of clusters
+    by recursively partitioning a data set, while ordering and possibly collapsing
+    clusters at each level. The algorithm uses the Mean/Median Split Silhouette (MSS)
+    criteria to identify the level of the tree with maximally homogeneous clusters.
+    It also runs the tree down to produce a final ordered list of the elements. The
+    non-parametric bootstrap allows one to estimate the probability that each element
+    belongs to each cluster (fuzzy clustering).'
