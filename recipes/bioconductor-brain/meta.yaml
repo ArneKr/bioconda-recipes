@@ -1,0 +1,36 @@
+package:
+  name: bioconductor-brain
+  version: 1.22.0
+source:
+  fn: BRAIN_1.22.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/BRAIN_1.22.0.tar.gz
+    - https://bioarchive.galaxyproject.org/BRAIN_1.22.0.tar.gz
+    - https://depot.galaxyproject.org/software/BRAIN/BRAIN_1.22.0_src_all.tar.gz
+  md5: 6b44711bce3659a711a19d4b41c30888
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biostrings
+    - r-base
+    - r-lattice
+    - r-polynomf
+  run:
+    - bioconductor-biostrings
+    - r-base
+    - r-lattice
+    - r-polynomf
+test:
+  commands:
+    - '$R -e "library(''BRAIN'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/BRAIN.html
+  license: GPL-2
+  summary: 'Package for calculating aggregated isotopic distribution and exact center-masses
+    for chemical substances (in this version composed of C, H, N, O and S). This is
+    an implementation of the BRAIN algorithm described in the paper by J. Claesen,
+    P. Dittwald, T. Burzykowski and D. Valkenborg.'
