@@ -1,0 +1,95 @@
+package:
+  name: bioconductor-debrowser
+  version: 1.4.5
+source:
+  fn: debrowser_1.4.5.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/debrowser_1.4.5.tar.gz
+    - https://depot.galaxyproject.org/software/debrowser/debrowser_1.4.5_src_all.tar.gz
+  md5: e7d022abfd506c3fb0d713b4f1332b05
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-annotate
+    - bioconductor-annotationdbi
+    - bioconductor-bayseq
+    - bioconductor-clusterprofiler
+    - bioconductor-deseq2
+    - bioconductor-dose
+    - bioconductor-edger
+    - bioconductor-genomicranges
+    - bioconductor-iranges
+    - bioconductor-limma
+    - bioconductor-org.hs.eg.db
+    - bioconductor-org.mm.eg.db
+    - bioconductor-s4vectors
+    - bioconductor-summarizedexperiment
+    - bioconductor-sva
+    - r-base
+    - r-d3heatmap
+    - r-devtools
+    - r-dt
+    - r-ggplot2
+    - r-ggvis
+    - r-gplots
+    - r-igraph
+    - r-jsonlite
+    - r-rcolorbrewer
+    - r-rcurl
+    - r-reshape2
+    - r-shiny
+    - r-shinydashboard
+    - r-shinyjs
+    - r-stringi
+    - r-v8
+  run:
+    - bioconductor-annotate
+    - bioconductor-annotationdbi
+    - bioconductor-bayseq
+    - bioconductor-clusterprofiler
+    - bioconductor-deseq2
+    - bioconductor-dose
+    - bioconductor-edger
+    - bioconductor-genomicranges
+    - bioconductor-iranges
+    - bioconductor-limma
+    - bioconductor-org.hs.eg.db
+    - bioconductor-org.mm.eg.db
+    - bioconductor-s4vectors
+    - bioconductor-summarizedexperiment
+    - bioconductor-sva
+    - r-base
+    - r-d3heatmap
+    - r-devtools
+    - r-dt
+    - r-ggplot2
+    - r-ggvis
+    - r-gplots
+    - r-igraph
+    - r-jsonlite
+    - r-rcolorbrewer
+    - r-rcurl
+    - r-reshape2
+    - r-shiny
+    - r-shinydashboard
+    - r-shinyjs
+    - r-stringi
+    - r-v8
+test:
+  commands:
+    - '$R -e "library(''debrowser'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/debrowser.html
+  license: 'GPL-3 + file LICENSE'
+  summary: 'Bioinformatics platform containing interactive plots and tables for differential
+    gene and region expression studies. Allows visualizing expression data much more
+    deeply in an interactive and faster way. By changing the parameters, users can
+    easily discover different parts of the data that like never have been done before.
+    Manually creating and looking these plots takes time. With DEBrowser users can
+    prepare plots without writing any code. Differential expression, PCA and clustering
+    analysis are made on site and the results are shown in various plots such as scatter,
+    bar, box, volcano, ma plots and Heatmaps.'
