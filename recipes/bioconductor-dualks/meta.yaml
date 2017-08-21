@@ -1,0 +1,35 @@
+package:
+  name: bioconductor-dualks
+  version: 1.36.0
+source:
+  fn: dualKS_1.36.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/dualKS_1.36.0.tar.gz
+    - https://bioarchive.galaxyproject.org/dualKS_1.36.0.tar.gz
+    - https://depot.galaxyproject.org/software/dualKS/dualKS_1.36.0_src_all.tar.gz
+  md5: 7196edc425263678377bb8cb35d1b9c6
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-affy
+    - 'bioconductor-biobase >=1.15.0'
+    - r-base
+  run:
+    - bioconductor-affy
+    - 'bioconductor-biobase >=1.15.0'
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''dualKS'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/dualKS.html
+  license: 'LGPL (>= 2.0)'
+  summary: 'This package implements a Kolmogorov Smirnov rank-sum based algorithm
+    for training (i.e. discriminant analysis--identification of genes that discriminate
+    between classes) and classification of gene expression data sets.  One of the
+    chief strengths of this approach is that it is amenable to the "multiclass" problem.
+    That is, it can discriminate between more than 2 classes.'
