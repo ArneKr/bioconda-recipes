@@ -1,0 +1,70 @@
+package:
+  name: bioconductor-cogena
+  version: 1.10.0
+source:
+  fn: cogena_1.10.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/cogena_1.10.0.tar.gz
+    - https://bioarchive.galaxyproject.org/cogena_1.10.0.tar.gz
+    - https://depot.galaxyproject.org/software/cogena/cogena_1.10.0_src_all.tar.gz
+  md5: b1284c903d098415939f46acc91e189b
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biobase
+    - r-amap
+    - r-apcluster
+    - r-base
+    - r-biwt
+    - r-class
+    - r-cluster
+    - r-corrplot
+    - r-devtools
+    - r-doparallel
+    - r-dplyr
+    - r-fastcluster
+    - r-foreach
+    - r-ggplot2
+    - r-gplots
+    - r-kohonen
+    - r-mclust
+    - r-reshape2
+  run:
+    - bioconductor-biobase
+    - r-amap
+    - r-apcluster
+    - r-base
+    - r-biwt
+    - r-class
+    - r-cluster
+    - r-corrplot
+    - r-devtools
+    - r-doparallel
+    - r-dplyr
+    - r-fastcluster
+    - r-foreach
+    - r-ggplot2
+    - r-gplots
+    - r-kohonen
+    - r-mclust
+    - r-reshape2
+test:
+  commands:
+    - '$R -e "library(''cogena'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/cogena.html
+  license: LGPL-3
+  summary: 'cogena is a workflow for co-expressed gene-set enrichment analysis. It
+    aims to discovery smaller scale, but highly correlated cellular events that may
+    be of great biological relevance. A novel pipeline for drug discovery and drug
+    repositioning based on the cogena workflow is proposed. Particularly, candidate
+    drugs can be predicted based on the gene expression of disease-related data, or
+    other similar drugs can be identified based on the gene expression of drug-related
+    data. Moreover, the drug mode of action can be disclosed by the associated pathway
+    analysis. In summary, cogena is a flexible workflow for various gene set enrichment
+    analysis for co-expressed genes, with a focus on pathway/GO analysis and drug
+    repositioning.'
