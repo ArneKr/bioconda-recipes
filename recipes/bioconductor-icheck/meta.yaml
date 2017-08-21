@@ -1,0 +1,52 @@
+package:
+  name: bioconductor-icheck
+  version: 1.6.0
+source:
+  fn: iCheck_1.6.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/iCheck_1.6.0.tar.gz
+    - https://bioarchive.galaxyproject.org/iCheck_1.6.0.tar.gz
+    - https://depot.galaxyproject.org/software/iCheck/iCheck_1.6.0_src_all.tar.gz
+  md5: 921d30af7b23366ae9190dbec4ffce33
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-affy
+    - bioconductor-biobase
+    - bioconductor-geneselectmmd
+    - bioconductor-limma
+    - bioconductor-lumi
+    - bioconductor-preprocesscore
+    - r-base
+    - r-gplots
+    - r-lmtest
+    - r-mass
+    - r-randomforest
+    - r-rgl
+    - r-scatterplot3d
+  run:
+    - bioconductor-affy
+    - bioconductor-biobase
+    - bioconductor-geneselectmmd
+    - bioconductor-limma
+    - bioconductor-lumi
+    - bioconductor-preprocesscore
+    - r-base
+    - r-gplots
+    - r-lmtest
+    - r-mass
+    - r-randomforest
+    - r-rgl
+    - r-scatterplot3d
+test:
+  commands:
+    - '$R -e "library(''iCheck'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/iCheck.html
+  license: 'GPL (>= 2)'
+  summary: 'QC pipeline and data analysis tools for high-dimensional Illumina mRNA
+    expression data.'
