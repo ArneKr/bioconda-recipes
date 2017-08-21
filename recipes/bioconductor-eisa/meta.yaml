@@ -1,0 +1,46 @@
+package:
+  name: bioconductor-eisa
+  version: 1.28.0
+source:
+  fn: eisa_1.28.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/eisa_1.28.0.tar.gz
+    - https://bioarchive.galaxyproject.org/eisa_1.28.0.tar.gz
+    - https://depot.galaxyproject.org/software/eisa/eisa_1.28.0_src_all.tar.gz
+  md5: b867378eb00c0a4fbe2867a46dfcc979
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-annotationdbi
+    - 'bioconductor-biobase >=2.17.8'
+    - bioconductor-biocgenerics
+    - bioconductor-category
+    - bioconductor-genefilter
+    - r-base
+    - r-dbi
+    - r-isa2
+  run:
+    - bioconductor-annotationdbi
+    - 'bioconductor-biobase >=2.17.8'
+    - bioconductor-biocgenerics
+    - bioconductor-category
+    - bioconductor-genefilter
+    - r-base
+    - r-dbi
+    - r-isa2
+test:
+  commands:
+    - '$R -e "library(''eisa'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/eisa.html
+  license: 'GPL (>= 2)'
+  summary: 'The Iterative Signature Algorithm (ISA) is a biclustering method; it finds
+    correlated blocks (transcription modules) in gene expression (or other tabular)
+    data. The ISA is capable of finding overlapping modules and it is resilient to
+    noise. This package provides a convenient interface to the ISA, using standard
+    BioConductor data structures; and also contains various visualization tools that
+    can be used with other biclustering algorithms.'
