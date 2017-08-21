@@ -1,0 +1,52 @@
+package:
+  name: bioconductor-genphen
+  version: 1.4.0
+source:
+  fn: genphen_1.4.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/genphen_1.4.0.tar.gz
+    - https://bioarchive.galaxyproject.org/genphen_1.4.0.tar.gz
+    - https://depot.galaxyproject.org/software/genphen/genphen_1.4.0_src_all.tar.gz
+  md5: 152955509a7a73e71c293a5e77e8a729
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biostrings
+    - r-base
+    - r-e1071
+    - r-effsize
+    - r-ggplot2
+    - r-randomforest
+    - r-rjags
+  run:
+    - bioconductor-biostrings
+    - r-base
+    - r-e1071
+    - r-effsize
+    - r-ggplot2
+    - r-randomforest
+    - r-rjags
+test:
+  commands:
+    - '$R -e "library(''genphen'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/genphen.html
+  license: 'GPL (>= 2)'
+  summary: 'Genetic association studies have become an essential tool for studying
+    the relationship between genotypes and phenotypes. They are necessary for the
+    discovery of disease-causing genetic variants. Here we provide a tool for conducting
+    genetic association studies, which uses statistical learning techniques such as
+    random forests and support vector machines, as well as using Bayesian inference
+    with Bayesian hierarchical models. These techniques are superior to the commonly
+    used (frequentist) statistical approaches, alleviating the multiple hypothesis
+    problems and the need for P value corrections, which often lead to massive numbers
+    of false negatives. Thus, with genphen we provide a framework to compare the results
+    obtained using frequentist methods with those obtained using the more sophisticated
+    methods provided by this tool. The tool also provides a few visualization functions
+    which enable the user to inspect the results of such genetic association study
+    and conveniently select the genotypes which have the highest strength of association
+    with the phenotype.'
