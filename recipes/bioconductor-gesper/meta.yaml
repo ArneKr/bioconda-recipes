@@ -1,0 +1,49 @@
+package:
+  name: bioconductor-gesper
+  version: 1.8.0
+source:
+  fn: gespeR_1.8.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/gespeR_1.8.0.tar.gz
+    - https://bioarchive.galaxyproject.org/gespeR_1.8.0.tar.gz
+    - https://depot.galaxyproject.org/software/gespeR/gespeR_1.8.0_src_all.tar.gz
+  md5: 36917b72ec2f1d81383849c87b5e7a28
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biobase
+    - bioconductor-biomart
+    - bioconductor-cellhts2
+    - r-base
+    - r-doparallel
+    - r-dplyr
+    - r-foreach
+    - r-ggplot2
+    - r-glmnet
+    - r-matrix
+    - r-reshape2
+  run:
+    - bioconductor-biobase
+    - bioconductor-biomart
+    - bioconductor-cellhts2
+    - r-base
+    - r-doparallel
+    - r-dplyr
+    - r-foreach
+    - r-ggplot2
+    - r-glmnet
+    - r-matrix
+    - r-reshape2
+test:
+  commands:
+    - '$R -e "library(''gespeR'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/gespeR.html
+  license: GPL-3
+  summary: 'Estimates gene-specific phenotypes from off-target confounded RNAi screens.
+    The phenotype of each siRNA is modeled based on on-targeted and off-targeted genes,
+    using a regularized linear regression model.'
