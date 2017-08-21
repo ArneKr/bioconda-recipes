@@ -1,0 +1,57 @@
+package:
+  name: bioconductor-immunespacer
+  version: 1.4.0
+source:
+  fn: ImmuneSpaceR_1.4.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/ImmuneSpaceR_1.4.0.tar.gz
+    - https://bioarchive.galaxyproject.org/ImmuneSpaceR_1.4.0.tar.gz
+    - https://depot.galaxyproject.org/software/ImmuneSpaceR/ImmuneSpaceR_1.4.0_src_all.tar.gz
+  md5: 8b7934449989ad6347884968b40d0005
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biobase
+    - r-base
+    - r-data.table
+    - r-ggplot2
+    - r-gplots
+    - r-gtools
+    - 'r-heatmaply >=0.7.0'
+    - r-pheatmap
+    - r-plotly
+    - r-rcurl
+    - r-reshape2
+    - r-rjson
+    - 'r-rlabkey >=2.1.127'
+    - r-rmarkdown
+    - r-scales
+  run:
+    - bioconductor-biobase
+    - r-base
+    - r-data.table
+    - r-ggplot2
+    - r-gplots
+    - r-gtools
+    - 'r-heatmaply >=0.7.0'
+    - r-pheatmap
+    - r-plotly
+    - r-rcurl
+    - r-reshape2
+    - r-rjson
+    - 'r-rlabkey >=2.1.127'
+    - r-rmarkdown
+    - r-scales
+test:
+  commands:
+    - '$R -e "library(''ImmuneSpaceR'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/ImmuneSpaceR.html
+  license: GPL-2
+  summary: 'Provides a convenient API for accessing data sets within ImmuneSpace (www.immunespace.org),
+    the data repository and analysis platform of the Human Immunology Project Consortium
+    (HIPC).'
