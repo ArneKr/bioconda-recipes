@@ -1,0 +1,45 @@
+package:
+  name: bioconductor-affyqcreport
+  version: 1.54.0
+source:
+  fn: affyQCReport_1.54.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/affyQCReport_1.54.0.tar.gz
+    - https://bioarchive.galaxyproject.org/affyQCReport_1.54.0.tar.gz
+    - https://depot.galaxyproject.org/software/affyQCReport/affyQCReport_1.54.0_src_all.tar.gz
+  md5: 9d4c66321cbeeac356b520b5060af360
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-affy
+    - bioconductor-affyplm
+    - 'bioconductor-biobase >=1.13.16'
+    - bioconductor-genefilter
+    - bioconductor-simpleaffy
+    - r-base
+    - r-lattice
+    - r-rcolorbrewer
+    - r-xtable
+  run:
+    - bioconductor-affy
+    - bioconductor-affyplm
+    - 'bioconductor-biobase >=1.13.16'
+    - bioconductor-genefilter
+    - bioconductor-simpleaffy
+    - r-base
+    - r-lattice
+    - r-rcolorbrewer
+    - r-xtable
+test:
+  commands:
+    - '$R -e "library(''affyQCReport'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/affyQCReport.html
+  license: 'LGPL (>= 2)'
+  summary: 'This package creates a QC report for an AffyBatch object. The report is
+    intended to allow the user to quickly assess the quality of a set of arrays in
+    an AffyBatch object.'
