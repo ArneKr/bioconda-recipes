@@ -1,0 +1,36 @@
+package:
+  name: bioconductor-apcomplex
+  version: 2.42.0
+source:
+  fn: apComplex_2.42.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/apComplex_2.42.0.tar.gz
+    - https://bioarchive.galaxyproject.org/apComplex_2.42.0.tar.gz
+    - https://depot.galaxyproject.org/software/apComplex/apComplex_2.42.0_src_all.tar.gz
+  md5: 72a9ef3ea248aedcfaba9c4deef725b9
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-graph
+    - bioconductor-org.sc.sgd.db
+    - bioconductor-rbgl
+    - bioconductor-rgraphviz
+    - r-base
+  run:
+    - bioconductor-graph
+    - bioconductor-org.sc.sgd.db
+    - bioconductor-rbgl
+    - bioconductor-rgraphviz
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''apComplex'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/apComplex.html
+  license: LGPL
+  summary: 'Functions to estimate a bipartite graph of protein complex membership
+    using AP-MS data.'
