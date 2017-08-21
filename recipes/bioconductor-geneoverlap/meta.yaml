@@ -1,0 +1,31 @@
+package:
+  name: bioconductor-geneoverlap
+  version: 1.12.0
+source:
+  fn: GeneOverlap_1.12.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/GeneOverlap_1.12.0.tar.gz
+    - https://bioarchive.galaxyproject.org/GeneOverlap_1.12.0.tar.gz
+    - https://depot.galaxyproject.org/software/GeneOverlap/GeneOverlap_1.12.0_src_all.tar.gz
+  md5: 6c682a58c200ac726be47005f752b112
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - r-base
+    - r-gplots
+    - r-rcolorbrewer
+  run:
+    - r-base
+    - r-gplots
+    - r-rcolorbrewer
+test:
+  commands:
+    - '$R -e "library(''GeneOverlap'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/GeneOverlap.html
+  license: GPL-3
+  summary: 'Test two sets of gene lists and visualize the results.'
