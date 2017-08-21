@@ -1,0 +1,45 @@
+package:
+  name: bioconductor-fccac
+  version: 1.2.0
+source:
+  fn: fCCAC_1.2.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/fCCAC_1.2.0.tar.gz
+    - https://bioarchive.galaxyproject.org/fCCAC_1.2.0.tar.gz
+    - https://depot.galaxyproject.org/software/fCCAC/fCCAC_1.2.0_src_all.tar.gz
+  md5: 49caa98023053d39903bc37614809dbf
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-complexheatmap
+    - bioconductor-genomation
+    - bioconductor-genomicranges
+    - bioconductor-iranges
+    - bioconductor-s4vectors
+    - r-base
+    - r-fda
+    - r-ggplot2
+    - r-rcolorbrewer
+  run:
+    - bioconductor-complexheatmap
+    - bioconductor-genomation
+    - bioconductor-genomicranges
+    - bioconductor-iranges
+    - bioconductor-s4vectors
+    - r-base
+    - r-fda
+    - r-ggplot2
+    - r-rcolorbrewer
+test:
+  commands:
+    - '$R -e "library(''fCCAC'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/fCCAC.html
+  license: Artistic-2.0
+  summary: 'An application of functional canonical correlation analysis to assess
+    covariance of nucleic acid sequencing datasets such as chromatin immunoprecipitation
+    followed by deep sequencing (ChIP-seq).'
