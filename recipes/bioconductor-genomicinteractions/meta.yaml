@@ -1,0 +1,61 @@
+package:
+  name: bioconductor-genomicinteractions
+  version: 1.10.0
+source:
+  fn: GenomicInteractions_1.10.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/GenomicInteractions_1.10.0.tar.gz
+    - https://bioarchive.galaxyproject.org/GenomicInteractions_1.10.0.tar.gz
+    - https://depot.galaxyproject.org/software/GenomicInteractions/GenomicInteractions_1.10.0_src_all.tar.gz
+  md5: 07c1209d9dc3895feb3369603a5576c3
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biobase
+    - 'bioconductor-biocgenerics >=0.15.3'
+    - bioconductor-genomeinfodb
+    - bioconductor-genomicranges
+    - bioconductor-gviz
+    - bioconductor-interactionset
+    - bioconductor-iranges
+    - bioconductor-rsamtools
+    - bioconductor-rtracklayer
+    - 'bioconductor-s4vectors >=0.13.13'
+    - r-base
+    - r-data.table
+    - r-dplyr
+    - r-ggplot2
+    - r-gridextra
+    - r-igraph
+    - r-stringr
+  run:
+    - bioconductor-biobase
+    - 'bioconductor-biocgenerics >=0.15.3'
+    - bioconductor-genomeinfodb
+    - bioconductor-genomicranges
+    - bioconductor-gviz
+    - bioconductor-interactionset
+    - bioconductor-iranges
+    - bioconductor-rsamtools
+    - bioconductor-rtracklayer
+    - 'bioconductor-s4vectors >=0.13.13'
+    - r-base
+    - r-data.table
+    - r-dplyr
+    - r-ggplot2
+    - r-gridextra
+    - r-igraph
+    - r-stringr
+test:
+  commands:
+    - '$R -e "library(''GenomicInteractions'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/GenomicInteractions.html
+  license: GPL-3
+  summary: 'R package for handling Genomic interaction data, such as ChIA-PET/Hi-C,
+    annotating genomic features with interaction information and producing various
+    plots / statistics.'
