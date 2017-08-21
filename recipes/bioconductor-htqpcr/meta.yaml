@@ -1,0 +1,44 @@
+package:
+  name: bioconductor-htqpcr
+  version: 1.30.0
+source:
+  fn: HTqPCR_1.30.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/HTqPCR_1.30.0.tar.gz
+    - https://bioarchive.galaxyproject.org/HTqPCR_1.30.0.tar.gz
+    - https://depot.galaxyproject.org/software/HTqPCR/HTqPCR_1.30.0_src_all.tar.gz
+  md5: 20c3219a4d3c32dbf20523f045bbf4be
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-affy
+    - bioconductor-biobase
+    - bioconductor-limma
+    - r-base
+    - r-gplots
+    - r-rcolorbrewer
+  run:
+    - bioconductor-affy
+    - bioconductor-biobase
+    - bioconductor-limma
+    - r-base
+    - r-gplots
+    - r-rcolorbrewer
+test:
+  commands:
+    - '$R -e "library(''HTqPCR'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/HTqPCR.html
+  license: Artistic-2.0
+  summary: 'Analysis of Ct values from high throughput quantitative real-time PCR
+    (qPCR) assays across multiple conditions or replicates. The input data can be
+    from spatially-defined formats such ABI TaqMan Low Density Arrays or OpenArray;
+    LightCycler from Roche Applied Science; the CFX plates from Bio-Rad Laboratories;
+    conventional 96- or 384-well plates; or microfluidic devices such as the Dynamic
+    Arrays from Fluidigm Corporation. HTqPCR handles data loading, quality assessment,
+    normalization, visualization and parametric or non-parametric testing for statistical
+    significance in Ct values between features (e.g. genes, microRNAs).'
