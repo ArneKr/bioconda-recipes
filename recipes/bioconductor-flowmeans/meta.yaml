@@ -1,0 +1,37 @@
+package:
+  name: bioconductor-flowmeans
+  version: 1.36.0
+source:
+  fn: flowMeans_1.36.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/flowMeans_1.36.0.tar.gz
+    - https://bioarchive.galaxyproject.org/flowMeans_1.36.0.tar.gz
+    - https://depot.galaxyproject.org/software/flowMeans/flowMeans_1.36.0_src_all.tar.gz
+  md5: 1b11b86e78b905d9d3df9a30f37d4210
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biobase
+    - bioconductor-flowcore
+    - r-base
+    - r-feature
+    - r-rrcov
+  run:
+    - bioconductor-biobase
+    - bioconductor-flowcore
+    - r-base
+    - r-feature
+    - r-rrcov
+test:
+  commands:
+    - '$R -e "library(''flowMeans'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/flowMeans.html
+  license: Artistic-2.0
+  summary: 'Identifies cell populations in Flow Cytometry data using non-parametric
+    clustering and segmented-regression-based change point detection. Note: R 2.11.0
+    or newer is required.'
