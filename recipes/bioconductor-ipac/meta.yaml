@@ -1,0 +1,35 @@
+package:
+  name: bioconductor-ipac
+  version: 1.20.1
+source:
+  fn: iPAC_1.20.1.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/iPAC_1.20.1.tar.gz
+    - https://depot.galaxyproject.org/software/iPAC/iPAC_1.20.1_src_all.tar.gz
+  md5: 0b9f742828e55e9ce9679dbadc5f9530
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biostrings
+    - bioconductor-multtest
+    - r-base
+    - r-gdata
+    - r-scatterplot3d
+  run:
+    - bioconductor-biostrings
+    - bioconductor-multtest
+    - r-base
+    - r-gdata
+    - r-scatterplot3d
+test:
+  commands:
+    - '$R -e "library(''iPAC'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/iPAC.html
+  license: GPL-2
+  summary: 'iPAC is a novel tool to identify somatic amino acid mutation clustering
+    within proteins while taking into account protein structure.'
