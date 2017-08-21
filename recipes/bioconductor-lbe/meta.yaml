@@ -1,0 +1,30 @@
+package:
+  name: bioconductor-lbe
+  version: 1.44.0
+source:
+  fn: LBE_1.44.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/LBE_1.44.0.tar.gz
+    - https://bioarchive.galaxyproject.org/LBE_1.44.0.tar.gz
+    - https://depot.galaxyproject.org/software/LBE/LBE_1.44.0_src_all.tar.gz
+  md5: 7dddfe5e1440d487ab6ad3794a94591f
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - r-base
+  run:
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''LBE'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/LBE.html
+  license: GPL-2
+  summary: 'LBE is an efficient procedure for estimating the proportion of true null
+    hypotheses, the false discovery rate (and so the q-values) in the framework of
+    estimating procedures based on the marginal distribution of the p-values without
+    assumption for the alternative hypothesis.'
