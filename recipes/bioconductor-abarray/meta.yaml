@@ -1,0 +1,36 @@
+package:
+  name: bioconductor-abarray
+  version: 1.44.0
+source:
+  fn: ABarray_1.44.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/ABarray_1.44.0.tar.gz
+    - https://bioarchive.galaxyproject.org/ABarray_1.44.0.tar.gz
+    - https://depot.galaxyproject.org/software/ABarray/ABarray_1.44.0_src_all.tar.gz
+  md5: 95f76e28f96a71dec51003f42f47f199
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biobase
+    - bioconductor-multtest
+    - r-base
+  run:
+    - bioconductor-biobase
+    - bioconductor-multtest
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''ABarray'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/ABarray.html
+  license: GPL
+  summary: 'Automated pipline to perform gene expression analysis for Applied Biosystems
+    Genome Survey Microarray (AB1700) data format. Functions include data preprocessing,
+    filtering, control probe analysis, statistical analysis in one single function.
+    A GUI interface is also provided. The raw data, processed data, graphics output
+    and statistical results are organized into folders according to the analysis settings
+    used.'
