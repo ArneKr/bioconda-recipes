@@ -1,0 +1,59 @@
+package:
+  name: bioconductor-cancer
+  version: 1.8.0
+source:
+  fn: canceR_1.8.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/canceR_1.8.0.tar.gz
+    - https://bioarchive.galaxyproject.org/canceR_1.8.0.tar.gz
+    - https://depot.galaxyproject.org/software/canceR/canceR_1.8.0_src_all.tar.gz
+  md5: 34737a1c9e0d57de7a0df23fe72614ee
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biobase
+    - bioconductor-genetclassifier
+    - bioconductor-gseabase
+    - bioconductor-gsealm
+    - bioconductor-phenotest
+    - r-base
+    - r-cgdsr
+    - r-circlize
+    - r-formula
+    - r-plyr
+    - r-rpart
+    - r-runit
+    - r-survival
+    - r-tcltk2
+    - r-tkrplot
+  run:
+    - bioconductor-biobase
+    - bioconductor-genetclassifier
+    - bioconductor-gseabase
+    - bioconductor-gsealm
+    - bioconductor-phenotest
+    - r-base
+    - r-cgdsr
+    - r-circlize
+    - r-formula
+    - r-plyr
+    - r-rpart
+    - r-runit
+    - r-survival
+    - r-tcltk2
+    - r-tkrplot
+test:
+  commands:
+    - '$R -e "library(''canceR'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/canceR.html
+  license: GPL-2
+  summary: 'The package is user friendly interface based on the cgdsr and other modeling
+    packages to explore, compare, and analyse all available Cancer Data (Clinical
+    data, Gene Mutation, Gene Methylation, Gene Expression, Protein Phosphorylation,
+    Copy Number Alteration) hosted by the Computational Biology Center at Memorial-Sloan-Kettering
+    Cancer Center (MSKCC).'
