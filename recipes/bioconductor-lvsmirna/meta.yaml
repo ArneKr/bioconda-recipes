@@ -1,0 +1,44 @@
+package:
+  name: bioconductor-lvsmirna
+  version: 1.26.1
+source:
+  fn: LVSmiRNA_1.26.1.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/LVSmiRNA_1.26.1.tar.gz
+    - https://depot.galaxyproject.org/software/LVSmiRNA/LVSmiRNA_1.26.1_src_all.tar.gz
+  md5: a2c9ee16ac09d13047b1da9d42187414
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-affy
+    - bioconductor-biobase
+    - bioconductor-biocgenerics
+    - bioconductor-limma
+    - bioconductor-vsn
+    - bioconductor-zlibbioc
+    - r-base
+    - r-mass
+    - r-quantreg
+    - r-sparsem
+  run:
+    - bioconductor-affy
+    - bioconductor-biobase
+    - bioconductor-biocgenerics
+    - bioconductor-limma
+    - bioconductor-vsn
+    - bioconductor-zlibbioc
+    - r-base
+    - r-mass
+    - r-quantreg
+    - r-sparsem
+test:
+  commands:
+    - '$R -e "library(''LVSmiRNA'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/LVSmiRNA.html
+  license: GPL-2
+  summary: 'Normalization of Agilent miRNA arrays.'
