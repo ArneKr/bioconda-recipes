@@ -1,0 +1,43 @@
+package:
+  name: bioconductor-hitc
+  version: 1.20.0
+source:
+  fn: HiTC_1.20.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/HiTC_1.20.0.tar.gz
+    - https://bioarchive.galaxyproject.org/HiTC_1.20.0.tar.gz
+    - https://depot.galaxyproject.org/software/HiTC/HiTC_1.20.0_src_all.tar.gz
+  md5: 946ae2468d3d9b6fcebc5a91ae6aec8d
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biostrings
+    - bioconductor-genomeinfodb
+    - bioconductor-genomicranges
+    - bioconductor-iranges
+    - bioconductor-rtracklayer
+    - r-base
+    - r-matrix
+    - r-rcolorbrewer
+  run:
+    - bioconductor-biostrings
+    - bioconductor-genomeinfodb
+    - bioconductor-genomicranges
+    - bioconductor-iranges
+    - bioconductor-rtracklayer
+    - r-base
+    - r-matrix
+    - r-rcolorbrewer
+test:
+  commands:
+    - '$R -e "library(''HiTC'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/HiTC.html
+  license: Artistic-2.0
+  summary: 'The HiTC package was developed to explore high-throughput ''C'' data such
+    as 5C or Hi-C. Dedicated R classes as well as standard methods for quality controls,
+    normalization, visualization, and further analysis are also provided.'
