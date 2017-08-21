@@ -1,0 +1,39 @@
+package:
+  name: bioconductor-gtrellis
+  version: 1.8.0
+source:
+  fn: gtrellis_1.8.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/gtrellis_1.8.0.tar.gz
+    - https://bioarchive.galaxyproject.org/gtrellis_1.8.0.tar.gz
+    - https://depot.galaxyproject.org/software/gtrellis/gtrellis_1.8.0_src_all.tar.gz
+  md5: 0fea3387d9deaea5ee06d45749b8588c
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-genomicranges
+    - bioconductor-iranges
+    - r-base
+    - 'r-circlize >=0.3.3'
+    - r-getoptlong
+  run:
+    - bioconductor-genomicranges
+    - bioconductor-iranges
+    - r-base
+    - 'r-circlize >=0.3.3'
+    - r-getoptlong
+test:
+  commands:
+    - '$R -e "library(''gtrellis'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/gtrellis.html
+  license: 'GPL (>= 2)'
+  summary: 'Genome level Trellis graph visualizes genomic data conditioned by genomic
+    categories (e.g. chromosomes). For each genomic category, multiple dimensional
+    data which are represented as tracks describe different features from different
+    aspects. This package provides high flexibility to arrange genomic categories
+    and to add self-defined graphics in the plot.'
