@@ -1,0 +1,32 @@
+package:
+  name: bioconductor-ichip
+  version: 1.30.0
+source:
+  fn: iChip_1.30.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/iChip_1.30.0.tar.gz
+    - https://bioarchive.galaxyproject.org/iChip_1.30.0.tar.gz
+    - https://depot.galaxyproject.org/software/iChip/iChip_1.30.0_src_all.tar.gz
+  md5: fee097a2bb76198c3b912e5da2df2399
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-limma
+    - r-base
+  run:
+    - bioconductor-limma
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''iChip'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/iChip.html
+  license: 'GPL (>= 2)'
+  summary: 'This package uses hidden Ising models to identify enriched genomic regions
+    in ChIP-chip data.  It can be used to analyze the data from multiple platforms
+    (e.g., Affymetrix, Agilent, and NimbleGen), and the data with single to multiple
+    replicates.'
