@@ -1,0 +1,35 @@
+package:
+  name: bioconductor-flowvs
+  version: 1.8.0
+source:
+  fn: flowVS_1.8.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/flowVS_1.8.0.tar.gz
+    - https://bioarchive.galaxyproject.org/flowVS_1.8.0.tar.gz
+    - https://depot.galaxyproject.org/software/flowVS/flowVS_1.8.0_src_all.tar.gz
+  md5: 766eb7289de339adc476f04de340f83f
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-flowcore
+    - bioconductor-flowstats
+    - bioconductor-flowviz
+    - r-base
+  run:
+    - bioconductor-flowcore
+    - bioconductor-flowstats
+    - bioconductor-flowviz
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''flowVS'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/flowVS.html
+  license: Artistic-2.0
+  summary: 'Per-channel variance stabilization from a collection of flow cytometry
+    samples by Bertlett test for homogeneity of variances. The approach is applicable
+    to microarrays data as well.'
