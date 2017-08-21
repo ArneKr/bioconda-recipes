@@ -1,0 +1,42 @@
+package:
+  name: bioconductor-bitseq
+  version: 1.20.0
+source:
+  fn: BitSeq_1.20.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/BitSeq_1.20.0.tar.gz
+    - https://bioarchive.galaxyproject.org/BitSeq_1.20.0.tar.gz
+    - https://depot.galaxyproject.org/software/BitSeq/BitSeq_1.20.0_src_all.tar.gz
+  md5: ea3dc17d69baec87b8e4c1b3533b3e25
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-iranges
+    - bioconductor-rsamtools
+    - bioconductor-s4vectors
+    - bioconductor-zlibbioc
+    - r-base
+  run:
+    - bioconductor-iranges
+    - bioconductor-rsamtools
+    - bioconductor-s4vectors
+    - bioconductor-zlibbioc
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''BitSeq'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/BitSeq.html
+  license: 'Artistic-2.0 + file LICENSE'
+  summary: 'The BitSeq package is targeted for transcript expression analysis and
+    differential expression analysis of RNA-seq data in two stage process. In the
+    first stage it uses Bayesian inference methodology to infer expression of individual
+    transcripts from individual RNA-seq experiments. The second stage of BitSeq embraces
+    the differential expression analysis of transcript expression. Providing expression
+    estimates from replicates of multiple conditions, Log-Normal model of the estimates
+    is used for inferring the condition mean transcript expression and ranking the
+    transcripts based on the likelihood of differential expression.'
