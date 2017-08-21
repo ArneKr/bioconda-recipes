@@ -1,0 +1,31 @@
+package:
+  name: bioconductor-lol
+  version: 1.24.0
+source:
+  fn: lol_1.24.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/lol_1.24.0.tar.gz
+    - https://bioarchive.galaxyproject.org/lol_1.24.0.tar.gz
+    - https://depot.galaxyproject.org/software/lol/lol_1.24.0_src_all.tar.gz
+  md5: dce3df65c619a1725f5e8d48714fa7dc
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - r-base
+    - r-matrix
+    - r-penalized
+  run:
+    - r-base
+    - r-matrix
+    - r-penalized
+test:
+  commands:
+    - '$R -e "library(''lol'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/lol.html
+  license: GPL-2
+  summary: 'Various optimization methods for Lasso inference with matrix warpper'
