@@ -1,0 +1,32 @@
+package:
+  name: bioconductor-igc
+  version: 1.6.0
+source:
+  fn: iGC_1.6.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/iGC_1.6.0.tar.gz
+    - https://bioarchive.galaxyproject.org/iGC_1.6.0.tar.gz
+    - https://depot.galaxyproject.org/software/iGC/iGC_1.6.0_src_all.tar.gz
+  md5: 28599e04c517bef6fb5b256a1e817182
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - r-base
+    - r-data.table
+    - r-plyr
+  run:
+    - r-base
+    - r-data.table
+    - r-plyr
+test:
+  commands:
+    - '$R -e "library(''iGC'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/iGC.html
+  license: GPL-2
+  summary: 'This package is intended to identify differentially expressed genes driven
+    by Copy Number Alterations from samples with both gene expression and CNA data.'
