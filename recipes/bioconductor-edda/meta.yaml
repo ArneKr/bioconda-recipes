@@ -1,0 +1,46 @@
+package:
+  name: bioconductor-edda
+  version: 1.14.0
+source:
+  fn: EDDA_1.14.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/EDDA_1.14.0.tar.gz
+    - https://bioarchive.galaxyproject.org/EDDA_1.14.0.tar.gz
+    - https://depot.galaxyproject.org/software/EDDA/EDDA_1.14.0_src_all.tar.gz
+  md5: cad71bc28824ba431b136087546a4e03
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-bayseq
+    - bioconductor-deseq
+    - bioconductor-edger
+    - r-base
+    - 'r-rcpp >=0.10.4'
+    - r-rocr
+    - r-snow
+    - gcc  # [linux]
+    - llvm  # [osx]
+  run:
+    - bioconductor-bayseq
+    - bioconductor-deseq
+    - bioconductor-edger
+    - r-base
+    - 'r-rcpp >=0.10.4'
+    - r-rocr
+    - r-snow
+test:
+  commands:
+    - '$R -e "library(''EDDA'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/EDDA.html
+  license: 'GPL (>= 2)'
+  summary: 'EDDA can aid in the design of a range of common experiments such as RNA-seq,
+    Nanostring assays, RIP-seq and Metagenomic sequencing, and enables researchers
+    to comprehensively investigate the impact of experimental decisions on the ability
+    to detect differential abundance. This work was published on 3 December 2014 at
+    Genome Biology under the title "The importance of study design for detecting differentially
+    abundant features in high-throughput experiments" (http://genomebiology.com/2014/15/12/527).'
