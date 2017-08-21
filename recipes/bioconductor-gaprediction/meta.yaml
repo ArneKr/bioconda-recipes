@@ -1,0 +1,32 @@
+package:
+  name: bioconductor-gaprediction
+  version: 1.2.0
+source:
+  fn: GAprediction_1.2.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/GAprediction_1.2.0.tar.gz
+    - https://bioarchive.galaxyproject.org/GAprediction_1.2.0.tar.gz
+    - https://depot.galaxyproject.org/software/GAprediction/GAprediction_1.2.0_src_all.tar.gz
+  md5: 1112174b4e1e4929166f2d71cd5825e0
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - r-base
+    - r-glmnet
+    - r-matrix
+  run:
+    - r-base
+    - r-glmnet
+    - r-matrix
+test:
+  commands:
+    - '$R -e "library(''GAprediction'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/GAprediction.html
+  license: 'GPL (>=2)'
+  summary: '[GAprediction] predicts gestational age using Illumina HumanMethylation450
+    CpG data.'
