@@ -1,0 +1,32 @@
+package:
+  name: bioconductor-logitt
+  version: 1.34.0
+source:
+  fn: logitT_1.34.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/logitT_1.34.0.tar.gz
+    - https://bioarchive.galaxyproject.org/logitT_1.34.0.tar.gz
+    - https://depot.galaxyproject.org/software/logitT/logitT_1.34.0_src_all.tar.gz
+  md5: d284e677a2b6b2cfc58d45948d20582d
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-affy
+    - r-base
+  run:
+    - bioconductor-affy
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''logitT'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/logitT.html
+  license: 'GPL (>= 2)'
+  summary: 'The logitT library implements the Logit-t algorithm introduced in --A
+    high performance test of differential gene expression for oligonucleotide arrays--
+    by William J Lemon, Sandya Liyanarachchi and Ming You for use with Affymetrix
+    data stored in an AffyBatch object in R.'
