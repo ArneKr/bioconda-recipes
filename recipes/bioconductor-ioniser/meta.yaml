@@ -1,0 +1,57 @@
+package:
+  name: bioconductor-ioniser
+  version: 2.0.0
+source:
+  fn: IONiseR_2.0.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/IONiseR_2.0.0.tar.gz
+    - https://bioarchive.galaxyproject.org/IONiseR_2.0.0.tar.gz
+    - https://depot.galaxyproject.org/software/IONiseR/IONiseR_2.0.0_src_all.tar.gz
+  md5: 711f87bc15b706a4df99f4913db38618
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biocgenerics
+    - bioconductor-biocparallel
+    - bioconductor-biostrings
+    - bioconductor-rhdf5
+    - bioconductor-shortread
+    - bioconductor-xvector
+    - r-base
+    - r-bit64
+    - r-dplyr
+    - r-ggplot2
+    - r-magrittr
+    - r-stringr
+    - r-tibble
+    - r-tidyr
+  run:
+    - bioconductor-biocgenerics
+    - bioconductor-biocparallel
+    - bioconductor-biostrings
+    - bioconductor-rhdf5
+    - bioconductor-shortread
+    - bioconductor-xvector
+    - r-base
+    - r-bit64
+    - r-dplyr
+    - r-ggplot2
+    - r-magrittr
+    - r-stringr
+    - r-tibble
+    - r-tidyr
+test:
+  commands:
+    - '$R -e "library(''IONiseR'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/IONiseR.html
+  license: 'MIT + file LICENSE'
+  summary: 'IONiseR provides tools for the quality assessment of Oxford Nanopore MinION
+    data. It extracts summary statistics from a set of fast5 files and can be used
+    either before or after base calling.  In addition to standard summaries of the
+    read-types produced, it provides a number of plots for visualising metrics relative
+    to experiment run time or spatially over the surface of a flowcell.'
