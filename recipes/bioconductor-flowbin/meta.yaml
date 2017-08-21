@@ -1,0 +1,42 @@
+package:
+  name: bioconductor-flowbin
+  version: 1.12.0
+source:
+  fn: flowBin_1.12.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/flowBin_1.12.0.tar.gz
+    - https://bioarchive.galaxyproject.org/flowBin_1.12.0.tar.gz
+    - https://depot.galaxyproject.org/software/flowBin/flowBin_1.12.0_src_all.tar.gz
+  md5: bb8d599fce72efa2b5a9c9271b6e0900
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biocgenerics
+    - bioconductor-flowcore
+    - bioconductor-flowfp
+    - bioconductor-limma
+    - r-base
+    - r-class
+    - r-snow
+  run:
+    - bioconductor-biocgenerics
+    - bioconductor-flowcore
+    - bioconductor-flowfp
+    - bioconductor-limma
+    - r-base
+    - r-class
+    - r-snow
+test:
+  commands:
+    - '$R -e "library(''flowBin'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/flowBin.html
+  license: Artistic-2.0
+  summary: 'Software to combine flow cytometry data that has been multiplexed into
+    multiple tubes with common markers between them, by establishing common bins across
+    tubes in terms of the common markers, then determining expression within each
+    tube for each bin in terms of the tube-specific markers.'
