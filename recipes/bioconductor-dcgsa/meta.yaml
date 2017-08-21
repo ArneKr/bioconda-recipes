@@ -1,0 +1,37 @@
+package:
+  name: bioconductor-dcgsa
+  version: 1.4.0
+source:
+  fn: dcGSA_1.4.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/dcGSA_1.4.0.tar.gz
+    - https://bioarchive.galaxyproject.org/dcGSA_1.4.0.tar.gz
+    - https://depot.galaxyproject.org/software/dcGSA/dcGSA_1.4.0_src_all.tar.gz
+  md5: 4650a98b3db197d3189d6c3c1f32b590
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biocparallel
+    - r-base
+    - r-matrix
+  run:
+    - bioconductor-biocparallel
+    - r-base
+    - r-matrix
+test:
+  commands:
+    - '$R -e "library(''dcGSA'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/dcGSA.html
+  license: GPL-2
+  summary: 'Distance-correlation based Gene Set Analysis for longitudinal gene expression
+    profiles. In longitudinal studies, the gene expression profiles were collected
+    at each visit from each subject and hence there are multiple measurements of the
+    gene expression profiles for each subject. The dcGSA package could be used to
+    assess the associations between gene sets and clinical outcomes of interest by
+    fully taking advantage of the longitudinal nature of both the gene expression
+    profiles and clinical outcomes.'
