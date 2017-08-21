@@ -1,0 +1,57 @@
+package:
+  name: bioconductor-ivas
+  version: 1.96.0
+source:
+  fn: IVAS_1.96.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/IVAS_1.96.0.tar.gz
+    - https://bioarchive.galaxyproject.org/IVAS_1.96.0.tar.gz
+    - https://depot.galaxyproject.org/software/IVAS/IVAS_1.96.0_src_all.tar.gz
+  md5: dc37c916039a863d566eed689e0a090f
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-annotationdbi
+    - bioconductor-biobase
+    - bioconductor-biocgenerics
+    - bioconductor-biocparallel
+    - bioconductor-genomeinfodb
+    - bioconductor-genomicfeatures
+    - bioconductor-genomicranges
+    - bioconductor-iranges
+    - bioconductor-s4vectors
+    - r-base
+    - r-doparallel
+    - r-foreach
+    - r-ggfortify
+    - r-ggplot2
+    - r-lme4
+    - r-matrix
+  run:
+    - bioconductor-annotationdbi
+    - bioconductor-biobase
+    - bioconductor-biocgenerics
+    - bioconductor-biocparallel
+    - bioconductor-genomeinfodb
+    - bioconductor-genomicfeatures
+    - bioconductor-genomicranges
+    - bioconductor-iranges
+    - bioconductor-s4vectors
+    - r-base
+    - r-doparallel
+    - r-foreach
+    - r-ggfortify
+    - r-ggplot2
+    - r-lme4
+    - r-matrix
+test:
+  commands:
+    - '$R -e "library(''IVAS'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/IVAS.html
+  license: GPL-2
+  summary: 'Identification of genetic variants affecting alternative splicing.'
