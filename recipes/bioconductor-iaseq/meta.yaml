@@ -1,0 +1,29 @@
+package:
+  name: bioconductor-iaseq
+  version: 1.20.0
+source:
+  fn: iASeq_1.20.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/iASeq_1.20.0.tar.gz
+    - https://bioarchive.galaxyproject.org/iASeq_1.20.0.tar.gz
+    - https://depot.galaxyproject.org/software/iASeq/iASeq_1.20.0_src_all.tar.gz
+  md5: 62abbf4c373975cb5ad0b13207c383f6
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - r-base
+  run:
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''iASeq'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/iASeq.html
+  license: GPL-2
+  summary: 'It fits correlation motif model to multiple RNAseq or ChIPseq studies
+    to improve detection of allele-specific events and describe correlation patterns
+    across studies.'
