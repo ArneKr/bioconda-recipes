@@ -1,0 +1,40 @@
+package:
+  name: bioconductor-hilbertcurve
+  version: 1.6.0
+source:
+  fn: HilbertCurve_1.6.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/HilbertCurve_1.6.0.tar.gz
+    - https://bioarchive.galaxyproject.org/HilbertCurve_1.6.0.tar.gz
+    - https://depot.galaxyproject.org/software/HilbertCurve/HilbertCurve_1.6.0_src_all.tar.gz
+  md5: 983f68d9e26640b47712577a1c6533e5
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-genomicranges
+    - bioconductor-hilbertvis
+    - bioconductor-iranges
+    - r-base
+    - 'r-circlize >=0.3.3'
+    - r-png
+  run:
+    - bioconductor-genomicranges
+    - bioconductor-hilbertvis
+    - bioconductor-iranges
+    - r-base
+    - 'r-circlize >=0.3.3'
+    - r-png
+test:
+  commands:
+    - '$R -e "library(''HilbertCurve'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/HilbertCurve.html
+  license: 'GPL (>= 2)'
+  summary: 'Hilbert curve is a type of space-filling curves that fold one dimensional
+    axis into a two dimensional space, but with still preserves the locality. This
+    package aims to provide an easy and flexible way to visualize data through Hilbert
+    curve.'
