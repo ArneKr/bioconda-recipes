@@ -1,0 +1,65 @@
+package:
+  name: bioconductor-arrayqualitymetrics
+  version: 3.32.0
+source:
+  fn: arrayQualityMetrics_3.32.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/arrayQualityMetrics_3.32.0.tar.gz
+    - https://bioarchive.galaxyproject.org/arrayQualityMetrics_3.32.0.tar.gz
+    - https://depot.galaxyproject.org/software/arrayQualityMetrics/arrayQualityMetrics_3.32.0_src_all.tar.gz
+  md5: 0f3d28f3797376ff9343b3603485f9aa
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-affy
+    - 'bioconductor-affyplm >=1.27.3'
+    - bioconductor-beadarray
+    - bioconductor-biobase
+    - bioconductor-genefilter
+    - bioconductor-limma
+    - 'bioconductor-vsn >=3.23.3'
+    - r-
+    - r-base
+    - 'r-cairo >=1.4-6'
+    - 'r-gridsvg >=1.4-3'
+    - r-hmisc
+    - r-hwriter
+    - r-lattice
+    - r-latticeextra
+    - r-rcolorbrewer
+    - r-setrng
+    - 'r-svgannotation >=0.9-0'
+    - r-xml
+  run:
+    - bioconductor-affy
+    - 'bioconductor-affyplm >=1.27.3'
+    - bioconductor-beadarray
+    - bioconductor-biobase
+    - bioconductor-genefilter
+    - bioconductor-limma
+    - 'bioconductor-vsn >=3.23.3'
+    - r-
+    - r-base
+    - 'r-cairo >=1.4-6'
+    - 'r-gridsvg >=1.4-3'
+    - r-hmisc
+    - r-hwriter
+    - r-lattice
+    - r-latticeextra
+    - r-rcolorbrewer
+    - r-setrng
+    - 'r-svgannotation >=0.9-0'
+    - r-xml
+test:
+  commands:
+    - '$R -e "library(''arrayQualityMetrics'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/arrayQualityMetrics.html
+  license: 'LGPL (>= 2)'
+  summary: 'This package generates microarray quality metrics reports for data in
+    Bioconductor microarray data containers (ExpressionSet, NChannelSet, AffyBatch).
+    One and two color array platforms are supported.'
