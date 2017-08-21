@@ -1,0 +1,44 @@
+package:
+  name: bioconductor-enrichedheatmap
+  version: 1.6.0
+source:
+  fn: EnrichedHeatmap_1.6.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/EnrichedHeatmap_1.6.0.tar.gz
+    - https://bioarchive.galaxyproject.org/EnrichedHeatmap_1.6.0.tar.gz
+    - https://depot.galaxyproject.org/software/EnrichedHeatmap/EnrichedHeatmap_1.6.0_src_all.tar.gz
+  md5: b36d0ea2b1c35a4a4aec8e015e316ac0
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - 'bioconductor-complexheatmap >=1.11.1'
+    - bioconductor-genomicranges
+    - bioconductor-iranges
+    - r-base
+    - r-getoptlong
+    - r-locfit
+    - r-matrixstats
+  run:
+    - 'bioconductor-complexheatmap >=1.11.1'
+    - bioconductor-genomicranges
+    - bioconductor-iranges
+    - r-base
+    - r-getoptlong
+    - r-locfit
+    - r-matrixstats
+test:
+  commands:
+    - '$R -e "library(''EnrichedHeatmap'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/EnrichedHeatmap.html
+  license: 'GPL (>= 2)'
+  summary: 'Enriched heatmap is a special type of heatmap which visualizes the enrichment
+    of genomic signals on specific target regions. Here we implement enriched heatmap
+    by ComplexHeatmap package. Since this type of heatmap is just a normal heatmap
+    but with some special settings, with the functionality of ComplexHeatmap, it would
+    be much easier to customize the heatmap as well as concatenating to a list of
+    heatmaps to show correspondance between different data sources.'
