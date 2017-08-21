@@ -1,0 +1,41 @@
+package:
+  name: bioconductor-ctsge
+  version: 1.2.0
+source:
+  fn: ctsGE_1.2.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/ctsGE_1.2.0.tar.gz
+    - https://bioarchive.galaxyproject.org/ctsGE_1.2.0.tar.gz
+    - https://depot.galaxyproject.org/software/ctsGE/ctsGE_1.2.0_src_all.tar.gz
+  md5: e093072f365ac3801011ea3f5666cdaf
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-limma
+    - r-base
+    - r-ccapp
+    - r-ggplot2
+    - r-reshape2
+    - r-shiny
+    - r-stringr
+  run:
+    - bioconductor-limma
+    - r-base
+    - r-ccapp
+    - r-ggplot2
+    - r-reshape2
+    - r-shiny
+    - r-stringr
+test:
+  commands:
+    - '$R -e "library(''ctsGE'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/ctsGE.html
+  license: GPL-2
+  summary: 'Methodology for supervised clustering of potentially many predictor variables,
+    such as genes etc., in time series datasets Provides functions that help the user
+    assigning genes to predefined set of model profiles.'
