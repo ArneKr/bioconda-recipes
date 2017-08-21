@@ -1,0 +1,42 @@
+package:
+  name: bioconductor-italics
+  version: 2.36.0
+source:
+  fn: ITALICS_2.36.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/ITALICS_2.36.0.tar.gz
+    - https://bioarchive.galaxyproject.org/ITALICS_2.36.0.tar.gz
+    - https://depot.galaxyproject.org/software/ITALICS/ITALICS_2.36.0_src_all.tar.gz
+  md5: 3323602786b1e1718c9dbb1af1f414dd
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-affxparser
+    - bioconductor-glad
+    - bioconductor-oligo
+    - bioconductor-oligoclasses
+    - bioconductor-pd.mapping50k.xba240
+    - r-base
+    - r-dbi
+    - r-italicsdata
+  run:
+    - bioconductor-affxparser
+    - bioconductor-glad
+    - bioconductor-oligo
+    - bioconductor-oligoclasses
+    - bioconductor-pd.mapping50k.xba240
+    - r-base
+    - r-dbi
+    - r-italicsdata
+test:
+  commands:
+    - '$R -e "library(''ITALICS'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/ITALICS.html
+  license: GPL-2
+  summary: 'A Method to normalize of Affymetrix GeneChip Human Mapping 100K and 500K
+    set'
