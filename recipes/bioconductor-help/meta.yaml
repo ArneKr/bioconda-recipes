@@ -1,0 +1,30 @@
+package:
+  name: bioconductor-help
+  version: 1.34.0
+source:
+  fn: HELP_1.34.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/HELP_1.34.0.tar.gz
+    - https://bioarchive.galaxyproject.org/HELP_1.34.0.tar.gz
+    - https://depot.galaxyproject.org/software/HELP/HELP_1.34.0_src_all.tar.gz
+  md5: 43c40d225441ab327536ddb69bd9fafd
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biobase
+    - r-base
+  run:
+    - bioconductor-biobase
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''HELP'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/HELP.html
+  license: 'GPL (>= 2)'
+  summary: 'The package contains a modular pipeline for analysis of HELP microarray
+    data, and includes graphical and mathematical tools with more general applications.'
