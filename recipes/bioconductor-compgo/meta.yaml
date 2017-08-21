@@ -1,0 +1,51 @@
+package:
+  name: bioconductor-compgo
+  version: 1.12.0
+source:
+  fn: CompGO_1.12.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/CompGO_1.12.0.tar.gz
+    - https://bioarchive.galaxyproject.org/CompGO_1.12.0.tar.gz
+    - https://depot.galaxyproject.org/software/CompGO/CompGO_1.12.0_src_all.tar.gz
+  md5: a40ff2f7eef1e6b06b723d6b60c0373d
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-genomicfeatures
+    - bioconductor-pathview
+    - bioconductor-pcamethods
+    - bioconductor-rdavidwebservice
+    - bioconductor-rgraphviz
+    - bioconductor-rtracklayer
+    - bioconductor-txdb.mmusculus.ucsc.mm9.knowngene
+    - r-base
+    - r-ggplot2
+    - r-reshape2
+  run:
+    - bioconductor-genomicfeatures
+    - bioconductor-pathview
+    - bioconductor-pcamethods
+    - bioconductor-rdavidwebservice
+    - bioconductor-rgraphviz
+    - bioconductor-rtracklayer
+    - bioconductor-txdb.mmusculus.ucsc.mm9.knowngene
+    - r-base
+    - r-ggplot2
+    - r-reshape2
+test:
+  commands:
+    - '$R -e "library(''CompGO'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/CompGO.html
+  license: GPL-2
+  summary: 'This package contains functions to accomplish several tasks. It is able
+    to download full genome databases from UCSC, import .bed files easily, annotate
+    these .bed file regions with genes (plus distance) from aforementioned database
+    dumps, interface with DAVID to create functional annotation and gene ontology
+    enrichment charts based on gene lists (such as those generated from input .bed
+    files) and finally visualise and compare these enrichments using either directed
+    acyclic graphs or scatterplots.'
