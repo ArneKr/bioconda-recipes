@@ -1,0 +1,56 @@
+package:
+  name: bioconductor-egad
+  version: 1.4.0
+source:
+  fn: EGAD_1.4.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/EGAD_1.4.0.tar.gz
+    - https://bioarchive.galaxyproject.org/EGAD_1.4.0.tar.gz
+    - https://depot.galaxyproject.org/software/EGAD/EGAD_1.4.0_src_all.tar.gz
+  md5: 491fd0832aec0921a161f3a09c8eff46
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-affy
+    - bioconductor-arrayqualitymetrics
+    - bioconductor-biobase
+    - bioconductor-geoquery
+    - bioconductor-impute
+    - bioconductor-limma
+    - r-base
+    - r-gplots
+    - r-igraph
+    - r-mass
+    - r-matrix
+    - r-plyr
+    - r-rcolorbrewer
+    - r-rcurl
+    - r-zoo
+  run:
+    - bioconductor-affy
+    - bioconductor-arrayqualitymetrics
+    - bioconductor-biobase
+    - bioconductor-geoquery
+    - bioconductor-impute
+    - bioconductor-limma
+    - r-base
+    - r-gplots
+    - r-igraph
+    - r-mass
+    - r-matrix
+    - r-plyr
+    - r-rcolorbrewer
+    - r-rcurl
+    - r-zoo
+test:
+  commands:
+    - '$R -e "library(''EGAD'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/EGAD.html
+  license: GPL-2
+  summary: 'The package implements a series of highly efficient tools to calculate
+    functional properties of networks based on guilt by association methods.'
