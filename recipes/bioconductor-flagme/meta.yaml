@@ -1,0 +1,40 @@
+package:
+  name: bioconductor-flagme
+  version: 1.32.0
+source:
+  fn: flagme_1.32.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/flagme_1.32.0.tar.gz
+    - https://bioarchive.galaxyproject.org/flagme_1.32.0.tar.gz
+    - https://depot.galaxyproject.org/software/flagme/flagme_1.32.0_src_all.tar.gz
+  md5: ec7ded2fdd673c34851aa89585f57b24
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-camera
+    - bioconductor-xcms
+    - r-base
+    - r-gcspikelite
+    - r-gplots
+    - r-mass
+    - r-sparsem
+  run:
+    - bioconductor-camera
+    - bioconductor-xcms
+    - r-base
+    - r-gcspikelite
+    - r-gplots
+    - r-mass
+    - r-sparsem
+test:
+  commands:
+    - '$R -e "library(''flagme'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/flagme.html
+  license: 'LGPL (>= 2)'
+  summary: 'Fragment-level analysis of gas chromatography - mass spectrometry metabolomics
+    data'
