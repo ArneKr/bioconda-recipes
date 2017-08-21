@@ -1,0 +1,45 @@
+package:
+  name: bioconductor-chrogps
+  version: 1.24.0
+source:
+  fn: chroGPS_1.24.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/chroGPS_1.24.0.tar.gz
+    - https://bioarchive.galaxyproject.org/chroGPS_1.24.0.tar.gz
+    - https://depot.galaxyproject.org/software/chroGPS/chroGPS_1.24.0_src_all.tar.gz
+  md5: 60118beceabd4377028479d3ab216e84
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biobase
+    - bioconductor-genomicranges
+    - r-base
+    - r-changepoint
+    - r-cluster
+    - r-dppackage
+    - r-icsnp
+    - r-mass
+  run:
+    - bioconductor-biobase
+    - bioconductor-genomicranges
+    - r-base
+    - r-changepoint
+    - r-cluster
+    - r-dppackage
+    - r-icsnp
+    - r-mass
+test:
+  commands:
+    - '$R -e "library(''chroGPS'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/chroGPS.html
+  license: 'GPL (>=2.14)'
+  summary: 'We provide intuitive maps to visualize the association between genetic
+    elements, with emphasis on epigenetics. The approach is based on Multi-Dimensional
+    Scaling. We provide several sensible distance metrics, and adjustment procedures
+    to remove systematic biases typically observed when merging data obtained under
+    different technologies or genetic backgrounds.'
