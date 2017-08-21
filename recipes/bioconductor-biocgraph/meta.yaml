@@ -1,0 +1,36 @@
+package:
+  name: bioconductor-biocgraph
+  version: 1.38.0
+source:
+  fn: biocGraph_1.38.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/biocGraph_1.38.0.tar.gz
+    - https://bioarchive.galaxyproject.org/biocGraph_1.38.0.tar.gz
+    - https://depot.galaxyproject.org/software/biocGraph/biocGraph_1.38.0_src_all.tar.gz
+  md5: 8174a11b8739176d3a94eac462ada93b
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biocgenerics
+    - bioconductor-geneplotter
+    - bioconductor-graph
+    - bioconductor-rgraphviz
+    - r-base
+  run:
+    - bioconductor-biocgenerics
+    - bioconductor-geneplotter
+    - bioconductor-graph
+    - bioconductor-rgraphviz
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''biocGraph'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/biocGraph.html
+  license: Artistic-2.0
+  summary: 'This package provides examples and code that make use of the different
+    graph related packages produced by Bioconductor.'
