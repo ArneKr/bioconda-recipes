@@ -1,0 +1,54 @@
+package:
+  name: bioconductor-degraph
+  version: 1.28.0
+source:
+  fn: DEGraph_1.28.0.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/DEGraph_1.28.0.tar.gz
+    - https://bioarchive.galaxyproject.org/DEGraph_1.28.0.tar.gz
+    - https://depot.galaxyproject.org/software/DEGraph/DEGraph_1.28.0_src_all.tar.gz
+  md5: 9cef436b169fdd272572a207f67d37e7
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-graph
+    - bioconductor-kegggraph
+    - bioconductor-ncigraph
+    - bioconductor-rbgl
+    - bioconductor-rgraphviz
+    - r-base
+    - r-lattice
+    - r-mvtnorm
+    - r-r.methodss3
+    - r-r.utils
+    - r-rrcov
+  run:
+    - bioconductor-graph
+    - bioconductor-kegggraph
+    - bioconductor-ncigraph
+    - bioconductor-rbgl
+    - bioconductor-rgraphviz
+    - r-base
+    - r-lattice
+    - r-mvtnorm
+    - r-r.methodss3
+    - r-r.utils
+    - r-rrcov
+test:
+  commands:
+    - '$R -e "library(''DEGraph'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/DEGraph.html
+  license: GPL-3
+  summary: 'DEGraph implements recent hypothesis testing methods which directly assess
+    whether a particular gene network is differentially expressed between two conditions.
+    This is to be contrasted with the more classical two-step approaches which first
+    test individual genes, then test gene sets for enrichment in differentially expressed
+    genes. These recent methods take into account the topology of the network to yield
+    more powerful detection procedures. DEGraph provides methods to easily test all
+    KEGG pathways for differential expression on any gene expression data set and
+    tools to visualize the results.'
