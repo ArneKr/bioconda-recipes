@@ -1,0 +1,47 @@
+package:
+  name: bioconductor-chemminer
+  version: 2.28.1
+source:
+  fn: ChemmineR_2.28.1.tar.gz
+  url:
+    - http://bioconductor.org/packages/3.5/bioc/src/contrib/ChemmineR_2.28.1.tar.gz
+    - https://depot.galaxyproject.org/software/ChemmineR/ChemmineR_2.28.1_src_all.tar.gz
+  md5: c319ecd906c226b1e5cb5def2dae4429
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biocgenerics
+    - r-base
+    - r-dbi
+    - r-digest
+    - r-ggplot2
+    - 'r-rcpp >=0.11.0'
+    - r-rcurl
+    - r-rjson
+    - gcc  # [linux]
+    - llvm  # [osx]
+  run:
+    - bioconductor-biocgenerics
+    - r-base
+    - r-dbi
+    - r-digest
+    - r-ggplot2
+    - 'r-rcpp >=0.11.0'
+    - r-rcurl
+    - r-rjson
+test:
+  commands:
+    - '$R -e "library(''ChemmineR'')"'
+about:
+  home: http://bioconductor.org/packages/3.5/bioc/html/ChemmineR.html
+  license: Artistic-2.0
+  summary: 'ChemmineR is a cheminformatics package for analyzing drug-like small molecule
+    data in R. Its latest version contains functions for efficient processing of large
+    numbers of molecules, physicochemical/structural property predictions, structural
+    similarity searching, classification and clustering of compound libraries with
+    a wide spectrum of algorithms. In addition, it offers visualization functions
+    for compound clustering results and chemical structures.'
