@@ -1,0 +1,59 @@
+{% set version = "1.14.0" %}
+{% set name = "proteoQC" %}
+{% set bioc = "3.6" %}
+
+package:
+  name: 'bioconductor-{{ name|lower }}'
+  version: '{{ version }}'
+source:
+  fn: '{{ name }}_{{ version }}.tar.gz'
+  url:
+    - 'http://bioconductor.org/packages/{{ bioc }}/bioc/src/contrib/{{ name }}_{{ version }}.tar.gz'
+    - 'https://bioarchive.galaxyproject.org/{{ name }}_{{ version }}.tar.gz'
+    - 'https://depot.galaxyproject.org/software/bioconductor-{{ name|lower }}/bioconductor-{{ name|lower }}_{{ version }}_src_all.tar.gz'
+  sha256: 54b739ece77b79f055ee16580d01f46eea5578ab54da1bd67a81ba750f5468cf
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-msnbase
+    - bioconductor-rpx
+    - bioconductor-rtandem
+    - r-base
+    - r-dplyr
+    - r-ggplot2
+    - r-nozzle.r1
+    - r-plotly
+    - r-plyr
+    - r-reshape2
+    - r-rmarkdown
+    - r-seqinr
+    - r-tidyr
+    - r-venndiagram
+    - r-xml
+  run:
+    - bioconductor-msnbase
+    - bioconductor-rpx
+    - bioconductor-rtandem
+    - r-base
+    - r-dplyr
+    - r-ggplot2
+    - r-nozzle.r1
+    - r-plotly
+    - r-plyr
+    - r-reshape2
+    - r-rmarkdown
+    - r-seqinr
+    - r-tidyr
+    - r-venndiagram
+    - r-xml
+test:
+  commands:
+    - '$R -e "library(''{{ name }}'')"'
+about:
+  home: 'http://bioconductor.org/packages/{{ bioc }}/bioc/html/{{ name }}.html'
+  license: LGPL-2
+  summary: 'This package creates an HTML format QC report for MS/MS-based proteomics data. The report is intended to allow the user to quickly assess the quality of proteomics data.'
