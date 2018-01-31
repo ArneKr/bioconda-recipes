@@ -1,0 +1,41 @@
+{% set version = "1.26.0" %}
+{% set name = "seqbias" %}
+{% set bioc = "3.6" %}
+
+package:
+  name: 'bioconductor-{{ name|lower }}'
+  version: '{{ version }}'
+source:
+  fn: '{{ name }}_{{ version }}.tar.gz'
+  url:
+    - 'http://bioconductor.org/packages/{{ bioc }}/bioc/src/contrib/{{ name }}_{{ version }}.tar.gz'
+    - 'https://bioarchive.galaxyproject.org/{{ name }}_{{ version }}.tar.gz'
+    - 'https://depot.galaxyproject.org/software/bioconductor-{{ name }}/bioconductor-{{ name }}_{{ version }}_src_all.tar.gz'
+  sha256: d429f61640f0217e8915071eb4c7e6e5df37dd8167b042ba089a63b0a9c63fc4
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - 'bioconductor-biostrings >=2.15.0'
+    - 'bioconductor-genomicranges >=0.1.0'
+    - 'bioconductor-rsamtools >=1.19.38'
+    - bioconductor-zlibbioc
+    - r-base
+    - gcc  # [linux]
+    - llvm  # [osx]
+  run:
+    - 'bioconductor-biostrings >=2.15.0'
+    - 'bioconductor-genomicranges >=0.1.0'
+    - 'bioconductor-rsamtools >=1.19.38'
+    - bioconductor-zlibbioc
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''{{ name }}'')"'
+about:
+  home: 'http://bioconductor.org/packages/{{ bioc }}/bioc/html/{{ name }}.html'
+  license: LGPL-3
+  summary: 'This package implements a model of per-position sequencing bias in high-throughput sequencing data using a simple Bayesian network, the structure and parameters of which are trained on a set of aligned reads and a reference genome sequence.'
