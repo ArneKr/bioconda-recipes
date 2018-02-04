@@ -1,0 +1,43 @@
+{% set version = "1.4.0" %}
+{% set name = "MODA" %}
+{% set bioc = "3.6" %}
+
+package:
+  name: 'bioconductor-{{ name|lower }}'
+  version: '{{ version }}'
+source:
+  fn: '{{ name }}_{{ version }}.tar.gz'
+  url:
+    - 'http://bioconductor.org/packages/{{ bioc }}/bioc/src/contrib/{{ name }}_{{ version }}.tar.gz'
+    - 'https://bioarchive.galaxyproject.org/{{ name }}_{{ version }}.tar.gz'
+    - 'https://depot.galaxyproject.org/software/bioconductor-{{ name|lower }}/bioconductor-{{ name|lower }}_{{ version }}_src_all.tar.gz'
+  sha256: 3e52e4bd325165419933c8effa781045a2bde185a3becebb232247f292aa5dad
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-amountain
+    - r-base
+    - r-cluster
+    - r-dynamictreecut
+    - r-igraph
+    - r-rcolorbrewer
+    - r-wgcna
+  run:
+    - bioconductor-amountain
+    - r-base
+    - r-cluster
+    - r-dynamictreecut
+    - r-igraph
+    - r-rcolorbrewer
+    - r-wgcna
+test:
+  commands:
+    - '$R -e "library(''{{ name }}'')"'
+about:
+  home: 'http://bioconductor.org/packages/{{ bioc }}/bioc/html/{{ name }}.html'
+  license: 'GPL (>= 2)'
+  summary: 'MODA can be used to estimate and construct condition-specific gene co-expression networks, and identify differentially expressed subnetworks as conserved or condition specific modules which are potentially associated with relevant biological processes.'
