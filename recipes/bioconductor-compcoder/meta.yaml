@@ -1,0 +1,65 @@
+{% set version = "1.14.0" %}
+{% set name = "compcodeR" %}
+{% set bioc = "3.6" %}
+
+package:
+  name: 'bioconductor-{{ name|lower }}'
+  version: '{{ version }}'
+source:
+  fn: '{{ name }}_{{ version }}.tar.gz'
+  url:
+    - 'http://bioconductor.org/packages/{{ bioc }}/bioc/src/contrib/{{ name }}_{{ version }}.tar.gz'
+    - 'https://bioarchive.galaxyproject.org/{{ name }}_{{ version }}.tar.gz'
+    - 'https://depot.galaxyproject.org/software/bioconductor-{{ name|lower }}/bioconductor-{{ name|lower }}_{{ version }}_src_all.tar.gz'
+  sha256: c4adde4401ab1d87602c60c5926174245f93101b508a665771db94e5ccdc0027
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-edger
+    - bioconductor-limma
+    - r-base
+    - r-catools
+    - r-gdata
+    - r-ggplot2
+    - r-gplots
+    - r-gtools
+    - r-kernsmooth
+    - 'r-knitr >=1.2'
+    - 'r-lattice >=0.16'
+    - r-markdown
+    - r-mass
+    - r-modeest
+    - r-rocr
+    - r-sm
+    - r-stringr
+    - r-vioplot
+  run:
+    - bioconductor-edger
+    - bioconductor-limma
+    - r-base
+    - r-catools
+    - r-gdata
+    - r-ggplot2
+    - r-gplots
+    - r-gtools
+    - r-kernsmooth
+    - 'r-knitr >=1.2'
+    - 'r-lattice >=0.16'
+    - r-markdown
+    - r-mass
+    - r-modeest
+    - r-rocr
+    - r-sm
+    - r-stringr
+    - r-vioplot
+test:
+  commands:
+    - '$R -e "library(''{{ name }}'')"'
+about:
+  home: 'http://bioconductor.org/packages/{{ bioc }}/bioc/html/{{ name }}.html'
+  license: 'GPL (>= 2)'
+  summary: 'This package provides extensive functionality for comparing results obtained by different methods for differential expression analysis of RNAseq data. It also contains functions for simulating count data and interfaces to several packages for performing the differential expression analysis.'
