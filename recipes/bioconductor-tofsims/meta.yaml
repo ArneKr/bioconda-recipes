@@ -1,0 +1,48 @@
+{% set version = "1.6.0" %}
+{% set name = "tofsims" %}
+{% set bioc = "3.6" %}
+
+package:
+  name: 'bioconductor-{{ name|lower }}'
+  version: '{{ version }}'
+source:
+  fn: '{{ name }}_{{ version }}.tar.gz'
+  url:
+    - 'http://bioconductor.org/packages/{{ bioc }}/bioc/src/contrib/{{ name }}_{{ version }}.tar.gz'
+    - 'https://bioarchive.galaxyproject.org/{{ name }}_{{ version }}.tar.gz'
+    - 'https://depot.galaxyproject.org/software/bioconductor-{{ name }}/bioconductor-{{ name }}_{{ version }}_src_all.tar.gz'
+  sha256: 36ff8b7af4ad0e986d84071ac5c7484a48a904f5a1ef5905f5a362170003f8fe
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-protgenerics
+    - r-als
+    - r-base
+    - r-chemometricswithr
+    - r-kernsmooth
+    - 'r-rcpp >=0.11.2'
+    - r-rcpparmadillo
+    - r-signal
+    - gcc  # [linux]
+    - llvm  # [osx]
+  run:
+    - bioconductor-protgenerics
+    - r-als
+    - r-base
+    - r-chemometricswithr
+    - r-kernsmooth
+    - 'r-rcpp >=0.11.2'
+    - r-rcpparmadillo
+    - r-signal
+    - libcxx # [osx]
+test:
+  commands:
+    - '$R -e "library(''{{ name }}'')"'
+about:
+  home: 'http://bioconductor.org/packages/{{ bioc }}/bioc/html/{{ name }}.html'
+  license: GPL-3
+  summary: 'This packages offers a pipeline for import, processing and analysis of ToF-SIMS 2D image data. Import of Iontof and Ulvac-Phi raw or preprocessed data is supported. For rawdata, mass calibration, peak picking and peak integration exist. General funcionality includes data binning, scaling, image subsetting and visualization. A range of multivariate tools common in the ToF-SIMS community are implemented (PCA, MCR, MAF, MNF). An interface to the bioconductor image processing package EBImage offers image segmentation functionality.'
