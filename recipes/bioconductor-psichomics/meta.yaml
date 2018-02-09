@@ -1,0 +1,92 @@
+{% set version = "1.4.3" %}
+{% set name = "psichomics" %}
+{% set bioc = "3.6" %}
+
+package:
+  name: 'bioconductor-{{ name|lower }}'
+  version: '{{ version }}'
+source:
+  fn: '{{ name }}_{{ version }}.tar.gz'
+  url:
+    - 'http://bioconductor.org/packages/{{ bioc }}/bioc/src/contrib/{{ name }}_{{ version }}.tar.gz'
+    - 'https://bioarchive.galaxyproject.org/{{ name }}_{{ version }}.tar.gz'
+    - 'https://depot.galaxyproject.org/software/bioconductor-{{ name }}/bioconductor-{{ name }}_{{ version }}_src_all.tar.gz'
+  sha256: 66f154f84f02c9bead7f5ac695e17b5b6893543f5c73e0f8b82aa4b42d0bb0c9
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-annotationhub
+    - bioconductor-edger
+    - bioconductor-limma
+    - r-base
+    - r-cluster
+    - r-colourpicker
+    - r-data.table
+    - r-digest
+    - r-dplyr
+    - 'r-dt >=0.2'
+    - r-fastica
+    - r-fastmatch
+    - r-ggplot2
+    - r-ggrepel
+    - 'r-highcharter >=0.5.0'
+    - r-htmltools
+    - r-httr
+    - r-jsonlite
+    - r-misctools
+    - r-pairsd3
+    - r-plyr
+    - r-r.utils
+    - 'r-rcpp >=0.12.14'
+    - 'r-shiny >=1.0.3'
+    - r-shinybs
+    - r-shinyjs
+    - r-stringr
+    - r-survival
+    - r-xml
+    - r-xtable
+    - gcc  # [linux]
+    - llvm  # [osx]
+  run:
+    - bioconductor-annotationhub
+    - bioconductor-edger
+    - bioconductor-limma
+    - r-base
+    - r-cluster
+    - r-colourpicker
+    - r-data.table
+    - r-digest
+    - r-dplyr
+    - 'r-dt >=0.2'
+    - r-fastica
+    - r-fastmatch
+    - r-ggplot2
+    - r-ggrepel
+    - 'r-highcharter >=0.5.0'
+    - r-htmltools
+    - r-httr
+    - r-jsonlite
+    - r-misctools
+    - r-pairsd3
+    - r-plyr
+    - r-r.utils
+    - 'r-rcpp >=0.12.14'
+    - 'r-shiny >=1.0.3'
+    - r-shinybs
+    - r-shinyjs
+    - r-stringr
+    - r-survival
+    - r-xml
+    - r-xtable
+    - libcxx # [osx]
+test:
+  commands:
+    - '$R -e "library(''{{ name }}'')"'
+about:
+  home: 'http://bioconductor.org/packages/{{ bioc }}/bioc/html/{{ name }}.html'
+  license: 'MIT + file LICENSE'
+  summary: 'Interactive R package with an intuitive Shiny-based graphical interface for alternative splicing quantification and integrative analyses of alternative splicing and gene expression from large transcriptomic datasets, including those from The Cancer Genome Atlas (TCGA) and the Genotype-Tissue Expression project (GTEx), as well as user-owned data. The tool interactively performs survival, dimensionality reduction and median- and variance-based differential splicing and gene expression analyses that benefit from the incorporation of clinical and molecular sample-associated features (such as tumour stage or survival). Interactive visual access to genomic mapping and functional annotation of selected alternative splicing events is also included.'
