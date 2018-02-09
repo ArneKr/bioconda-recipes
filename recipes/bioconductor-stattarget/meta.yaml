@@ -1,0 +1,49 @@
+{% set version = "1.8.0" %}
+{% set name = "statTarget" %}
+{% set bioc = "3.6" %}
+
+package:
+  name: 'bioconductor-{{ name|lower }}'
+  version: '{{ version }}'
+source:
+  fn: '{{ name }}_{{ version }}.tar.gz'
+  url:
+    - 'http://bioconductor.org/packages/{{ bioc }}/bioc/src/contrib/{{ name }}_{{ version }}.tar.gz'
+    - 'https://bioarchive.galaxyproject.org/{{ name }}_{{ version }}.tar.gz'
+    - 'https://depot.galaxyproject.org/software/bioconductor-{{ name|lower }}/bioconductor-{{ name|lower }}_{{ version }}_src_all.tar.gz'
+  sha256: 80e690d100d0d227da3e0b5e8175d99bae687363f93074de59c88112c98ed67c
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-impute
+    - bioconductor-roc
+    - r-base
+    - r-gwidgets2
+    - r-gwidgets2rgtk2
+    - r-pdist
+    - r-pls
+    - r-plyr
+    - r-randomforest
+    - r-rrcov
+  run:
+    - bioconductor-impute
+    - bioconductor-roc
+    - r-base
+    - r-gwidgets2
+    - r-gwidgets2rgtk2
+    - r-pdist
+    - r-pls
+    - r-plyr
+    - r-randomforest
+    - r-rrcov
+test:
+  commands:
+    - '$R -e "library(''{{ name }}'')"'
+about:
+  home: 'http://bioconductor.org/packages/{{ bioc }}/bioc/html/{{ name }}.html'
+  license: 'GPL (>= 2)'
+  summary: 'An easy to use tool provides a graphical user interface for quality control based shift signal correction, integration of metabolomic data from multi-batch experiments, and the comprehensive statistic analysis in non-targeted or targeted metabolomics.'
