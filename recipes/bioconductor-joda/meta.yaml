@@ -1,0 +1,35 @@
+{% set version = "1.26.0" %}
+{% set name = "joda" %}
+{% set bioc = "3.6" %}
+
+package:
+  name: 'bioconductor-{{ name|lower }}'
+  version: '{{ version }}'
+source:
+  fn: '{{ name }}_{{ version }}.tar.gz'
+  url:
+    - 'http://bioconductor.org/packages/{{ bioc }}/bioc/src/contrib/{{ name }}_{{ version }}.tar.gz'
+    - 'https://bioarchive.galaxyproject.org/{{ name }}_{{ version }}.tar.gz'
+    - 'https://depot.galaxyproject.org/software/bioconductor-{{ name }}/bioconductor-{{ name }}_{{ version }}_src_all.tar.gz'
+  sha256: 66a1a3e50a70ebf973f3cb506b0e80b4581c7aa788c39a9fa526d00f089e8e63
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-rbgl
+    - r-base
+    - r-bgmm
+  run:
+    - bioconductor-rbgl
+    - r-base
+    - r-bgmm
+test:
+  commands:
+    - '$R -e "library(''{{ name }}'')"'
+about:
+  home: 'http://bioconductor.org/packages/{{ bioc }}/bioc/html/{{ name }}.html'
+  license: 'GPL (>= 2)'
+  summary: 'Package ''joda'' implements three steps of an algorithm called JODA. The algorithm computes gene deregulation scores. For each gene, its deregulation score reflects how strongly an effect of a certain regulator''s perturbation on this gene differs between two different cell populations. The algorithm utilizes regulator knockdown expression data as well as knowledge about signaling pathways in which the regulators are involved (formalized in a simple matrix model).'
