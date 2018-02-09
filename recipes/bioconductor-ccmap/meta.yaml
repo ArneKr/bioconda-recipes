@@ -1,0 +1,47 @@
+{% set version = "1.4.0" %}
+{% set name = "ccmap" %}
+{% set bioc = "3.6" %}
+
+package:
+  name: 'bioconductor-{{ name|lower }}'
+  version: '{{ version }}'
+source:
+  fn: '{{ name }}_{{ version }}.tar.gz'
+  url:
+    - 'http://bioconductor.org/packages/{{ bioc }}/bioc/src/contrib/{{ name }}_{{ version }}.tar.gz'
+    - 'https://bioarchive.galaxyproject.org/{{ name }}_{{ version }}.tar.gz'
+    - 'https://depot.galaxyproject.org/software/bioconductor-{{ name }}/bioconductor-{{ name }}_{{ version }}_src_all.tar.gz'
+  sha256: 0178580c5a16338b34d62d5a3ecb99c4c23aa8cbac91641aa606a0042bdcaba0
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - 'bioconductor-annotationdbi >=1.36.2'
+    - 'bioconductor-biocinstaller >=1.24.0'
+    - 'bioconductor-ccdata >=1.1.2'
+    - r-base
+    - 'r-data.table >=1.10.4'
+    - 'r-doparallel >=1.0.10'
+    - 'r-foreach >=1.4.3'
+    - 'r-lsa >=0.73.1'
+    - 'r-xgboost >=0.6.4'
+  run:
+    - 'bioconductor-annotationdbi >=1.36.2'
+    - 'bioconductor-biocinstaller >=1.24.0'
+    - 'bioconductor-ccdata >=1.1.2'
+    - r-base
+    - 'r-data.table >=1.10.4'
+    - 'r-doparallel >=1.0.10'
+    - 'r-foreach >=1.4.3'
+    - 'r-lsa >=0.73.1'
+    - 'r-xgboost >=0.6.4'
+test:
+  commands:
+    - '$R -e "library(''{{ name }}'')"'
+about:
+  home: 'http://bioconductor.org/packages/{{ bioc }}/bioc/html/{{ name }}.html'
+  license: 'MIT + file LICENSE'
+  summary: 'Finds drugs and drug combinations that are predicted to reverse or mimic gene expression signatures. These drugs might reverse diseases or mimic healthy lifestyles.'
