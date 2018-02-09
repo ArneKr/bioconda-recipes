@@ -1,0 +1,37 @@
+{% set version = "1.10.0" %}
+{% set name = "diggit" %}
+{% set bioc = "3.6" %}
+
+package:
+  name: 'bioconductor-{{ name|lower }}'
+  version: '{{ version }}'
+source:
+  fn: '{{ name }}_{{ version }}.tar.gz'
+  url:
+    - 'http://bioconductor.org/packages/{{ bioc }}/bioc/src/contrib/{{ name }}_{{ version }}.tar.gz'
+    - 'https://bioarchive.galaxyproject.org/{{ name }}_{{ version }}.tar.gz'
+    - 'https://depot.galaxyproject.org/software/bioconductor-{{ name }}/bioconductor-{{ name }}_{{ version }}_src_all.tar.gz'
+  sha256: 36070acb4daefb1d83599eb4087d882eeb8f55eab7b182ada95133f4757a5c1b
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biobase
+    - 'bioconductor-viper >=1.3.1'
+    - r-base
+    - r-ks
+  run:
+    - bioconductor-biobase
+    - 'bioconductor-viper >=1.3.1'
+    - r-base
+    - r-ks
+test:
+  commands:
+    - '$R -e "library(''{{ name }}'')"'
+about:
+  home: 'http://bioconductor.org/packages/{{ bioc }}/bioc/html/{{ name }}.html'
+  license: 'file LICENSE'
+  summary: 'Inference of Genetic Variants Driving Cellullar Phenotypes by the DIGGIT algorithm'
