@@ -1,0 +1,48 @@
+{% set version = "1.4.0" %}
+{% set name = "normr" %}
+{% set bioc = "3.6" %}
+
+package:
+  name: 'bioconductor-{{ name|lower }}'
+  version: '{{ version }}'
+source:
+  fn: '{{ name }}_{{ version }}.tar.gz'
+  url:
+    - 'http://bioconductor.org/packages/{{ bioc }}/bioc/src/contrib/{{ name }}_{{ version }}.tar.gz'
+    - 'https://bioarchive.galaxyproject.org/{{ name }}_{{ version }}.tar.gz'
+    - 'https://depot.galaxyproject.org/software/bioconductor-{{ name }}/bioconductor-{{ name }}_{{ version }}_src_all.tar.gz'
+  sha256: 6c1bfe9cfa20bc9263a4d19cade28f8b68bed9238388cafdb9fae7e086302e3c
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - 'bioconductor-bamsignals >=1.4'
+    - bioconductor-genomeinfodb
+    - bioconductor-genomicranges
+    - bioconductor-iranges
+    - 'bioconductor-qvalue >=2.2'
+    - 'bioconductor-rtracklayer >=1.32'
+    - r-base
+    - 'r-rcpp >=0.11'
+    - gcc  # [linux]
+    - llvm  # [osx]
+  run:
+    - 'bioconductor-bamsignals >=1.4'
+    - bioconductor-genomeinfodb
+    - bioconductor-genomicranges
+    - bioconductor-iranges
+    - 'bioconductor-qvalue >=2.2'
+    - 'bioconductor-rtracklayer >=1.32'
+    - r-base
+    - 'r-rcpp >=0.11'
+    - libcxx # [osx]
+test:
+  commands:
+    - '$R -e "library(''{{ name }}'')"'
+about:
+  home: 'http://bioconductor.org/packages/{{ bioc }}/bioc/html/{{ name }}.html'
+  license: GPL-2
+  summary: 'Robust normalization and difference calling procedures for ChIP-seq and alike data. Read counts are modeled jointly as a binomial mixture model with a user-specified number of components. A fitted background estimate accounts for the effect of enrichment in certain regions and, therefore, represents an appropriate null hypothesis. This robust background is used to identify significantly enriched or depleted regions.'
