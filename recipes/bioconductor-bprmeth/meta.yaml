@@ -1,0 +1,53 @@
+{% set version = "1.4.0" %}
+{% set name = "BPRMeth" %}
+{% set bioc = "3.6" %}
+
+package:
+  name: 'bioconductor-{{ name|lower }}'
+  version: '{{ version }}'
+source:
+  fn: '{{ name }}_{{ version }}.tar.gz'
+  url:
+    - 'http://bioconductor.org/packages/{{ bioc }}/bioc/src/contrib/{{ name }}_{{ version }}.tar.gz'
+    - 'https://bioarchive.galaxyproject.org/{{ name }}_{{ version }}.tar.gz'
+    - 'https://depot.galaxyproject.org/software/bioconductor-{{ name|lower }}/bioconductor-{{ name|lower }}_{{ version }}_src_all.tar.gz'
+  sha256: e434111d5b19022f9dfa98ec51a57b299b345d33ef3e8785fab9cb9fcc17f72c
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-genomicranges
+    - bioconductor-iranges
+    - bioconductor-s4vectors
+    - r-assertthat
+    - r-base
+    - r-data.table
+    - r-doparallel
+    - r-e1071
+    - r-earth
+    - r-foreach
+    - r-mass
+    - r-randomforest
+  run:
+    - bioconductor-genomicranges
+    - bioconductor-iranges
+    - bioconductor-s4vectors
+    - r-assertthat
+    - r-base
+    - r-data.table
+    - r-doparallel
+    - r-e1071
+    - r-earth
+    - r-foreach
+    - r-mass
+    - r-randomforest
+test:
+  commands:
+    - '$R -e "library(''{{ name }}'')"'
+about:
+  home: 'http://bioconductor.org/packages/{{ bioc }}/bioc/html/{{ name }}.html'
+  license: GPL-3
+  summary: 'BPRMeth package uses the Binomial Probit Regression likelihood to model methylation profiles and extract higher order features. These features quantitate precisely notions of shape of a methylation profile. Using these higher order features across promoter-proximal regions, we construct a powerful predictor of gene expression. Also, these features are used to cluster proximal-promoter regions using the EM algorithm.'
