@@ -1,0 +1,49 @@
+{% set version = "1.14.0" %}
+{% set name = "CompGO" %}
+{% set bioc = "3.6" %}
+
+package:
+  name: 'bioconductor-{{ name|lower }}'
+  version: '{{ version }}'
+source:
+  fn: '{{ name }}_{{ version }}.tar.gz'
+  url:
+    - 'http://bioconductor.org/packages/{{ bioc }}/bioc/src/contrib/{{ name }}_{{ version }}.tar.gz'
+    - 'https://bioarchive.galaxyproject.org/{{ name }}_{{ version }}.tar.gz'
+    - 'https://depot.galaxyproject.org/software/bioconductor-{{ name|lower }}/bioconductor-{{ name|lower }}_{{ version }}_src_all.tar.gz'
+  sha256: 65573e195b2916a47315b60fe644db5a0cf560384c4b71c931047775f8b09229
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-genomicfeatures
+    - bioconductor-pathview
+    - bioconductor-pcamethods
+    - bioconductor-rdavidwebservice
+    - bioconductor-rgraphviz
+    - bioconductor-rtracklayer
+    - bioconductor-txdb.mmusculus.ucsc.mm9.knowngene
+    - r-base
+    - r-ggplot2
+    - r-reshape2
+  run:
+    - bioconductor-genomicfeatures
+    - bioconductor-pathview
+    - bioconductor-pcamethods
+    - bioconductor-rdavidwebservice
+    - bioconductor-rgraphviz
+    - bioconductor-rtracklayer
+    - bioconductor-txdb.mmusculus.ucsc.mm9.knowngene
+    - r-base
+    - r-ggplot2
+    - r-reshape2
+test:
+  commands:
+    - '$R -e "library(''{{ name }}'')"'
+about:
+  home: 'http://bioconductor.org/packages/{{ bioc }}/bioc/html/{{ name }}.html'
+  license: GPL-2
+  summary: 'This package contains functions to accomplish several tasks. It is able to download full genome databases from UCSC, import .bed files easily, annotate these .bed file regions with genes (plus distance) from aforementioned database dumps, interface with DAVID to create functional annotation and gene ontology enrichment charts based on gene lists (such as those generated from input .bed files) and finally visualise and compare these enrichments using either directed acyclic graphs or scatterplots.'

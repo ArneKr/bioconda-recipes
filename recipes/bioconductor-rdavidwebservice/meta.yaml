@@ -1,0 +1,45 @@
+{% set version = "1.16.0" %}
+{% set name = "RDAVIDWebService" %}
+{% set bioc = "3.6" %}
+
+package:
+  name: 'bioconductor-{{ name|lower }}'
+  version: '{{ version }}'
+source:
+  fn: '{{ name }}_{{ version }}.tar.gz'
+  url:
+    - 'http://bioconductor.org/packages/{{ bioc }}/bioc/src/contrib/{{ name }}_{{ version }}.tar.gz'
+    - 'https://bioarchive.galaxyproject.org/{{ name }}_{{ version }}.tar.gz'
+    - 'https://depot.galaxyproject.org/software/bioconductor-{{ name|lower }}/bioconductor-{{ name|lower }}_{{ version }}_src_all.tar.gz'
+  sha256: 8f838789cd6b67eed475ce75e86bbaf202f28f93f1582137fbe04f792c0efbbb
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-category
+    - bioconductor-go.db
+    - bioconductor-gostats
+    - bioconductor-graph
+    - bioconductor-rbgl
+    - r-base
+    - r-ggplot2
+    - r-rjava
+  run:
+    - bioconductor-category
+    - bioconductor-go.db
+    - bioconductor-gostats
+    - bioconductor-graph
+    - bioconductor-rbgl
+    - r-base
+    - r-ggplot2
+    - r-rjava
+test:
+  commands:
+    - '$R -e "library(''{{ name }}'')"'
+about:
+  home: 'http://bioconductor.org/packages/{{ bioc }}/bioc/html/{{ name }}.html'
+  license: 'GPL (>=2)'
+  summary: 'Tools for retrieving data from the Database for Annotation, Visualization and Integrated Discovery (DAVID) using Web Services into R objects. This package offers the main functionalities of DAVID website including: i) user friendly connectivity to upload gene/background list/s, change gene/background position, select current specie/s, select annotations, etc. ii) Reports of the submitted Gene List, Annotation Category Summary, Gene/Term Clusters, Functional Annotation Chart, Functional Annotation Table'
