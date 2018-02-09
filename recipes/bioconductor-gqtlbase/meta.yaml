@@ -1,0 +1,57 @@
+{% set version = "1.10.0" %}
+{% set name = "gQTLBase" %}
+{% set bioc = "3.6" %}
+
+package:
+  name: 'bioconductor-{{ name|lower }}'
+  version: '{{ version }}'
+source:
+  fn: '{{ name }}_{{ version }}.tar.gz'
+  url:
+    - 'http://bioconductor.org/packages/{{ bioc }}/bioc/src/contrib/{{ name }}_{{ version }}.tar.gz'
+    - 'https://bioarchive.galaxyproject.org/{{ name }}_{{ version }}.tar.gz'
+    - 'https://depot.galaxyproject.org/software/bioconductor-{{ name|lower }}/bioconductor-{{ name|lower }}_{{ version }}_src_all.tar.gz'
+  sha256: 65801b2a37c5cfbc72b2d7dfed5edacd8c1755c3e7cde92a7b73362199dba69c
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biocgenerics
+    - bioconductor-genomicfiles
+    - bioconductor-genomicranges
+    - bioconductor-rtracklayer
+    - bioconductor-s4vectors
+    - bioconductor-summarizedexperiment
+    - r-base
+    - r-batchjobs
+    - r-bbmisc
+    - r-bit
+    - r-doparallel
+    - r-ff
+    - r-ffbase
+    - r-foreach
+  run:
+    - bioconductor-biocgenerics
+    - bioconductor-genomicfiles
+    - bioconductor-genomicranges
+    - bioconductor-rtracklayer
+    - bioconductor-s4vectors
+    - bioconductor-summarizedexperiment
+    - r-base
+    - r-batchjobs
+    - r-bbmisc
+    - r-bit
+    - r-doparallel
+    - r-ff
+    - r-ffbase
+    - r-foreach
+test:
+  commands:
+    - '$R -e "library(''{{ name }}'')"'
+about:
+  home: 'http://bioconductor.org/packages/{{ bioc }}/bioc/html/{{ name }}.html'
+  license: Artistic-2.0
+  summary: 'Infrastructure for eQTL, mQTL and similar studies.'
