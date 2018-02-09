@@ -1,0 +1,49 @@
+{% set version = "1.26.0" %}
+{% set name = "mcaGUI" %}
+{% set bioc = "3.6" %}
+
+package:
+  name: 'bioconductor-{{ name|lower }}'
+  version: '{{ version }}'
+source:
+  fn: '{{ name }}_{{ version }}.tar.gz'
+  url:
+    - 'http://bioconductor.org/packages/{{ bioc }}/bioc/src/contrib/{{ name }}_{{ version }}.tar.gz'
+    - 'https://bioarchive.galaxyproject.org/{{ name }}_{{ version }}.tar.gz'
+    - 'https://depot.galaxyproject.org/software/bioconductor-{{ name|lower }}/bioconductor-{{ name|lower }}_{{ version }}_src_all.tar.gz'
+  sha256: c0bb37ced7a50a77afedf7ec5ebe5a184eaec2e98ada129ea30f303904a3adfa
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-otubase
+    - r-base
+    - r-bpca
+    - r-foreign
+    - 'r-gwidgets >=0.0-36'
+    - 'r-gwidgetsrgtk2 >=0.0-53'
+    - r-lattice
+    - r-mass
+    - r-proto
+    - r-vegan
+  run:
+    - bioconductor-otubase
+    - r-base
+    - r-bpca
+    - r-foreign
+    - 'r-gwidgets >=0.0-36'
+    - 'r-gwidgetsrgtk2 >=0.0-53'
+    - r-lattice
+    - r-mass
+    - r-proto
+    - r-vegan
+test:
+  commands:
+    - '$R -e "library(''{{ name }}'')"'
+about:
+  home: 'http://bioconductor.org/packages/{{ bioc }}/bioc/html/{{ name }}.html'
+  license: 'GPL (>= 2)'
+  summary: 'Microbial community analysis GUI for R using gWidgets.'
