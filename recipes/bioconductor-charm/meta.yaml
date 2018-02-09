@@ -1,0 +1,65 @@
+{% set version = "2.24.0" %}
+{% set name = "charm" %}
+{% set bioc = "3.6" %}
+
+package:
+  name: 'bioconductor-{{ name|lower }}'
+  version: '{{ version }}'
+source:
+  fn: '{{ name }}_{{ version }}.tar.gz'
+  url:
+    - 'http://bioconductor.org/packages/{{ bioc }}/bioc/src/contrib/{{ name }}_{{ version }}.tar.gz'
+    - 'https://bioarchive.galaxyproject.org/{{ name }}_{{ version }}.tar.gz'
+    - 'https://depot.galaxyproject.org/software/bioconductor-{{ name }}/bioconductor-{{ name }}_{{ version }}_src_all.tar.gz'
+  sha256: 2add2874fbaad6c320572e23582f9ab2c29effeeee18ea1c2da4fd83f935297f
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biobase
+    - bioconductor-biostrings
+    - bioconductor-bsgenome
+    - bioconductor-genefilter
+    - bioconductor-iranges
+    - bioconductor-limma
+    - 'bioconductor-oligo >=1.11.31'
+    - 'bioconductor-oligoclasses >=1.17.39'
+    - bioconductor-preprocesscore
+    - bioconductor-siggenes
+    - 'bioconductor-sva >=3.1.2'
+    - r-base
+    - r-ff
+    - r-fields
+    - r-gtools
+    - r-nor1mix
+    - r-rcolorbrewer
+    - r-sqn
+  run:
+    - bioconductor-biobase
+    - bioconductor-biostrings
+    - bioconductor-bsgenome
+    - bioconductor-genefilter
+    - bioconductor-iranges
+    - bioconductor-limma
+    - 'bioconductor-oligo >=1.11.31'
+    - 'bioconductor-oligoclasses >=1.17.39'
+    - bioconductor-preprocesscore
+    - bioconductor-siggenes
+    - 'bioconductor-sva >=3.1.2'
+    - r-base
+    - r-ff
+    - r-fields
+    - r-gtools
+    - r-nor1mix
+    - r-rcolorbrewer
+    - r-sqn
+test:
+  commands:
+    - '$R -e "library(''{{ name }}'')"'
+about:
+  home: 'http://bioconductor.org/packages/{{ bioc }}/bioc/html/{{ name }}.html'
+  license: 'LGPL (>= 2)'
+  summary: 'This package implements analysis tools for DNA methylation data generated using Nimblegen microarrays and the McrBC protocol. It finds differentially methylated regions between samples, calculates percentage methylation estimates and includes array quality assessment tools.'
