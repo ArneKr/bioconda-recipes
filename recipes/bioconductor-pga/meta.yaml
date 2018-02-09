@@ -1,0 +1,69 @@
+{% set version = "1.8.0" %}
+{% set name = "PGA" %}
+{% set bioc = "3.6" %}
+
+package:
+  name: 'bioconductor-{{ name|lower }}'
+  version: '{{ version }}'
+source:
+  fn: '{{ name }}_{{ version }}.tar.gz'
+  url:
+    - 'http://bioconductor.org/packages/{{ bioc }}/bioc/src/contrib/{{ name }}_{{ version }}.tar.gz'
+    - 'https://bioarchive.galaxyproject.org/{{ name }}_{{ version }}.tar.gz'
+    - 'https://depot.galaxyproject.org/software/bioconductor-{{ name|lower }}/bioconductor-{{ name|lower }}_{{ version }}_src_all.tar.gz'
+  sha256: 06a0ffe02136823ce1ec469541b9a6ee4bb4ab1012df14459fedb7c7ed068174
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-annotationdbi
+    - 'bioconductor-biomart >=2.17.1'
+    - 'bioconductor-biostrings >=2.26.3'
+    - 'bioconductor-customprodb >=1.7.0'
+    - 'bioconductor-genomicfeatures >=1.19.8'
+    - bioconductor-genomicranges
+    - bioconductor-iranges
+    - 'bioconductor-rsamtools >=1.10.2'
+    - bioconductor-rtandem
+    - bioconductor-rtracklayer
+    - 'bioconductor-s4vectors >=0.9.25'
+    - 'bioconductor-variantannotation >=1.7.28'
+    - r-base
+    - r-data.table
+    - r-ggplot2
+    - r-nozzle.r1
+    - r-pheatmap
+    - r-rcurl
+    - r-rsqlite
+    - r-stringr
+  run:
+    - bioconductor-annotationdbi
+    - 'bioconductor-biomart >=2.17.1'
+    - 'bioconductor-biostrings >=2.26.3'
+    - 'bioconductor-customprodb >=1.7.0'
+    - 'bioconductor-genomicfeatures >=1.19.8'
+    - bioconductor-genomicranges
+    - bioconductor-iranges
+    - 'bioconductor-rsamtools >=1.10.2'
+    - bioconductor-rtandem
+    - bioconductor-rtracklayer
+    - 'bioconductor-s4vectors >=0.9.25'
+    - 'bioconductor-variantannotation >=1.7.28'
+    - r-base
+    - r-data.table
+    - r-ggplot2
+    - r-nozzle.r1
+    - r-pheatmap
+    - r-rcurl
+    - r-rsqlite
+    - r-stringr
+test:
+  commands:
+    - '$R -e "library(''{{ name }}'')"'
+about:
+  home: 'http://bioconductor.org/packages/{{ bioc }}/bioc/html/{{ name }}.html'
+  license: GPL-2
+  summary: 'This package provides functions for construction of customized protein databases based on RNA-Seq data with/without genome guided, database searching, post-processing and report generation. This kind of customized protein database includes both the reference database (such as Refseq or ENSEMBL) and the novel peptide sequences form RNA-Seq data.'
