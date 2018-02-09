@@ -1,0 +1,46 @@
+{% set version = "1.48.0" %}
+{% set name = "snapCGH" %}
+{% set bioc = "3.6" %}
+
+package:
+  name: 'bioconductor-{{ name|lower }}'
+  version: '{{ version }}'
+source:
+  fn: '{{ name }}_{{ version }}.tar.gz'
+  url:
+    - 'http://bioconductor.org/packages/{{ bioc }}/bioc/src/contrib/{{ name }}_{{ version }}.tar.gz'
+    - 'https://bioarchive.galaxyproject.org/{{ name }}_{{ version }}.tar.gz'
+    - 'https://depot.galaxyproject.org/software/bioconductor-{{ name|lower }}/bioconductor-{{ name|lower }}_{{ version }}_src_all.tar.gz'
+  sha256: ad1f226691804005a10a816332ce984cfa1f602a990f6527218ea6cc7daded8a
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-acgh
+    - bioconductor-dnacopy
+    - bioconductor-glad
+    - bioconductor-limma
+    - bioconductor-tilingarray
+    - r-base
+    - r-cluster
+    - gcc  # [linux]
+    - llvm  # [osx]
+  run:
+    - bioconductor-acgh
+    - bioconductor-dnacopy
+    - bioconductor-glad
+    - bioconductor-limma
+    - bioconductor-tilingarray
+    - r-base
+    - r-cluster
+    - libcxx # [osx]
+test:
+  commands:
+    - '$R -e "library(''{{ name }}'')"'
+about:
+  home: 'http://bioconductor.org/packages/{{ bioc }}/bioc/html/{{ name }}.html'
+  license: GPL
+  summary: 'Methods for segmenting, normalising and processing aCGH data; including plotting functions for visualising raw and segmented data for individual and multiple arrays.'

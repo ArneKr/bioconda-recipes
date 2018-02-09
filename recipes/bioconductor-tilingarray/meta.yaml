@@ -1,0 +1,48 @@
+{% set version = "1.56.0" %}
+{% set name = "tilingArray" %}
+{% set bioc = "3.6" %}
+
+package:
+  name: 'bioconductor-{{ name|lower }}'
+  version: '{{ version }}'
+source:
+  fn: '{{ name }}_{{ version }}.tar.gz'
+  url:
+    - 'http://bioconductor.org/packages/{{ bioc }}/bioc/src/contrib/{{ name }}_{{ version }}.tar.gz'
+    - 'https://bioarchive.galaxyproject.org/{{ name }}_{{ version }}.tar.gz'
+    - 'https://depot.galaxyproject.org/software/bioconductor-{{ name|lower }}/bioconductor-{{ name|lower }}_{{ version }}_src_all.tar.gz'
+  sha256: 6be23fc7df268be921a35cdad112f164aca99e05c78084453e64e91f72281c2a
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-affy
+    - bioconductor-biobase
+    - bioconductor-genefilter
+    - bioconductor-vsn
+    - r-base
+    - r-pixmap
+    - r-rcolorbrewer
+    - r-strucchange
+    - gcc  # [linux]
+    - llvm  # [osx]
+  run:
+    - bioconductor-affy
+    - bioconductor-biobase
+    - bioconductor-genefilter
+    - bioconductor-vsn
+    - r-base
+    - r-pixmap
+    - r-rcolorbrewer
+    - r-strucchange
+    - libcxx # [osx]
+test:
+  commands:
+    - '$R -e "library(''{{ name }}'')"'
+about:
+  home: 'http://bioconductor.org/packages/{{ bioc }}/bioc/html/{{ name }}.html'
+  license: Artistic-2.0
+  summary: 'The package provides functionality that can be useful for the analysis of high-density tiling microarray data (such as from Affymetrix genechips) for measuring transcript abundance and architecture. The main functionalities of the package are: 1. the class ''segmentation'' for representing partitionings of a linear series of data; 2. the function ''segment'' for fitting piecewise constant models using a dynamic programming algorithm that is both fast and exact; 3. the function ''confint'' for calculating confidence intervals using the strucchange package; 4. the function ''plotAlongChrom'' for generating pretty plots; 5. the function ''normalizeByReference'' for probe-sequence dependent response adjustment from a (set of) reference hybridizations.'

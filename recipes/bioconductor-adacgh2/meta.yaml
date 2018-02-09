@@ -1,0 +1,54 @@
+{% set version = "2.18.0" %}
+{% set name = "ADaCGH2" %}
+{% set bioc = "3.6" %}
+
+package:
+  name: 'bioconductor-{{ name|lower }}'
+  version: '{{ version }}'
+source:
+  fn: '{{ name }}_{{ version }}.tar.gz'
+  url:
+    - 'http://bioconductor.org/packages/{{ bioc }}/bioc/src/contrib/{{ name }}_{{ version }}.tar.gz'
+    - 'https://bioarchive.galaxyproject.org/{{ name }}_{{ version }}.tar.gz'
+    - 'https://depot.galaxyproject.org/software/bioconductor-{{ name|lower }}/bioconductor-{{ name|lower }}_{{ version }}_src_all.tar.gz'
+  sha256: dd25bbda0c535387d52d63fa6854a06b3521b6e6953f8ecd5c633128bae9350a
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-acgh
+    - bioconductor-dnacopy
+    - bioconductor-glad
+    - bioconductor-snapcgh
+    - bioconductor-tilingarray
+    - r-base
+    - r-bit
+    - r-cluster
+    - r-ff
+    - r-ffbase
+    - r-waveslim
+    - gcc  # [linux]
+    - llvm  # [osx]
+  run:
+    - bioconductor-acgh
+    - bioconductor-dnacopy
+    - bioconductor-glad
+    - bioconductor-snapcgh
+    - bioconductor-tilingarray
+    - r-base
+    - r-bit
+    - r-cluster
+    - r-ff
+    - r-ffbase
+    - r-waveslim
+    - libcxx # [osx]
+test:
+  commands:
+    - '$R -e "library(''{{ name }}'')"'
+about:
+  home: 'http://bioconductor.org/packages/{{ bioc }}/bioc/html/{{ name }}.html'
+  license: 'GPL (>= 3)'
+  summary: 'Analysis and plotting of array CGH data. Allows usage of Circular Binary Segementation, wavelet-based smoothing (both as in Liu et al., and HaarSeg as in Ben-Yaacov and Eldar), HMM, BioHMM, GLAD, CGHseg. Most computations are parallelized (either via forking or with clusters, including MPI and sockets clusters) and use ff for storing data.'
