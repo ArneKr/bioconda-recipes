@@ -1,0 +1,49 @@
+{% set version = "1.4.0" %}
+{% set name = "SRGnet" %}
+{% set bioc = "3.6" %}
+
+package:
+  name: 'bioconductor-{{ name|lower }}'
+  version: '{{ version }}'
+source:
+  fn: '{{ name }}_{{ version }}.tar.gz'
+  url:
+    - 'http://bioconductor.org/packages/{{ bioc }}/bioc/src/contrib/{{ name }}_{{ version }}.tar.gz'
+    - 'https://bioarchive.galaxyproject.org/{{ name }}_{{ version }}.tar.gz'
+    - 'https://depot.galaxyproject.org/software/bioconductor-{{ name|lower }}/bioconductor-{{ name|lower }}_{{ version }}_src_all.tar.gz'
+  sha256: 912d19bdbd59f8f8a47382287fec792c6269f4233952daaeb9dbb4add1d04aa8
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-ebcoexpress
+    - bioconductor-limma
+    - r-base
+    - 'r-dmwr >=0.4.1'
+    - 'r-gbm >=2.1.1'
+    - r-hmisc
+    - r-igraph
+    - r-mass
+    - r-matrixstats
+    - 'r-pvclust >=2.0-0'
+  run:
+    - bioconductor-ebcoexpress
+    - bioconductor-limma
+    - r-base
+    - 'r-dmwr >=0.4.1'
+    - 'r-gbm >=2.1.1'
+    - r-hmisc
+    - r-igraph
+    - r-mass
+    - r-matrixstats
+    - 'r-pvclust >=2.0-0'
+test:
+  commands:
+    - '$R -e "library(''{{ name }}'')"'
+about:
+  home: 'http://bioconductor.org/packages/{{ bioc }}/bioc/html/{{ name }}.html'
+  license: GPL-2
+  summary: 'We developed SRGnet to analyze synergistic regulatory mechanisms in transcriptome profiles that act to enhance the overall cell response to combination of mutations, drugs or environmental exposure. This package can be used to identify regulatory modules downstream of synergistic response genes, prioritize synergistic regulatory genes that may be potential intervention targets, and contextualize gene perturbation experiments.'
