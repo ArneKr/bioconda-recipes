@@ -1,0 +1,83 @@
+{% set version = "1.6.0" %}
+{% set name = "CONFESS" %}
+{% set bioc = "3.6" %}
+
+package:
+  name: 'bioconductor-{{ name|lower }}'
+  version: '{{ version }}'
+source:
+  fn: '{{ name }}_{{ version }}.tar.gz'
+  url:
+    - 'http://bioconductor.org/packages/{{ bioc }}/bioc/src/contrib/{{ name }}_{{ version }}.tar.gz'
+    - 'https://bioarchive.galaxyproject.org/{{ name }}_{{ version }}.tar.gz'
+    - 'https://depot.galaxyproject.org/software/bioconductor-{{ name|lower }}/bioconductor-{{ name|lower }}_{{ version }}_src_all.tar.gz'
+  sha256: 54b6936356e58676e23d1524108b47ca933ca8ea2fb2f8f7862afdfe3d87bb4e
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-ebimage
+    - bioconductor-flowclust
+    - bioconductor-flowcore
+    - bioconductor-flowmeans
+    - bioconductor-flowmerge
+    - bioconductor-flowpeaks
+    - bioconductor-limma
+    - bioconductor-samspectral
+    - r-base
+    - r-changepoint
+    - r-cluster
+    - r-contrast
+    - 'r-data.table >=1.9.7'
+    - r-ecp
+    - r-flexmix
+    - r-foreach
+    - r-ggplot2
+    - r-mass
+    - r-moments
+    - r-outliers
+    - r-plotrix
+    - r-raster
+    - r-readbitmap
+    - r-reshape2
+    - r-waveslim
+    - r-wavethresh
+    - r-zoo
+  run:
+    - bioconductor-ebimage
+    - bioconductor-flowclust
+    - bioconductor-flowcore
+    - bioconductor-flowmeans
+    - bioconductor-flowmerge
+    - bioconductor-flowpeaks
+    - bioconductor-limma
+    - bioconductor-samspectral
+    - r-base
+    - r-changepoint
+    - r-cluster
+    - r-contrast
+    - 'r-data.table >=1.9.7'
+    - r-ecp
+    - r-flexmix
+    - r-foreach
+    - r-ggplot2
+    - r-mass
+    - r-moments
+    - r-outliers
+    - r-plotrix
+    - r-raster
+    - r-readbitmap
+    - r-reshape2
+    - r-waveslim
+    - r-wavethresh
+    - r-zoo
+test:
+  commands:
+    - '$R -e "library(''{{ name }}'')"'
+about:
+  home: 'http://bioconductor.org/packages/{{ bioc }}/bioc/html/{{ name }}.html'
+  license: GPL-2
+  summary: 'Single Cell Fluidigm Spot Detector.'
