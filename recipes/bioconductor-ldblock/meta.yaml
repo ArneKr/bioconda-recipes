@@ -1,0 +1,49 @@
+{% set version = "1.8.0" %}
+{% set name = "ldblock" %}
+{% set bioc = "3.6" %}
+
+package:
+  name: 'bioconductor-{{ name|lower }}'
+  version: '{{ version }}'
+source:
+  fn: '{{ name }}_{{ version }}.tar.gz'
+  url:
+    - 'http://bioconductor.org/packages/{{ bioc }}/bioc/src/contrib/{{ name }}_{{ version }}.tar.gz'
+    - 'https://bioarchive.galaxyproject.org/{{ name }}_{{ version }}.tar.gz'
+    - 'https://depot.galaxyproject.org/software/bioconductor-{{ name }}/bioconductor-{{ name }}_{{ version }}_src_all.tar.gz'
+  sha256: 6a61456028ae3974c11cc84c0561fcd9055e3c7d1a2b9a56765c34037bd4cea2
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-erma
+    - bioconductor-genomeinfodb
+    - 'bioconductor-genomicfiles >=1.13.6'
+    - bioconductor-go.db
+    - bioconductor-homo.sapiens
+    - bioconductor-rsamtools
+    - bioconductor-snpstats
+    - bioconductor-variantannotation
+    - r-base
+    - r-matrix
+  run:
+    - bioconductor-erma
+    - bioconductor-genomeinfodb
+    - 'bioconductor-genomicfiles >=1.13.6'
+    - bioconductor-go.db
+    - bioconductor-homo.sapiens
+    - bioconductor-rsamtools
+    - bioconductor-snpstats
+    - bioconductor-variantannotation
+    - r-base
+    - r-matrix
+test:
+  commands:
+    - '$R -e "library(''{{ name }}'')"'
+about:
+  home: 'http://bioconductor.org/packages/{{ bioc }}/bioc/html/{{ name }}.html'
+  license: Artistic-2.0
+  summary: 'Define data structures for linkage disequilibrium measures in populations.'

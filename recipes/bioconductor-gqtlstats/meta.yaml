@@ -1,0 +1,91 @@
+{% set version = "1.10.1" %}
+{% set name = "gQTLstats" %}
+{% set bioc = "3.6" %}
+
+package:
+  name: 'bioconductor-{{ name|lower }}'
+  version: '{{ version }}'
+source:
+  fn: '{{ name }}_{{ version }}.tar.gz'
+  url:
+    - 'http://bioconductor.org/packages/{{ bioc }}/bioc/src/contrib/{{ name }}_{{ version }}.tar.gz'
+    - 'https://bioarchive.galaxyproject.org/{{ name }}_{{ version }}.tar.gz'
+    - 'https://depot.galaxyproject.org/software/bioconductor-{{ name|lower }}/bioconductor-{{ name|lower }}_{{ version }}_src_all.tar.gz'
+  sha256: b84e7078ad684dbf617042716b29bb39b04131371f901e069973c92f9c0e783f
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-annotationdbi
+    - bioconductor-biobase
+    - bioconductor-biocgenerics
+    - bioconductor-erma
+    - bioconductor-genomeinfodb
+    - bioconductor-genomicfeatures
+    - bioconductor-genomicfiles
+    - bioconductor-genomicranges
+    - bioconductor-gqtlbase
+    - bioconductor-iranges
+    - bioconductor-ldblock
+    - bioconductor-limma
+    - 'bioconductor-s4vectors >=0.9.25'
+    - bioconductor-snpstats
+    - bioconductor-summarizedexperiment
+    - bioconductor-variantannotation
+    - r-base
+    - r-batchjobs
+    - r-bbmisc
+    - r-beeswarm
+    - r-doparallel
+    - r-dplyr
+    - r-ffbase
+    - r-foreach
+    - r-ggbeeswarm
+    - r-ggplot2
+    - r-hardyweinberg
+    - r-mgcv
+    - r-plotly
+    - r-reshape2
+    - r-shiny
+  run:
+    - bioconductor-annotationdbi
+    - bioconductor-biobase
+    - bioconductor-biocgenerics
+    - bioconductor-erma
+    - bioconductor-genomeinfodb
+    - bioconductor-genomicfeatures
+    - bioconductor-genomicfiles
+    - bioconductor-genomicranges
+    - bioconductor-gqtlbase
+    - bioconductor-iranges
+    - bioconductor-ldblock
+    - bioconductor-limma
+    - 'bioconductor-s4vectors >=0.9.25'
+    - bioconductor-snpstats
+    - bioconductor-summarizedexperiment
+    - bioconductor-variantannotation
+    - r-base
+    - r-batchjobs
+    - r-bbmisc
+    - r-beeswarm
+    - r-doparallel
+    - r-dplyr
+    - r-ffbase
+    - r-foreach
+    - r-ggbeeswarm
+    - r-ggplot2
+    - r-hardyweinberg
+    - r-mgcv
+    - r-plotly
+    - r-reshape2
+    - r-shiny
+test:
+  commands:
+    - '$R -e "library(''{{ name }}'')"'
+about:
+  home: 'http://bioconductor.org/packages/{{ bioc }}/bioc/html/{{ name }}.html'
+  license: Artistic-2.0
+  summary: 'computationally efficient analysis of eQTL, mQTL, dsQTL, etc.'

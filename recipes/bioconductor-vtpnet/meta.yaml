@@ -1,0 +1,41 @@
+{% set version = "0.18.0" %}
+{% set name = "vtpnet" %}
+{% set bioc = "3.6" %}
+
+package:
+  name: 'bioconductor-{{ name|lower }}'
+  version: '{{ version }}'
+source:
+  fn: '{{ name }}_{{ version }}.tar.gz'
+  url:
+    - 'http://bioconductor.org/packages/{{ bioc }}/bioc/src/contrib/{{ name }}_{{ version }}.tar.gz'
+    - 'https://bioarchive.galaxyproject.org/{{ name }}_{{ version }}.tar.gz'
+    - 'https://depot.galaxyproject.org/software/bioconductor-{{ name }}/bioconductor-{{ name }}_{{ version }}_src_all.tar.gz'
+  sha256: 9011566df51a3a986fadfcc3405cc3e156345e75a3625916ff37d36a4fd2dc0a
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-genomicranges
+    - bioconductor-graph
+    - bioconductor-gwascat
+    - r-base
+    - r-doparallel
+    - r-foreach
+  run:
+    - bioconductor-genomicranges
+    - bioconductor-graph
+    - bioconductor-gwascat
+    - r-base
+    - r-doparallel
+    - r-foreach
+test:
+  commands:
+    - '$R -e "library(''{{ name }}'')"'
+about:
+  home: 'http://bioconductor.org/packages/{{ bioc }}/bioc/html/{{ name }}.html'
+  license: Artistic-2.0
+  summary: 'variant-transcription factor-phenotype networks, inspired by Maurano et al., Science (2012), PMID 22955828'
