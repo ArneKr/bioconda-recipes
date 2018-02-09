@@ -1,0 +1,61 @@
+{% set version = "1.4.1" %}
+{% set name = "CytoML" %}
+{% set bioc = "3.6" %}
+
+package:
+  name: 'bioconductor-{{ name|lower }}'
+  version: '{{ version }}'
+source:
+  fn: '{{ name }}_{{ version }}.tar.gz'
+  url:
+    - 'http://bioconductor.org/packages/{{ bioc }}/bioc/src/contrib/{{ name }}_{{ version }}.tar.gz'
+    - 'https://bioarchive.galaxyproject.org/{{ name }}_{{ version }}.tar.gz'
+    - 'https://depot.galaxyproject.org/software/bioconductor-{{ name|lower }}/bioconductor-{{ name|lower }}_{{ version }}_src_all.tar.gz'
+  sha256: 0bf39fad87f23af4976b32de15851c4c9254c1fe6cf0dd45009dffcc9b4a47ca
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biobase
+    - 'bioconductor-flowcore >=1.43.10'
+    - 'bioconductor-flowutils >=1.35.7'
+    - 'bioconductor-flowworkspace >=3.25.16'
+    - 'bioconductor-ggcyto >=1.5.4'
+    - bioconductor-graph
+    - bioconductor-ncdfflow
+    - 'bioconductor-opencyto >=1.11.3'
+    - bioconductor-rbgl
+    - bioconductor-rgraphviz
+    - r-base
+    - r-base64enc
+    - r-data.table
+    - r-jsonlite
+    - r-plyr
+    - r-xml
+  run:
+    - bioconductor-biobase
+    - 'bioconductor-flowcore >=1.43.10'
+    - 'bioconductor-flowutils >=1.35.7'
+    - 'bioconductor-flowworkspace >=3.25.16'
+    - 'bioconductor-ggcyto >=1.5.4'
+    - bioconductor-graph
+    - bioconductor-ncdfflow
+    - 'bioconductor-opencyto >=1.11.3'
+    - bioconductor-rbgl
+    - bioconductor-rgraphviz
+    - r-base
+    - r-base64enc
+    - r-data.table
+    - r-jsonlite
+    - r-plyr
+    - r-xml
+test:
+  commands:
+    - '$R -e "library(''{{ name }}'')"'
+about:
+  home: 'http://bioconductor.org/packages/{{ bioc }}/bioc/html/{{ name }}.html'
+  license: Artistic-2.0
+  summary: 'This package is designed to use GatingML2.0 as the standard format to exchange the gated data with other software platform.'
