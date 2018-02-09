@@ -1,0 +1,53 @@
+{% set version = "2.20.0" %}
+{% set name = "GeneAnswers" %}
+{% set bioc = "3.6" %}
+
+package:
+  name: 'bioconductor-{{ name|lower }}'
+  version: '{{ version }}'
+source:
+  fn: '{{ name }}_{{ version }}.tar.gz'
+  url:
+    - 'http://bioconductor.org/packages/{{ bioc }}/bioc/src/contrib/{{ name }}_{{ version }}.tar.gz'
+    - 'https://bioarchive.galaxyproject.org/{{ name }}_{{ version }}.tar.gz'
+    - 'https://depot.galaxyproject.org/software/bioconductor-{{ name|lower }}/bioconductor-{{ name|lower }}_{{ version }}_src_all.tar.gz'
+  sha256: 86a75eec831509084882c98575d21cca505c377034fe29c76433c4e553616d85
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-annotate
+    - 'bioconductor-biobase >=1.12.0'
+    - bioconductor-heatplus
+    - bioconductor-rbgl
+    - r-base
+    - r-downloader
+    - r-igraph
+    - r-mass
+    - r-rcolorbrewer
+    - r-rcurl
+    - r-rsqlite
+    - r-xml
+  run:
+    - bioconductor-annotate
+    - 'bioconductor-biobase >=1.12.0'
+    - bioconductor-heatplus
+    - bioconductor-rbgl
+    - r-base
+    - r-downloader
+    - r-igraph
+    - r-mass
+    - r-rcolorbrewer
+    - r-rcurl
+    - r-rsqlite
+    - r-xml
+test:
+  commands:
+    - '$R -e "library(''{{ name }}'')"'
+about:
+  home: 'http://bioconductor.org/packages/{{ bioc }}/bioc/html/{{ name }}.html'
+  license: 'LGPL (>= 2)'
+  summary: 'GeneAnswers provides an integrated tool for biological or medical interpretation of the given one or more groups of genes by means of statistical test.'
