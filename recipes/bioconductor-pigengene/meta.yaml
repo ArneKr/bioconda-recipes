@@ -1,0 +1,55 @@
+{% set version = "1.4.2" %}
+{% set name = "Pigengene" %}
+{% set bioc = "3.6" %}
+
+package:
+  name: 'bioconductor-{{ name|lower }}'
+  version: '{{ version }}'
+source:
+  fn: '{{ name }}_{{ version }}.tar.gz'
+  url:
+    - 'http://bioconductor.org/packages/{{ bioc }}/bioc/src/contrib/{{ name }}_{{ version }}.tar.gz'
+    - 'https://bioarchive.galaxyproject.org/{{ name }}_{{ version }}.tar.gz'
+    - 'https://depot.galaxyproject.org/software/bioconductor-{{ name|lower }}/bioconductor-{{ name|lower }}_{{ version }}_src_all.tar.gz'
+  sha256: 0befcdf734cc3d0d941464c8c9f351664a2214e9af99a12d5d12983143c29697
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-go.db
+    - bioconductor-graph
+    - bioconductor-impute
+    - bioconductor-preprocesscore
+    - bioconductor-rgraphviz
+    - r-base
+    - r-bnlearn
+    - r-c50
+    - r-mass
+    - r-matrixstats
+    - r-partykit
+    - 'r-pheatmap >=1.0.8'
+    - r-wgcna
+  run:
+    - bioconductor-go.db
+    - bioconductor-graph
+    - bioconductor-impute
+    - bioconductor-preprocesscore
+    - bioconductor-rgraphviz
+    - r-base
+    - r-bnlearn
+    - r-c50
+    - r-mass
+    - r-matrixstats
+    - r-partykit
+    - 'r-pheatmap >=1.0.8'
+    - r-wgcna
+test:
+  commands:
+    - '$R -e "library(''{{ name }}'')"'
+about:
+  home: 'http://bioconductor.org/packages/{{ bioc }}/bioc/html/{{ name }}.html'
+  license: 'GPL (>=2)'
+  summary: 'Pigengene package provides an efficient way to infer biological signatures from gene expression profiles. The signatures are independent from the underlying platform, e.g., the input can be microarray or RNA Seq data. It can even infer the signatures using data from one platform, and evaluate them on the other. Pigengene identifies the modules (clusters) of highly coexpressed genes using coexpression network analysis, summarizes the biological information of each module in an eigengene, learns a Bayesian network that models the probabilistic dependencies between modules, and builds a decision tree based on the expression of eigengenes.'
