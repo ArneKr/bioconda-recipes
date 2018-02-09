@@ -1,0 +1,50 @@
+{% set version = "1.21.0" %}
+{% set name = "ddgraph" %}
+{% set bioc = "3.6" %}
+
+package:
+  name: 'bioconductor-{{ name|lower }}'
+  version: '{{ version }}'
+source:
+  fn: '{{ name }}_{{ version }}.tar.gz'
+  url:
+    - 'http://bioconductor.org/packages/{{ bioc }}/bioc/src/contrib/{{ name }}_{{ version }}.tar.gz'
+    - 'https://bioarchive.galaxyproject.org/{{ name }}_{{ version }}.tar.gz'
+    - 'https://depot.galaxyproject.org/software/bioconductor-{{ name }}/bioconductor-{{ name }}_{{ version }}_src_all.tar.gz'
+  sha256: 8449d20a55cfe3da01a225f9eed4e5784ae1c3c7e96edc25245d7a569002a626
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-graph
+    - r-base
+    - 'r-bnlearn >=2.8'
+    - r-gtools
+    - r-mass
+    - r-pcalg
+    - r-plotrix
+    - r-rcolorbrewer
+    - r-rcpp
+    - gcc  # [linux]
+    - llvm  # [osx]
+  run:
+    - bioconductor-graph
+    - r-base
+    - 'r-bnlearn >=2.8'
+    - r-gtools
+    - r-mass
+    - r-pcalg
+    - r-plotrix
+    - r-rcolorbrewer
+    - r-rcpp
+    - libcxx # [osx]
+test:
+  commands:
+    - '$R -e "library(''{{ name }}'')"'
+about:
+  home: 'http://bioconductor.org/packages/{{ bioc }}/bioc/html/{{ name }}.html'
+  license: GPL-3
+  summary: 'Distinguish direct from indirect interactions in gene regulation and infer combinatorial code from highly correlated variables such as transcription factor binding profiles. The package implements the Neighbourhood Consistent PC algorithm (NCPC) and draws Direct Dependence Graphs to represent dependence structure around a target variable. The package also provides a unified interface to other Graphical Modelling (Bayesian Network) packages for distinguishing direct and indirect interactions.'
