@@ -1,0 +1,35 @@
+{% set version = "1.10.0" %}
+{% set name = "SELEX" %}
+{% set bioc = "3.6" %}
+
+package:
+  name: 'bioconductor-{{ name|lower }}'
+  version: '{{ version }}'
+source:
+  fn: '{{ name }}_{{ version }}.tar.gz'
+  url:
+    - 'http://bioconductor.org/packages/{{ bioc }}/bioc/src/contrib/{{ name }}_{{ version }}.tar.gz'
+    - 'https://bioarchive.galaxyproject.org/{{ name }}_{{ version }}.tar.gz'
+    - 'https://depot.galaxyproject.org/software/bioconductor-{{ name|lower }}/bioconductor-{{ name|lower }}_{{ version }}_src_all.tar.gz'
+  sha256: 85185c7adee8d8e9ca1be1b47ad4d7620e91f62d06a5f1f6b107aeaf80d20139
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - 'bioconductor-biostrings >=2.26.0'
+    - r-base
+    - 'r-rjava >=0.5-0'
+  run:
+    - 'bioconductor-biostrings >=2.26.0'
+    - r-base
+    - 'r-rjava >=0.5-0'
+test:
+  commands:
+    - '$R -e "library(''{{ name }}'')"'
+about:
+  home: 'http://bioconductor.org/packages/{{ bioc }}/bioc/html/{{ name }}.html'
+  license: 'GPL (>=2)'
+  summary: 'Tools for quantifying DNA binding specificities based on SELEX-seq data'
