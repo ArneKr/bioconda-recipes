@@ -1,0 +1,57 @@
+{% set version = "1.12.2" %}
+{% set name = "regionReport" %}
+{% set bioc = "3.6" %}
+
+package:
+  name: 'bioconductor-{{ name|lower }}'
+  version: '{{ version }}'
+source:
+  fn: '{{ name }}_{{ version }}.tar.gz'
+  url:
+    - 'http://bioconductor.org/packages/{{ bioc }}/bioc/src/contrib/{{ name }}_{{ version }}.tar.gz'
+    - 'https://bioarchive.galaxyproject.org/{{ name }}_{{ version }}.tar.gz'
+    - 'https://depot.galaxyproject.org/software/bioconductor-{{ name|lower }}/bioconductor-{{ name|lower }}_{{ version }}_src_all.tar.gz'
+  sha256: bd9f26d27e1e6745a103220d6c8961c7b240c10f99fb460991734fe745ab73bb
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - 'bioconductor-biocstyle >=2.5.19'
+    - bioconductor-deformats
+    - 'bioconductor-derfinder >=1.1.0'
+    - bioconductor-deseq2
+    - bioconductor-genomeinfodb
+    - bioconductor-genomicranges
+    - bioconductor-s4vectors
+    - bioconductor-summarizedexperiment
+    - r-base
+    - 'r-knitcitations >=1.0.1'
+    - 'r-knitr >=1.6'
+    - 'r-knitrbootstrap >=0.9.0'
+    - r-refmanager
+    - 'r-rmarkdown >=0.9.5'
+  run:
+    - 'bioconductor-biocstyle >=2.5.19'
+    - bioconductor-deformats
+    - 'bioconductor-derfinder >=1.1.0'
+    - bioconductor-deseq2
+    - bioconductor-genomeinfodb
+    - bioconductor-genomicranges
+    - bioconductor-s4vectors
+    - bioconductor-summarizedexperiment
+    - r-base
+    - 'r-knitcitations >=1.0.1'
+    - 'r-knitr >=1.6'
+    - 'r-knitrbootstrap >=0.9.0'
+    - r-refmanager
+    - 'r-rmarkdown >=0.9.5'
+test:
+  commands:
+    - '$R -e "library(''{{ name }}'')"'
+about:
+  home: 'http://bioconductor.org/packages/{{ bioc }}/bioc/html/{{ name }}.html'
+  license: Artistic-2.0
+  summary: 'Generate HTML or PDF reports to explore a set of regions such as the results from annotation-agnostic expression analysis of RNA-seq data at base-pair resolution performed by derfinder. You can also create reports for DESeq2 or edgeR results.'
