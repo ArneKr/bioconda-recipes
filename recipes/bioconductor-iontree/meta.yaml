@@ -1,0 +1,37 @@
+{% set version = "1.24.0" %}
+{% set name = "iontree" %}
+{% set bioc = "3.6" %}
+
+package:
+  name: 'bioconductor-{{ name|lower }}'
+  version: '{{ version }}'
+source:
+  fn: '{{ name }}_{{ version }}.tar.gz'
+  url:
+    - 'http://bioconductor.org/packages/{{ bioc }}/bioc/src/contrib/{{ name }}_{{ version }}.tar.gz'
+    - 'https://bioarchive.galaxyproject.org/{{ name }}_{{ version }}.tar.gz'
+    - 'https://depot.galaxyproject.org/software/bioconductor-{{ name }}/bioconductor-{{ name }}_{{ version }}_src_all.tar.gz'
+  sha256: f81a1f17bdd31d3119234061dd16ebedcd081183f504193b2551f969d745cba4
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - r-base
+    - r-rjava
+    - r-rsqlite
+    - r-xml
+  run:
+    - r-base
+    - r-rjava
+    - r-rsqlite
+    - r-xml
+test:
+  commands:
+    - '$R -e "library(''{{ name }}'')"'
+about:
+  home: 'http://bioconductor.org/packages/{{ bioc }}/bioc/html/{{ name }}.html'
+  license: GPL-2
+  summary: 'Ion fragmentation provides structural information for metabolite identification. This package provides utility functions to manage and analyse MS2/MS3 fragmentation data from ion trap mass spectrometry. It was designed for high throughput metabolomics data with many biological samples and a large numer of ion trees collected. Tests have been done with data from low-resolution mass spectrometry but could be readily extended to precursor ion based fragmentation data from high resoultion mass spectrometry.'
