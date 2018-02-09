@@ -1,0 +1,37 @@
+{% set version = "2.38.0" %}
+{% set name = "Mfuzz" %}
+{% set bioc = "3.6" %}
+
+package:
+  name: 'bioconductor-{{ name|lower }}'
+  version: '{{ version }}'
+source:
+  fn: '{{ name }}_{{ version }}.tar.gz'
+  url:
+    - 'http://bioconductor.org/packages/{{ bioc }}/bioc/src/contrib/{{ name }}_{{ version }}.tar.gz'
+    - 'https://bioarchive.galaxyproject.org/{{ name }}_{{ version }}.tar.gz'
+    - 'https://depot.galaxyproject.org/software/bioconductor-{{ name|lower }}/bioconductor-{{ name|lower }}_{{ version }}_src_all.tar.gz'
+  sha256: 316c3dbca6900baf57ab1b32ce8d86338e51361d976560c32662ade6d11b88a1
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - 'bioconductor-biobase >=2.5.5'
+    - bioconductor-tkwidgets
+    - r-base
+    - r-e1071
+  run:
+    - 'bioconductor-biobase >=2.5.5'
+    - bioconductor-tkwidgets
+    - r-base
+    - r-e1071
+test:
+  commands:
+    - '$R -e "library(''{{ name }}'')"'
+about:
+  home: 'http://bioconductor.org/packages/{{ bioc }}/bioc/html/{{ name }}.html'
+  license: GPL-2
+  summary: 'Package for noise-robust soft clustering of gene expression time-series data (including a graphical user interface)'
