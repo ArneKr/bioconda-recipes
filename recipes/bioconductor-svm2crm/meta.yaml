@@ -1,0 +1,55 @@
+{% set version = "1.10.0" %}
+{% set name = "SVM2CRM" %}
+{% set bioc = "3.6" %}
+
+package:
+  name: 'bioconductor-{{ name|lower }}'
+  version: '{{ version }}'
+source:
+  fn: '{{ name }}_{{ version }}.tar.gz'
+  url:
+    - 'http://bioconductor.org/packages/{{ bioc }}/bioc/src/contrib/{{ name }}_{{ version }}.tar.gz'
+    - 'https://bioarchive.galaxyproject.org/{{ name }}_{{ version }}.tar.gz'
+    - 'https://depot.galaxyproject.org/software/bioconductor-{{ name|lower }}/bioconductor-{{ name|lower }}_{{ version }}_src_all.tar.gz'
+  sha256: 56f2b52cf2e35afc7b3e0e4934ce2848f228675bc7977acd8884c4ba887e986c
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-annotationdbi
+    - bioconductor-genomicranges
+    - bioconductor-iranges
+    - bioconductor-rtracklayer
+    - bioconductor-svm2crmdata
+    - r-base
+    - r-liblinear
+    - r-mclust
+    - r-pls
+    - r-rocr
+    - r-squash
+    - r-verification
+    - r-zoo
+  run:
+    - bioconductor-annotationdbi
+    - bioconductor-genomicranges
+    - bioconductor-iranges
+    - bioconductor-rtracklayer
+    - bioconductor-svm2crmdata
+    - r-base
+    - r-liblinear
+    - r-mclust
+    - r-pls
+    - r-rocr
+    - r-squash
+    - r-verification
+    - r-zoo
+test:
+  commands:
+    - '$R -e "library(''{{ name }}'')"'
+about:
+  home: 'http://bioconductor.org/packages/{{ bioc }}/bioc/html/{{ name }}.html'
+  license: GPL-3
+  summary: 'Detection of cis-regulatory elements using svm implemented in LiblineaR.'
