@@ -1,0 +1,45 @@
+{% set version = "2.38.0" %}
+{% set name = "ITALICS" %}
+{% set bioc = "3.6" %}
+
+package:
+  name: 'bioconductor-{{ name|lower }}'
+  version: '{{ version }}'
+source:
+  fn: '{{ name }}_{{ version }}.tar.gz'
+  url:
+    - 'http://bioconductor.org/packages/{{ bioc }}/bioc/src/contrib/{{ name }}_{{ version }}.tar.gz'
+    - 'https://bioarchive.galaxyproject.org/{{ name }}_{{ version }}.tar.gz'
+    - 'https://depot.galaxyproject.org/software/bioconductor-{{ name|lower }}/bioconductor-{{ name|lower }}_{{ version }}_src_all.tar.gz'
+  sha256: 627865afb88b44938b0dc360661afa9b2583a1ee1d030e0368637f410d36fa10
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-affxparser
+    - bioconductor-glad
+    - bioconductor-italicsdata
+    - bioconductor-oligo
+    - bioconductor-oligoclasses
+    - bioconductor-pd.mapping50k.xba240
+    - r-base
+    - r-dbi
+  run:
+    - bioconductor-affxparser
+    - bioconductor-glad
+    - bioconductor-italicsdata
+    - bioconductor-oligo
+    - bioconductor-oligoclasses
+    - bioconductor-pd.mapping50k.xba240
+    - r-base
+    - r-dbi
+test:
+  commands:
+    - '$R -e "library(''{{ name }}'')"'
+about:
+  home: 'http://bioconductor.org/packages/{{ bioc }}/bioc/html/{{ name }}.html'
+  license: GPL-2
+  summary: 'A Method to normalize of Affymetrix GeneChip Human Mapping 100K and 500K set'
