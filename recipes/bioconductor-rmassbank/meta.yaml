@@ -1,0 +1,56 @@
+{% set version = "2.6.0" %}
+{% set name = "RMassBank" %}
+{% set bioc = "3.6" %}
+
+package:
+  name: 'bioconductor-{{ name|lower }}'
+  version: '{{ version }}'
+source:
+  fn: '{{ name }}_{{ version }}.tar.gz'
+  url:
+    - 'http://bioconductor.org/packages/{{ bioc }}/bioc/src/contrib/{{ name }}_{{ version }}.tar.gz'
+    - 'https://bioarchive.galaxyproject.org/{{ name }}_{{ version }}.tar.gz'
+    - 'https://depot.galaxyproject.org/software/bioconductor-{{ name|lower }}/bioconductor-{{ name|lower }}_{{ version }}_src_all.tar.gz'
+  sha256: 3c955bb8e3e9b2ace86c49d6690786426f6660890025c2d65125d1e58991d6f9
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biobase
+    - bioconductor-msnbase
+    - bioconductor-mzr
+    - bioconductor-s4vectors
+    - r-base
+    - r-digest
+    - r-rcdk
+    - r-rcpp
+    - r-rcurl
+    - r-rjson
+    - r-xml
+    - r-yaml
+    - gcc  # [linux]
+    - llvm  # [osx]
+  run:
+    - bioconductor-biobase
+    - bioconductor-msnbase
+    - bioconductor-mzr
+    - bioconductor-s4vectors
+    - r-base
+    - r-digest
+    - r-rcdk
+    - r-rcpp
+    - r-rcurl
+    - r-rjson
+    - r-xml
+    - r-yaml
+    - libcxx # [osx]
+test:
+  commands:
+    - '$R -e "library(''{{ name }}'')"'
+about:
+  home: 'http://bioconductor.org/packages/{{ bioc }}/bioc/html/{{ name }}.html'
+  license: Artistic-2.0
+  summary: 'Workflow to process tandem MS files and build MassBank records. Functions include automated extraction of tandem MS spectra, formula assignment to tandem MS fragments, recalibration of tandem MS spectra with assigned fragments, spectrum cleanup, automated retrieval of compound information from Internet databases, and export to MassBank records.'
