@@ -1,0 +1,47 @@
+{% set version = "1.8.2" %}
+{% set name = "PharmacoGx" %}
+{% set bioc = "3.6" %}
+
+package:
+  name: 'bioconductor-{{ name|lower }}'
+  version: '{{ version }}'
+source:
+  fn: '{{ name }}_{{ version }}.tar.gz'
+  url:
+    - 'http://bioconductor.org/packages/{{ bioc }}/bioc/src/contrib/{{ name }}_{{ version }}.tar.gz'
+    - 'https://bioarchive.galaxyproject.org/{{ name }}_{{ version }}.tar.gz'
+    - 'https://depot.galaxyproject.org/software/bioconductor-{{ name|lower }}/bioconductor-{{ name|lower }}_{{ version }}_src_all.tar.gz'
+  sha256: 696d2e5e95b5fef333eb08c1b92591ee27a61e13950052dcb3486312f7e5e770
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biobase
+    - bioconductor-piano
+    - r-base
+    - r-catools
+    - r-downloader
+    - r-lsa
+    - r-magicaxis
+    - r-rcolorbrewer
+    - r-reshape2
+  run:
+    - bioconductor-biobase
+    - bioconductor-piano
+    - r-base
+    - r-catools
+    - r-downloader
+    - r-lsa
+    - r-magicaxis
+    - r-rcolorbrewer
+    - r-reshape2
+test:
+  commands:
+    - '$R -e "library(''{{ name }}'')"'
+about:
+  home: 'http://bioconductor.org/packages/{{ bioc }}/bioc/html/{{ name }}.html'
+  license: Artistic-2.0
+  summary: 'Contains a set of functions to perform large-scale analysis of pharmacogenomic data.'
