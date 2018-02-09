@@ -1,0 +1,51 @@
+{% set version = "3.6.0" %}
+{% set name = "FEM" %}
+{% set bioc = "3.6" %}
+
+package:
+  name: 'bioconductor-{{ name|lower }}'
+  version: '{{ version }}'
+source:
+  fn: '{{ name }}_{{ version }}.tar.gz'
+  url:
+    - 'http://bioconductor.org/packages/{{ bioc }}/bioc/src/contrib/{{ name }}_{{ version }}.tar.gz'
+    - 'https://bioarchive.galaxyproject.org/{{ name }}_{{ version }}.tar.gz'
+    - 'https://depot.galaxyproject.org/software/bioconductor-{{ name|lower }}/bioconductor-{{ name|lower }}_{{ version }}_src_all.tar.gz'
+  sha256: 8de0404cc9b50cb6c072b3f79d186624b48ae47a246e24133b71998b69ba472f
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-annotationdbi
+    - bioconductor-biocgenerics
+    - bioconductor-graph
+    - bioconductor-impute
+    - bioconductor-limma
+    - bioconductor-marray
+    - bioconductor-org.hs.eg.db
+    - r-base
+    - r-corrplot
+    - r-igraph
+    - r-matrix
+  run:
+    - bioconductor-annotationdbi
+    - bioconductor-biocgenerics
+    - bioconductor-graph
+    - bioconductor-impute
+    - bioconductor-limma
+    - bioconductor-marray
+    - bioconductor-org.hs.eg.db
+    - r-base
+    - r-corrplot
+    - r-igraph
+    - r-matrix
+test:
+  commands:
+    - '$R -e "library(''{{ name }}'')"'
+about:
+  home: 'http://bioconductor.org/packages/{{ bioc }}/bioc/html/{{ name }}.html'
+  license: 'GPL (>=2)'
+  summary: 'The FEM package performs a systems-level integrative analysis of DNA methylation and gene expression data. It seeks modules of functionally related genes which exhibit differential promoter DNA methylation and differential expression, where an inverse association between promoter DNA methylation and gene expression is assumed. For full details, see Jiao et al Bioinformatics 2014.'
