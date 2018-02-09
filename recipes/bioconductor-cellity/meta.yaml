@@ -1,0 +1,47 @@
+{% set version = "1.6.0" %}
+{% set name = "cellity" %}
+{% set bioc = "3.6" %}
+
+package:
+  name: 'bioconductor-{{ name|lower }}'
+  version: '{{ version }}'
+source:
+  fn: '{{ name }}_{{ version }}.tar.gz'
+  url:
+    - 'http://bioconductor.org/packages/{{ bioc }}/bioc/src/contrib/{{ name }}_{{ version }}.tar.gz'
+    - 'https://bioarchive.galaxyproject.org/{{ name }}_{{ version }}.tar.gz'
+    - 'https://depot.galaxyproject.org/software/bioconductor-{{ name }}/bioconductor-{{ name }}_{{ version }}_src_all.tar.gz'
+  sha256: ba2439f5bf1520f6baaf345183ce28d8c1520f8c034591fd5645da1f7052fa6b
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-annotationdbi
+    - bioconductor-org.hs.eg.db
+    - bioconductor-org.mm.eg.db
+    - bioconductor-topgo
+    - r-base
+    - r-e1071
+    - r-ggplot2
+    - r-mvoutlier
+    - r-robustbase
+  run:
+    - bioconductor-annotationdbi
+    - bioconductor-org.hs.eg.db
+    - bioconductor-org.mm.eg.db
+    - bioconductor-topgo
+    - r-base
+    - r-e1071
+    - r-ggplot2
+    - r-mvoutlier
+    - r-robustbase
+test:
+  commands:
+    - '$R -e "library(''{{ name }}'')"'
+about:
+  home: 'http://bioconductor.org/packages/{{ bioc }}/bioc/html/{{ name }}.html'
+  license: 'GPL (>= 2)'
+  summary: 'A support vector machine approach to identifying and filtering low quality cells from single-cell RNA-seq datasets.'
