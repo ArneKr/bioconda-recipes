@@ -1,0 +1,35 @@
+{% set version = "1.32.0" %}
+{% set name = "MBCB" %}
+{% set bioc = "3.6" %}
+
+package:
+  name: 'bioconductor-{{ name|lower }}'
+  version: '{{ version }}'
+source:
+  fn: '{{ name }}_{{ version }}.tar.gz'
+  url:
+    - 'http://bioconductor.org/packages/{{ bioc }}/bioc/src/contrib/{{ name }}_{{ version }}.tar.gz'
+    - 'https://bioarchive.galaxyproject.org/{{ name }}_{{ version }}.tar.gz'
+    - 'https://depot.galaxyproject.org/software/bioconductor-{{ name|lower }}/bioconductor-{{ name|lower }}_{{ version }}_src_all.tar.gz'
+  sha256: 8ce4b1aa421ae7f9f1dfa5dd2b05b8428f93f66ac06f45fd7f733752e2afb82a
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-preprocesscore
+    - r-base
+    - r-tcltk2
+  run:
+    - bioconductor-preprocesscore
+    - r-base
+    - r-tcltk2
+test:
+  commands:
+    - '$R -e "library(''{{ name }}'')"'
+about:
+  home: 'http://bioconductor.org/packages/{{ bioc }}/bioc/html/{{ name }}.html'
+  license: 'GPL (>= 2)'
+  summary: 'This package provides a model-based background correction method, which incorporates the negative control beads to pre-process Illumina BeadArray data.'
