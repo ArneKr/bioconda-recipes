@@ -1,0 +1,49 @@
+{% set version = "1.14.1" %}
+{% set name = "Rcpi" %}
+{% set bioc = "3.6" %}
+
+package:
+  name: 'bioconductor-{{ name|lower }}'
+  version: '{{ version }}'
+source:
+  fn: '{{ name }}_{{ version }}.tar.gz'
+  url:
+    - 'http://bioconductor.org/packages/{{ bioc }}/bioc/src/contrib/{{ name }}_{{ version }}.tar.gz'
+    - 'https://bioarchive.galaxyproject.org/{{ name }}_{{ version }}.tar.gz'
+    - 'https://depot.galaxyproject.org/software/bioconductor-{{ name|lower }}/bioconductor-{{ name|lower }}_{{ version }}_src_all.tar.gz'
+  sha256: 1458c66c9257afe5b6c7641b8f7a115ecf0286873432ba5d15000209785629bc
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biostrings
+    - bioconductor-chemminer
+    - bioconductor-fmcsr
+    - bioconductor-gosemsim
+    - r-base
+    - r-doparallel
+    - r-foreach
+    - 'r-rcdk >=3.3.8'
+    - r-rcurl
+    - r-rjson
+  run:
+    - bioconductor-biostrings
+    - bioconductor-chemminer
+    - bioconductor-fmcsr
+    - bioconductor-gosemsim
+    - r-base
+    - r-doparallel
+    - r-foreach
+    - 'r-rcdk >=3.3.8'
+    - r-rcurl
+    - r-rjson
+test:
+  commands:
+    - '$R -e "library(''{{ name }}'')"'
+about:
+  home: 'http://bioconductor.org/packages/{{ bioc }}/bioc/html/{{ name }}.html'
+  license: Artistic-2.0
+  summary: 'Rcpi offers a molecular informatics toolkit with a comprehensive integration of bioinformatics and chemoinformatics tools for drug discovery.'
