@@ -1,0 +1,49 @@
+{% set version = "1.12.0" %}
+{% set name = "paxtoolsr" %}
+{% set bioc = "3.6" %}
+
+package:
+  name: 'bioconductor-{{ name|lower }}'
+  version: '{{ version }}'
+source:
+  fn: '{{ name }}_{{ version }}.tar.gz'
+  url:
+    - 'http://bioconductor.org/packages/{{ bioc }}/bioc/src/contrib/{{ name }}_{{ version }}.tar.gz'
+    - 'https://bioarchive.galaxyproject.org/{{ name }}_{{ version }}.tar.gz'
+    - 'https://depot.galaxyproject.org/software/bioconductor-{{ name }}/bioconductor-{{ name }}_{{ version }}_src_all.tar.gz'
+  sha256: 1a5d0a2b43167bdd844bc7780faff122c247b5b9094d7036967429d32369b225
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - r-base
+    - r-data.table
+    - r-httr
+    - r-igraph
+    - r-jsonlite
+    - r-plyr
+    - r-r.utils
+    - 'r-rjava >=0.9-8'
+    - r-rjson
+    - r-xml
+  run:
+    - r-base
+    - r-data.table
+    - r-httr
+    - r-igraph
+    - r-jsonlite
+    - r-plyr
+    - r-r.utils
+    - 'r-rjava >=0.9-8'
+    - r-rjson
+    - r-xml
+test:
+  commands:
+    - '$R -e "library(''{{ name }}'')"'
+about:
+  home: 'http://bioconductor.org/packages/{{ bioc }}/bioc/html/{{ name }}.html'
+  license: LGPL-3
+  summary: 'The package provides a set of R functions for interacting with BioPAX OWL files using Paxtools and the querying Pathway Commons (PC) molecular interaction database that are hosted by the Computational Biology Center at Memorial Sloan-Kettering Cancer Center (MSKCC). Pathway Commons databases include: BIND, BioGRID, CORUM, CTD, DIP, DrugBank, HPRD, HumanCyc, IntAct, KEGG, MirTarBase, Panther, PhosphoSitePlus, Reactome, RECON, TRANSFAC.'
