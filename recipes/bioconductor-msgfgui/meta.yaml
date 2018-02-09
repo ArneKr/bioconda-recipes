@@ -1,0 +1,43 @@
+{% set version = "1.12.0" %}
+{% set name = "MSGFgui" %}
+{% set bioc = "3.6" %}
+
+package:
+  name: 'bioconductor-{{ name|lower }}'
+  version: '{{ version }}'
+source:
+  fn: '{{ name }}_{{ version }}.tar.gz'
+  url:
+    - 'http://bioconductor.org/packages/{{ bioc }}/bioc/src/contrib/{{ name }}_{{ version }}.tar.gz'
+    - 'https://bioarchive.galaxyproject.org/{{ name }}_{{ version }}.tar.gz'
+    - 'https://depot.galaxyproject.org/software/bioconductor-{{ name|lower }}/bioconductor-{{ name|lower }}_{{ version }}_src_all.tar.gz'
+  sha256: 095a0ac996962264d53b1e26fd90b00fb81c126f481251823f9dd5ad45a821fb
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-msgfplus
+    - 'bioconductor-mzid >=1.2'
+    - bioconductor-mzr
+    - r-base
+    - r-shiny
+    - 'r-shinyfiles >=0.4.0'
+    - r-xlsx
+  run:
+    - bioconductor-msgfplus
+    - 'bioconductor-mzid >=1.2'
+    - bioconductor-mzr
+    - r-base
+    - r-shiny
+    - 'r-shinyfiles >=0.4.0'
+    - r-xlsx
+test:
+  commands:
+    - '$R -e "library(''{{ name }}'')"'
+about:
+  home: 'http://bioconductor.org/packages/{{ bioc }}/bioc/html/{{ name }}.html'
+  license: 'GPL (>= 2)'
+  summary: 'This package makes it possible to perform analyses using the MSGFplus package in a GUI environment. Furthermore it enables the user to investigate the results using interactive plots, summary statistics and filtering. Lastly it exposes the current results to another R session so the user can seamlessly integrate the gui into other workflows.'
