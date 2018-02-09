@@ -1,0 +1,39 @@
+{% set version = "1.20.0" %}
+{% set name = "EasyqpcR" %}
+{% set bioc = "3.6" %}
+
+package:
+  name: 'bioconductor-{{ name|lower }}'
+  version: '{{ version }}'
+source:
+  fn: '{{ name }}_{{ version }}.tar.gz'
+  url:
+    - 'http://bioconductor.org/packages/{{ bioc }}/bioc/src/contrib/{{ name }}_{{ version }}.tar.gz'
+    - 'https://bioarchive.galaxyproject.org/{{ name }}_{{ version }}.tar.gz'
+    - 'https://depot.galaxyproject.org/software/bioconductor-{{ name|lower }}/bioconductor-{{ name|lower }}_{{ version }}_src_all.tar.gz'
+  sha256: 1c9eb605da3c61311c6373c95d76bf8f690c464e00e9b7d2ce064970efc0951a
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - r-base
+    - r-gwidgetsrgtk2
+    - r-matrixstats
+    - r-plotrix
+    - r-plyr
+  run:
+    - r-base
+    - r-gwidgetsrgtk2
+    - r-matrixstats
+    - r-plotrix
+    - r-plyr
+test:
+  commands:
+    - '$R -e "library(''{{ name }}'')"'
+about:
+  home: 'http://bioconductor.org/packages/{{ bioc }}/bioc/html/{{ name }}.html'
+  license: 'GPL (>=2)'
+  summary: 'This package is based on the qBase algorithms published by Hellemans et al. in 2007. The EasyqpcR package allows you to import easily qPCR data files as described in the vignette. Thereafter, you can calculate amplification efficiencies, relative quantities and their standard errors, normalization factors based on the best reference genes choosen (using the SLqPCR package), and then the normalized relative quantities, the NRQs scaled to your control and their standard errors. This package has been created for low-throughput qPCR data analysis.'
