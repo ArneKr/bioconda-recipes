@@ -1,0 +1,38 @@
+{% set version = "1.18.0" %}
+{% set name = "iBMQ" %}
+{% set bioc = "3.6" %}
+
+package:
+  name: 'bioconductor-{{ name|lower }}'
+  version: '{{ version }}'
+source:
+  fn: '{{ name }}_{{ version }}.tar.gz'
+  url:
+    - 'http://bioconductor.org/packages/{{ bioc }}/bioc/src/contrib/{{ name }}_{{ version }}.tar.gz'
+    - 'https://bioarchive.galaxyproject.org/{{ name }}_{{ version }}.tar.gz'
+    - 'https://depot.galaxyproject.org/software/bioconductor-{{ name|lower }}/bioconductor-{{ name|lower }}_{{ version }}_src_all.tar.gz'
+  sha256: 6d55e375a8f79ac0bb6b38ff79476b7feb357465c84214569ecd3ff56c91ed89
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - 'bioconductor-biobase >=2.16.0'
+    - r-base
+    - 'r-ggplot2 >=0.9.2'
+    - gcc  # [linux]
+    - llvm  # [osx]
+  run:
+    - 'bioconductor-biobase >=2.16.0'
+    - r-base
+    - 'r-ggplot2 >=0.9.2'
+    - libcxx # [osx]
+test:
+  commands:
+    - '$R -e "library(''{{ name }}'')"'
+about:
+  home: 'http://bioconductor.org/packages/{{ bioc }}/bioc/html/{{ name }}.html'
+  license: Artistic-2.0
+  summary: 'integrated Bayesian Modeling of eQTL data'
