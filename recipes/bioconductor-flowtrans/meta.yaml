@@ -1,0 +1,37 @@
+{% set version = "1.30.0" %}
+{% set name = "flowTrans" %}
+{% set bioc = "3.6" %}
+
+package:
+  name: 'bioconductor-{{ name|lower }}'
+  version: '{{ version }}'
+source:
+  fn: '{{ name }}_{{ version }}.tar.gz'
+  url:
+    - 'http://bioconductor.org/packages/{{ bioc }}/bioc/src/contrib/{{ name }}_{{ version }}.tar.gz'
+    - 'https://bioarchive.galaxyproject.org/{{ name }}_{{ version }}.tar.gz'
+    - 'https://depot.galaxyproject.org/software/bioconductor-{{ name|lower }}/bioconductor-{{ name|lower }}_{{ version }}_src_all.tar.gz'
+  sha256: dc151b3abf62771dd7f8a8872b6c5343a40358e9b532554aec8f6c04d2d6576a
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-flowclust
+    - bioconductor-flowcore
+    - bioconductor-flowviz
+    - r-base
+  run:
+    - bioconductor-flowclust
+    - bioconductor-flowcore
+    - bioconductor-flowviz
+    - r-base
+test:
+  commands:
+    - '$R -e "library(''{{ name }}'')"'
+about:
+  home: 'http://bioconductor.org/packages/{{ bioc }}/bioc/html/{{ name }}.html'
+  license: Artistic-2.0
+  summary: 'Profile maximum likelihood estimation of parameters for flow cytometry data transformations.'
