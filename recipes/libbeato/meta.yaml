@@ -1,0 +1,36 @@
+{% set name = "libbeato" %}
+{% set version = "1.0" %}
+
+
+package:
+  name: {{ name }}
+  version: {{ version }}
+
+build:
+  number: 0
+
+source:
+  fn: {{ name }}-0c30432af9c7e1e09ba065ad3b2bc042baa54dc2.tar.gz
+  url: https://github.com/CRG-Barcelona/libbeato/archive/0c30432af9c7e1e09ba065ad3b2bc042baa54dc2.tar.gz
+  sha256: 918a54dd366061255a7bcce65708f69fa643a10fd54e51cfeaae46eecc9c5855
+
+requirements:
+  build:
+  - gcc # [linux]
+  - llvm # [osx]
+  - htslib
+
+  run:
+  - libgcc # [linux]
+  - htslib
+
+test:
+  commands:
+    - test -f $PREFIX/lib/libbeato.a #[unix]
+    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]
+    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]
+
+about:
+  home: https://github.com/CRG-Barcelona/libbeato/
+  license: GPL3
+  summary: "This is a C library containing routines for various uses in Genomics, and includes a copy of the freeware portion of the C library from UCSC's Genome Browser Group."
