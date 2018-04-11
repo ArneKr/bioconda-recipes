@@ -1,0 +1,38 @@
+{% set name = "uproc" %}
+{% set version = "1.2.0" %}
+
+
+package:
+  name: {{ name }}
+  version: {{ version }}
+
+build:
+  number: 0
+
+source:
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: http://uproc.gobics.de/downloads/uproc/{{ name }}-{{ version }}.tar.gz
+  sha256: 59a91e4d383f223ec8f6e450c42f98e1aab06435a879b56b1510d70fe77e34a5
+
+requirements:
+  build:
+  - gcc # [linux]
+  - llvm # [osx]
+  - doxygen
+  - zlib {{ CONDA_ZLIB }}*
+
+  run:
+  - libgcc # [linux]
+  - doxygen
+  - zlib {{ CONDA_ZLIB }}*
+
+test:
+  commands:
+    - test -f $PREFIX/lib/uproc.a #[unix]
+    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]
+    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]
+
+about:
+  home: http://uproc.gobics.de/
+  license: GPL3
+  summary: "The ultrafast protein classification (UProC) toolbox implements a novel algorithm (Mosaic Matching) for large-scale sequence analysis"
