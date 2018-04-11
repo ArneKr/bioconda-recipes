@@ -18,11 +18,11 @@ requirements:
   build:
   - gcc # [linux]
   - llvm # [osx]
-  - htslib
+  - htslib {{ CONDA_HTSLIB }}*
 
   run:
   - libgcc # [linux]
-  - htslib
+  - htslib {{ CONDA_HTSLIB }}*
 
 test:
   commands:
